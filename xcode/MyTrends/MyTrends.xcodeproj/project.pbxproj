@@ -1,0 +1,341 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0715410D11832896007B5FB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0715410C11832896007B5FB2 /* MainViewController.m */; };
+		07313EEA118D8CEE005A08B3 /* trends.png in Resources */ = {isa = PBXBuildFile; fileRef = 07313EE9118D8CEE005A08B3 /* trends.png */; };
+		07313F13118D908B005A08B3 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07313F12118D908B005A08B3 /* ContentView.m */; };
+		07B323C211A57ACE00383E50 /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B323C111A57ACE00383E50 /* MyWebView.m */; };
+		07BD98C7118E7CCC00B4F49A /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BD98BB118E7CCC00B4F49A /* 7.png */; };
+		07BD98C8118E7CCC00B4F49A /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BD98BC118E7CCC00B4F49A /* 6.png */; };
+		07BD98C9118E7CCC00B4F49A /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BD98BD118E7CCC00B4F49A /* 5.png */; };
+		07BD98CA118E7CCC00B4F49A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BD98BE118E7CCC00B4F49A /* 4.png */; };
+		07BD98CB118E7CCC00B4F49A /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BD98BF118E7CCC00B4F49A /* 3.png */; };
+		07BD98CC118E7CCC00B4F49A /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BD98C0118E7CCC00B4F49A /* 2.png */; };
+		07BD98CD118E7CCC00B4F49A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BD98C1118E7CCC00B4F49A /* 1.png */; };
+		07BF08B91185CAEB001B522D /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BF08B81185CAEB001B522D /* InfoView.m */; };
+		07BF0968118867F8001B522D /* MainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BF0967118867F8001B522D /* MainToolbar.m */; };
+		07BF0A3F11888A5C001B522D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BF0A3E11888A5C001B522D /* TouchableImageView.m */; };
+		07BF0AA31189C835001B522D /* DoubleSideInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BF0AA21189C835001B522D /* DoubleSideInfoView.m */; };
+		07D2021411A03608008ADDC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07D2021311A03608008ADDC4 /* Localizable.strings */; };
+		07D2024311A19EC7008ADDC4 /* Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D2024211A19EC7008ADDC4 /* Info.m */; };
+		07D202EA11A2E023008ADDC4 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D202E911A2E023008ADDC4 /* 8.png */; };
+		07F21EED11A645C600BD9F6D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F21EEC11A645C600BD9F6D /* icon.png */; };
+		1D3623260D0F684500981E51 /* MyTrendsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MyTrendsAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0715410B11832896007B5FB2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0715410C11832896007B5FB2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		07313EE9118D8CEE005A08B3 /* trends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trends.png; path = ../MyTrends/photos/trends.png; sourceTree = SOURCE_ROOT; };
+		07313F11118D908B005A08B3 /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		07313F12118D908B005A08B3 /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
+		07B323C011A57ACE00383E50 /* MyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebView.h; sourceTree = "<group>"; };
+		07B323C111A57ACE00383E50 /* MyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebView.m; sourceTree = "<group>"; };
+		07BD98BB118E7CCC00B4F49A /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 7.png; path = ../MyTrends/photos/7.png; sourceTree = SOURCE_ROOT; };
+		07BD98BC118E7CCC00B4F49A /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = ../MyTrends/photos/6.png; sourceTree = SOURCE_ROOT; };
+		07BD98BD118E7CCC00B4F49A /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = ../MyTrends/photos/5.png; sourceTree = SOURCE_ROOT; };
+		07BD98BE118E7CCC00B4F49A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = ../MyTrends/photos/4.png; sourceTree = SOURCE_ROOT; };
+		07BD98BF118E7CCC00B4F49A /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = ../MyTrends/photos/3.png; sourceTree = SOURCE_ROOT; };
+		07BD98C0118E7CCC00B4F49A /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../MyTrends/photos/2.png; sourceTree = SOURCE_ROOT; };
+		07BD98C1118E7CCC00B4F49A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../MyTrends/photos/1.png; sourceTree = SOURCE_ROOT; };
+		07BF08B71185CAEB001B522D /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
+		07BF08B81185CAEB001B522D /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
+		07BF0966118867F8001B522D /* MainToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainToolbar.h; sourceTree = "<group>"; };
+		07BF0967118867F8001B522D /* MainToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainToolbar.m; sourceTree = "<group>"; };
+		07BF0A3D11888A5C001B522D /* TouchableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableImageView.h; sourceTree = "<group>"; };
+		07BF0A3E11888A5C001B522D /* TouchableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableImageView.m; sourceTree = "<group>"; };
+		07BF0AA11189C835001B522D /* DoubleSideInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleSideInfoView.h; sourceTree = "<group>"; };
+		07BF0AA21189C835001B522D /* DoubleSideInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleSideInfoView.m; sourceTree = "<group>"; };
+		07D2021311A03608008ADDC4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		07D2024111A19EC7008ADDC4 /* Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Info.h; sourceTree = "<group>"; };
+		07D2024211A19EC7008ADDC4 /* Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Info.m; sourceTree = "<group>"; };
+		07D202E911A2E023008ADDC4 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = ../MyTrends/photos/8.png; sourceTree = SOURCE_ROOT; };
+		07F21EEC11A645C600BD9F6D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../MyTrends/photos/icon.png; sourceTree = SOURCE_ROOT; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* MyTrendsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTrendsAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* MyTrendsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTrendsAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* 时尚表情.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "时尚表情.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* MyTrends_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTrends_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* MyTrends-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MyTrends-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* MyTrendsAppDelegate.h */,
+				1D3623250D0F684500981E51 /* MyTrendsAppDelegate.m */,
+				0715410B11832896007B5FB2 /* MainViewController.h */,
+				0715410C11832896007B5FB2 /* MainViewController.m */,
+				07BF08B71185CAEB001B522D /* InfoView.h */,
+				07BF08B81185CAEB001B522D /* InfoView.m */,
+				07BF0966118867F8001B522D /* MainToolbar.h */,
+				07BF0967118867F8001B522D /* MainToolbar.m */,
+				07BF0A3D11888A5C001B522D /* TouchableImageView.h */,
+				07BF0A3E11888A5C001B522D /* TouchableImageView.m */,
+				07BF0AA11189C835001B522D /* DoubleSideInfoView.h */,
+				07BF0AA21189C835001B522D /* DoubleSideInfoView.m */,
+				07313F11118D908B005A08B3 /* ContentView.h */,
+				07313F12118D908B005A08B3 /* ContentView.m */,
+				07D2024111A19EC7008ADDC4 /* Info.h */,
+				07D2024211A19EC7008ADDC4 /* Info.m */,
+				07B323C011A57ACE00383E50 /* MyWebView.h */,
+				07B323C111A57ACE00383E50 /* MyWebView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* 时尚表情.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* MyTrends_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07F21EEC11A645C600BD9F6D /* icon.png */,
+				07D202E911A2E023008ADDC4 /* 8.png */,
+				07BD98BB118E7CCC00B4F49A /* 7.png */,
+				07BD98BC118E7CCC00B4F49A /* 6.png */,
+				07BD98BD118E7CCC00B4F49A /* 5.png */,
+				07BD98BE118E7CCC00B4F49A /* 4.png */,
+				07BD98BF118E7CCC00B4F49A /* 3.png */,
+				07BD98C0118E7CCC00B4F49A /* 2.png */,
+				07BD98C1118E7CCC00B4F49A /* 1.png */,
+				07313EE9118D8CEE005A08B3 /* trends.png */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* MyTrends-Info.plist */,
+				07D2021311A03608008ADDC4 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* 时尚表情 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "时尚表情" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "时尚表情";
+			productName = MyTrends;
+			productReference = 1D6058910D05DD3D006BFB54 /* 时尚表情.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "mytrends" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* 时尚表情 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				07313EEA118D8CEE005A08B3 /* trends.png in Resources */,
+				07BD98C7118E7CCC00B4F49A /* 7.png in Resources */,
+				07BD98C8118E7CCC00B4F49A /* 6.png in Resources */,
+				07BD98C9118E7CCC00B4F49A /* 5.png in Resources */,
+				07BD98CA118E7CCC00B4F49A /* 4.png in Resources */,
+				07BD98CB118E7CCC00B4F49A /* 3.png in Resources */,
+				07BD98CC118E7CCC00B4F49A /* 2.png in Resources */,
+				07BD98CD118E7CCC00B4F49A /* 1.png in Resources */,
+				07D2021411A03608008ADDC4 /* Localizable.strings in Resources */,
+				07D202EA11A2E023008ADDC4 /* 8.png in Resources */,
+				07F21EED11A645C600BD9F6D /* icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* MyTrendsAppDelegate.m in Sources */,
+				0715410D11832896007B5FB2 /* MainViewController.m in Sources */,
+				07BF08B91185CAEB001B522D /* InfoView.m in Sources */,
+				07BF0968118867F8001B522D /* MainToolbar.m in Sources */,
+				07BF0A3F11888A5C001B522D /* TouchableImageView.m in Sources */,
+				07BF0AA31189C835001B522D /* DoubleSideInfoView.m in Sources */,
+				07313F13118D908B005A08B3 /* ContentView.m in Sources */,
+				07D2024311A19EC7008ADDC4 /* Info.m in Sources */,
+				07B323C211A57ACE00383E50 /* MyWebView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MyTrends_Prefix.pch;
+				INFOPLIST_FILE = "MyTrends-Info.plist";
+				PRODUCT_NAME = "时尚表情";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jason Hu (2QTJ7UN4A7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jason Hu (2QTJ7UN4A7)";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MyTrends_Prefix.pch;
+				INFOPLIST_FILE = "MyTrends-Info.plist";
+				PRODUCT_NAME = "时尚表情";
+				PROVISIONING_PROFILE = "6D97CBDB-108D-4407-A17D-B468C9803B4D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6D97CBDB-108D-4407-A17D-B468C9803B4D";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "时尚表情" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "mytrends" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
