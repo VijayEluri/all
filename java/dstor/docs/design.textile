@@ -1,0 +1,71 @@
+*Table of Content*
+
+{toc}
+
+h2. REST API
+
+|| URL || HTTP方法 || 说明 || 参数 || 返回值 ||
+| /files/ | POST | 创建新文件 | multipart方式POST文件内容 | {"id":<文件id>, "err":0} |
+| /files/ | GET | 查询 |  | id列表 |
+| /file | GET | 获取已经存在的文件 | /file/<文件id> | 原文件名的文件二进制流 |
+| /file | HEAD | 获取已经存在的文件的元数据 | /file/<文件id> | Header中包含文件元数据 |
+| /file | DELETE | 删除已经存在的文件 | /file/<文件id> | {"err":0} |
+| /file | PUT | 更新已经存在的文件 | /file/<文件id> | {"err":0} |
+
+h3. POST /files/
+
+_1. Client->Server_ 
+{code}POST /files/ HTTP/1.1
+User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+Host: localhost:8517
+Accept: */*
+Metadata:{test:1}
+Content-Length: 29343
+Expect: 100-continue
+Content-Type: multipart/form-data; boundary=----------------------------e4f460371edf {code}
+Metadata: json形式的文档元数据
+
+_2. Server->Client_
+{code}HTTP/1.1 100 Continue{code}
+_3. Client->Server_
+{code}------------------------------e4f460371edf
+Content-Disposition: form-data; name="file"; filename="file1.bin"
+Content-Type: application/octet-stream{code}
+_4. Client->Server_
+{code}%PDF-1.3.%............4 0 obj.<< /Length 5 0 R /Filter /FlateDec
+ode >>.stream.x...[o.H....+j.}.2+.w....d..@23.'..z1P$:.B.G.r...U
+7o.u.........>u...n^?._....M.P&y(.B~....V..*...........>...5./:.l
+)?.K...|....../.....y..Q.-..#.....d........G.&..7...G..%.....b?.{code}
+
+h3. GET /file/<id>
+_1. C->S_
+{code}GET /file/8044 HTTP/1.1
+User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+Host: localhost:8517
+Accept: */*{code}
+_2. S->C_
+{code}HTTP/1.1 200 OK
+Content-Type: application/x-download;charset=UTF-8
+Content-Disposition: attachment; filename=file1.bin
+Metadata:{test:1}
+Transfer-Encoding: chunked
+Server: Jetty(7.1.5.v20100705)
+
+3000
+%PDF-1.3.%............4 0 obj.<< /Length 5 0 R /Filter /FlateDec
+ode >>.stream.x...[o.H....+j.}.2+.w....d..@23.'..z1P$:.B.G.r...U
+7o.u.........>u...n^?._....M.P&y(.B~....V..*...........>...5./:.l{code}
+
+h2. 存储
+
+元数据
+
+{code}{
+  _id:1
+  n:file name
+  s:file size
+  u:URI
+  h:md5 hash
+}{code}
+
+h2. BOCS架构

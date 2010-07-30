@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- HTTP request handlers -->
+	<bean id="fileHandler" class="com.lanxum.dstor.server.rest.handlers.file.FileHandler">
+		<property name="methodMap">
+			<map>
+				<entry key="get" value-ref="fileGetHandler" />
+				<entry key="delete" value-ref="fileDeleteHandler" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="filesHandler" class="com.lanxum.dstor.server.rest.handlers.files.FilesHandler">
+		<property name="methodMap">
+			<map>
+				<entry key="post" value-ref="filesPostHandler" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="filesPostHandler" class="com.lanxum.dstor.server.rest.handlers.files.PostHandler">
+		<property name="idGenerator" ref="idGenerator" />
+		<property name="fileStore" ref="fileStore" />
+		<property name="dbService" ref="dbService" />
+	</bean>
+
+	<bean id="fileGetHandler" class="com.lanxum.dstor.server.rest.handlers.file.GetHandler">
+		<property name="fileStore" ref="fileStore" />
+		<property name="dbService" ref="dbService" />
+	</bean>
+
+	<bean id="fileDeleteHandler" class="com.lanxum.dstor.server.rest.handlers.file.DeleteHandler">
+		<property name="fileStore" ref="fileStore" />
+		<property name="dbService" ref="dbService" />
+	</bean>
+
+	<bean id="propHandler" class="com.lanxum.dstor.server.rest.handlers.PropertiesHandler" />
+
+
+	<!-- MongoDB as meta data back end -->
+
+	<bean id="mongoConnection" class="com.lanxum.dstor.server.db.mongo.Connection" scope="singleton">
+		<!-- db name -->
+		<constructor-arg type="java.lang.String" value="dstor" />
+		<!-- host -->
+		<constructor-arg type="java.lang.String" value="localhost" />
+		<!-- port -->
+		<constructor-arg type="int" value="27017" />
+		<!-- connection pool size -->
+		<constructor-arg type="int" value="10" />
+	</bean>
+
+	<bean id="mongoConnection.db" class="org.springframework.beans.factory.config.PropertyPathFactoryBean" />
+
+	<bean id="idGenerator" class="com.lanxum.dstor.server.db.mongo.IdGeneratorImpl">
+		<property name="db" ref="mongoConnection.db" />
+	</bean>
+
+	<bean id="dbService" class="com.lanxum.dstor.server.db.mongo.DbServiceImpl">
+		<property name="db" ref="mongoConnection.db" />
+	</bean>
+
+	<!-- File System storage back end -->
+
+	<bean id="fileStore" class="com.lanxum.dstor.server.store.fs.FileStoreImpl">
+		<property name="basePath" value="/var/dstor/fs" />
+	</bean>
+
+	<!-- main server -->
+	<bean id="restServer" class="com.lanxum.dstor.server.rest.RestServer">
+		<constructor-arg type="int" value="8517" />
+		<constructor-arg>
+			<map>
+				<entry key="file" value-ref="fileHandler" />
+				<entry key="files" value-ref="filesHandler" />
+				<entry key="prop" value-ref="propHandler" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+</beans>
