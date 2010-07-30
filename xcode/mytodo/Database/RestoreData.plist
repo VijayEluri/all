@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Screen</key>
+	<string></string>
+	<key>TaskView</key>
+	<dict>
+		<key>ParentTaskId</key>
+		<string></string>
+		<key>State</key>
+		<string></string>
+	</dict>
+	<key>TaskDetailView</key>
+	<dict>
+		<key>TaskId</key>
+		<string></string>
+		<key>Content</key>
+		<string></string>
+		<key>Priority</key>
+		<string></string>
+		<key>Note</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>
