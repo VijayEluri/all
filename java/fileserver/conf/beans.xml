@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+           
+    <bean id="fileSystemBackend" class="com.oldhu.fileserver.backend.FileSystemBackend" scope="singleton">
+        <property name="baseDir" value="/tmp/data"/>
+    </bean>
+
+    <bean id="db" class="com.oldhu.fileserver.db.je.JeDb" scope="singleton">
+        <property name="dbPath" value="/tmp/db"/>
+    </bean>
+
+    <bean id="createCommand" class="com.oldhu.fileserver.command.impl.Create">
+        <constructor-arg>
+            <ref bean="db"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="saveCommand" class="com.oldhu.fileserver.command.impl.Save">
+        <constructor-arg>
+            <ref bean="fileSystemBackend"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="downloadCommand" class="com.oldhu.fileserver.command.impl.Download"/>
+
+    <bean id="eraseCommand" class="com.oldhu.fileserver.command.impl.Erase"/>
+
+    <bean id="dummyCommand" class="com.oldhu.fileserver.command.impl.Dummy"/>
+
+    <bean id="commandFactory" class="com.oldhu.fileserver.command.CommandFactory" scope="singleton">
+        <constructor-arg>
+            <map>
+                <entry>
+                    <key>
+                        <value>C</value>
+                    </key>
+                    <ref bean="createCommand"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>S</value>
+                    </key>
+                    <ref bean="saveCommand"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>D</value>
+                    </key>
+                    <ref bean="downloadCommand"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>E</value>
+                    </key>
+                    <ref bean="eraseCommand"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>Z</value>
+                    </key>
+                    <ref bean="dummyCommand"/>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="fileServerHandler" class="com.oldhu.fileserver.FileServerHandler">
+        <property name="commandFactory" ref="commandFactory"/>
+    </bean>
+</beans>

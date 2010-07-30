@@ -1,0 +1,436 @@
+11:32:44,335  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2: display name [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]; startup date [Mon Oct 26 11:32:44 CST 2009]; root of context hierarchy
+11:32:44,400  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+11:32:44,612  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]: org.springframework.beans.factory.support.DefaultListableBeanFactory@56da6bf4
+11:32:44,637  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@56da6bf4: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+11:32:44,670 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+11:32:44,766  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+14:54:25,574  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]; startup date [Mon Oct 26 14:54:25 CST 2009]; root of context hierarchy
+14:54:25,639  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+14:54:25,855  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8
+14:54:25,893  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+14:54:25,927 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+14:54:26,025  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+16:37:15,947  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 16:37:15 CST 2009]; root of context hierarchy
+16:37:16,011  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+16:37:16,306  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1f950198
+16:37:16,352  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1f950198: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+16:37:16,389 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+16:37:16,519  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+16:38:35,651  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2: display name [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]; startup date [Mon Oct 26 16:38:35 CST 2009]; root of context hierarchy
+16:38:35,717  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+16:38:35,970  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8
+16:38:36,070  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+16:38:36,107 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+16:38:46,534  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2: display name [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]; startup date [Mon Oct 26 16:38:46 CST 2009]; root of context hierarchy
+16:38:46,601  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+16:38:46,833  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8
+16:38:46,861  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+16:38:46,900 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+16:38:47,001  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+16:39:16,460 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - channel closed
+16:41:03,134  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]; startup date [Mon Oct 26 16:41:03 CST 2009]; root of context hierarchy
+16:41:03,225  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+16:41:03,430  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8
+16:41:03,476  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+16:41:03,512 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+16:41:03,606  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+16:41:14,446 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3
+16:41:24,487 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+16:41:24,502 ERROR [FS] com.oldhu.fileserver.FileServerHandler - Error in processing message.
+java.lang.Exception: Cannot recognize command: 
+	at com.oldhu.fileserver.command.CommandFactory.getCommand(CommandFactory.java:16)
+	at com.oldhu.fileserver.FileServerHandler.messageReceived(FileServerHandler.java:46)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:98)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:555)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:345)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:332)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:323)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:275)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:196)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.IoWorkerRunnable.run(IoWorkerRunnable.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:637)
+16:41:24,506 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - channel closed
+16:45:37,200  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]; startup date [Mon Oct 26 16:45:37 CST 2009]; root of context hierarchy
+16:45:37,262  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+16:45:37,479  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8
+16:45:37,505  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+16:45:37,543 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+16:45:37,640  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+16:46:10,752 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3
+16:46:20,756 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+16:46:20,758  WARN [FS] com.oldhu.fileserver.FileServerHandler - Try next command
+com.oldhu.fileserver.command.CommandException: Cannot recognize command: 
+	at com.oldhu.fileserver.command.CommandFactory.getCommand(CommandFactory.java:16)
+	at com.oldhu.fileserver.FileServerHandler.messageReceived(FileServerHandler.java:46)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:98)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:555)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:345)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:332)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:323)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:275)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:196)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.IoWorkerRunnable.run(IoWorkerRunnable.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:637)
+16:46:20,759  WARN [FS] com.oldhu.fileserver.FileServerHandler - Try next command
+com.oldhu.fileserver.command.CommandException: Cannot recognize command: 
+
+	at com.oldhu.fileserver.command.CommandFactory.getCommand(CommandFactory.java:16)
+	at com.oldhu.fileserver.FileServerHandler.messageReceived(FileServerHandler.java:46)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:98)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:555)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:345)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:332)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:323)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:275)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:196)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.IoWorkerRunnable.run(IoWorkerRunnable.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:637)
+16:46:35,054 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3
+16:46:45,054 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+16:46:45,055  WARN [FS] com.oldhu.fileserver.FileServerHandler - Try next command
+com.oldhu.fileserver.command.CommandException: Cannot recognize command: 
+	at com.oldhu.fileserver.command.CommandFactory.getCommand(CommandFactory.java:16)
+	at com.oldhu.fileserver.FileServerHandler.messageReceived(FileServerHandler.java:46)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:98)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:555)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:345)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:332)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:323)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:275)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:196)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.IoWorkerRunnable.run(IoWorkerRunnable.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:637)
+16:46:45,055  WARN [FS] com.oldhu.fileserver.FileServerHandler - Try next command
+com.oldhu.fileserver.command.CommandException: Cannot recognize command: 
+
+	at com.oldhu.fileserver.command.CommandFactory.getCommand(CommandFactory.java:16)
+	at com.oldhu.fileserver.FileServerHandler.messageReceived(FileServerHandler.java:46)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:98)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:555)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:345)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:332)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:323)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:275)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:196)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.IoWorkerRunnable.run(IoWorkerRunnable.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:637)
+16:50:36,258  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@99b5393: display name [org.springframework.context.support.ClassPathXmlApplicationContext@99b5393]; startup date [Mon Oct 26 16:50:36 CST 2009]; root of context hierarchy
+16:50:36,320  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+16:50:36,521  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@99b5393]: org.springframework.beans.factory.support.DefaultListableBeanFactory@6f9bb25a
+16:50:36,545  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6f9bb25a: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+16:50:36,585 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+16:50:36,694  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+16:50:43,990 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3
+16:50:53,420 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3
+16:50:53,994 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+16:50:53,994  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+16:50:53,995  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+16:52:45,879  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2: display name [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]; startup date [Mon Oct 26 16:52:45 CST 2009]; root of context hierarchy
+16:52:45,946  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+16:52:46,167  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]: org.springframework.beans.factory.support.DefaultListableBeanFactory@56da6bf4
+16:52:46,192  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@56da6bf4: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+16:52:46,227 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+16:52:46,331  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+16:52:53,073 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3
+16:52:53,074 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+16:52:56,209 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3
+16:52:56,209 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+16:53:03,074 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+16:53:03,078 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+16:53:03,079  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+16:53:03,079  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+16:53:06,209 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:00:30,207  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 17:00:30 CST 2009]; root of context hierarchy
+17:00:30,270  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+17:00:30,474  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1f950198
+17:00:30,511  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1f950198: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+17:00:30,549 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+17:00:30,649  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+17:00:57,719 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6a47a0d4bytes to read: 3
+17:00:57,721 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:01:01,005 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6a47a0d4bytes to read: 3
+17:01:01,006 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:01:07,722 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:01:07,725 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:01:07,726  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:01:07,726  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:01:11,007 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:03:36,109  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 17:03:36 CST 2009]; root of context hierarchy
+17:03:36,172  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+17:03:36,385  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@6f9bb25a
+17:03:36,412  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6f9bb25a: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+17:03:36,446 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+17:03:36,539  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+17:03:41,928 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6aba4211bytes to read: 3
+17:03:41,930 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:03:44,870 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6aba4211bytes to read: 3
+17:03:44,872 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:03:51,930 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:03:51,934 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:03:51,935  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:03:51,935  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:03:54,873 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:13:06,323  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed: display name [org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed]; startup date [Mon Oct 26 17:13:06 CST 2009]; root of context hierarchy
+17:13:06,391  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+17:13:06,611  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed]: org.springframework.beans.factory.support.DefaultListableBeanFactory@979dce4
+17:13:06,634  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@979dce4: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+17:13:06,670 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+17:13:06,801  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+17:13:10,675 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - Channel: [id: 0x3313beb5, /0:0:0:0:0:0:0:1%0:56471 => /0:0:0:0:0:0:0:1%0:8517]
+17:13:10,675 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6655bb93bytes to read: 3
+17:13:10,677 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:13:15,298 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - Channel: [id: 0x5c1ae90c, /0:0:0:0:0:0:0:1%0:56473 => /0:0:0:0:0:0:0:1%0:8517]
+17:13:15,299 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6655bb93bytes to read: 3
+17:13:15,299 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:13:20,678 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:13:20,682 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:13:20,682  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:13:20,682  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:13:25,300 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:22:00,444  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 17:22:00 CST 2009]; root of context hierarchy
+17:22:00,506  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+17:22:00,713  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1f950198
+17:22:00,736  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1f950198: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+17:22:00,770 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+17:22:00,862  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+17:22:31,381  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]; startup date [Mon Oct 26 17:22:31 CST 2009]; root of context hierarchy
+17:22:31,446  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+17:22:31,660  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8
+17:22:31,687  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1de58cb8: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+17:22:31,723 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+17:22:31,825  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+17:22:36,640 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - Channel: [id: 0x3d358f03, /0:0:0:0:0:0:0:1%0:56545 => /0:0:0:0:0:0:0:1%0:8517]
+17:22:36,641 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6aba4211bytes to read: 3
+17:22:36,642 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:22:38,971 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - Channel: [id: 0x07114460, /0:0:0:0:0:0:0:1%0:56546 => /0:0:0:0:0:0:0:1%0:8517]
+17:22:38,972 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6aba4211bytes to read: 3
+17:22:38,972 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:22:46,642 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:22:46,646 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:22:46,646  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:22:46,646  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:22:48,978 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:22:48,979 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:22:48,979  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:22:48,980  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:23:12,921 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - Channel: [id: 0x07114460, /0:0:0:0:0:0:0:1%0:56546 => /0:0:0:0:0:0:0:1%0:8517]
+17:23:12,922 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6aba4211bytes to read: 3
+17:23:12,924 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:23:18,233 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - Channel: [id: 0x3d358f03, /0:0:0:0:0:0:0:1%0:56545 => /0:0:0:0:0:0:0:1%0:8517]
+17:23:18,234 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6aba4211bytes to read: 3
+17:23:18,234 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:23:22,924 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:23:22,924 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:23:22,925  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:23:22,925  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:23:28,234 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:23:28,235 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:23:28,236  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:23:28,236  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:24:15,461  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 17:24:15 CST 2009]; root of context hierarchy
+17:24:15,525  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+17:24:15,735  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@6f9bb25a
+17:24:15,759  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6f9bb25a: defining beans [fileSystemBackend,commandFactory,fileServerHandler]; root of factory hierarchy
+17:24:15,794 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+17:24:15,897  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+17:24:59,986 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6a47a0d4bytes to read: 3
+17:24:59,987 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:25:06,327 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@6a47a0d4bytes to read: 3
+17:25:06,328 DEBUG [FS] com.oldhu.fileserver.command.Create - start processing
+17:25:09,987 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:25:09,991 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:25:09,992  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:25:09,993  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:25:16,328 DEBUG [FS] com.oldhu.fileserver.command.Create - done processing
+17:25:16,329 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+17:25:16,330  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+17:25:16,330  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+20:59:04,742  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7c6572b: display name [org.springframework.context.support.ClassPathXmlApplicationContext@7c6572b]; startup date [Mon Oct 26 20:59:04 CST 2009]; root of context hierarchy
+20:59:04,933  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+20:59:05,270  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@7c6572b]: org.springframework.beans.factory.support.DefaultListableBeanFactory@4b7f1841
+20:59:05,316  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4b7f1841: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+20:59:05,350 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+20:59:05,351 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:01:06,394  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]; startup date [Mon Oct 26 21:01:06 CST 2009]; root of context hierarchy
+21:01:06,472  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+21:01:06,711  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@4a4e79f1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@254e8cee
+21:01:06,729  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@254e8cee: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:01:06,763 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:01:06,768 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+21:01:06,779 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+21:01:06,893  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+21:09:40,460  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@99b5393: display name [org.springframework.context.support.ClassPathXmlApplicationContext@99b5393]; startup date [Mon Oct 26 21:09:40 CST 2009]; root of context hierarchy
+21:09:40,584  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+21:09:40,807  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@99b5393]: org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810
+21:09:40,829  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:09:40,859 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:09:40,863 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+21:09:40,887  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:10:12,862  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 21:10:12 CST 2009]; root of context hierarchy
+21:10:12,929  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+21:10:13,154  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810
+21:10:13,175  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:10:13,205 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:10:13,209 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+21:10:13,222  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:10:56,951  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2: display name [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]; startup date [Mon Oct 26 21:10:56 CST 2009]; root of context hierarchy
+21:10:57,032  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+21:10:57,307  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]: org.springframework.beans.factory.support.DefaultListableBeanFactory@254e8cee
+21:10:57,326  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@254e8cee: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:10:57,368 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:10:57,375 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+21:10:57,387 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+21:10:57,481  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+21:48:52,568  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed: display name [org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed]; startup date [Mon Oct 26 21:48:52 CST 2009]; root of context hierarchy
+21:48:52,686  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+21:48:53,014  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed]: org.springframework.beans.factory.support.DefaultListableBeanFactory@4979935d
+21:48:53,042  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4979935d: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:48:53,085 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:48:53,089 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+21:48:53,109 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+21:48:53,322  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+21:49:13,908 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@5684ce7abytes to read: 3
+21:49:13,996 ERROR [FS] com.oldhu.fileserver.db.je.JeDb - Exception while getting next id
+com.sleepycat.je.log.LogException: (JE 3.3.87) Environment home /tmp/db doesn't exist
+	at com.sleepycat.je.log.FileManager.<init>(FileManager.java:257)
+	at com.sleepycat.je.dbi.EnvironmentImpl.<init>(EnvironmentImpl.java:327)
+	at com.sleepycat.je.dbi.DbEnvPool.getEnvironment(DbEnvPool.java:147)
+	at com.sleepycat.je.Environment.<init>(Environment.java:210)
+	at com.sleepycat.je.Environment.<init>(Environment.java:150)
+	at com.oldhu.fileserver.db.je.JeDb.getEnvironment(JeDb.java:31)
+	at com.oldhu.fileserver.db.je.JeDb.getDb(JeDb.java:42)
+	at com.oldhu.fileserver.db.je.JeDb.getSequence(JeDb.java:54)
+	at com.oldhu.fileserver.db.je.JeDb.nextId(JeDb.java:65)
+	at com.oldhu.fileserver.command.Create.processBuffer(Create.java:22)
+	at com.oldhu.fileserver.FileServerHandler.messageReceived(FileServerHandler.java:53)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:98)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:555)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:345)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:332)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:323)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:275)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:196)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.IoWorkerRunnable.run(IoWorkerRunnable.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:637)
+21:50:12,712  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 21:50:12 CST 2009]; root of context hierarchy
+21:50:12,788  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+21:50:13,043  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810
+21:50:13,076  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@403ef810: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:50:13,106 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:50:13,112 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+21:50:13,127 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+21:50:13,259  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+21:50:19,941 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@33682598bytes to read: 3
+21:50:20,233  INFO [FS] com.oldhu.fileserver.db.je.JeDb - nGets=0
+nCachedGets=0
+current=0
+value=0
+lastValue=-1
+min=-9223372036854775808
+max=9223372036854775807
+cacheSize=100
+21:50:20,236 DEBUG [FS] com.oldhu.fileserver.command.Create - NextId: 0
+21:50:20,240 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+21:50:20,240  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+21:50:20,241  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+21:50:40,574 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - com.oldhu.fileserver.FileServerHandler@33682598bytes to read: 3
+21:50:40,575 DEBUG [FS] com.oldhu.fileserver.command.Create - NextId: 1
+21:50:40,575 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - has data left, need loop
+21:50:40,576  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+21:50:40,576  WARN [FS] com.oldhu.fileserver.FileServerHandler - Cannot recognize command, try next char
+21:51:24,891  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed: display name [org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed]; startup date [Mon Oct 26 21:51:24 CST 2009]; root of context hierarchy
+21:51:24,967  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+21:51:25,259  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@151a64ed]: org.springframework.beans.factory.support.DefaultListableBeanFactory@4cb9e45a
+21:51:25,294  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4cb9e45a: defining beans [fileSystemBackend,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+21:51:25,347 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+21:51:25,355 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+21:51:25,371 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+21:51:25,527  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+22:00:15,513  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2: display name [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]; startup date [Mon Oct 26 22:00:15 CST 2009]; root of context hierarchy
+22:00:15,583  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+22:00:15,810  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@348bdcd2]: org.springframework.beans.factory.support.DefaultListableBeanFactory@66100363
+22:00:15,835  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@66100363: defining beans [fileSystemBackend,db,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+22:00:15,880 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+22:00:15,883 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+22:00:15,894 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+22:00:16,012  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+22:01:00,421 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 25
+22:01:00,422 DEBUG [FS] com.oldhu.fileserver.command.Save - 1, 0, 294889
+22:01:00,462 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 1024
+22:01:00,465 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 1536
+22:01:00,466 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 2048
+22:01:00,469 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3072
+22:01:00,470 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 4096
+22:01:00,471 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 6144
+22:01:00,474 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 8192
+22:01:00,475 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 12288
+22:01:00,477 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 16384
+22:01:00,478 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 24576
+22:01:00,479 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 32768
+22:01:00,481 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 49152
+22:01:00,483 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 65536
+22:01:00,486 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 65536
+22:01:00,488 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 2537
+22:10:45,949  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d: display name [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]; startup date [Mon Oct 26 22:10:45 CST 2009]; root of context hierarchy
+22:10:46,022  INFO [FS] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+22:10:46,283  INFO [FS] org.springframework.context.support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@77d80e6d]: org.springframework.beans.factory.support.DefaultListableBeanFactory@66100363
+22:10:46,308  INFO [FS] org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@66100363: defining beans [fileSystemBackend,db,createCommand,saveCommand,commandFactory,fileServerHandler]; root of factory hierarchy
+22:10:46,374 DEBUG [FS] com.oldhu.fileserver.command.Create - constructing.
+22:10:46,377 DEBUG [FS] com.oldhu.fileserver.command.Save - constructing.
+22:10:46,390 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - constructing.
+22:10:46,536  INFO [FS] com.oldhu.fileserver.NettyMain - server started.
+22:10:50,306 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 1024
+22:10:50,306 DEBUG [FS] com.oldhu.fileserver.command.Save - 1, 0, 294889
+22:10:50,323 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 1536
+22:10:50,324 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 2048
+22:10:50,324 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 3072
+22:10:50,325 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 4096
+22:10:50,329 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 6144
+22:10:50,330 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 8192
+22:10:50,331 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 12288
+22:10:50,331 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 16384
+22:10:50,332 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 24576
+22:10:50,334 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 32768
+22:10:50,335 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 49152
+22:10:50,336 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 65536
+22:10:50,337 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 65536
+22:10:50,338 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 2562
+22:10:50,353 DEBUG [FS] com.oldhu.fileserver.command.Save - closing channel
+22:10:51,363 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - channel closed
+22:10:51,372 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 1
+22:10:51,638  INFO [FS] com.oldhu.fileserver.db.je.JeDb - nGets=0
+nCachedGets=0
+current=0
+value=0
+lastValue=-1
+min=-9223372036854775808
+max=9223372036854775807
+cacheSize=100
+22:10:51,641 DEBUG [FS] com.oldhu.fileserver.command.Create - NextId: 0
+22:10:51,644 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - bytes to read: 1
+22:10:51,644 DEBUG [FS] com.oldhu.fileserver.command.Create - NextId: 1
+22:10:52,645 DEBUG [FS] com.oldhu.fileserver.FileServerHandler - channel closed
