@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>documents</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>myutil.py</string>
+			<key>lastUsed</key>
+			<date>2009-05-15T15:20:07Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>parse_pslog.py</string>
+			<key>lastUsed</key>
+			<date>2009-05-15T15:20:06Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>test.py</string>
+			<key>lastUsed</key>
+			<date>2009-04-11T13:04:51Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>test.py</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>mongotest.py</string>
+			<key>lastUsed</key>
+			<date>2009-04-13T01:46:48Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>parse_session_log.py</string>
+			<key>lastUsed</key>
+			<date>2009-04-11T13:12:59Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>parselog.py</string>
+			<key>lastUsed</key>
+			<date>2009-03-27T05:10:45Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>bdbtest.py</string>
+			<key>lastUsed</key>
+			<date>2009-04-05T12:30:37Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>wx1.py</string>
+			<key>lastUsed</key>
+			<date>2009-05-15T15:20:07Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+	</array>
+	<key>fileHierarchyDrawerWidth</key>
+	<integer>200</integer>
+	<key>metaData</key>
+	<dict/>
+	<key>showFileHierarchyDrawer</key>
+	<true/>
+	<key>windowFrame</key>
+	<string>{{260, 60}, {855, 718}}</string>
+</dict>
+</plist>
