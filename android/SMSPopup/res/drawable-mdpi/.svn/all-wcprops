@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/231/trunk/SMSPopup/res/drawable-mdpi
+END
+smspopup_icon.png
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196/trunk/SMSPopup/res/drawable-mdpi/smspopup_icon.png
+END
+quickcontact_badge_small_pressed.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/231/trunk/SMSPopup/res/drawable-mdpi/quickcontact_badge_small_pressed.9.png
+END
+quickcontact_badge_small_unpressed.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/231/trunk/SMSPopup/res/drawable-mdpi/quickcontact_badge_small_unpressed.9.png
+END
+stat_notify_sms_eclair.png
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/196/trunk/SMSPopup/res/drawable-mdpi/stat_notify_sms_eclair.png
+END
+stat_notify_sms.png
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196/trunk/SMSPopup/res/drawable-mdpi/stat_notify_sms.png
+END
+stat_notify_sms_failed_eclair.png
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/196/trunk/SMSPopup/res/drawable-mdpi/stat_notify_sms_failed_eclair.png
+END
+stat_notify_sms_failed.png
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/196/trunk/SMSPopup/res/drawable-mdpi/stat_notify_sms_failed.png
+END
