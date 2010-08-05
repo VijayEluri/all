@@ -201,6 +201,24 @@ public class SmsPopupConfigActivity extends PreferenceActivity {
         }
       });
     }
+    
+    Preference manageFilterMessagePref = findPreference(getString(R.string.pref_manage_filtered_key));
+    if (manageFilterMessagePref != null) {
+    	manageFilterMessagePref.setOnPreferenceClickListener(new OnPreferenceClickL         istener() {
+			public boolean onPreferenceClick(Preference pref) {
+				return true;
+			}
+    	});
+    }
+
+    Preference processExistingMessagePref = findPreference(getString(R.string.pref_filter_existing_key));
+    if (processExistingMessagePref != null) {
+    	processExistingMessagePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			public boolean onPreferenceClick(Preference pref) {
+				return true;
+			}
+    	});
+    }
 
     // Split long messages preference (for some CDMA carriers like Verizon)
     CheckBoxPreference splitLongMessagesPref =
