@@ -100,7 +100,8 @@
       android:name=".ReminderReceiverService" />
     <service
       android:name=".SmsMonitorService" />
-  </application>
+  <activity android:name=".filter.FilteredManagementActivity"></activity>
+</application>
   <uses-permission
     android:name="android.permission.READ_SMS" />
   <uses-permission
