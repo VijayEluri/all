@@ -1,0 +1,18 @@
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\bin\Debug\MergeWordFiles.exe
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\bin\Debug\MergeWordFiles.pdb
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\obj\Debug\MergeWordFiles.Form1.resources
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\obj\Debug\MergeWordFiles.Properties.Resources.resources
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\obj\Debug\MergeWordFiles.csproj.GenerateResource.Cache
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\obj\Debug\MergeWordFiles.exe
+C:\Users\Jason\AppData\Local\Temporary Projects\MergeWordFiles\obj\Debug\MergeWordFiles.pdb
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\obj\Debug\MergeWordFiles.exe
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\obj\Debug\MergeWordFiles.pdb
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\bin\Debug\MergeWordFiles.exe
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\bin\Debug\MergeWordFiles.pdb
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\obj\Debug\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\obj\Debug\MergeWordFiles.Form1.resources
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\obj\Debug\MergeWordFiles.Properties.Resources.resources
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\obj\Debug\MergeWordFiles.csproj.GenerateResource.Cache
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\obj\Debug\MergeWordFiles.csproj.ResolveComReference.cache
+D:\My Documents\Visual Studio 2008\Projects\MergeWordFiles\MergeWordFiles\bin\Debug\MergeWordFiles.exe.config

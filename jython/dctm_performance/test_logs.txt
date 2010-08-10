@@ -1,0 +1,14 @@
+10 threads
+10000 files
+865M totally
+
+otb: 5min 10000 865M
+no folder security / no audit: 3:40
+no folder security / no audit / smalll files: 3:35
+no folder security / no audit / no ft index queue / small files: 3:15
+no folder security / no audit / no ft index queue / smalll files / no oracle logging: 3:00
+
+
+no folder security / no audit / no ft index queue / without files: 2:00
+no folder security / no audit / no ft index queue / without files / no indexes: 1:48
+no folder security / no audit / no ft index queue / without files / in 50 batch: 1:55
