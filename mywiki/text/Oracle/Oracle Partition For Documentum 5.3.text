@@ -1,0 +1,80 @@
+
+h2. Table partition
+
+Tables need to be partitions:
+* DMI_OBJECT_TYPE
+* DM_DOCUMENT_S
+* DMR_CONTENT_S
+* DMR_CONTENT_R
+* DM_SYSOBJECT_S
+* DM_SYSOBJECT_R
+* custom_type_S
+* custom_type_R
+
+
+pre.. 
+select table_name from user_tables where table_name like %customer_type%'
+
+p. 
+
+
+# generate all DDL {{{
+set pagesize 0
+set long 90000
+SELECT DBMS_METADATA.GET_DDL('TABLE', 'DMI_OBJECT_TYPE') FROM DUAL;
+SELECT DBMS_METADATA.GET_DDL('TABLE', 'DM_DOCUMENT_S') FROM DUAL;
+SELECT DBMS_METADATA.GET_DDL('TABLE', 'DMR_CONTENT_R') FROM DUAL;
+SELECT DBMS_METADATA.GET_DDL('TABLE', 'DMR_CONTENT_S') FROM DUAL;
+SELECT DBMS_METADATA.GET_DDL('TABLE', 'DM_SYSOBJECT_S') FROM DUAL;
+SELECT DBMS_METADATA.GET_DDL('TABLE', 'DM_SYSOBJECT_R') FROM DUAL;
+}}}
+# generate index names {{{
+select table_name, index_owner, index_name, column_name, column_position
+  from dba_ind_columns
+  where table_name='DM_SYSOBJECT_S'
+  order by index_name, column_position;
+}}}
+# partition by object id, object id format:{{{
+09  000550     80007f1c
+TAG DOCBASE_ID UNIQUE_ID
+}}} meaning of tag:
+** 09 dm_document
+** 08 dm_sysobject
+** 0c dm_cabinet
+** 0b dm_folder
+** 11 dm_user
+** 12 dm_group
+# rename the table {{{
+ALTER TABLE DMI_OBJECT_TYPE RENAME TO DMI_OBJECT_TYPE_BAK;
+}}}
+# recreate the table: {{{
+CREATE... 
+(
+ ...
+)
+PARTITION BY RANGE(R_OBJECT_ID) (
+  PARTITION P1 VALUES LESS THAN ('0900055080000000') TABLESPACE DM_DEMO_DOCBASE,
+  PARTITION P2 VALUES LESS THAN ('0900055080989680') TABLESPACE DM_DEMO_P2, -- 0x989680 == 10,000,000
+  ......
+ PARTITION PMAX VALUES LESs THAN (MAXVALUE) TABLESPACE DM_DEMO_DOCBASE
+);
+}}}
+# recreate the index: {{{
+create unique index ... on ...(R_OBJECT_ID)
+local
+(
+   PARTITION IND_P0 TABLESPACE POCINDX,
+   PARTITION IND_P1 TABLESPACE index_p1,
+   PARTITION IND_P2 TABLESPACE index_p2,
+  ...... 
+  PARTITION IND_PMAX TABLESPACE POCINDX
+);
+}}}
+# insert all data back to the new table {{{
+INSERT /*+ PARALLEL(DMI_OBJECT_TYPE) */ INTO DMI_OBJECT_TYPE NOLOGGING SELECT  /*+ PARALLEL(DMI_OBJECT_TYPE_BAK) */ * FROM DMI_OBJECT_TYPE_BAK;
+COMMIT;
+}}}
+
+'''SEE ATTACHMENTS FOR ALL SCRIPTS'''
+----
+CategoryDocumentumOracle

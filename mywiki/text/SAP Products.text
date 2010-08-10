@@ -1,0 +1,34 @@
+h2. SAP Web Application Server
+
+Web Application Server (WAS or Web AS) is a component of the NetWeaver solution which works as a web application server to SAP solutions. From the SAP point of view the Web AS is the '''foundation''' on which most of their product range runs.
+
+h2. SAP Solutions
+
+* SAP SCM
+* SAP CRM
+* SAP ERP
+** former called "SAP R/3"
+** R/3 Basis system is the platform for all other applications in R/3 System
+** later called "mySAP ERP"
+** now "SAP ERP"
+* SAP PLM
+* SAP SRM
+
+h2. ArchiveLink
+
+ArchiveLink is a service integrated in the _SAP Web Application Server_ for linking archived documents and the application documents entered in the SAPsystem.
+
+The following documents can be stored in a storage system using ArchiveLink:
+* Incoming documents
+Incoming documents are all documents that have not been created using SAPscript or SAP Smart Forms in your own SAP System:
+** Scanned documents
+** Local desktop files (files you have created yourself are also incoming documents for this purpose)
+** Faxes and e-mails
+* Outgoing documents
+Outgoing documents are all documents that have been created in your own SAP System using SAPscript or SAP SmartForms, for example, correspondence, invoices, order confirmations, etc.
+* Print lists
+Print lists are the result of report runs in the SAP System, for example, cumulative audit trails, batch where-used lists, object service specifications, balance sheet valuations, and cost center reports.
+* Archive files
+** Data records are retrieved from the database table to reduce the size of the database tables available in the system. There can be two reasons for this:
+** System requirements (releasing storage space in the database, improving performance)
+** Legal guidelines (country-specific storage requirements, data accessibility for external auditors, potential reusability of data).

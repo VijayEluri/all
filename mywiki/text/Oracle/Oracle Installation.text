@@ -1,0 +1,56 @@
+h2. 10G2 on Linux
+
+Kernel parameter: 
+<pre><code>cat >> /etc/sysctl.conf <<EOF
+kernel.shmall = 2097152
+kernel.shmmax = 536870912
+kernel.shmmni = 4096
+kernel.sem = 250 32000 100 128
+fs.file-max = 65536
+net.ipv4.ip_local_port_range = 1024 65000
+net.core.rmem_default=262144
+net.core.wmem_default=262144
+net.core.rmem_max=262144
+net.core.wmem_max=262144
+EOF
+/sbin/sysctl -p
+</code></pre>
+
+h2. Oracle 10GR2 Installation on Solaris 10(sparc)
+
+# create user/groups 
+<pre><code>groupadd -g 100 dba
+groupadd -g 101 oinstall
+useradd -u 101 -d /ora10g -g oinstall -G dba -m -s /usr/bin/bash oracle
+chown oracle:dba /ora10g</code></pre>
+# edit /etc/system 
+<pre>cp /etc/system /etc/system.orig</pre> 
+add the following into system 
+<pre><code>set noexec_user_stack=1
+set semsys:seminfo_semmni=100
+set semsys:seminfo_semmns=1024
+set semsys:seminfo_semmsl=256
+set semsys:seminfo_semvmx=32767
+set shmsys:shminfo_shmmax=4294967295
+set shmsys:shminfo_shmmin=1
+set shmsys:shminfo_shmmni=100
+set shmsys:shminfo_shmseg=10</code></pre>
+# edit owner env 
+<pre><code>su - oracle
+vi .bash_profile</code></pre>
+add the following lines: 
+<pre><code>umask 022
+export ORACLE_SID=DCTM
+export ORACLE_HOME=/ora10g/product/10.2.0/db_1
+export PATH=$ORACLE_HOME/bin:$PATH </code></pre>
+# then logout to root, expand the installation file 
+<pre><code>cd /install
+gunzip 10gr2_db_sol.cpio.gz
+nohup cpio *idmv < 10gr2_db_sol.cpio &</code></pre>
+# if install from console, disable xhost access control 
+<pre><code>/usr/openwin/bin/xhost +
+export DISPLAY=127.0.0.1:0.0</code></pre>
+# run the installer 
+<pre><code>su * oracle
+cd /install
+./runInstaller</code></pre>

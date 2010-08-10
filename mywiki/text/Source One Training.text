@@ -1,0 +1,79 @@
+h1. Engagement
+
+* Deal registration
+* Notify Daryush for each POC
+
+h1. Product Family
+
+Email Management: per active mailbox, exclude disabled ones. EmailXtender user can upgrade to SourceOne for free.
+
+Discovery Manager: per mailbox, include disabled ones.
+
+Discovery Collector is a hardware, OEM from Stored IQ
+
+h1. Exchange
+
+h2. Roles
+
+introduced in Exchange 2007.
+
+* Edge Transport
+* Hub Transport
+* Client Access
+* Mailbox -> need to access
+* Unified Messaging
+
+h1. Architecture
+
+h2. Capture
+
+* Real-Time Journaling. Will expand a distribution list to assign permissions to specific users.
+* Scheduled archive. Won't expand distribution lists. To archive PST file, nothing need to be installed on client.
+* User archive
+
+* Permission is based on email address, not windows ID.
+* When retention period expired, the container file will be deleted.
+
+h2. Comparing vs. EmailXtender
+
+* Not direct connection to one Exchange server, but based on AD information.
+* Attachments can be stored separately, then de-duped by storage devices.
+* No message body keyword rules
+* PST migration but no shortcut
+
+h2. PST Capture
+
+
+
+h2. Fulltext search
+
+iSys 8.0, no .rar support, .zip is supported.
+
+h2. Connect to Documentum
+
+HVS is a must.
+
+All emails archived into Documentum will be light objects and owned by a service account. So we cannot search from Webtop for someone's email, but still can do this from SourceOne search.
+
+attachments will be seperated objects linked to email objects.
+
+h2. Archive servers
+
+when we have multiple archive servers, they need to access the backend storage in a shared manner, which means NAS.
+
+
+h2. SQL Server in SourceOne
+
+* Job DB
+* Mail Archive DB -> SHA-1 signature of each archived email.
+* Search DB -> Saved search conditions
+
+h1. Questions
+
+h2. Can SourceOne filter email and change the route of it based on policy ?
+
+h2. How to do IM ?
+
+require third-party IM to SMTP gateway.
+
+h2. Migration

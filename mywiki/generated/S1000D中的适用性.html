@@ -1,0 +1,180 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Applicability in S1000D</h1><div id="div1"><p>S1000D中有适用性通过三个基础步骤使用：</p>
+<ol>
+	<li>声明在内容的适用性声明中允许的条件或值。</li>
+	<li>在内容中使用1中的声明进行适用性定义</li>
+	<li>按适用性条件过滤内容</li>
+</ol>
+</div><h2 id="2" class="title">适用性声明</h2><div id="div2"><p>为了防止在书写适用性出现Typo，并共享多个事先写好的适用性声明，S1000D建议将适用性声明放在三类单独的适用性DM中，并在其它的DM中进行引用，这三类DM分别为：</p>
+<ol>
+	<li><span class="caps">ACT</span>: Applicability Cross-ref Table<br />
+  ACT用于定义产品属性，通常在生产时已经定义好，比如序号、型号等。</li>
+	<li><span class="caps">CCT</span>: Conditions Cross-ref Table<br />
+  CCT用于定义各种条件，比如是否结冰？pre/post SB等。</li>
+	<li><span class="caps">PCT</span>: Product Cross-ref Table<br />
+  PCT中是ACT和CCT的组合，定义一个具体的产品所有的相关属性和条件</li>
+</ol>
+</div><h3 id="3" class="title"><span class="caps">ACT</span></h3><div id="div3"><p>给定如下的一个ACT定义：</p>
+<pre>
+&lt;dmodule&gt;
+  &lt;content&gt;
+    &lt;applicCrossRefTable&gt;
+      &lt;productAttributeList&gt;
+        &lt;productAttribute id="mfg"&gt;
+          &lt;name&gt;Manufacturer&lt;/name&gt;
+          &lt;descr&gt;The name of the manufacturer&lt;/descr&gt;
+          &lt;enumeration applicPropertyValues = "AIRBUS|BOEING|DOUGLAS|PRATT|GE|ROLLS|GOODRICH"/&gt;
+        &lt;/productAttribute&gt;
+        &lt;productAttribute id="tail"&gt;
+          &lt;name&gt;Tail Number&lt;/name&gt;
+          &lt;descr&gt;Tail Number for an aircraft.&lt;/descr&gt;
+          &lt;enumeration applicPropertyValues = "3101~3102|3114~3178|3201|3203~3205|3209~3245|3247~3280|3301~3321|3351~3361|6622~6628|6631~6635"/&gt;
+        &lt;/productAttribute&gt;
+      &lt;/productAttributeList&gt;
+    &lt;/applicCrossRefTable&gt;
+  &lt;/content&gt;
+&lt;/dmodule&gt;</pre>
+<p></p>
+<p>可以通过prodattr的方式在DM中进行引用，如：</p>
+<pre>
+&lt;dmodule&gt;
+  &lt;identAndStatusSection&gt;
+    &lt;dmstatus&gt;
+      &lt;applic&gt;
+        &lt;assert applicPropertyIdent="tail" applicPropertyType= "prodattr" applicPropertyValues="3210"/&gt;
+      &lt;/applic&gt;
+    &lt;/dmstatus&gt;
+  &lt;/identAndStatusSection&gt;
+  &lt;content&gt;….&lt;/content&gt;
+&lt;/dmodule&gt;</pre>
+<p></p>
+<p>如果applicPropertyType=&quot;condition&quot;，则会去引用CCT中的条件。</p>
+</div><h3 id="4" class="title"><span class="caps">CCT</span></h3><div id="div4"><p>给定如下的CCT定义：</p>
+<pre>
+&lt;condTypeList&gt;
+  &lt;condType id="yesno"&gt;
+    &lt;name&gt;Yes or No&lt;/name&gt;
+    &lt;descr&gt;Boolean Type Yes or No&lt;/descr&gt;
+    &lt;enumeration applicPropertyValues="yes|no"/&gt;
+  &lt;/condType&gt;
+&lt;/condTypeList&gt;
+&lt;condList&gt;
+  &lt;cond id="icy" condTypeRefId="yesno"&gt;
+    &lt;name&gt;Icy&lt;/name&gt;
+    &lt;descr&gt;Icy weather conditions&lt;/descr&gt;
+  &lt;/cond&gt;
+&lt;/condList&gt;</pre>
+<p></p>
+<p>在DM中的applic中可以这样引用：</p>
+<pre>
+&lt;applic id="applic1"&gt;
+  &lt;assert applicPropertyIdent="icy" applicPropertyType="condition" applicPropertyValues="yes"/&gt;
+&lt;/applic&gt;</pre>
+<p></p>
+<p>在内容中则可以：</p>
+<pre>
+&lt;para applicRefId="applic1"&gt;
+  De-ice the A/C
+&lt;/para&gt;</pre>
+<p></p>
+</div><h3 id="5" class="title"><span class="caps">PCT</span></h3><div id="div5"><p>比如：</p>
+<pre>
+&lt;dmodule&gt;
+  &lt;content&gt;
+    &lt;productCrossRefTable&gt;
+      &lt;product&gt;
+        &lt;assign applicPropertyIdent ="mfg" applicPropertyType ="prodattr" applicPropertyValue ="AIRBUS"/&gt;
+        &lt;assign applicPropertyIdent ="modelseries" applicPropertyType ="prodattr" applicPropertyValue ="A319/A320"/&gt;
+        &lt;assign applicPropertyIdent ="tail" applicPropertyType ="prodattr" applicPropertyValue ="3101"/&gt;
+        &lt;assign applicPropertyIdent ="serialno" applicPropertyType ="prodattr" applicPropertyValue ="1058"/&gt;
+        &lt;assign applicPropertyIdent ="registry" applicPropertyType ="prodattr" applicPropertyValue ="N301NB"/&gt;
+        &lt;assign applicPropertyIdent ="ETOPS-AC" applicPropertyType ="condition" applicPropertyValue ="NON-ETOPS"/&gt;
+      &lt;/product&gt;
+      &lt;product&gt;
+        &lt;assign applicPropertyIdent ="mfg" applicPropertyType ="prodattr" applicPropertyValue ="BOEING"/&gt;
+        &lt;assign applicPropertyIdent ="modelseries" applicPropertyType ="prodattr" applicPropertyValue ="B757200"/&gt;
+        &lt;assign applicPropertyIdent ="tail" applicPropertyType ="prodattr" applicPropertyValue ="5517"/&gt;
+        &lt;assign applicPropertyIdent ="custeff" applicPropertyType ="prodattr" applicPropertyValue ="517"/&gt;
+        &lt;assign applicPropertyIdent ="ETOPS-AC" applicPropertyType ="condition" applicPropertyValue ="NON-ETOPS"/&gt;
+      &lt;/product&gt;
+    &lt;/productCrossRefTable&gt;
+  &lt;/content&gt;
+&lt;/dmodule&gt;</pre>
+<p></p>
+<p>可以看到，PCT对ACT和CCT都有引用，但PCT中的每个product自己并没有id，无法被其它DM引用。所以，在其它DM的编写过程中，是不会引用PCT的内容作为适用性条件的。PCT更多地用于在发布的时候，将所有的Product列出来，供工程师进行快速的选择。因此PCT应该有能力记录一架飞机完整的构型信息，至少是所有的与手册/工卡相关的构型信息。</p>
+</div><h2 id="6" class="title">适用性使用</h2><div id="div6"></div><h3 id="7" class="title">全局适用性</h3><div id="div7"><p>比如：</p>
+<pre>
+&lt;dmodule&gt;
+  &lt;identAndStatusSection&gt;
+    &lt;dmstatus&gt;
+      &lt;applic&gt;
+        &lt;displayText&gt;
+          &lt;simplePara&gt;For model Mountain storm only&lt;/simplePara&gt;
+        &lt;/displayText&gt;
+        &lt;assert applicPropertyIdent="model" applicPropertyValues="Mountain storm"/&gt;
+      &lt;/applic&gt;
+    &lt;/dmstatus&gt;
+  &lt;/identAndStatusSection&gt;
+  &lt;content&gt;….&lt;/content&gt;
+&lt;/dmodule&gt;</pre>
+<p></p>
+<p>这就定义了一个全局适用性(<assert/>)，整个数据模块只有在model == &#8220;Mountain storem&#8221;时有效。<displayText/>则定义了一段描述性文字，用于解释下面的适用性条件。</p>
+<p>下面是一个多值的适用性声明，允许model取两个值中的一个：</p>
+<pre>
+&lt;assert applicPropertyIdent="model" applicPropertyValues="Mountain storm | Brook trekker"/&gt;</pre>
+<p></p>
+<p>下面是更复杂的条件，允许type为&quot;Mountain bike&quot;，或model为&quot;Brook trekker&quot;</p>
+<pre>
+&lt;applic&gt;
+  &lt;displayText&gt;
+    &lt;simplePara&gt;All mountain bikes and models Brook trekker&lt;/simplePara&gt;
+  &lt;/displayText&gt;
+  &lt;evaluate andOr="or"&gt;
+    &lt;assert applicPropertyIdent="type" applicPropertyValues="Mountain bike"/&gt;
+    &lt;assert applicPropertyIdent="model" applicPropertyValues=“Brook trekker"/&gt;
+  &lt;/evaluate&gt;
+&lt;/applic&gt;</pre>
+<p></p>
+<p>再复杂一点的逻辑表达式：</p>
+<pre>
+&lt;evaluate andOr="and"&gt;
+  &lt;assert applicPropertyIdent="type“ applicPropertyValues="Mountain bicycle"/&gt;
+  &lt;evaluate andOr="or"&gt;
+    &lt;evaluate andOr="and"&gt;
+      &lt;assert applicPropertyIdent="model“ applicPropertyValues="Mountain storm"/&gt;
+      &lt;assert applicPropertyIdent="version" applicPropertyValues="Mk1"/&gt;
+    &lt;/evaluate&gt;
+    &lt;evaluate andOr="and"&gt;
+      &lt;assert applicPropertyIdent="model" applicPropertyValues="Brook trekker"/&gt;
+      &lt;assert applicPropertyIdent="version” applicPropertyValues="Mk9"/&gt;
+    &lt;/evaluate&gt;
+  &lt;/evaluate&gt;
+&lt;/evaluate&gt;</pre>
+<p></p>
+</div><h3 id="8" class="title">嵌入适用性</h3><div id="div8"><pre>
+&lt;dmodule&gt;
+  &lt;identAndStatusSection&gt;
+    &lt;dmstatus&gt;
+      &lt;referencedApplicGroup&gt;
+        &lt;applic id="myFirstApplicDefinition"&gt;
+          &lt;assert applicPropertyIdent="model" applicPropertyValues="Mountain storm"/&gt;
+        &lt;/applic&gt;
+      &lt;/referencedApplicGroup&gt;
+    &lt;/dmstatus&gt;
+  &lt;/identAndStatusSection&gt;
+  &lt;content&gt;
+    …
+    &lt;para applicRefId="myFirstApplicDefinition"&gt;This para has applicability&lt;/para&gt;
+    &lt;para&gt;This para is always visible&lt;/para&gt;
+    &lt;para applicRefId="myFirstApplicDefinition"&gt;This para has applicability&lt;/para&gt;
+    …
+  &lt;/content&gt;
+&lt;/dmodule&gt;</pre>
+<p></p>
+<p>先在<identAndStatusSection><dmstatus><referencedApplicGroup>中定义<applic/>，同时给其指定id，然后在<content>中通过applicRefId对其进行使用。</p></div></div>
+</body></html>

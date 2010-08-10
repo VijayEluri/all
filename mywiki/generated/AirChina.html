@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Meeting</h1><div id="div1"></div><h2 id="2" class="title">2009-5-8 上午</h2><div id="div2"><p>参会：硬件、软件、手册、工卡</p>
+<p>需求：</p>
+<ul>
+	<li>用户数
+	<ul>
+		<li>总用户数: 5000人左右</li>
+		<li>活跃和非活跃用户</li>
+	</ul></li>
+	<li>数据量
+	<ul>
+		<li>手册
+		<ul>
+			<li>结构化手册: <span class="caps">AMM</span> <span class="caps">IPC</span> <span class="caps">WDM</span> 等6种，每架飞机保留2个版本</li>
+			<li>非结构化手册：现有手册2万份，大部分是纸质，有一部分需要扫描成PDF。只保留最近2版</li>
+		</ul></li>
+		<li>工卡
+		<ul>
+			<li>与维修计划的划分</li>
+		</ul></li>
+		<li>CAMP工程文件
+		<ul>
+			<li>输入：AD/SB</li>
+			<li>评估：80%的关键用户每天都在线上进行</li>
+			<li>输出：EO</li>
+		</ul></li>
+		<li>单机档案
+		<ul>
+			<li>Ameco的经验，数据量不是很大，担心访问性能，现在系统只能支持100人左右</li>
+			<li>220架至300架飞机</li>
+			<li>三年的数据量</li>
+			<li>扫描统一放在基地</li>
+			<li>每个基地每天处理的数据量：2人8小时1万5千份</li>
+			<li>由直管基地负责</li>
+			<li>黑白扫描</li>
+			<li>历史数据是次要工作，关键是未来产生的数据</li>
+		</ul></li>
+	</ul></li>
+	<li>拓扑
+	<ul>
+		<li>分布式架构</li>
+		<li>网络拓扑</li>
+		<li>基地和外站
+		<ul>
+			<li>直管基地有6个，非直管有3个</li>
+			<li>北京和成都可以做定检</li>
+			<li>其它地方做航线</li>
+		</ul></li>
+		<li>外站通常是航线工卡，变化少，机型固定</li>
+		<li>需要从外网访问</li>
+	</ul></li>
+	<li>硬件平台
+	<ul>
+		<li>HP PC Server</li>
+		<li>通常使用双机</li>
+		<li>测试环境</li>
+		<li>基于现在正在安装的DMX4，无需扩盘</li>
+	</ul></li>
+	<li>软件平台
+	<ul>
+		<li>Oracle</li>
+		<li>Weblogic</li>
+		<li>对软件模块的要求，比如用双机时，需要Oracle的RAC license</li>
+	</ul></li>
+	<li>扩展性
+	<ul>
+		<li>本期只是机务</li>
+		<li>未来加入飞行手册等</li>
+	</ul></li>
+	<li>SAP现状
+	<ul>
+		<li>2台p570
+		<ul>
+			<li>一台数据库</li>
+			<li>一台应用</li>
+			<li>另外一台临时SUN服务器支持应用</li>
+		</ul></li>
+		<li><span class="caps">HACMP</span></li>
+		<li>单独一台条码服务器</li>
+		<li>另外有开发、测试环境</li>
+	</ul></li>
+	<li>数字签名
+	<ul>
+		<li>现在不一定做，但要有扩展能力</li>
+		<li>适航当局可能很快可以认可数字签名
+		<ul>
+			<li>官方认证，要有能力去支持官方认证的公司</li>
+		</ul></li>
+		<li>哪些环节需要签名
+		<ul>
+			<li>比如手册改版，发布之前</li>
+		</ul></li>
+		<li>从技术角度建议如何实现，无需涉及业务</li>
+	</ul></li>
+</ul>
+</div><h2 id="3" class="title">2009-05-13 <span class="caps">EMC</span>/航安/立思辰项目会议</h2><div id="div3"><p>1. 国内的案例<br />
+2. 软件模块 IsoDraw</p></div></div>
+</body></html>

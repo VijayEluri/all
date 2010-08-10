@@ -1,0 +1,14 @@
+http://www.linuxfoundation.org/en/Net:Netem
+
+http://blog.s135.com/post/380/
+
+http://purefinity.blogspot.com/2009/01/simulating-network-delay-using-linux.html
+
+<pre>
+tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
+tc -s qdisc
+tc qdisc del dev eth0 root
+
+tc qdisc add dev eth0 root handle 1:0 netem delay 100ms
+tc qdisc add dev eth0 parent 1:1 handle 10: tbf rate 256kbit buffer 1600 limit 3000
+</pre>

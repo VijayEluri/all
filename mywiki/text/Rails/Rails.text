@@ -1,0 +1,73 @@
+h1. Rails script
+
+h2. Generate model
+
+<pre>script/generate model </pre>
+
+h2. Generate db migration
+
+<pre>script/generate migration add_folder_id_to_picture folder_id:integer</pre>
+
+h1. Railscast
+
+h2. dynamic find
+
+<pre><code>Task.find(:all, :conditions => ['complete = ?', false] ->
+Task.find_all_by_complete(false)
+
+Task.find(:first, :conditions => ['complete = ?, false], :order => 'create_at DESC') ->
+Task.find_by_complete(false, :order => 'create_at DESC')
+
+Task.find(:all, :conditions => ['project_id = ? AND complete = ?', @project.id, false] ->
+@project.tasks.find_all_by_complete(false)
+</code></pre>
+
+h2. with_scope
+
+<pre><code>class Task < ActiveRecord::Base
+  def self.find_incomplete(options = {})
+    with_scope :find => options do
+      find_all_by_complete(false, :order => 'created_at DESC')
+    end
+  end
+
+end</code></pre>
+
+then when call
+<pre>Task.find_incomplete(:limit => 20)</pre>
+with the help of with_scope, the find_all_by_complete method will execute with the parameter options and it's own original options.
+
+h2. layouts
+
+# application.rhtml
+# <controller_name>.rhtml
+# assigned in controller
+<pre><code>class SearchController < ApplicationController
+  layout 'admin'
+end</code></pre>
+# assigned in controller via method
+<pre><code>class SearchController < ApplicationController
+  layout :user_layout
+  protected
+  def user_layout
+    if user.admin?
+      'admin'
+    else
+      'normal'
+    end
+  end
+end</code></pre>
+
+h2. content_for
+
+in layout:
+<pre><code><%= yield :head %></code></pre>
+in template:
+<pre><code><% content_for :head do %>
+  <p>content</p>
+<% end %></code></pre>
+
+h2. filtering log
+
+in application controller
+<pre>filter_parameter_logging "password"</pre>

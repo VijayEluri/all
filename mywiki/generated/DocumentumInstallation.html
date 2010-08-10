@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Windows + <span class="caps">SQL</span> Server</h1><div id="div1"><ul>
+	<li>Windows
+	<ul>
+		<li>Use english version default options</li>
+		<li>set 4-digit year in Reginal</li>
+		<li><span class="caps">NEVER</span> use Administrator as install owner</li>
+		<li>add &#8216;&#8217;JAVA_HOME\bin&#8217;&#8217; to system path</li>
+		<li>Do not include Chinese characters in source file path</li>
+	</ul></li>
+	<li><span class="caps">SQL</span> Server
+	<ul>
+		<li>choose custom setup</li>
+		<li>use Latin1_General</li>
+		<li>select case sensitive</li>
+		<li>check sort option with &#8217;&#8217;sp_helpsort&#8217;&#8217;</li>
+	</ul></li>
+</ul>
+</div><h1 id="2" class="title"><span class="caps">AIX</span> + Oracle</h1><div id="div2"><ol>
+	<li>Install <span class="caps">ORACLE</span> server.</li>
+	<li>setting <a href="Oracle%20Parameters%20for%20Documentum.html">Oracle Parameters for Documentum</a></li>
+	<li>Install <span class="caps">ORACLE</span> client</li>
+	<li>make sure tnsping works</li>
+	<li>edit /etc/services<br />
+<pre>lime    1497/tcp<br />
+lime_s  1498/tcp</pre></li>
+	<li>create install owner: dmadmin</li>
+	<li>set <span class="caps">DOCUMENTUM</span>, DOCUMENTUM_SHARED, DM_HOME<br />
+<pre>export <span class="caps">DOCUMENTUM</span>=/dctm<br />
+export DM_HOME=$<span class="caps">DOCUMENTUM</span>/product/5.3<br />
+export DOCUMENTUM_SHARED=/dctm/shared </pre></li>
+	<li>run installer</li>
+	<li>set ORACLE_HOME, <span class="caps">LIBPATH</span>, <span class="caps">PATH</span><br />
+<pre>export ORACLE_HOME=/oraclnt/oracle<br />
+export <span class="caps">LIBPATH</span>=$ORACLE_HOME/lib:$DOCUMENTUM_SHARED/dfc:$<span class="caps">LIBPATH</span><br />
+export <span class="caps">PATH</span>=$ORACLE_HOME/bin:$<span class="caps">PATH</span> </pre></li>
+	<li>run $DM_HOME/install/dm_launch_server_config.sh</li>
+	<li>If use pre-created account, it needs <span class="caps">CONNECT</span> and <span class="caps">RESOURCE</span> and <span class="caps">CREATE</span> <span class="caps">VIEW</span> privileges</li>
+	<li>Optionally do [[Oracle Partition for Documentum 5.3]]</li>
+	<li>if need to install webtop/da on <span class="caps">AIX</span>, modify the config.ini file in the webtop/da setup files(find in archives) to support <span class="caps">AIX</span></li>
+</ol>
+</div><h1 id="3" class="title"><span class="caps">SUSE</span> + Sybase</h1><div id="div3"><ol>
+	<li>[[SetupSybaseForDocumentum|Setup Sybase for Documentum]]</li>
+	<li>install Sybase Open Client (<span class="caps">OCS</span>)
+	<ul>
+		<li>the content server depends Sybase 15 client library</li>
+		<li>must install sybase 15 <span class="caps">OCS</span> client library no matter what server is running</li>
+		<li>edit $<span class="caps">SYBASE</span>/interfaces file to connect server</li>
+		<li>make sure the client can connect to server <br />
+<pre> isql -Usa -Ppassword -Sserver_name</pre> then <br />
+<pre>1&gt; select @@version<br />
+2&gt; go </pre></li>
+	</ul></li>
+	<li>edit /etc/services <br />
+<pre>lime    1497/tcp<br />
+lime_s  1498/tcp </pre></li>
+	<li>create install owner: dmadmin <br />
+<pre>groupadd dmadmin<br />
+useradd -g dmadmin -d /dctm dmadmin </pre></li>
+	<li>setup the .profile of dmadmin <br />
+<pre>export <span class="caps">SYBASE</span>=/sybase<br />
+export SYBASE_OCS=<span class="caps">OCS</span>-15_0<br />
+export <span class="caps">DOCUMENTUM</span>=/dctm<br />
+export DM_HOME=$<span class="caps">DOCUMENTUM</span>/product/5.3<br />
+export DOCUMENTUM_SHARED=$<span class="caps">DOCUMENTUM</span>/shared<br />
+export <span class="caps">PATH</span>=$<span class="caps">SYBASE</span>/$SYBASE_OCS/bin:$<span class="caps">PATH</span><br />
+export LD_LIBRARY_PATH=$<span class="caps">SYBASE</span>/$SYBASE_OCS/lib:$DOCUMENTUM_SHARED/dfc<br />
+export <span class="caps">LANG</span>=en_US </pre></li>
+	<li>run dctm installer</li>
+	<li>run server config</li>
+</ol>
+</div><h1 id="4" class="title">Upgrade to D6</h1><div id="div4"><ol>
+	<li>backup all dm_formats</li>
+	<li>run consistency checker against old repository</li>
+	<li>disable all jobs</li>
+	<li>stop repository and docbroker</li>
+	<li>set new env</li>
+	<li>install software</li>
+	<li>run configurator</li>
+	<li>upgrade docbroker and docbase.</li>
+</ol>
+<p>The execution of System Administration tool may fail at creation of adminjob.ebs and all_jobs.scr. You need to destroy the objects by api.</p>
+<pre>
+retrieve,c,dm_procedure where object_name='adminjob.ebs'
+get,c,&lt;id&gt;,i_contents_id
+destroy,c,&lt;id&gt;
+apply,c,&lt;contentsid&gt;,DESTROY_CONTENT
+
+retrieve,c,dm_script where object_name='WS3_all_jobs.scr'
+get,c,&lt;id&gt;,i_contents_id
+destroy,c,&lt;id&gt;
+apply,c,&lt;contentsid&gt;,DESTROY_CONTENT
+</pre></div></div>
+</body></html>

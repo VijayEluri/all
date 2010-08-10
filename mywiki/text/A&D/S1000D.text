@@ -1,0 +1,214 @@
+<<TableOfContents>>
+
+ the Product :: Any platform, system, or equipment
+ project :: The task to develop, maintain and dispose of the Product
+
+
+h1. Chapter 3 Information Generation
+
+
+
+h2. 3.2 Data Modules
+
+
+h2. 3.3 Information Sets
+
+
+Information sets are explained in Chapter 5, include
+
+* Crew/Operator Information
+* Description and operation
+* Maintenance procedures
+* Fault isolation
+* Non-destructive testing
+* Corrosion control
+* Storage
+* Wiring data
+* Illustrated parts data
+* Maintenance planning information
+* Mass and balance information
+* Recovery information
+* Equipment information
+* Weapon loading information
+* Cargo loading information
+* Stores loading information
+* Role change information
+* Battle damage assessment and repair information
+* Illustrated tool and support equipment information
+* Service bulletins
+* Material data
+* Common information and data
+* Training
+* Air system information sets
+* Land and sea information sets
+
+h2. 3.4 Zoning and access
+
+
+* Zoning method A. For transport air vehicle
+* method B. For fighter air vehicle
+* method C. For a helicopter
+
+ . Major zones are numbered as 100, 200, 300, 400, ..., 900
+ . Major sub-zones are numbered as 310, 320, 330, 340, ...
+ . Zones are numbered as 321, 322, 323, ...
+
+
+h2. 3.5 Updating data modules
+
+
+For every release of data module, the issue number '''must be incremented by one.'''
+
+* New data modules
+* Change of data modules
+** if content changed, <issno type="CHANGED">
+** if only status changed, <issno type="STATUS">
+** reason of change should be noted use <rfu>
+* Revised data module
+** Revised DM is a completely reworked one
+** <issno type="REVISED">
+* Deletion of DM
+** <issno type="DELETED">
+* Reinstating of DM
+** Reinstating means restoring a deleted DM
+** <issno type="RINSTATE-CHANGED">
+
+
+h2. 3.6 Security and data restriction
+
+
+h2. 3.7 QA
+
+
+h2. 3.8 Disassembly principles
+
+
+h2. 3.9 Authoring
+
+
+h3. 3.9.1 General writing rules
+
+
+h3. 3.9.2 Illustration and multimedia
+
+
+h3. 3.9.3 Warnings, cautions and notes
+
+
+h3. 3.9.4 Front matter
+
+# Title page
+# List of effective pages (LOEP)
+** The project must decide on use of LOEP instead of LOEDM
+# List of effective data modules (LOEDM)
+# Change record
+# Highlights
+# Access illustration, used in IETP only
+# List of abbreviations (LOA)
+# List of terms (LOT)
+# List of symbols (LOS)
+# Technical standard record (TSR)
+# Table of contents (TOC)
+# List of applicable spec and doc (LOASD)
+# List of support equipment (LOSE)
+# List of supplies (LOSU)
+# List of spares (LOSP)
+# List of illustrations (LOI), used in IETP only
+# PCT list
+# CCT list
+# ACT list
+
+
+h3. 3.9.5 Data modules
+
+
+h4. 3.9.5.1 Identification and status
+
+
+h4. 3.9.5.2 Content
+
+
+h5. 3.9.5.2.2 Descriptive information
+
+
+h5. 3.9.5.2.3 Procedural information
+
+
+h5. 3.9.5.2.4 Fault isolation information
+
+
+h5. 3.9.5.2.5 Maintenance planning information
+
+
+h5. 3.9.5.2.6 Crew/Operator information
+
+
+h5. 3.9.5.2.7 Illustrated parts data information
+
+
+h5. 3.9.5.2.8 Battle damage assessment and repair information
+
+
+h5. 3.9.5.2.9 Wiring data
+
+
+h5. 3.9.5.2.10 Process data module
+
+
+h5. 3.9.5.2.11 Technical information repository data module
+
+
+h5. 3.9.5.2.12 Container data module
+
+
+h4. 3.9.5.3 Applicability
+
+
+h3. 3.9.6 Attributes
+
+
+h3. 3.9.7 Training
+
+
+
+h1. Chapter 4 Information Management
+
+
+Key element of information management is CSDB(common source database). CSDB contains
+
+* Data modules
+* Illustrations
+* Data module lists
+* Comments
+* Publication modules
+* Data dispatch notes
+
+
+h2. 4.3 DMC
+
+
+h2. 4.4 ICN
+
+
+h2. 4.5 DML
+
+ DML :: Data Module List
+the following DML are '''recommended'''
+
+h3. 4.5.1 DMRL
+
+ DMRL :: Data Module Requirement List, is used to identify the required data modules for a project.
+
+''<dmltype type="c">'' or ''<dmltype type="p">'', "c" means complete DMRL, "p" means partial DMRL. Type can also be identified by DMLC.
+
+Other data modules are referenced by tag ''<dmentry>''. Each entry can have one of the attribute values "n"(new), "c"(changed), or "d"(deleted).
+
+
+h3. 4.5.2 CSL
+
+ CSL :: CSDB Status List, has the same format as DMRL with ''<dmltype type="s">''.
+
+It '''recommended''' that each agency/company produce a periodic CSL of DMs that it has issued to ensure consistency.
+
+h2. 4.7 Version control of data modules
+

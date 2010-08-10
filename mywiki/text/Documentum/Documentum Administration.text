@@ -1,0 +1,9 @@
+h2. User Management
+
+h3. Domain groups
+
+A domain group represents a particular client application domain. A domain group contains a set of role groups, corresponding to the roles recognized by the client application.
+
+h3. User rename
+
+Select the user, Tools->Reassign User. There is a job dm_userRename which will do update to all related objects.

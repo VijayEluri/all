@@ -1,0 +1,25 @@
+
+|_. Group |_. Key |_. Function |
+|/5. Move around | ⌘ + &larr; -> | start / end of line |
+| ⌘ + &uarr; &darr; | begin / end of file |
+| ⌘ + L | goto line |
+| ⌥ + &larr; -> | move cursor forward/backward by word |
+| ⌃ + ⌘ + &uarr; &darr; | move selection up / down |
+|/3. Copy/Paste/Selection | ⌃ + ⌥ + ⌘ + V | paste with clipboard history |
+| ⌥ | switch column selection and line selection |
+| ⌃ + w | select word |
+|/8. Text edit | ⌘+  ↩ | insert and move to next line |
+|⎋ (escape) | auto complete |
+| ⌃ + U | upper case |
+| ⌥ + ⌘ + O | overwrite mode |
+| ⌥ + ⌘ + A | edit every line of selection |
+| ⇧ + ⌃ + K | delete current line |
+| ⇧ + ⌃ + D | duplicate current line |
+| F5 | sort selection |
+|/4. Find/Replace | ⌘ + E | copy selection to find clipboard |
+| ⇧ + ⌘ + E | copy selection to replace clipboard |
+| ⌘ + G | find using clipboard |
+| ⌃ +  ⌘ + F | replace using clipboard |
+|/2. View | F1 | fold current block |
+| ⌥ + ⌘ + i | show invisible |
+| Others | ⌃ + r | exec selection and insert result |

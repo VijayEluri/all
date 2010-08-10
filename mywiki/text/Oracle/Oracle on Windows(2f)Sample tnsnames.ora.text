@@ -1,0 +1,28 @@
+
+
+pre.. 
+SERVER1 =
+ (DESCRIPTION =
+   (ADDRESS_LIST =
+     (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.1)(PORT = 1521))
+   )
+   (CONNECT_DATA =
+     (SID = EMC)
+     (SERVER = DEDICATED)
+   )
+ )
+SERVER2 =
+ (DESCRIPTION =
+   (ADDRESS_LIST =
+     (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.5)(PORT = 1521))
+   )
+   (CONNECT_DATA =
+     (SID = EMC)
+     (SERVER = DEDICATED)
+   )
+ )
+
+p. 
+
+----
+CategoryOracle

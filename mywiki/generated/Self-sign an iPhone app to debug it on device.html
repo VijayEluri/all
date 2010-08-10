@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h2 id="1" class="title">Self-sign an iPhone App</h2><div id="div1"><ul>
+	<li>Create a code sign certificate in KeyChain tool.
+	<ul>
+		<li>Keep the validation period as 365 days. (3000 days obviously won&#8217;t work&#8230;)</li>
+		<li>Trust the certificate after you created it</li>
+	</ul></li>
+	<li>Add two user-defined settings in project settings<br />
+<pre>PROVISIONING_PROFILE_ALLOWED = NO<br />
+PROVISIONING_PROFILE_REQUIRED = NO</pre></li>
+	<li>Change &#8220;Code Signing Identity&#8221; in project settings to your certificate</li>
+	<li>Add the following key/value in info.plist<br />
+<pre>SignerIdentity = Apple iPhone OS Application Signing</pre></li>
+	<li>Patch the MobileInstall right:
+	<ul>
+		<li>Add a source http://cydia.hackulo.us in Cydia</li>
+		<li>Install miPatch</li>
+	</ul></li>
+</ul></div></div>
+</body></html>

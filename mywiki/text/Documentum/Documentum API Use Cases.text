@@ -1,0 +1,90 @@
+h1. Get and set attribute
+
+<pre>
+PI> query,s0,'select r_object_id from dm_user where user_login_name=''dmadmin'
+...
+q0
+API> next,s0,q0
+...
+OK
+API> get,s0,q0,r_object_id
+...
+110be6e180000102
+API> close,s0,q0
+...
+OK
+API> dump,s0,110be6e180000102su
+...
+USER ATTRIBUTES
+
+  user_name                  : dmadmin
+  ...
+  default_folder             : /Temp
+  ...
+
+API> set,s0,110be6e180000102,default_folder
+SET> /dmadmin
+...
+OK
+API> save,s0,110be6e180000102
+...
+OK
+API> reinit,s0
+...
+OK
+</pre>
+
+h1. use case 2 (better than case 1)
+
+<pre>
+API> retrieve,c,dm_user where user_login_name='dmadmin'
+...
+1101349980000102
+API> dump,c,l
+...
+...
+API> get,c,l,default_folder
+...
+/dmadmin
+API> set,c,l,default_folder
+SET> /newfolder
+...
+OK
+API> save,c,l
+...
+OK
+API> reinit,c
+...
+OK
+</pre>
+
+h1. Signoff object
+
+<pre>
+API> retrieve,c,dm_document where object_name='SevenDCTMJobs.pdf'
+...
+090134998000491d
+API> signoff,c,l,'dmadmin','dmadmin','approved'
+...
+OK
+API> retrieve,c,dm_audittrail where object_name like 'Seven%'
+...
+5f01349980000500
+API> dump,c,l
+...
+USER ATTRIBUTES
+
+  event_name                 : dm_signoff
+  event_source               : Electronic Signature
+  user_name                  : dmadmin
+  audited_obj_id             : 090134998000491d
+  time_stamp                 : 2007-9-16 23:28:30
+  string_1                   : jason-vm3\dmadmin
+  string_2                   : approved
+  string_3                   :
+  string_4                   :
+......
+ object_name                : SevenDCTMJobs.pdf
+ version_label              : 1.0
+ object_type                : dm_document
+</pre>

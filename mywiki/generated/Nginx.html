@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">References</h1><div id="div1"><ul>
+	<li><a href="http://www.jedi.be/blog/2009/04/10/rails-and-large-large-file-uploads-looking-at-the-alternatives/">http://www.jedi.be/blog/2009/04/10/rails-and-large-large-file-uploads-looking-at-the-alternatives/</a></li>
+	<li><a href="http://www.motionstandingstill.com/nginx-upload-awesomeness/2008-08-13/">http://www.motionstandingstill.com/nginx-upload-awesomeness/2008-08-13/</a></li>
+	<li><a href="http://www.motionstandingstill.com/ngnix-upload-awesomeness-pt2/2008-08-20/">http://www.motionstandingstill.com/ngnix-upload-awesomeness-pt2/2008-08-20/</a></li>
+</ul>
+</div><h1 id="2" class="title">Nginx with upload module installation</h1><div id="div2"><ul>
+	<li>Download sources
+	<ul>
+		<li><a href="http://nginx.net/">http://nginx.net/</a></li>
+		<li><a href="http://www.grid.net.ru/nginx/upload.en.html">http://www.grid.net.ru/nginx/upload.en.html</a></li>
+	</ul></li>
+	<li>Extract and config<br />
+<pre>$ ./configure &#8212;add-module=../nginx_upload_module-2.0.9/</pre></li>
+	<li>Make and make install</li>
+</ul>
+</div><h1 id="3" class="title">Configuration</h1><div id="div3"><pre>
+  location /upload {
+    upload_pass /internal_upload;
+    upload_store /tmp;
+    upload_set_form_field $upload_field_name.name "$upload_file_name";
+    upload_set_form_field $upload_field_name.content_type "$upload_content_type";
+    upload_set_form_field $upload_field_name.path "$upload_tmp_path";
+    upload_store_access user:rw group:rw all:rw;
+    upload_pass_form_field "^authenticity_token$";
+  }
+  
+  location /internal_upload {
+    proxy_pass http://0.0.0.0:3000/upload
+  }
+</pre>
+</div><h1 id="4" class="title">Test</h1><div id="div4"><pre>curl -F datafile['file']=@MVI_4725.AVI http://localhost:80/upload</pre></div></div>
+</body></html>

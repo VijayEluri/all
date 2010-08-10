@@ -1,0 +1,31 @@
+
+h2. Uninstall Oracle on Windows
+
+# Uninstall using Oracle universal installer
+# Reboot
+# Delete C:\Program Files\Oracle
+# Delete %ORACLE_HOME%
+# Delete %ORACLE_DATA%
+# Repair registry using NU Windoc
+# Delete registry key: HKLM\SYSTEM\CONTROLSET001\Enum\Root\LEGACY_ORACLE*
+# Delete registry key: HKLM\SOFTWARE\ORACLE
+# Reboot 
+
+h2. Migrating Oracle on Windows
+
+* Copy files
+** $ORACLE_HOME/dbs   init$SID.ora
+** $ORACLE_HOME/admin  Directory
+** $ORACLE_HOME/network/admin all files
+* Create new SID instance
+
+pre.. 
+oradim -new -sid <SID> -pfile <full-init-ora-filename>
+
+p. 
+
+* set env ORACLE_SID
+* update the listener.ora and tnsnames.ora. [[/Sample listener.ora]], [[/Sample tnsnames.ora]]
+* Connect and startup
+----
+CategoryOracle

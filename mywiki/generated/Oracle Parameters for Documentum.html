@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<pre>
+alter system set optimizer_index_cost_adj=5 scope=spfile;
+alter system set optimizer_index_caching=95 scope=spfile;
+alter system set sort_area_size=524288 scope=spfile;
+alter system set optimizer_mode='CHOOSE' scope=spfile;
+alter system set shared_pool_size=200M scope=spfile;
+alter system set log_buffer=524288 scope=spfile;
+alter system set cursor_sharing=FORCE scope=spfile;
+</pre>
+<ul>
+	<li>sort_area_size
+	<ul>
+		<li>can influence merge joins which are common in <span class="caps">DCTM</span> operations</li>
+	</ul></li>
+	<li>on <span class="caps">RAC</span>, set MAX_COMMIT_PROPAGATION_DELAY to 0</li>
+</ul></div>
+</body></html>

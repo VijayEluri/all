@@ -1,0 +1,72 @@
+<<TableOfContents>>
+
+
+h2. Archive Services for SAP (AS SAP)
+
+* Enables users to easily access and display documents stored in an EMC Documentum repository from a variety of SAP modules.
+* Links documents stored in EMC Documentum to a variety of SAP documents.
+* Archives SAP data, reports, and documents through ArchiveLink certified interfaces in EMC Documentum.
+AS SAP consists for the following components
+# HTTP archiving services
+# RFC archiving services
+# WebAdmin
+
+h2. Content Services for SAP (CS SAP)
+
+* Enables users to easily access and display documents stored in an EMC Documentum reposito from a variety of SAP modules.
+* Links documents stored in EMC Documentum to a variety of SAP documents.
+* Works with Archive Services for SAP to archive SAP data, reports, and documents through ArchiveLink certified interfaces in EMC Documentum.
+* Stores and manages reports, and incoming and outgoing documents in EMC Documentum.
+CS SAP consists of the following components
+# Agent services<<BR>>
+ There are five types of actions:
+## Linking SAP objects to Documentum objects.
+## Linking Documentum objects to SAP objects.
+## Replicating SAP objects into a Documentum repository.
+## Replicating Documentum objects into SAP.
+## Checking the integrity of the linked objects in SAP and Documentum.
+# Capture<<BR>> 
+ The Capture component allows you to scan documents, archive the images in a Documentum repository, and create a link to the appropriate records in SAP . Once this link is created, the document is available to both SAP and non SAP users. 
+## Documents are scanned in and linked using the Capture component. This method is best for individual document linking.
+## Documents are scanned using a high end scanning solution (such as Captiv a InputAccel) and the Capture component is used to link the document to SAP. This method is best for production processing.
+## Electronic files from a Documentum repository are linked to SAP using the Capture component. The Capture component supports electronic files in all formats.
+# Manage<<BR>>
+ The Manage component allows you to release and link documents from a Documentum repository into a SAP R/3 system. You can link the document to specific material, functional location, equipment master record, or other supported objects in SAP.
+# View<<BR>>
+ Non SAP users can view SAP documents using the View component. This component also provides you with the ability to define your preferences for the application to be used to open the different document formats.
+# Rendition Services<<BR>>
+ Built in filters that provide the following renditions:
+** PDF rendition
+** ASCII text rendition
+** HTML rendition 
+ When one of these built in filters is used, the appropriate document rendition is generated when the Print List is archived in the repository.
+# WebAdmin<<BR>>
+ Documentum supports the following SAP document classes / formats:
+** Incoming or scanned documents (FAX class, Tiff format)
+** Outgoing documents (OTF class, PDF format)
+** Archived data (REO class, REO format)
+** Reports or print lists (ALF class, ALF format)
+
+h2. iViews for Related Content (IVRC)
+
+* Find and view related content from SAP Enterprise Portal.
+* Release and link documents from an EMC Documentum repository to SAP. You can link documents to specific material, functional location, equipment master record, or other supported object types in SAP.
+* Manage the links between EMC Documentum objects and SAP objects. 
+* Delete links to related content
+
+h2. Repository Manager
+
+* Access content stored in an EMC Documentum repository from within SAP Portal.
+* Seamlessly leverage the functionalities of SAP P ortal for content stored in EMC Documentum.<<BR>>For example: SAP Portal functionalities available for content stored in EMC Documentum include Knowledge Management (KM) functions, federated search, navigation, and so on .
+* Access EMC Documentum features within SAP Portal.<<BR>>For example: EMC Documentum functionalities available within SAP Portal include checkin, checkout, move, copy , and so on .
+
+h2. Process Services for SAP
+
+PS SAP extends the functionality of Documentum Business Process Manager. While you can use either tool to create templates, PS SAP offers enhanced options, including the ability to create workflow templates that include custom activity types. All templates are delivered in the "SAP Integration" activity palette.
+
+h2. External Viewing Services for SAP
+
+* includes server components of CS SAP
+* dependant on AS SAP
+----
+CategoryDocumentum

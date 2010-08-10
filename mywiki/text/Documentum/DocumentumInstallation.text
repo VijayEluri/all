@@ -1,0 +1,94 @@
+
+h1. Windows + SQL Server
+
+* Windows
+** Use english version default options
+** set 4-digit year in Reginal
+** NEVER use Administrator as install owner
+** add ''JAVA_HOME\bin'' to system path
+** Do not include Chinese characters in source file path
+* SQL Server
+** choose custom setup
+** use Latin1_General
+** select case sensitive
+** check sort option with ''sp_helpsort''
+
+
+h1. AIX + Oracle
+
+# Install ORACLE server. 
+# setting [[Oracle Parameters for Documentum]]
+# Install ORACLE client
+# make sure tnsping works
+# edit /etc/services
+<pre>lime    1497/tcp
+lime_s  1498/tcp</pre>
+# create install owner: dmadmin
+# set DOCUMENTUM, DOCUMENTUM_SHARED, DM_HOME
+<pre>export DOCUMENTUM=/dctm
+export DM_HOME=$DOCUMENTUM/product/5.3
+export DOCUMENTUM_SHARED=/dctm/shared </pre>
+# run installer
+# set ORACLE_HOME, LIBPATH, PATH
+<pre>export ORACLE_HOME=/oraclnt/oracle
+export LIBPATH=$ORACLE_HOME/lib:$DOCUMENTUM_SHARED/dfc:$LIBPATH
+export PATH=$ORACLE_HOME/bin:$PATH </pre>
+# run $DM_HOME/install/dm_launch_server_config.sh
+# If use pre-created account, it needs CONNECT and RESOURCE and CREATE VIEW privileges
+# Optionally do [[Oracle Partition for Documentum 5.3]]
+# if need to install webtop/da on AIX, modify the config.ini file in the webtop/da setup files(find in archives) to support AIX
+
+h1. SUSE + Sybase
+
+# [[SetupSybaseForDocumentum|Setup Sybase for Documentum]]
+# install Sybase Open Client (OCS)
+** the content server depends Sybase 15 client library
+** must install sybase 15 OCS client library no matter what server is running
+** edit $SYBASE/interfaces file to connect server
+** make sure the client can connect to server 
+<pre> isql -Usa -Ppassword -Sserver_name</pre> then 
+<pre>1> select @@version
+2> go </pre>
+# edit /etc/services 
+<pre>lime    1497/tcp
+lime_s  1498/tcp </pre>
+# create install owner: dmadmin 
+<pre>groupadd dmadmin
+useradd -g dmadmin -d /dctm dmadmin </pre>
+# setup the .profile of dmadmin 
+<pre>export SYBASE=/sybase
+export SYBASE_OCS=OCS-15_0
+export DOCUMENTUM=/dctm
+export DM_HOME=$DOCUMENTUM/product/5.3
+export DOCUMENTUM_SHARED=$DOCUMENTUM/shared
+export PATH=$SYBASE/$SYBASE_OCS/bin:$PATH
+export LD_LIBRARY_PATH=$SYBASE/$SYBASE_OCS/lib:$DOCUMENTUM_SHARED/dfc
+export LANG=en_US </pre>
+# run dctm installer
+# run server config
+
+
+h1. Upgrade to D6
+
+# backup all dm_formats
+# run consistency checker against old repository
+# disable all jobs
+# stop repository and docbroker
+# set new env
+# install software
+# run configurator
+# upgrade docbroker and docbase.
+
+The execution of System Administration tool may fail at creation of adminjob.ebs and all_jobs.scr. You need to destroy the objects by api.
+
+<pre>
+retrieve,c,dm_procedure where object_name='adminjob.ebs'
+get,c,<id>,i_contents_id
+destroy,c,<id>
+apply,c,<contentsid>,DESTROY_CONTENT
+
+retrieve,c,dm_script where object_name='WS3_all_jobs.scr'
+get,c,<id>,i_contents_id
+destroy,c,<id>
+apply,c,<contentsid>,DESTROY_CONTENT
+</pre>

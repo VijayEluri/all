@@ -1,0 +1,233 @@
+#!/usr/bin/env rake
+
+require 'rubygems'
+require 'redcloth'
+require 'pathname'
+require 'uri'
+
+require 'config'
+
+# process in textile format
+# convert links, ignore anything between <pre> </pre>
+# supports the following formats
+# 	1. [http://www.something.com | Text]
+# 	2. [http://www.something.com]
+# 	3. [Text | WikiName]
+# 	4. [WikiName]
+def wikiLinks!(lines)
+	newlines = ""
+	ignore_lines = false
+
+	lines.each do |line|
+		if ignore_lines || line =~ /<pre>.*?<\/pre>/ # inside <pre> or this line includes complete pre
+		elsif line =~ /<pre>/ # found <pre>, ignore this line and the following
+			ignore_lines = true
+		elsif line =~ /<\/pre>/ # found </pre>, ignore this line and stop ignoring
+			ignore_lines = false
+		else # process links
+			line.gsub!(/\[+(.*?)\]+/) do |match|
+				part1, part2 = $1.split('|')
+				part1.strip! if part1
+				part2.strip! if part2
+
+				if part1 =~ /https?:\/\// # format 1. 2.
+					link = part1
+					title = part2 ? part2 : part1
+				else # format 3. 4.
+					title = part1
+					link = part2 ? part2 : part1
+					link = link + ".html"
+				end
+				"\"#{title}\":#{URI.escape(link)}"
+			end
+		end
+		newlines << line
+	end
+	newlines
+end
+
+# process in html format
+# process titles such as <h1> <h2> <h3> to support open/close
+def titles!(lines)
+  index = 1
+  newlines = []
+  div_open = false
+  
+  lines.each do |line|
+
+    if line =~ /<h(\d)>(.*?)<\/h\d>/
+      newlines << "</div>" if div_open # close div if it's open
+      newlines << "<h#{$1} id=\"#{index}\" class=\"title\">#{$2}</h#{$1}>"
+      newlines << "<div id=\"div#{index}\">"
+      index += 1
+      div_open = true
+      next
+    end
+        
+    newlines << line
+  end
+  newlines << "</div>" if div_open
+  newlines
+end
+
+# convert a textile file into html
+def build(src, target)
+	open(src) do |fobj|
+		lines = wikiLinks! fobj.readlines.join('')
+		open(target, 'w') do |out|
+			out << Header
+			html = RedCloth.new(lines).to_html
+			out << titles!(html)
+			out << Footer
+		end
+	end
+end
+
+# yield directories on sorted manner
+def folders(dir)
+	Dir[File.join(dir, '*')].sort.each do |entry|
+		yield entry if FileTest.directory?(entry)
+	end
+end
+
+# yield files on sorted manner
+def files(dir, pattern = '*')
+	Dir[File.join(dir, pattern)].sort.each do |entry|
+		yield entry unless FileTest.directory?(entry)
+	end
+end
+
+# has .html files under dir?
+def hasHTML?(dir)
+  FileList["#{dir}/**/*.html"].size > 0
+end
+
+# build index of html files under html/ folder
+# TODO: sub folders
+def buildHTMLIndex(content, dir = nil, level = 0)
+  buildHTMLIndex(content, 'html') && return if dir.nil?
+
+  if level == 0
+    content << "\nh1. HTML Pages\n"
+  else
+		content << "\nh#{level + 1}. #{File.basename(dir)}\n"
+  end
+  
+  files(dir, '*.html') do |file|
+    page = File.basename(file, '.html')
+		content << "* \"#{page}\":./html/#{URI.escape(page)}.html\n"
+  end  
+end
+
+# build index file according to hierarchy of text/ folder
+# output format: textile
+def buildIndex(content, dir = nil, level = 0)
+	buildIndex(content, 'text') && return if dir.nil?
+		
+	if level == 0
+	  content << "\nh1. (No Category)\n"
+	else
+		content << "\nh#{level}. #{File.basename(dir)}\n"
+	end
+
+	files(dir, '*.text') do |file|
+		page = File.basename(file, '.text')
+		content << "* \"#{page}\":./#{URI.escape(page)}.html\n"
+	end
+
+	folders(dir) do |folder|
+		buildIndex(content, folder, level + 1)
+	end
+end
+
+task :dirs do
+  mkdir_p OutputDir
+  mkdir_p "#{OutputDir}/html"
+end
+
+# task index
+# 	call buildIndex to build index
+# 	output converted html
+task :index do
+	content = ''
+  @div_index = 1
+	buildIndex content
+	buildHTMLIndex content
+	open("#{OutputDir}/index.html", 'w') do |out| 
+		out << Header
+		out << IndexHead
+		html = RedCloth.new(content).to_html
+		out << titles!(html)
+		out << Footer
+	end
+	print "index.html rebuilt.\n"
+end
+
+# task compile
+# 	iterate files under text/ folder
+# 	call build to convert them all into OutputDir/ folder without original hierarchy
+task :compile do
+  infl = FileList['text/**/*.text']
+	bc = 0
+  infl.each do |fn|
+    target = "#{File.join(OutputDir, File.basename(fn).ext('html'))}"
+    unless uptodate?(target, fn)
+      build(fn, target)
+			bc = bc + 1
+    end
+  end
+	print "#{bc} pages were built.\n"
+end
+
+# task html
+#   iterate files under html/ folder
+#   copy all into OutputDir/html with original hierarchy
+task :html do
+  infl = FileList['html/**/*']
+	bc = 0
+  infl.each do |fn|
+    target = File.join(OutputDir, fn)
+    unless uptodate?(target, fn)
+		  if FileTest.directory?(fn)
+		    mkdir_p target
+		  else
+		    cp fn, target
+			  bc = bc + 1
+		  end
+    end
+  end
+	print "#{bc} files were copied.\n"
+end
+
+# task of copying .css
+task :css do
+	css = FileList['css/*.css']
+	css.each do |fn|
+		target = File.join(OutputDir, File.basename(fn))
+		unless uptodate?(target, fn)
+			cp fn, target
+		end
+	end
+end
+
+# task of copying .js
+task :js do
+	js = FileList['js/jquery*.js']
+	js.each do |fn|
+		target = File.join(OutputDir, 'jquery.js')
+		unless uptodate?(target, fn)
+		  cp fn, target
+		end
+	end
+end
+
+task :clean do
+	rm_rf Dir["#{OutputDir}"]
+end
+
+task :index => [:dirs, :css, :js]
+task :compile => [:dirs, :css, :js]
+task :html => :dirs
+task :rebuild => [:clean, :default]
+
+task :default => [:index, :html, :compile]

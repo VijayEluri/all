@@ -1,0 +1,98 @@
+<<TableOfContents>>
+
+
+h1. JVM_Bind: Address already in use error when calling DFS too fast on Windows
+
+
+this relates to a known Windows setting: http://support.microsoft.com/kb/q196271
+
+* go to '''HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameter'''
+* MaxUserPort DWORD 65534
+* TCPTimedWaitDelay DWORD 30
+* you can see all open local ports by '''netstat -n'''
+
+
+h1. MediaWorkSpace WebService error
+
+
+If MediaWorkSpace and DFS are not deployed on the same machine, must add crossdomain.xml to DFS's host's root. eg:
+
+* MediaWorkSpace: http://hosta:8080/MediaWorkSpace
+* DFS: http://hostb:9080/service/mediaworkspace
+
+Then you must deploy a crossdomain.xml at http://hostb:9080/crossdomain.xml contains:
+
+
+pre.. 
+<?xml version="1.0"?>
+<cross-domain-policy>
+	<allow-access-from domain="*"/>
+	<allow-http-request-headers-from domain="*" headers="*"/>
+</cross-domain-policy> 
+
+p. 
+
+
+
+h1. ADTS error
+
+
+* Install .Net Framework 2.0 SP2 if ASP.NET webservice error
+* Adlib need at least 1G free disk space to start to work
+
+
+h1. locale en error
+
+
+make sure dm_dataDictionaryPublish job run once after installation and types are created.
+
+
+h1. UCFException: All remote hosts failed
+
+'''iapi'''
+
+pre.. 
+API> retrieve,c,dm_acs_config
+...
+08013499800002fb
+API> get,c,l,acs_base_url
+...
+http://jason-vm3:9080/ACS/servlet/ACS
+API> set,c,l,acs_base_url[0]
+SET> http://newhost:9080/ACS/servlet/ACS
+...
+OK
+API> save,c,l
+...
+OK
+
+p. 
+
+
+h1. WDK Trace
+
+http://developer.emc.com/developer/articles/wdk_itrace_tool.htm
+
+h1. DMCL Trace
+
+dmcl.ini
+
+pre.. 
+[DMAPI_CONFIGURATION]
+trace_file = c:\tracefile.txt
+trace_level = 10
+
+p. 
+
+
+
+h1. DA cannot show right click menu
+
+
+When you first run DA, if global registry is not properly configured, the DA may behave wired that cannot show right click menu, almost all menu items in menu bar are also disabled.
+
+To fix this, firstly enable global registry following the steps: [[DocumentumConfiguration#globalregistry]]
+
+Then clear all cache of the App server that runs DA. Start it again. Enter DA. Select one document and press <shift-p> to force show the properties page of this item. After you close the properties page, all will be fixed.
+----
+CategoryDocumentum

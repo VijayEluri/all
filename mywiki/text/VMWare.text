@@ -1,0 +1,12 @@
+h1. no sync time
+
+add the following lines in .vmx file
+
+<pre>
+tools.syncTime = "FALSE"
+time.synchronize.continue = "FALSE"
+time.synchronize.restore = "FALSE"
+time.synchronize.resume.disk = "FALSE"
+time.synchronize.shrink = "FALSE"
+time.synchronize.tools.startup = "FALSE"
+</pre>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h2 id="1" class="title">10G2 on Linux</h2><div id="div1"><p>Kernel parameter: <br />
+<pre><code>cat &gt;&gt; /etc/sysctl.conf &lt;&lt;EOF
+kernel.shmall = 2097152
+kernel.shmmax = 536870912
+kernel.shmmni = 4096
+kernel.sem = 250 32000 100 128
+fs.file-max = 65536
+net.ipv4.ip_local_port_range = 1024 65000
+net.core.rmem_default=262144
+net.core.wmem_default=262144
+net.core.rmem_max=262144
+net.core.wmem_max=262144
+EOF
+/sbin/sysctl -p
+</code></pre></p>
+</div><h2 id="2" class="title">Oracle 10GR2 Installation on Solaris 10(sparc)</h2><div id="div2"><ol>
+	<li>create user/groups <br />
+<pre><code>groupadd -g 100 dba
+groupadd -g 101 oinstall
+useradd -u 101 -d /ora10g -g oinstall -G dba -m -s /usr/bin/bash oracle
+chown oracle:dba /ora10g</code></pre></li>
+	<li>edit /etc/system <br />
+<pre>cp /etc/system /etc/system.orig</pre> <br />
+add the following into system <br />
+<pre><code>set noexec_user_stack=1
+set semsys:seminfo_semmni=100
+set semsys:seminfo_semmns=1024
+set semsys:seminfo_semmsl=256
+set semsys:seminfo_semvmx=32767
+set shmsys:shminfo_shmmax=4294967295
+set shmsys:shminfo_shmmin=1
+set shmsys:shminfo_shmmni=100
+set shmsys:shminfo_shmseg=10</code></pre></li>
+	<li>edit owner env <br />
+<pre><code>su - oracle
+vi .bash_profile</code></pre><br />
+add the following lines: <br />
+<pre><code>umask 022
+export ORACLE_SID=DCTM
+export ORACLE_HOME=/ora10g/product/10.2.0/db_1
+export PATH=$ORACLE_HOME/bin:$PATH </code></pre></li>
+	<li>then logout to root, expand the installation file <br />
+<pre><code>cd /install
+gunzip 10gr2_db_sol.cpio.gz
+nohup cpio *idmv &lt; 10gr2_db_sol.cpio &amp;</code></pre></li>
+	<li>if install from console, disable xhost access control <br />
+<pre><code>/usr/openwin/bin/xhost +
+export DISPLAY=127.0.0.1:0.0</code></pre></li>
+	<li>run the installer <br />
+<pre><code>su * oracle
+cd /install
+./runInstaller</code></pre></li>
+</ol></div></div>
+</body></html>

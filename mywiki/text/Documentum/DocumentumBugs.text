@@ -1,0 +1,62 @@
+
+h1. 我遇到过的Documentum问题
+
+
+
+h2. Ticket登录中的DMCL内存泄露
+
+
+* 用户: 光大银行
+* 操作系统: HP-UX on RISC
+* 数据库: Oracle
+* 版本：5.3SP4
+* 生产
+
+问题表现：用户部署在WebLogic(on Windows)上的应用每隔几天遇到一次JVM crash退出。应用中调用了DFC，使用Ticket登录。
+
+问题原因：Ticket登录的底层dmcl代码有内存泄露，用户的应用大量使用了基于Ticket的登录，长时间运行后，整个应用程序使用的内存空间超过了Windows的2G进程内存限制，然后JVM崩溃。
+
+
+h2. 批量加载导致Content Server的documentum进程退出
+
+
+* 用户: 中国银行
+* 操作系统: AIX 5.3
+* 数据库: Oracle
+* 版本: 5.3SP5
+* 测试
+
+问题表现：用DFC API长时间加载时，documentum占用内存持续上涨，加载到约3000万条时，崩溃。
+
+问题原因：Documentum Bug，TSE提供Hotfix解决
+
+
+h2. Webtop无法稳定运行
+
+
+* 用户: 中国银行
+* 操作系统: AIX 5.3
+* 数据库: Oracle
+* 版本: 5.3SP4/5/6
+* 应用服务器: Tomcat on Windows
+* 应用服务器: Websphere on AIX
+
+问题现象：基于LoadRunner的Webtop压力脚本无法长时间稳定运行。在Websphere上运行约10分钟可导致Websphere退出。在Tomcat上运行1小时左右也会导致Tomcat退出。
+
+至今没有解决
+
+
+h2. BOCS在网络有丢包时无法正确回写到ACS
+
+
+* 用户：中国银行/华为
+* 操作系统: Linux
+* 数据库: Oracle
+* 版本: 6.0SP1 patch release
+
+问题现象：BOCS异步回写，华为在测试从俄罗斯的BOCS向总部回写时，发现总是无法成功。经在Lab中多次测试，发现当网络有一定的丢包率的时候，会导致BOCS回写ACS的异常终止，并且不自动重试，也不自动继续下一个。
+
+问题原因：在BOCS服务器上，有两个缓存目录：acsCache和primeStore。在异步回写模式下，UCF向BOCS写入的内容会写入primeStore中。当在服务器上Run AsyncWrite Job时，这个Job会生成一系列的任务，将任务提交给DMS，然后DMS会将消息发给BOCS，BOCS根据消息去将内容上载到ACS。在这个过程中，DMS会重试多次，确保BOCS可收到消息，但BOCS针对每个消息只试一次。在网络有数据包丢失的情况下，BOCS的上传过程会遇到一个java.io.EOFException，这个Exception估计开发人员没有去处理，因此在出现这个Exception的时候，整个BOCS上传的循环就退出了。
+
+----
+CategoryDocumentum

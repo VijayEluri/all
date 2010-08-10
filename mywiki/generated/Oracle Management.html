@@ -1,0 +1,115 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Display current charset</h1><div id="div1"><pre>
+select value from nls_database_parameters where parameter = 'NLS_CHARACTERSET';
+select value from nls_database_parameters where parameter = 'NLS_NCHAR_CHARACTERSET';
+</pre>
+</div><h1 id="2" class="title">Disable flashback</h1><div id="div2"><pre>
+exec dbms_flashback.disable;
+alter database flashback off;
+</pre>
+</div><h1 id="3" class="title">Change parameter</h1><div id="div3"><pre>
+show parameter &lt;parameter&gt;
+alter system set &lt;parameter&gt;=&lt;value&gt; scope=spfile
+</pre>
+</div><h1 id="4" class="title">Trace sql</h1><div id="div4"><pre>
+show parameter user_dump_dest;
+exec dbms_monitor.database_trace_enable(binds=&gt;TRUE);
+exec dbms_monitor.database_trace_disable;
+</pre>
+<p>Trace Analyzer from metalink:</p>
+<p>https://metalink.oracle.com/metalink/plsql/ml2_documents.showDocument?p_database_id=<span class="caps">NOT</span>&amp;p_id=224270.1</p>
+<p>Generate raw sql:</p>
+<pre>tkprof dctm_ora_4103.trc dctm_ora_4103.rpt record=dctm_ora_4103.sql</pre>
+</div><h1 id="5" class="title">Trun off logging</h1><div id="div5"><pre>
+alter system set "_disable_logging"=True scope=spfile;
+alter system set "_disable_logging"=False scope=spfile;
+</pre>
+</div><h1 id="6" class="title">Show user tablespaces</h1><div id="div6"><pre>
+col file_name format a50
+col tablespace_name format a10
+SELECT file_name, tablespace_name, ROUND(bytes/1024000) MB FROM dba_data_files ORDER BY file_name;
+
+set linesize 120
+SELECT tablespace_name, ROUND(SUM(total_mb)-SUM(free_mb)) CUR_USE_MB, 
+       ROUND(SUM(total_mb)) CUR_SZ_MB, 
+       ROUND((SUM(total_mb)-SUM(free_mb))/SUM(total_mb)*100) CUR_PCT_FULL, 
+       ROUND(SUM(max_mb) * (SUM(total_mb)-SUM(free_mb))) FREE_SPACE_MB,
+       ROUND(SUM(max_mb)) MAX_SZ_MB, 
+       ROUND((SUM(total_mb)-SUM(free_mb))/SUM(max_mb)*100) PCT_FULL
+FROM (
+  SELECT tablespace_name, SUM(bytes)/1024/1024 FREE_MB,
+  0 TOTAL_MB, 0 MAX_MB
+  FROM dba_free_space
+  GROUP BY tablespace_name
+  UNION
+  SELECT tablespace_name, 0 CURRENT_MB,
+  SUM(bytes)/1024/1024 TOTAL_MB,
+  SUM(DECODE(maxbytes,0,bytes, maxbytes))/1024/1024 MAX_MB
+  FROM dba_data_files
+  GROUP BY tablespace_name)
+GROUP BY tablespace_name;
+</pre>
+</div><h1 id="7" class="title">Add datafile into tablespace</h1><div id="div7"><pre>
+ALTER TABLESPACE ADD DATAFILE &lt;file_name&gt;,
+&lt;integer&gt;&lt;K | M | G | T&gt;
+[REUSE]
+&lt;autoextend&gt; &lt;ON | OFF&gt;
+NEXT &lt;integer&gt;&lt;K | M | G | T&gt;
+MAXSIZE &lt;integer&gt;&lt;K | M | G | T | UNLIMITED&gt;
+
+alter tablespace example add datafile '/oradata/example07.dbf' size 250m autoextend off;
+</pre>
+</div><h1 id="8" class="title">show table space usage</h1><div id="div8"><pre>
+break on report
+compute sum of tbs_size_mb on report
+compute sum of used        on report
+compute sum of avail       on report
+
+column tsname       format a20         heading 'Tablespace Name'
+column tbs_size_mb  format 999,999     heading 'Size|(MB)'
+column used         format 999,999     heading 'Used|(MB)'
+column avail        format 999,999     heading 'Free|(MB)'
+column used_visual  format a11         heading 'Used'
+column pct_used     format 999         heading '% Used'
+
+set linesize  1000
+set trimspool on
+set pagesize  32000
+set verify    off
+set feedback  off
+
+PROMPT
+PROMPT *************************
+PROMPT *** TABLESPACE STATUS ***
+PROMPT *************************
+
+SELECT   df.tablespace_name                           tsname
+,        sum(df.bytes)/1024/1024                      tbs_size_mb
+,        nvl(sum(e.used_bytes)/1024/1024,0)           used
+,        nvl(sum(f.free_bytes)/1024/1024,0)           avail
+,        rpad(' '||rpad('X',round(sum(e.used_bytes)
+*10/sum(df.bytes),0), 'X'),11,'-')           used_visual
+,        nvl((sum(e.used_bytes)*100)/sum(df.bytes),0) pct_used
+FROM     sys.dba_data_files df
+,        (SELECT   file_id
+,        sum(nvl(bytes,0)) used_bytes
+FROM     sys.dba_extents
+GROUP BY file_id) e
+,        (SELECT   max(bytes) free_bytes
+,        file_id
+FROM     dba_free_space
+GROUP BY file_id) f
+WHERE    e.file_id(+) = df.file_id
+AND      df.file_id   = f.file_id(+)
+GROUP BY df.tablespace_name
+ORDER BY 6
+/
+
+clear breaks
+</pre></div></div>
+</body></html>

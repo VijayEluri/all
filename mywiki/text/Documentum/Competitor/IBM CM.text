@@ -1,0 +1,45 @@
+h2. CM
+
+h3. Documents
+
+http://publib.boulder.ibm.com/infocenter/cmgmt/v8r3m0/index.jsp
+
+h3. Platforms
+
+* ref: http://www-306.ibm.com/software/data/cm/cmgr/mp/requirements.html
+* ref: http://www-1.ibm.com/support/docview.wss?rs=86&uid=swg21268156
+* 8.3: AIX, Windows, Solaris, Linux, HP-UX IA64(added from 8.3 Fix 7)
+* 8.4: AIX, Windows, Solaris, Linux
+* Database: DB2, Oracle
+
+h3. Components
+
+* Library server
+*** Need a database
+* Resource manager
+*** Running inside a web app server
+*** File can be stored distributely
+*** Can be configured to do partial replication, providing failover
+*** Need a database
+* CM Client for Windows
+*** triangle: library server/resource manager/cm client
+*** cm client *> library server: SQL request directly
+*** library server *> cm client: token and locator
+*** cm client *> resource manager: HTTP request
+* eClient (web based)
+*** client capabilities: http://www-1.ibm.com/support/docview.wss?uid=swg21220064
+* Administration client
+* Information Integrator for Content (ECI like)
+* CM VideoCharger
+* CM OnDemand
+
+h3. vs DCTM
+
+# No HP-UX support
+# No Sybase, SQL Server support
+# No lightweight cache component (BOCS)
+# Need many database instances
+# Doesn't support D&D on web
+# Cannot import multiple files through web
+# Cannot manipulate compond document(virtual document) through desktop/web
+# No web based administration client

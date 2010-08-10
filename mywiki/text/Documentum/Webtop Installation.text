@@ -1,0 +1,13 @@
+
+h1. Installation on Websphere Network Deploy Mode
+
+
+# Install Websphere using root user
+# set root's DOCUMENTUM and DOCUMENTUM_SHARED
+# run webtop installer
+# install webtop into a location
+# deploy webtop to cluster/server using deployment manager
+# run webtop installer again
+# deploy webtop to those server.
+----
+CategoryDocumentum

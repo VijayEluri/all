@@ -1,0 +1,243 @@
+h1. Applicability in S1000D
+
+S1000D中有适用性通过三个基础步骤使用：
+# 声明在内容的适用性声明中允许的条件或值。
+# 在内容中使用1中的声明进行适用性定义
+# 按适用性条件过滤内容
+
+h2. 适用性声明
+
+为了防止在书写适用性出现Typo，并共享多个事先写好的适用性声明，S1000D建议将适用性声明放在三类单独的适用性DM中，并在其它的DM中进行引用，这三类DM分别为：
+
+# ACT: Applicability Cross-ref Table
+  ACT用于定义产品属性，通常在生产时已经定义好，比如序号、型号等。
+# CCT: Conditions Cross-ref Table
+  CCT用于定义各种条件，比如是否结冰？pre/post SB等。
+# PCT: Product Cross-ref Table
+  PCT中是ACT和CCT的组合，定义一个具体的产品所有的相关属性和条件
+
+
+h3. ACT
+
+给定如下的一个ACT定义：
+
+pre.. 
+<dmodule>
+  <content>
+    <applicCrossRefTable>
+      <productAttributeList>
+        <productAttribute id="mfg">
+          <name>Manufacturer</name>
+          <descr>The name of the manufacturer</descr>
+          <enumeration applicPropertyValues = "AIRBUS|BOEING|DOUGLAS|PRATT|GE|ROLLS|GOODRICH"/>
+        </productAttribute>
+        <productAttribute id="tail">
+          <name>Tail Number</name>
+          <descr>Tail Number for an aircraft.</descr>
+          <enumeration applicPropertyValues = "3101~3102|3114~3178|3201|3203~3205|3209~3245|3247~3280|3301~3321|3351~3361|6622~6628|6631~6635"/>
+        </productAttribute>
+      </productAttributeList>
+    </applicCrossRefTable>
+  </content>
+</dmodule>
+
+p. 
+
+
+可以通过prodattr的方式在DM中进行引用，如：
+
+pre.. 
+<dmodule>
+  <identAndStatusSection>
+    <dmstatus>
+      <applic>
+        <assert applicPropertyIdent="tail" applicPropertyType= "prodattr" applicPropertyValues="3210"/>
+      </applic>
+    </dmstatus>
+  </identAndStatusSection>
+  <content>….</content>
+</dmodule>
+
+p. 
+
+
+如果applicPropertyType="condition"，则会去引用CCT中的条件。
+
+
+h3. CCT
+
+
+给定如下的CCT定义：
+
+pre.. 
+<condTypeList>
+  <condType id="yesno">
+    <name>Yes or No</name>
+    <descr>Boolean Type Yes or No</descr>
+    <enumeration applicPropertyValues="yes|no"/>
+  </condType>
+</condTypeList>
+<condList>
+  <cond id="icy" condTypeRefId="yesno">
+    <name>Icy</name>
+    <descr>Icy weather conditions</descr>
+  </cond>
+</condList>
+
+p. 
+
+
+在DM中的applic中可以这样引用：
+
+
+pre.. 
+<applic id="applic1">
+  <assert applicPropertyIdent="icy" applicPropertyType="condition" applicPropertyValues="yes"/>
+</applic>
+
+p. 
+
+
+在内容中则可以：
+
+pre.. 
+<para applicRefId="applic1">
+  De-ice the A/C
+</para>
+
+p. 
+
+
+h3. PCT
+
+
+比如：
+
+pre.. 
+<dmodule>
+  <content>
+    <productCrossRefTable>
+      <product>
+        <assign applicPropertyIdent ="mfg" applicPropertyType ="prodattr" applicPropertyValue ="AIRBUS"/>
+        <assign applicPropertyIdent ="modelseries" applicPropertyType ="prodattr" applicPropertyValue ="A319/A320"/>
+        <assign applicPropertyIdent ="tail" applicPropertyType ="prodattr" applicPropertyValue ="3101"/>
+        <assign applicPropertyIdent ="serialno" applicPropertyType ="prodattr" applicPropertyValue ="1058"/>
+        <assign applicPropertyIdent ="registry" applicPropertyType ="prodattr" applicPropertyValue ="N301NB"/>
+        <assign applicPropertyIdent ="ETOPS-AC" applicPropertyType ="condition" applicPropertyValue ="NON-ETOPS"/>
+      </product>
+      <product>
+        <assign applicPropertyIdent ="mfg" applicPropertyType ="prodattr" applicPropertyValue ="BOEING"/>
+        <assign applicPropertyIdent ="modelseries" applicPropertyType ="prodattr" applicPropertyValue ="B757200"/>
+        <assign applicPropertyIdent ="tail" applicPropertyType ="prodattr" applicPropertyValue ="5517"/>
+        <assign applicPropertyIdent ="custeff" applicPropertyType ="prodattr" applicPropertyValue ="517"/>
+        <assign applicPropertyIdent ="ETOPS-AC" applicPropertyType ="condition" applicPropertyValue ="NON-ETOPS"/>
+      </product>
+    </productCrossRefTable>
+  </content>
+</dmodule>
+
+p. 
+
+可以看到，PCT对ACT和CCT都有引用，但PCT中的每个product自己并没有id，无法被其它DM引用。所以，在其它DM的编写过程中，是不会引用PCT的内容作为适用性条件的。PCT更多地用于在发布的时候，将所有的Product列出来，供工程师进行快速的选择。因此PCT应该有能力记录一架飞机完整的构型信息，至少是所有的与手册/工卡相关的构型信息。
+
+
+h2. 适用性使用
+
+
+h3. 全局适用性
+
+比如：
+
+
+pre.. 
+<dmodule>
+  <identAndStatusSection>
+    <dmstatus>
+      <applic>
+        <displayText>
+          <simplePara>For model Mountain storm only</simplePara>
+        </displayText>
+        <assert applicPropertyIdent="model" applicPropertyValues="Mountain storm"/>
+      </applic>
+    </dmstatus>
+  </identAndStatusSection>
+  <content>….</content>
+</dmodule>
+
+p. 
+
+
+这就定义了一个全局适用性(<assert/>)，整个数据模块只有在model == "Mountain storem"时有效。<displayText/>则定义了一段描述性文字，用于解释下面的适用性条件。
+
+下面是一个多值的适用性声明，允许model取两个值中的一个：
+
+pre.. 
+<assert applicPropertyIdent="model" applicPropertyValues="Mountain storm | Brook trekker"/>
+
+p. 
+
+
+下面是更复杂的条件，允许type为"Mountain bike"，或model为"Brook trekker"
+
+pre.. 
+<applic>
+  <displayText>
+    <simplePara>All mountain bikes and models Brook trekker</simplePara>
+  </displayText>
+  <evaluate andOr="or">
+    <assert applicPropertyIdent="type" applicPropertyValues="Mountain bike"/>
+    <assert applicPropertyIdent="model" applicPropertyValues=“Brook trekker"/>
+  </evaluate>
+</applic>
+
+p. 
+
+
+再复杂一点的逻辑表达式：
+
+pre.. 
+<evaluate andOr="and">
+  <assert applicPropertyIdent="type“ applicPropertyValues="Mountain bicycle"/>
+  <evaluate andOr="or">
+    <evaluate andOr="and">
+      <assert applicPropertyIdent="model“ applicPropertyValues="Mountain storm"/>
+      <assert applicPropertyIdent="version" applicPropertyValues="Mk1"/>
+    </evaluate>
+    <evaluate andOr="and">
+      <assert applicPropertyIdent="model" applicPropertyValues="Brook trekker"/>
+      <assert applicPropertyIdent="version” applicPropertyValues="Mk9"/>
+    </evaluate>
+  </evaluate>
+</evaluate>
+
+p. 
+
+
+
+h3. 嵌入适用性
+
+
+pre.. 
+<dmodule>
+  <identAndStatusSection>
+    <dmstatus>
+      <referencedApplicGroup>
+        <applic id="myFirstApplicDefinition">
+          <assert applicPropertyIdent="model" applicPropertyValues="Mountain storm"/>
+        </applic>
+      </referencedApplicGroup>
+    </dmstatus>
+  </identAndStatusSection>
+  <content>
+    …
+    <para applicRefId="myFirstApplicDefinition">This para has applicability</para>
+    <para>This para is always visible</para>
+    <para applicRefId="myFirstApplicDefinition">This para has applicability</para>
+    …
+  </content>
+</dmodule>
+
+p. 
+
+
+先在<identAndStatusSection><dmstatus><referencedApplicGroup>中定义<applic/>，同时给其指定id，然后在<content>中通过applicRefId对其进行使用。

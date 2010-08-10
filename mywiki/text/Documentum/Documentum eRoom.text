@@ -1,0 +1,14 @@
+
+h2. Change File Server UserName/Password
+
+# open eRoom Admin
+# lock server
+# Right click Console Root->eRoom, select properties
+# Change the File Server user/pass
+
+h2. Remove trail warning
+
+* wwwroot/eRoom/thinclient/Body.asp
+* modify ''GenerateTrailWarning''
+----
+CategoryDocumentum

@@ -1,0 +1,22 @@
+
+h2. Object model design
+
+* Create an enterprise type derived form dm_document
+* Create subtypes of enterprise type, avoid going beyond 3-4 levels deep
+* Try to keep number of visible types to 7-10
+
+h2. Folder hierarchy design
+
+* Free-form
+* Locked-down
+* Hybrid
+** 1-3 levels locked-down
+** any level below 3rd level is free-form
+* No more than 5-6 levels deep, based on usability
+* No more than 20-30 subfolders per folder
+
+h2. Lifecycle design
+
+* lifecycle states are designed to be linear
+----
+CategoryDocumentum

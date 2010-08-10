@@ -1,0 +1,71 @@
+* Install sybase
+## set kernel parameter, increase memory allocation permit
+## add sybase group and user sybase:sybase
+## mount sybase iso
+## run setup as sybase
+## block size 4096 for D5/8192 for D6
+## config a new server/backup server/monitor server
+* Set sybase parameter
+## enter isql
+## Set the following parameters to the values shown:
+	 for D5 {{{
+sp_configure 'number of open objects', 2000
+sp_configure 'number of open indexes', 1000
+sp_configure 'number of locks', 20000
+sp_configure 'max memory', <number of 2k pages>
+}}}
+	 for D6/Sybase 15 {{{
+sp_configure 'number of open objects', 4000
+sp_configure 'number of open indexes', 3000
+sp_configure 'number of locks', 25000
+sp_configure 'number of user connections', 200
+sp_configure 'procedure cache size', 48000
+sp_configure 'number of open partitions', 2500
+sp_configure 'max memory', <number of 2k pages>
+}}}
+## Restart the Sybase server.
+* Set codepage to UTF8
+## Install the Sybase server with the UTF-8 code page.
+## Connect as Sybase administrator.
+## Using isql, connect and run the following query to determine if UTF-8 is installed: {{{
+1)use master
+2)go
+1)select name from syscharsets where name='utf8'
+2)go
+}}} If the query returns an answer, UTF-8 is installed.
+## Issue this command to determine whether UTF-8 is the default character set: {{{
+1: sp_configure 'default character set id'
+2: go 
+}}}
+## If UTF-8 is not installed or is not the default code page:
+*** Execute this command on the command-line to install the UTF-8 code page: {{{
+charset -Usa -Ppassword -Shost_name binary.srt utf8
+}}}
+*** Using isql, execute these commands to make UTF-8 the default code page: {{{
+1)use master
+2)go
+1)sp_configure 'default character set id',190
+2)go
+}}}
+## Restart the Sybase server.
+## Install Content Server and configure a repository.
+* Create database with page size larger than 2k {{{
+dbinit -p 4096
+dbinit -p 8192
+}}}
+* Increase the network packet size
+## Log in the ISQL.
+## Display the current maximum network packet size: {{{
+sp_configure "max network"
+}}}
+## Change the size to 4 K: {{{
+sp_configure "max network packet size", 4096
+}}}
+	 or to 8K {{{
+sp_configure "max network packet size", 8192
+}}}
+* Increase Sybase connections {{{
+sp_configure 'number of user connections', 200
+}}} watch the prompt messages, the command may be failed.
+----
+CategoryDocumentum

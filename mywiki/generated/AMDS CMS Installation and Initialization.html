@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Installation</h1><div id="div1"><ul>
+	<li>Create destination dir and cd into it</li>
+	<li>run <span class="caps">CMS</span> installer<br />
+<pre>java -jar path_to_AMDS-CMS_xxx_xxx.jar</pre></li>
+	<li>run project installer<br />
+<pre>java -jar path_to_ Docato-project-amds-cms-xxx.jar</pre></li>
+	<li>start <span class="caps">CMS</span> by starting tomcat</li>
+	<li>create default project, in Docato/bin, run <br />
+<pre>docato-ant -f ../../amds/<span class="caps">AMDS</span>-<span class="caps">CMS</span>/project/build.xml recreate-project</pre>
+	<ul>
+		<li>Default user/password: Administrator/secret</li>
+	</ul></li>
+	<li>Install <span class="caps">XEP</span></li>
+	<li>Install JustCGM and config
+	<ul>
+		<li>install JustCGM and copy license.dat into justcgm&#8217;s dir</li>
+		<li>log into <span class="caps">AMDS</span>-<span class="caps">CMS</span> and goto &#8220;Project&#8221; &#8594; &#8220;Info&#8221;, edit &#8220;JustCGM executable&#8221; to &#8220;C:/Program Files/Justcroft/JustCGM 4.2/fscgmint_f.exe&#8221;</li>
+		<li>You should config JustCGM before import any data modules so that the import process will generate tiff variant for cgm files.</li>
+	</ul></li>
+	<li>Install IsoView on all client machines to view <span class="caps">CGM</span>/<span class="caps">TIFF</span> graphics</li>
+</ul>
+</div><h1 id="2" class="title">Initialization</h1><div id="div2"><ul>
+	<li>import <span class="caps">ACT</span>/<span class="caps">CCT</span>/<span class="caps">PCT</span> and <span class="caps">BREX</span><br />
+<pre>cd /d C:\<span class="caps">AMDS</span>\Docato\bin\<br />
+docato-ant -f ..\..\amds\<span class="caps">AMDS</span>-<span class="caps">CMS</span>\project\build.xml import-s1000d-customer-package -Ddir=C:\shenzhen\brex_xct</pre></li>
+	<li>modify /definition-lists/carrier-def<br />
+<pre><code>&lt;body&gt;
+	&lt;row&gt;
+		&lt;cell&gt;NWA&lt;/cell&gt;
+		&lt;cell&gt;Northwest Airlines&lt;/cell&gt;
+	&lt;/row&gt;
+	&lt;row&gt;
+		&lt;cell&gt;SHENZHEN&lt;/cell&gt;
+		&lt;cell&gt;Shenzhen Airlines&lt;/cell&gt;
+	&lt;/row&gt;
+&lt;/body&gt;</code></pre></li>
+	<li>modify /definition-lists/ac-model-def<br />
+<pre><code>&lt;row&gt;
+   &lt;cell&gt;BOEING&lt;/cell&gt;
+   &lt;cell&gt;B737&lt;/cell&gt;
+   &lt;cell&gt;ALL&lt;/cell&gt;
+&lt;/row&gt;</code></pre></li>
+</ul></div></div>
+</body></html>

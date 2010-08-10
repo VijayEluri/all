@@ -1,0 +1,40 @@
+h1. Installation
+
+* Create destination dir and cd into it
+* run CMS installer
+<pre>java -jar path_to_AMDS-CMS_xxx_xxx.jar</pre>
+* run project installer
+<pre>java -jar path_to_ Docato-project-amds-cms-xxx.jar</pre>
+* start CMS by starting tomcat
+* create default project, in Docato/bin, run 
+<pre>docato-ant -f ../../amds/AMDS-CMS/project/build.xml recreate-project</pre>
+** Default user/password: Administrator/secret
+* Install XEP
+* Install JustCGM and config
+** install JustCGM and copy license.dat into justcgm's dir
+** log into AMDS-CMS and goto "Project" -> "Info", edit "JustCGM executable" to "C:/Program Files/Justcroft/JustCGM 4.2/fscgmint_f.exe"
+** You should config JustCGM before import any data modules so that the import process will generate tiff variant for cgm files.
+* Install IsoView on all client machines to view CGM/TIFF graphics
+
+h1. Initialization
+
+* import ACT/CCT/PCT and BREX
+<pre>cd /d C:\AMDS\Docato\bin\
+docato-ant -f ..\..\amds\AMDS-CMS\project\build.xml import-s1000d-customer-package -Ddir=C:\shenzhen\brex_xct</pre>
+* modify /definition-lists/carrier-def
+<pre><code><body>
+	<row>
+		<cell>NWA</cell>
+		<cell>Northwest Airlines</cell>
+	</row>
+	<row>
+		<cell>SHENZHEN</cell>
+		<cell>Shenzhen Airlines</cell>
+	</row>
+</body></code></pre>
+* modify /definition-lists/ac-model-def
+<pre><code><row>
+   <cell>BOEING</cell>
+   <cell>B737</cell>
+   <cell>ALL</cell>
+</row></code></pre>

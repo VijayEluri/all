@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h2 id="1" class="title">Uninstall Oracle on Windows</h2><div id="div1"><ol>
+	<li>Uninstall using Oracle universal installer</li>
+	<li>Reboot</li>
+	<li>Delete C:\Program Files\Oracle</li>
+	<li>Delete <span>ORACLE_HOME</span></li>
+	<li>Delete <span>ORACLE_DATA</span></li>
+	<li>Repair registry using NU Windoc</li>
+	<li>Delete registry key: <span class="caps">HKLM</span>\<span class="caps">SYSTEM</span>\CONTROLSET001\Enum\Root\LEGACY_ORACLE*</li>
+	<li>Delete registry key: <span class="caps">HKLM</span>\<span class="caps">SOFTWARE</span>\<span class="caps">ORACLE</span></li>
+	<li>Reboot</li>
+</ol>
+</div><h2 id="2" class="title">Migrating Oracle on Windows</h2><div id="div2"><ul>
+	<li>Copy files
+	<ul>
+		<li>$ORACLE_HOME/dbs   init$<span class="caps">SID</span>.ora</li>
+		<li>$ORACLE_HOME/admin  Directory</li>
+		<li>$ORACLE_HOME/network/admin all files</li>
+	</ul></li>
+	<li>Create new <span class="caps">SID</span> instance</li>
+</ul>
+<pre>
+oradim -new -sid &lt;SID&gt; -pfile &lt;full-init-ora-filename&gt;</pre>
+<p></p>
+<ul>
+	<li>set env ORACLE_SID</li>
+	<li>update the listener.ora and tnsnames.ora. <a href="/Sample%20listener.ora.html">/Sample listener.ora</a>, <a href="/Sample%20tnsnames.ora.html">/Sample tnsnames.ora</a></li>
+	<li>Connect and startup<br />
+&#8212;&#8212;<br />
+CategoryOracle</li>
+</ul></div></div>
+</body></html>

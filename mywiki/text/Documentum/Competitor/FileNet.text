@@ -1,0 +1,37 @@
+
+h2. Document
+
+
+ . goto: http://www.ibm.com/software/data/support
+ . select filenet product
+
+
+h2. Platform
+
+
+h3. Components
+
+* Content Engine
+ .object-oriented meta data model, Java/.NET/Web Service API, Unicode based, Running inside an application server
+## Content Engine Service
+## Content Engine Transport
+## Talk with other components via EJB/Web services
+## MMC snap-in Enterprise manager
+* Process Engine 
+  . talk with Content Engine/other components via IIOP
+* Image Services 
+  . Panagon-based. to integrate:
+** Image Services Resource Adapter is provided to access image service from Content Engine. ISRA is JCA adapter.
+** Content Federation Services for Image Services is provided to provide a deeper integration.
+* Application Engine(optional)
+ . presentation layer for both process and content.
+* Workplace XT(optional)
+** j2ee, web-based client.  
+** Office integrator. 
+** Component integrator. (Process Integrator-like)
+* Rendition Engine
+ . DTS-like, based on Liquent's RenderPerfect
+* Web Application Kit
+ . WDK-like. Workplace XT is built on it.
+----
+CategoryDocumentumCompetitors

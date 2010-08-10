@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<ul>
+	<li>carrier-def<br />
+  定义Carrier code，CMS中carrier code的popup使用这个数据</li>
+</ul>
+<ul>
+	<li>effgrp-def<br />
+  定义所有的effgrp，这个effgrp与ACT/<span class="caps">CCT</span>/PCT无关，在airplane-def中会引用，在Work card中会引用。Work card不使用xCT。</li>
+</ul>
+<ul>
+	<li>airplane-def<br />
+  定义所有的airplane，airplane属于fleet，fleet属于carrier<br />
+<pre><code>&lt;carrier&gt;
+    &lt;carrier-code&gt;SHENZHEN&lt;/carrier-code&gt;
+    &lt;fleet&gt;
+        &lt;type&gt;
+            &lt;mfg&gt;BOEING&lt;/mfg&gt;
+            &lt;model&gt;B737&lt;/model&gt;
+            &lt;dash&gt;ALL&lt;/dash&gt;
+        &lt;/type&gt;
+        &lt;airplane&gt;
+            &lt;airplane-tail&gt;5510&lt;/airplane-tail&gt;
+            &lt;airplane-msn&gt;23190&lt;/airplane-msn&gt;
+            &lt;airplane-csn&gt;N501US&lt;/airplane-csn&gt;
+            &lt;effgrp&gt;501&lt;/effgrp&gt;
+            &lt;effgrp&gt;502&lt;/effgrp&gt;
+        &lt;/airplane&gt;
+    &lt;/fleet&gt;
+&lt;/carrier&gt;</code></pre><br />
+  在这里定义了：一个fleet中，每一个airplane与相应的effgrp之间的关系。当在DS系统中工卡查询的时候选择一个tail number时，系统会从这个定义中查找到相应的effgrp，一个airplane可对应多个effgrp，然后用这里的effgrp去apply到workcard上，产生相应的单机工卡。</li>
+</ul>
+<ul>
+	<li>ac-model-def<br />
+  定义所有的飞机型号，CMS中Fleet的popup使用这个数据</li>
+</ul>
+<ul>
+	<li><span class="caps">ACT</span>/<span class="caps">CCT</span>/<span class="caps">PCT</span><br />
+  <span class="caps">ACT</span>/<span class="caps">CCT</span>/PCT现在只在DM中起作用，在work card中是不起作用的。导入DM之前，需要有正确的ACT/<span class="caps">CCT</span>/PCT，在DS中浏览手册时，也使用PCT中的定义去apply applicability，通过PCT中的一个具体的产品找到相应的custeff数值，然后将其apply到DM上。DM在从SGML转换来的时候，SGML中的<effect>标签实际上被转换成了<applic>下的custeff属性。</li>
+</ul></div>
+</body></html>

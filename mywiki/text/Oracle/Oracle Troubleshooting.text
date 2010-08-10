@@ -1,0 +1,10 @@
+h2. Cannot connect / as sysdba
+
+try comment the line
+
+<pre>
+SQLNET_AUTHENTICATION_SERVICES= (NONE)
+</pre>
+
+in the file $ORACLE_HOME/network/admin/sqlnet.ora
+

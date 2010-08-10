@@ -1,0 +1,24 @@
+
+
+pre.. 
+LISTENER =
+ (ADDRESS_LIST=
+      (ADDRESS=(PROTOCOL=tcp)(HOST=server1)(PORT=1521))
+      (ADDRESS=(PROTOCOL=ipc)(KEY=PNPKEY))) 
+SID_LIST_LISTENER=
+  (SID_LIST=
+      (SID_DESC=
+         (GLOBAL_DBNAME=ORAHOME92)
+         (SID_NAME=EMC)               
+        (ORACLE_HOME=E:\oracle\ora92)
+        (PRESPAWN_MAX=20)
+          (PRESPAWN_LIST=
+          (PRESPAWN_DESC=(PROTOCOL=tcp)(POOL_SIZE=2)(TIMEOUT=1))
+        )
+       )
+      )
+
+p. 
+
+----
+CategoryOracle

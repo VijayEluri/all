@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h2 id="1" class="title">Object model design</h2><div id="div1"><ul>
+	<li>Create an enterprise type derived form dm_document</li>
+	<li>Create subtypes of enterprise type, avoid going beyond 3-4 levels deep</li>
+	<li>Try to keep number of visible types to 7-10</li>
+</ul>
+</div><h2 id="2" class="title">Folder hierarchy design</h2><div id="div2"><ul>
+	<li>Free-form</li>
+	<li>Locked-down</li>
+	<li>Hybrid
+	<ul>
+		<li>1-3 levels locked-down</li>
+		<li>any level below 3rd level is free-form</li>
+	</ul></li>
+	<li>No more than 5-6 levels deep, based on usability</li>
+	<li>No more than 20-30 subfolders per folder</li>
+</ul>
+</div><h2 id="3" class="title">Lifecycle design</h2><div id="div3"><ul>
+	<li>lifecycle states are designed to be linear<br />
+&#8212;&#8212;<br />
+CategoryDocumentum</li>
+</ul></div></div>
+</body></html>

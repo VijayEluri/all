@@ -1,0 +1,36 @@
+h1. References
+
+* [[http://www.jedi.be/blog/2009/04/10/rails-and-large-large-file-uploads-looking-at-the-alternatives/]]
+* [[http://www.motionstandingstill.com/nginx-upload-awesomeness/2008-08-13/]]
+* [[http://www.motionstandingstill.com/ngnix-upload-awesomeness-pt2/2008-08-20/]]
+
+h1. Nginx with upload module installation
+
+* Download sources
+** [[http://nginx.net/]]
+** [[http://www.grid.net.ru/nginx/upload.en.html]]
+* Extract and config
+<pre>$ ./configure --add-module=../nginx_upload_module-2.0.9/</pre>
+* Make and make install
+
+h1. Configuration
+
+<pre>
+  location /upload {
+    upload_pass /internal_upload;
+    upload_store /tmp;
+    upload_set_form_field $upload_field_name.name "$upload_file_name";
+    upload_set_form_field $upload_field_name.content_type "$upload_content_type";
+    upload_set_form_field $upload_field_name.path "$upload_tmp_path";
+    upload_store_access user:rw group:rw all:rw;
+    upload_pass_form_field "^authenticity_token$";
+  }
+  
+  location /internal_upload {
+    proxy_pass http://0.0.0.0:3000/upload
+  }
+</pre>
+
+h1. Test
+
+<pre>curl -F datafile['file']=@MVI_4725.AVI http://localhost:80/upload</pre>

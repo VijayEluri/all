@@ -1,0 +1,1586 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+<script>function a(c){this.t={};this.tick=function(d,e,b){var f=b?b:(new Date).getTime();this.t[d]=[f,e]};this.tick("start",null,c)}var g=new a;window.jstiming={Timer:a,load:g};try{window.jstiming.pt=window.external.pageT}catch(h){};
+</script>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<!-- base -->
+<title>绿坝-花季护航软件技术分析</title>
+<style type="text/css">
+/* default css */
+table {
+font-size: 1em;
+line-height: inherit;
+border-collapse: collapse;
+}
+tr {
+text-align: left;
+}
+div, address, ol, ul, li, option, select {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+p {
+margin: 0px;
+}
+pre {
+font-family: Courier New;
+white-space: pre-wrap;
+margin:0;
+}
+body {
+margin: 6px;
+padding: 0px;
+font-family: Verdana, sans-serif;
+font-size: 10pt;
+background-color: #ffffff;
+}
+img {
+-moz-force-broken-image-icon: 1;
+}
+@media screen {
+html.pageview {
+background-color: #f3f3f3 !important;
+}
+body {
+min-height: 1100px;
+counter-reset: __goog_page__;
+}
+* html body {
+height: 1100px;
+}
+.pageview body {
+border-top: 1px solid #ccc;
+border-left: 1px solid #ccc;
+border-right: 2px solid #bbb;
+border-bottom: 2px solid #bbb;
+width: 648px !important;
+margin: 15px auto 25px;
+padding: 40px 50px;
+}
+/* IE6 */
+* html {
+overflow-y: scroll;
+}
+* html.pageview body {
+overflow-x: auto;
+}
+/* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+html*#wys_frame::before {
+content: '\A0';
+position: fixed;
+overflow: hidden;
+width: 0;
+height: 0;
+top: 0;
+left: 0;
+}
+.writely-callout-data {
+display: none;
+*display: inline-block;
+*width: 0;
+*height: 0;
+*overflow: hidden;
+}
+.writely-footnote-marker {
+background-image: url('images/footnote_doc_icon.gif');
+background-color: transparent;
+background-repeat: no-repeat;
+width: 7px;
+overflow: hidden;
+height: 16px;
+vertical-align: top;
+-moz-user-select: none;
+}
+.editor .writely-footnote-marker {
+cursor: move;
+}
+.writely-footnote-marker-highlight {
+background-position: -15px 0;
+-moz-user-select: text;
+}
+.writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+background: transparent;
+}
+.writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+background: transparent;
+}
+.writely-footnote-hide-selection {
+cursor: move;
+}
+.editor .writely-comment-yellow {
+background-color: #FF9;
+background-position: -240px 0;
+}
+.editor .writely-comment-yellow-hover {
+background-color: #FF0;
+background-position: -224px 0;
+}
+.editor .writely-comment-blue {
+background-color: #C0D3FF;
+background-position: -16px 0;
+}
+.editor .writely-comment-blue-hover {
+background-color: #6292FE;
+background-position: 0 0;
+}
+.editor .writely-comment-orange {
+background-color: #FFDEAD;
+background-position: -80px 0;
+}
+.editor .writely-comment-orange-hover {
+background-color: #F90;
+background-position: -64px 0;
+}
+.editor .writely-comment-green {
+background-color: #99FBB3;
+background-position: -48px 0;
+}
+.editor .writely-comment-green-hover {
+background-color: #00F442;
+background-position: -32px 0;
+}
+.editor .writely-comment-cyan {
+background-color: #CFF;
+background-position: -208px 0;
+}
+.editor .writely-comment-cyan-hover {
+background-color: #0FF;
+background-position: -192px 0;
+}
+.editor .writely-comment-purple {
+background-color: #EBCCFF;
+background-position: -144px 0;
+}
+.editor .writely-comment-purple-hover {
+background-color: #90F;
+background-position: -128px 0;
+}
+.editor .writely-comment-magenta {
+background-color: #FCF;
+background-position: -112px 0;
+}
+.editor .writely-comment-magenta-hover {
+background-color: #F0F;
+background-position: -96px 0;
+}
+.editor .writely-comment-red {
+background-color: #FFCACA;
+background-position: -176px 0;
+}
+.editor .writely-comment-red-hover {
+background-color: #FF7A7A;
+background-position: -160px 0;
+}
+.editor .writely-comment-marker {
+background-image: url('images/markericons_horiz.gif');
+background-color: transparent;
+padding-right: 11px;
+background-repeat: no-repeat;
+width: 16px;
+height: 16px;
+-moz-user-select: none;
+}
+.editor .writely-comment-hidden {
+padding: 0;
+background: none;
+}
+.editor .writely-comment-marker-hidden {
+background: none;
+padding: 0;
+width: 0;
+}
+.editor .writely-comment-none {
+opacity: .2;
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+-moz-opacity: .2;
+}
+.editor .writely-comment-none-hover {
+opacity: .2;
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+-moz-opacity: .2;
+}
+.br_fix br:not(:-moz-last-node):not(:-moz-first-node) {
+position:relative;
+left: -1ex
+}
+.br_fix br+br {
+position: static !important
+}
+#cb-p-tgt {
+font-size: 8pt;
+padding: .4em;
+font-style: oblique;
+background-color: #FFF1A8;
+border: 1px solid #000;
+}
+}
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+blockquote {padding: 10px; border: 1px #DDD dashed }
+.webkit-indent-blockquote { border: none; }
+a img {border: 0}
+.pb {
+border-width: 0;
+page-break-after: always;
+/* We don't want this to be resizeable, so enforce a width and height
+using !important */
+height: 1px !important;
+width: 100% !important;
+}
+.editor .pb {
+border-top: 1px dashed #C0C0C0;
+border-bottom: 1px dashed #C0C0C0;
+}
+div.google_header, div.google_footer {
+position: relative;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+/* Table of contents */
+.editor div.writely-toc {
+background-color: #f3f3f3;
+border: 1px solid #ccc;
+}
+.writely-toc > ol {
+padding-left: 3em;
+font-weight: bold;
+}
+ol.writely-toc-subheading {
+padding-left: 1em;
+font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+list-style-position: inside;
+}
+.writely-toc-none {
+list-style-type: none;
+}
+.writely-toc-decimal {
+list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+list-style-type: lower-roman;
+}
+.writely-toc-disc {
+list-style-type: disc;
+}
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+list-style-type: disc;
+}
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+list-style-type: decimal;
+}
+/* end default css */
+/* custom css */
+/* end custom css */
+/* ui edited css */
+body {
+font-family: Verdana;
+font-size: 10.0pt;
+line-height: normal;
+background-color: #ffffff;
+}
+/* end ui edited css */
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+.editor div.google_header, .editor div.google_footer {
+border: 2px #DDDDDD dashed;
+position: static;
+width: 100%;
+min-height: 2em;
+}
+.editor .misspell {background-color: yellow}
+.editor .writely-comment {
+font-size: 9pt;
+line-height: 1.4;
+padding: 1px;
+border: 1px dashed #C0C0C0
+}
+/* end editor CSS */
+</style>
+<style>
+body {
+margin: 0px;
+}
+#doc-contents {
+margin: 6px;
+}
+#google-view-footer {
+clear: both;
+border-top: thin solid;
+padding-top: 0.3em;
+padding-bottom: 0.3em;
+}
+a.google-small-link:link, a.google-small-link:visited {
+color:#112ABB;
+font-family:Arial,Sans-serif;
+font-size:11px !important;
+}
+body, p, div, td {
+direction: inherit;
+}
+@media print {
+#google-view-footer {
+display: none;
+}
+}
+</style>
+<script>
+function viewOnLoad() {
+if (document.location.href.indexOf('spi=1') != -1) {
+if (navigator.userAgent.toLowerCase().indexOf('msie') != -1) {
+window.print();
+} else {
+window.setTimeout(window.print, 10);
+}
+}
+if (document.location.href.indexOf('hgd=1') != -1) {
+var footer = document.getElementById("google-view-footer");
+if (footer) {
+footer.style.display = 'none';
+}
+}
+}
+</script>
+</head><body onload="window.jstiming.load.tick('ol'); window.jstiming.report(window.jstiming.load, null, document.location.protocol == 'https:' ? 'https://gg.google.com/csi' : null);">
+<div id="doc-contents">
+<h1>
+绿坝-花季护航软件技术分析（不断更新中）<br>
+<span style="color: rgb(153, 153, 153);">A Technical Analysis of the 'Green Dam-Youth Escort' Software</span><br>
+</h1>
+<div>
+<br>
+</div>
+<div>
+协作组编写<span style="color: rgb(153, 153, 153);"> A collaborative work</span><br>
+</div>
+<div>
+2009年6月 <span style="color: rgb(153, 153, 153);">June, 2009</span><br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<hr>
+</div>
+<div style="text-align: center;"><br></div><div style="text-align: center;">
+目 &nbsp; &nbsp; 录<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<ol>
+<li>
+<a id="t7i1" href="#1.%E5%85%B3%E4%BA%8E_About" title="关于 About">关于 About</a>&nbsp;</li>
+<li>
+<a href="#2.%E7%9B%AE%E7%9A%84%E5%92%8C%E5%8A%9F%E8%83%BD_Objectives_and_functions" id="n:ny" title="目的和功能 Objectives and functions">目的和功能 Objectives and functions</a>&nbsp;<br>
+</li>
+<li>
+<a href="#3.%E9%80%82%E7%94%A8%E6%80%A7_Applicability" id="yj9g" title="适用性 Applicability">适用性 Applicability</a>&nbsp;<br>
+</li>
+<li>
+<a href="#4.%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90_Technical_Framework_Ana" id="c_-b" title="技术架构分析 Technical Framework Analysis">技术架构分析 Technical Framework Analysis</a>&nbsp;<br>
+</li>
+<li>
+<a href="#5.%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF_contents_detection_meth" id="wupk" title="内容检测技术 contents detection methods">内容检测技术 contents detection methods</a>&nbsp;<br>
+</li>
+<li>
+<a href="#6.%E8%A2%AB%E7%9B%91%E6%8E%A7%E3%80%81%E5%B1%8F%E8%94%BD%E7%9A%84%E5%85%B3%E9%94%AE%E8%AF%8D%E3%80%81URL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90" id="lisq" title="被监控、屏蔽的关键词、URL数据库文件分析">被监控、屏蔽的关键词、URL数据库文件分析</a>&nbsp;<br>
+</li>
+<li>
+<a href="#7.%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C_User_experience" id="kv.q" title="用户体验 User experience">用户体验 User experience</a>&nbsp;<br>
+</li>
+<li>
+<a href="#8.%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%BE%B5%E5%AE%B3_Copyright_infringement" id="enk_" title="知识产权侵害 Copyright infringement">知识产权侵害 Copyright infringement</a>&nbsp;<br>
+</li>
+<li>
+<a href="#9.%E6%BD%9C%E5%9C%A8%E9%A3%8E%E9%99%A9_Vulnerabilities" id="wga7" title="潜在风险 Vulnerabilities">潜在风险 Vulnerabilities</a>&nbsp;<br>
+</li>
+<li>
+<a href="#10.%E5%AA%92%E4%BD%93%E6%8A%A5%E9%81%93_Media_coverage" id="xv1t" title="媒体报道 Media coverage">媒体报道 Media coverage</a>&nbsp;<br>
+</li>
+<li>
+<a href="#links" id="xp1h" title="相关文件 Links">相关文件 Links</a>&nbsp;<br>
+</li>
+</ol>
+</div>
+<div>
+<br>
+</div>
+<div>
+<hr>
+</div>
+<div>
+<br>
+</div>
+<div>
+<h2>
+<a id="qpzs" name="1.关于_About"></a>1.关于 <span style="color: rgb(153, 153, 153);">About</span><br>
+</h2>
+<br>
+绿坝-花季护航是郑州金惠的“金惠堵截黄色图像和不良信息专家系统”以及北京大正的“花季护航上网管理软件”组合之后的市场产品名。<span style="color: rgb(102, 102, 102);"><br>
+<span style="color: rgb(153, 153, 153); background-color: rgb(255, 153, 0);"><span style="background-color: rgb(255, 255, 255);">Green
+Dam is the informal name given to the combination of two commercial
+products: a pornographic image and harmful information blocking system
+from Jinhui Technologies in Zhengzhou, Henan province and the
+Beijing-based Zhengda Corporation's 'Youth Escort' Internet activity
+management software.</span></span></span><br>
+<br>
+金惠堵截黄色图像和不良信息专家系统 V2.51<br>
+项目总监 赵慧琴 <span style="color: rgb(153, 153, 153);">Project Director: Zhao Huiqin</span><br>
+技术总监 周翚 <span style="color: rgb(153, 153, 153);">Technical Director: Zhou Hui</span><br>
+总设计师 汤怀礼 <span style="color: rgb(153, 153, 153);">Chief Designer: Tang Huaili</span><br>
+策划经理 何红杰 <span style="color: rgb(153, 153, 153);">Project Manager: He Hongjie</span><br>
+项目工程师 李弼程 ,曹闻 ,彭天强 ,钟声 ,李晓贺 ,李扬 ,<span style="background-color: rgb(255, 255, 255);">李书进黄亮</span> ,张文中 <span style="color: rgb(153, 153, 153);">Project Engineers: Li Bicheng, Cao Wen, Peng Tianqiang, Zhong Sheng, Li Xiaohe, Li Yang, Zhang Wenzhong</span><br>
+测&nbsp; 试 Mary 马,&nbsp; Sharon 张, 董娟 <span style="color: rgb(153, 153, 153);">Beta Testers: Mary Ma, Sharon Zhang, Dong Juan</span><br>
+文&nbsp; 档 张晨民，刘裕 ,Biddle 张 <span style="color: rgb(153, 153, 153);">Documentation: Zhang Chenmin, Liu Yu, Biddle Zhang</span><br>
+系统支持 吴朝阳, 宜娟 ,刘移山 ,丁敏 <span style="color: rgb(153, 153, 153);">Systems Support: Wu Chaoyang, Xuan Juan, Liu Yishan, Ding Min</span><br>
+金惠科技 版权 (c) 2005 所有权利保留 Http://www.zzjinhui.com <span style="color: rgb(153, 153, 153);">©2009 Jinhui Technologies. All Rights Reserved</span><br>
+<br>
+1)国家公安部信息安全专用产品销售许可证（XKC30492）<span style="color: rgb(153, 153, 153);">National Ministry of Public Safety Information Security Product Sales License No. XKC30492</span><br>
+2)国家发展和改革委员会批准(发改高技[2004]2040号)列入“重大软件产业化专项”，是全国同类过滤产品唯一批准项目 <span style="color: rgb(153, 153, 153);">National
+Development and Reform Commission Approval (NDRC Circular[2004]#2040)
+as "Major Software Industrialization Project", the only approved
+filtering software project of its kind nationwide</span><br>
+3)国家科技部（国科发技字[2004]449号）批准为“技术创新基金项目” <span style="color: rgb(153, 153, 153);">Ministry of Science and Technology (MOST Circular[2004]#449) Approval for "technological innovation project funding"</span><br>
+4)国家信息产业部（信部运[2005]9号）批准为“电子信息产业发展基金项目” <span style="color: rgb(153, 153, 153);">Ministry
+of Industry and Information Technology (MIIT Circular[2005]#9) Approval
+for "electronic information industry development project funding"</span><br>
+国家互联网违法和不良信息举报中心(net.china.cn)唯一正式推荐 <span style="color: rgb(153, 153, 153);">Only the China Internet Illegal Information Reporting Center (ciirc.china.cn) has officially recommended Green Dam.</span><br>
+第九届中国国际软件博览会荣获金奖 <span style="color: rgb(153, 153, 153);">Awarded first prize at the Ninth Chinese International Software Expo</span><br>
+2005中国郑州先进适用技术交易会金奖 <span style="color: rgb(153, 153, 153);">First prize at the 2005 Zhengzhou Advanced Adaptive Technology Trade Fair</span><br>
+郑州市科技进步一等奖 <span style="color: rgb(153, 153, 153);">First prize in technological advancement from Zhengzhou City</span><br>
+金惠公司营销服务中心电话：0371-63697160，63697161<span style="color: rgb(153, 153, 153);"> Jinhui Marketing Service Center: 0371-63697160</span><br style="color: rgb(153, 153, 153);">
+<span style="color: rgb(153, 153, 153);"> 传真：0371-63697171 Fax: 0371-63697171</span><br>
+<br>
+</div>
+<h2>
+<a id="ywfo" name="2.目的和功能_Objectives_and_functions"></a>2.目的和功能 <span style="color: rgb(153, 153, 153);">Objectives and functions</span><br>
+</h2>
+<div>
+<span style="font-family: arial,helvetica,sans-serif;">以工信部，教育部，财政部和国务院新闻办为<a href="http://www.lssw365.net/lvhang/index.php/Content/index/pid/1/sort/3/id/512" style="color: rgb(51, 102, 204);">合作伙伴</a>，绿坝目前有<a href="http://bbs.lssw365.net/lvhang/index.php/List/index/pid/2/sort/6" style="color: rgb(51, 102, 204);" title="家庭版">家庭版</a>，<a href="http://bbs.lssw365.net/lvhang/index.php/List/index/pid/2/sort/16" style="color: rgb(51, 102, 204);" title="厂商版">厂商版</a>，<a href="http://bbs.lssw365.net/lvhang/index.php/List/index/pid/2/sort/17" style="color: rgb(51, 102, 204);" title="渠道版">渠道版</a>，<a href="http://bbs.lssw365.net/lvhang/index.php/List/index/pid/2/sort/18" style="color: rgb(51, 102, 204);" title="网吧版">网吧版</a>以及<a href="http://bbs.lssw365.net/lvhang/index.php/List/index/pid/2/sort/19" style="color: rgb(51, 102, 204);" title="校园版">校园版</a>（家庭版与校园版经校验后发现完全一致，没有发现有官员版和五毛版，目前也没有发布人脑版）。<span style="color: rgb(153, 153, 153);">With
+the Ministry of Industry and Information Technology, Ministry of
+Education, Ministry of Finance and State Council Information Department
+as its partners, Greed Dam currently offers Family</span></span><span style="color: rgb(153, 153, 153);">, Commercial, Organization, Internet Bar and Campus Editions.&nbsp; </span>
+</div>
+<div>
+<br>
+</div>
+<div>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif">公开宣称的功能： 针对10-16岁青少年，过滤色情图片、色情内容、暴力内容、</font><font class="Apple-style-span" face="arial, helvetica, sans-serif">过滤反审查软件（例如无界）</font>。
+</div>
+<div>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif">潜在功能：过滤政治内容？<br>
+<span style="color: rgb(153, 153, 153);">Stated features: To protect minors from age 10-16 through the filtering of pornographic and violent images and content, also </span></font><font class="Apple-style-span" face="arial, helvetica, sans-serif"><span style="color: rgb(153, 153, 153);">circumvention software</span></font><font class="Apple-style-span" face="arial, helvetica, sans-serif"><span style="color: rgb(153, 153, 153);">.</span><br style="color: rgb(153, 153, 153);">
+<span style="color: rgb(153, 153, 153);"> Latent features: To filter political content?</span><br>
+</font>
+</div>
+<div>
+<br>
+还有一个绿坝网络版，在 http://www.zzjinhui.com/down/newServerCard.rar 可以下载。<br>
+<span style="color: rgb(153, 153, 153);">There also exists a Network Edition of Green Dam, which can be downloaded </span><a href="http://www.zzjinhui.com/down/newServerCard.rar" id="v:8b" style="color: rgb(153, 153, 153);" title="here">here</a><span style="color: rgb(153, 153, 153);"> (.rar).</span><br>
+</div>
+<h2>
+<a id="rty5" name="3.适用性_Applicability"></a>3.适用性 <span style="color: rgb(153, 153, 153);">Applicability</span><br>
+</h2>
+<div>
+虽然产品声明的目标是针对10-16岁青少年，但是产品的约定安装机器并没有选择性，产品缺省假设每台被安装的机器都是青少年使用。目前该产品只提供
+Windows 版本，对IE、Google Chrome（因为采用了系统的网络设置）有效，对Firefox
+无效。软件屏蔽的不良信息包括时政类的不良信息，软件并非采用一般软件的安装方式，对Firefox无效，关闭浏览器及将网址加入黑名单无确认。在IE下
+,对明显属于时政类“不良信息”的信息判断不稳定。对色情类“不良信息”的网页判断较准。换成Firefox后，软件没反应。&nbsp;
+</div>
+<div>
+<span style="color: rgb(153, 153, 153);">Current versions only support
+Windows; effective only when used in conjunction with Internet Explorer
+or Google Chrome, it has no effect when used with Firefox. The harmful
+information screened by the software includes politically-related
+harmful information, and the software relies on non-conventional
+methods to install, also ineffective within Firefox, closing the
+browser and adding the website address onto a banned list without
+confirmation. In Internet Explorer, the software's ability to classify
+clearly political content as "harmful information" is unreliable; for
+pornographic content, Green Dam is able to make relatively accurate
+assessments. When used with Firefox, however, the software shows no
+response.</span><br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<div>
+<u><b> 产品当前支持的兼容性列表</b></u>&nbsp;
+</div>
+<div>
+<b style="color: rgb(153, 153, 153);"><u>Compatibility list of currently supported projects</u></b><br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<u> 序号 项目 内容 备注 <span style="color: rgb(153, 153, 153);">Sequence / Item / Content/ Notes</span><br>
+</u>
+</div>
+<div>
+<b>操作系统 <span style="color: rgb(153, 153, 153);">Operation Systems</span><br>
+</b>
+</div>
+<div>
+1 Win98 兼容 不支持屏幕文字监控 <span style="color: rgb(153, 153, 153);">1. Windows 98, compatible, text screening not supported</span><br>
+</div>
+<div>
+2 Win2000 兼容 <span style="color: rgb(153, 153, 153);">2. Windows 2000, compatible</span><br>
+</div>
+<div>
+3 Winxp 兼容 <span style="color: rgb(153, 153, 153);">3. Windows XP, compatible </span>
+</div>
+<div>
+4 Win vista 兼容 安装升级和卸载需管理员身份 <span style="color: rgb(153, 153, 153);">4. Windows Vista, compatible, updates and uninstall can only be performed through User Account Control.</span><br>
+</div>
+<div>
+<b>浏览器 <span style="color: rgb(153, 153, 153);">Browsers</span><br>
+</b>
+</div>
+<div>
+1 IE6.0/7.0 兼容 <span style="color: rgb(153, 153, 153);">1. Internet Explorer 6.0/70, compatible </span>
+</div>
+<div>
+<b> 2 Opera 9.5 兼容 <span style="color: rgb(153, 153, 153);">2. Opera 9.5, </span></b><span style="color: rgb(153, 153, 153);">compatible </span>
+</div>
+<div>
+<b> 3 Firefox 2.0 兼容 <span style="color: rgb(153, 153, 153);">3. Firefox 2.0, </span></b><span style="color: rgb(153, 153, 153);">compatible </span>
+</div>
+<div>
+<b> 4 Netscape 9.0 兼容 <span style="color: rgb(153, 153, 153);">4. Netscape 9.0, </span></b><span style="color: rgb(153, 153, 153);">compatible </span>
+</div>
+<div>
+5 腾讯TT 3.0 兼容 <span style="color: rgb(153, 153, 153);">5. Tencent Traveler 3.0, compatible </span>
+</div>
+<div>
+6 Maxthon 2.0 兼容 <span style="color: rgb(153, 153, 153);">6. Maxthon 2.0, compatible </span>
+</div>
+<div>
+<b>办公软件 Office Software</b><br>
+</div>
+<div>
+1 MS Office2003 兼容 <span style="color: rgb(153, 153, 153);">1. Microsoft Office 2003, compatible </span>
+</div>
+<div>
+2 金山WPS 2007 兼容 <span style="color: rgb(153, 153, 153);">2. Kingsoft WPS 2007, compatible </span>
+</div>
+<div>
+3 永中Office2007 兼容 <span style="color: rgb(153, 153, 153);">Evermore Office 2007, compatible </span>
+</div>
+<div>
+<b>杀毒软件 Anti-virus Software</b><br>
+</div>
+<div>
+1 卡巴斯基6/7 兼容 <span style="color: rgb(153, 153, 153);">1. Kaspersky 6/7, compatible </span>
+</div>
+<div>
+2 瑞星19 兼容 <span style="color: rgb(153, 153, 153);">2. Rising 19, compatible </span>
+</div>
+<div>
+3 江民2008 兼容 <span style="color: rgb(153, 153, 153);">3. Jiangmin 2008, compatible </span>
+</div>
+<div>
+4 诺顿2008 兼容 <span style="color: rgb(153, 153, 153);">4. Norton 2008, compatible </span>
+</div>
+<div>
+5 McAfee2008 兼容 <span style="color: rgb(153, 153, 153);">5. McAfee 2008, compatible </span>
+</div>
+<div>
+</div>
+</div>
+<div>
+</div>
+<div>
+<br>
+</div>
+<h2>
+<a id="z5_m" name="4.技术架构分析_Technical_Framework_Ana"></a>4.技术架构分析 <span style="color: rgb(153, 153, 153);">Technical Framework Analysis</span>
+</h2>
+<h3>
+程序结构 <span style="color: rgb(153, 153, 153);">software architecture </span>
+</h3>
+<div>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif">绿坝-花季护航”所有的文件都安装在系统目录（</font>%WinDir%和%WinSysDir%<font class="Apple-style-span" face="arial, helvetica, sans-serif">）下，程序菜单没有提供卸载入口，后发现卸载功能在主程序的一个菜单里。在启用“绿坝-花季护航”的图片过滤功能时，软件自动清除的浏览器缓存。<br>
+<span style="color: rgb(153, 153, 153);">All files within "Green Dam-Youth Escort" are installed to the system directory (</span></font><span style="color: rgb(153, 153, 153);">%WinDir% and %WinSysDir%</span><font class="Apple-style-span" face="arial, helvetica, sans-serif"><span style="color: rgb(153, 153, 153);">),
+and while no means to uninstall are provided in the Applications menu,
+the option to uninstall can be found in a menu within the main program.
+When launching Green Dam's image filtering function, the software
+automatically clears the browser cache.</span><br>
+<br>
+在</font>%WinDir%<font class="Apple-style-span" face="arial, helvetica, sans-serif">目录下的xstring.s2g存放着该软件所有文件的安装路径。<span style="color: rgb(153, 153, 153);">Within xstring.s2g, located in the Windows directory, there can be found all the installation paths for all the program's files.</span><br>
+</font>
+</div>
+<div>
+<br>
+</div>
+<div>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif">运行时加载的模块：</font>
+</div>
+<div>
+<span style="font-family: arial,helvetica,sans-serif;">驱动： C:Windows\system32\Drivers\mgtaki.sys<br>
+服务： C:Windows\MPSvcC.exe<br>
+启动项： C:Windows\system32\xnet2.exe<br>
+<span style="color: rgb(153, 153, 153);">During operation, Green Dam installs the following modules:</span><br style="color: rgb(153, 153, 153);">
+<span style="color: rgb(153, 153, 153);"> Drivers: </span></span><span style="font-family: arial,helvetica,sans-serif; color: rgb(153, 153, 153);">C:Windows\system32\Drivers\mgtaki.sys<br>
+Service: C:Windows\MPSvcC.exe<br>
+Launch: C:Windows\system32\xnet2.exe</span><br>
+<br>
+<span style="font-family: arial,sans-serif;"><span style="font-family: Verdana,sans-serif;"><font size="2">经鉴定 ，是XDaemon.exe、XNet2.exe、gn.exe三个程序相互保护，防止被删掉和结束进程。 这是一种通常被病毒和流流氓软件所使用的技术。<br>
+</font></span></span><span style="color: rgb(153, 153, 153);">Following
+evaluation, three applications, XDaemon.exe, XNet2.exe and gn.exe, can
+be seen to be protecting one another, preventing each process from
+being deleted or interrupted, a kind of technique used by malware...</span><br>
+</div>
+<div>
+<br>
+绿坝将密码用MD5算法转换后，以文本方式保存在system32目录下的kwpwf.dll文件中。以记事本打开该文件，以“D0970714757783E6CF17B26FB8E2298F”替换其内容后保存，即可将密码恢复为初始密码“112233”。<br>
+<span style="color: rgb(153, 153, 153);">After Green Dam converts the
+password using the MD5 algorithm, it saves it in text format within the
+kwpwf.dll file located in the C:\WINDOWS\system32 directory. When
+opened using Notepad, if the content is then replaced with
+"D0970714757783E6CF17B26FB8E2298F" and saved, the password can then be
+restored to the original "112233".&nbsp;</span>
+</div>
+<br>
+<div>
+<br>
+</div>
+<div>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif">
+</font><div style="margin-right: 0px; margin-left: 0px;">
+<font class="Apple-style-span" face="arial, helvetica, sans-serif"><font size="1"> <font size="2">绿坝的通过网络<a href="http://www.zzjinhui.com/softpatch/" id="m609" title="自动更新">自动更新</a><font size="1">，<span style="color: rgb(153, 153, 153);">同目录下里面还包含一张</span><a href="http://www.zzjinhui.com/softpatch/Image0.jpg" style="color: rgb(153, 153, 153);">美女图</a><span style="color: rgb(153, 153, 153);">不知是何用意。在经过网络用户的分析后，发现 </span><a href="http://www.zzjinhui.com/softpatch/kwupdate.dat" style="color: rgb(153, 153, 153);">http://www.zzjinhui.com/softpatch/kwupdate.dat</a><span style="color: rgb(153, 153, 153);"> 此文件和屏蔽关键词和URL有关。有2个相关IP：211.161.1.134和 203.171.236.231，其中第二个IP指向 河南省郑州市景安计算机网络技术有限公司。(zzidc.com.cn)</span></font></font></font><font style="color: rgb(0, 0, 0);" face="arial, sans-serif"><span style="font-family: Simsun;"><font size="2"><span style="font-family: verdana,arial,helvetica,sans-serif;"><span style="color: rgb(153, 153, 153);">——（已失效）</span><br>
+Green Dam updates automatically online, and the update address is: </span></font></span></font><font class="Apple-style-span" style="color: rgb(0, 0, 0);" face="arial, helvetica, sans-serif"><span style="font-family: arial,sans-serif;"><a href="http://www.zzjinhui.com/softpatch/" target="_blank">http://www.zzjinhui.com/softpatch/</a>;</span></font> <font style="color: rgb(153, 153, 153);" size="1">found
+therein is a pretty woman picture
+http://www.zzjinhui.com/softpatch/Image0.jpg although its purpose is
+unknown. Following analysis by Internet users, it was discovered that
+the file <a href="http://www.zzjinhui.com/softpatch/kwupdate.dat">http://www.zzjinhui.com/softpatch/kwupdate.dat</a>
+is related to the filtering of keywords and URLs. Connected to that are
+two IP addresses: 211.161.1.134 and 203.171.236.231; the second of the
+IP addresses belongs to Zhengzhou Giant Computer Network Technology Co.
+Ltd. in Henan province. (zzidc.com.cn)&nbsp; <font size="2">- (unavailable since yesterday)</font></font><br style="color: rgb(0, 0, 0);">
+<br style="background-color: rgb(255, 242, 204);">
+</font></div>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif"></font>
+</div>
+<h3>
+<a id="gld0" name="5.内容检测技术_contents_detection_meth"></a>5.内容检测技术 <span style="color: rgb(153, 153, 153);">Content detection methods</span><br>
+</h3>
+<h4>
+图像过滤 <span style="color: rgb(153, 153, 153);">Image filtering</span><br>
+</h4>
+图像检测进程从待检图像队列中获取图像数据，先归一化图像尺寸，然后分离肤色区域和非肤色区域，在对肤色区域关系进行分析后去除干扰，提取区域的特征送入
+已训练SVM分类器。当图像被检为色情图像后送入人脸检测器，若人脸不是主要部分便确定为色情图像。这套算法的主要问题是，色情图像的识别严重依赖于肤色
+和肤色形状；而最后使用人脸检测加权判定也只是手工打补丁避免出现大幅人脸识别为色情图像问题的办法，且经验权值可靠性缺乏验证。<br>
+<span style="color: rgb(153, 153, 153);">The process of image detection
+begins when visual data is obtaining as the image is in queue to be
+screened, first normalizing the image's size, then separating areas of
+skin tone from those without skin tone; analysis of the relationship
+between areas of skin tone is followed by removal of noises, then
+extraction of the area's characteristics, which are then input into a
+trained SVM classifier. Once the image has been deemed pornographic it
+is sent to a human face detector; if a human face is not the primary
+component, the image is then classified as pornography. The main
+problem with this algorithm is that recognition of pornographic images
+relies heavily on skin color and shape, and the final use of a human
+face detector in a weighted judgment is only a manual patch aimed at
+preventing the problematic occurrence of large faces being identified
+as pornography, but also the reliability of empirical weighting lacks
+verification.</span><br>
+<br>
+<div style="text-align: left;">
+<span style="background-color: rgb(252, 229, 205);"><span style="background-color: rgb(243, 243, 243);">从
+XFImage.xml可观察到，绿霸使用了OpenCV的haar分类器进行人脸检测。绿霸附带的cximage.dll、CImage.dll、
+xcore.dll和Xcv.dll也来自OpenCV的库文件。都反映出绿霸主要使用了OpenCV来进行图像方面的处理。不过就像一般国产软件的做
+法，绿霸大概也无视了OpenCV的BSD许可证。<br>
+<span style="color: rgb(153, 153, 153);">From XFImage.xml it can be
+observed that Green Dam uses OpenCV's Haar classifier in undergoing
+human face detection. Included with Green Dam, cximage.dll, CImage.dll,
+xcore.dll and Xcv.dll, also library files from OpenCV. This all
+suggests that Green Dam primarily uses OpenCV to process images.
+However, as is done with much of </span></span></span><span style="background-color: rgb(252, 229, 205); color: rgb(153, 153, 153);"><span style="background-color: rgb(243, 243, 243);">domestic </span></span><span style="background-color: rgb(252, 229, 205);"><span style="background-color: rgb(243, 243, 243); color: rgb(153, 153, 153);">Chinese software, Green Dam has disregarded OpenCV's BSD license.&nbsp; </span><br>
+<br style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">金惠公司承诺</span></span><span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">图像检测正检率&gt;90%，误检率&lt;7%，而</span>检出率 = 正检率*色情图像比例 + (1 – 误检率)*(1–色情图像比例)，在色情图像占1%时，检出率为93%。<br>
+<span style="color: rgb(153, 153, 153);">Jinhui Corporation has
+committed to an accurate image detection rate of higher than 90%, and a
+false detection rate of less than 7%, with the detection rate=accurate
+detection rate*proportion of pornographic images＋(1-false detection
+rate)*(1-proportion of pornographic images); with 1% of images being
+pornographic, the detection rate would be 93%.</span><br>
+</div>
+<div>
+<br>
+<div>
+<h4>
+文字过滤 <span style="color: rgb(153, 153, 153);">Text filtering</span><br>
+</h4>
+</div>
+对政治性内容的分析，包括法轮功内容的过滤，使用了北京大正语言知识处理科技有限公司提供的文字过滤引擎HncEng.exe、HncEngPS.dll、SentenceObj.dll，<span style="font-family: arial,sans-serif;">数据文件HNCLIB/FalunWord.lib 中<span style="font-family: Verdana,sans-serif;">还包含以<span style="color: rgb(0, 0, 0); background-color: rgb(255, 153, 0);">UTF-32LE</span>编码的除法轮功外大量政治和色情有关的词汇。<br>
+<span style="color: rgb(153, 153, 153);">An a</span></span></span><span style="color: rgb(153, 153, 153);">nalysis
+of political content, including the filtering of Falun Gong-related
+content, shows that used is Beijing Dazheng Language Technology Co.
+Ltd.'s text filtering engine, HncEng.exe, HncEngPS.dll and
+SentenceObj.dll, and within data file HNCLIB/FalunWord.lib, in UTF-32LE
+code, aside from Falun Gong there can also be found a large glossary
+related to political and pornographic content.</span><br>
+<br>
+<span style="font-family: arial,sans-serif;">从数据文件HNCLIB/FalunWord.lib中分析出来的<a href="http://filetwt.com/f/bn734dm89h" id="y573" title="关键词列表">关键词列表</a>；</span><span style="font-family: arial,sans-serif;">更完整的解析出的<a href="https://docs.google.com/View?docid=d7w7twp_977hcmc35g3" id="x0bl" title="关键词">关键词</a>。</span></div><div><span style="font-family: arial,sans-serif;">（典型关键字包括，“法轮功”，“六四”，“天安门”，“江泽民”，等）</span><br>
+<br style="background-color: rgb(255, 255, 255);">
+<font class="Apple-style-span" style="background-color: rgb(255, 255, 255);" face="arial, helvetica, sans-serif">UMich的团队<a href="http://scott.wolchok.org/greendam.html" id="d925" target="_blank" title="报告">报告</a>通过反向工程解出了绿霸安装在system32下的若干dat加密文件的<a href="http://scott.wolchok.org/gddec.c" id="p6bq" target="_blank" title="解码方式">解码方式</a>，经过解码发现多数dat文件来自美产过滤软件CYBERsitter的关键字列表（<span style="font-family: monospace,sans-serif;"><span style="font-family: arial,helvetica,sans-serif;"><font size="2"><a href="http://initiative.yo2.cn/archives/640704" id="j20c" title="在解密后的csnews.dat中发现了CYBERsitter的Readme内容原封不动地拷贝下来">在解密后的csnews.dat中发现了CYBERsitter的Readme内容原封不动地拷贝下来</a>），另外几个dat文件（xword?.dat）则主要包含关于色情、政治和法轮功的词汇。</font></span></span></font>
+</div>
+<div>
+<span style="color: rgb(153, 153, 153);"> A team from the University of
+Michigan has reverse-engineered and decoded the encrypted dat files
+installed by Green Dam to the system32 directory, finding that many of
+these encrypted files appear to be banned keyword lists from the
+US-made CYBERsitter censorware circa 2006, and other files of interest
+include several dat files which contain sexual and political terms, as
+well as others related to Falun Gong.</span><br style="color: rgb(153, 153, 153);">
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<h4>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif">应用程序屏蔽</font> <span style="color: rgb(153, 153, 153);">Application screening</span><br>
+</h4>
+<i>
+<div>
+<strike style="color: rgb(0, 0, 0);"><span style="font-style: normal;">对应用程序使用时间的控制 </span>Regarding control over application usage time</strike>&nbsp;
+</div>
+</i>
+</div>
+<div>
+</div>
+<br>
+<div>
+<div>
+金惠公司称，绿霸可以禁止各种网络游戏（如征途、魔兽世界）、聊天(如QQ、MSN)等程序，定制黑白名单过滤实效更强，阻断以代理服务器或代理类软件而躲避网址屏蔽的匿名浏览（如自由门）<i> (金惠堵截黄色图像及不良信息专家系统FAQ-20080520)</i>。<br>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif"><span style="color: rgb(153, 153, 153);">Jinhui
+claims that Green Dam can disable kinds of online game, instant
+messager with customizable blacklists and whitelists for effectiveness,
+meanwhile block some anonymous browsing proxy software such as FreeGate.</span></font><br>
+<br>
+<span style="font-family: arial,sans-serif;">在system32中的filtport.dat 文件 ，默认内容是FreeGate/8567/tcp Urf/9666/tcp，推测就是对自由门和无界软件进行屏蔽的配置文件。</span>
+<div>
+</div>
+<span style="font-family: arial,sans-serif;"><span style="font-family: Verdana,sans-serif;"><font style="color: rgb(153, 153, 153);" size="2">两个进程：xdaemon.exe和xnet2.exe，</font><span style="background-color: rgb(255, 255, 0); color: rgb(153, 153, 153);">进入无界页面</span><font size="2"><span style="background-color: rgb(255, 255, 0); color: rgb(153, 153, 153);">会.....&nbsp;</span><br>
+Screening of anticircumvention software, such as FreeGate. In system32
+there can be found a filtport.dat file whose default content reads: </font></span></span><span style="font-family: arial,sans-serif;"><span style="font-family: Verdana,sans-serif;"><span style="font-family: arial,sans-serif;"><font size="2">FreeGate/8567/tcp Urf/9666/tcp.</font></span></span></span><span style="font-family: arial,sans-serif;"><span style="font-family: Verdana,sans-serif;"><font size="2"> <span style="color: rgb(153, 153, 153);">Two processes, xdaemon.exe and xnet2.exe, upon entering FreeGa</span></font></span></span><span style="color: rgb(153, 153, 153);">te will......</span><br>
+&nbsp;
+</div>
+<div>
+</div>
+</div>
+<h3>
+控制技术 <span style="color: rgb(153, 153, 153);">Controlling techniques</span><br>
+</h3>
+金惠公司称，绿霸软件能够控制未成年人上网、QQ、MSN及游戏的时间，避免过度沉溺于网络，有效戒除网瘾<font face="arial, helvetica, sans-serif">（</font>谈判响应书<font face="arial, helvetica, sans-serif">）；</font><font class="Apple-style-span" face="arial, helvetica, sans-serif"><span style="color: rgb(153, 153, 153);">Jjinhui
+claims that Green Dam can controls the time minors spend online, using
+QQ or MSN, and playing games; by preventing overindulgence of the
+Internet, Green Dam effectively eliminates Internet addiction.</span><br>
+</font>
+<div>
+<br>
+<h4>
+应用程序监控 <span style="color: rgb(153, 153, 153);">Application monitoring</span><br>
+</h4>
+<div>
+<font class="Apple-style-span" face="arial, helvetica, sans-serif">经过测试，发现如果在记事本或者WordPad中输入任何“法轮功”字样，都会关闭应用程序，但是在绘图板和MSN中输入这些字则不会有反应，这也说明其程序的不完备性。<span style="color: rgb(153, 153, 153);">Testing</span></font><span style="color: rgb(153, 153, 153);">
+has shown that if any word resembling "Falun Gong" is entered into
+either Notepad or WordPad, the application will shut down; however,
+typing the same characters into Paint or MSN Messenger bears no
+response, illustrating the incompleteness of the the program.</span><br>
+</div>
+<div>
+<br>
+</div>
+<blockquote class="webkit-indent-blockquote" style="border: medium none ; margin: 0pt 0pt 0pt 40px;">
+部分反编译的内容发现有多种应用程序是其监控的对象。<br>
+<span style="color: rgb(153, 153, 153);">A segment of decompiled content shows the extent of the Green Dam's monitoring.</span><br>
+<br>
+<span style="font-family: arial,sans-serif;">00468940 &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+.wow.exe.魔兽世界....yaho</span><br>
+<span style="font-family: arial,sans-serif;">00468980 &nbsp;omessenger.exe..雅虎通..wangwang.exe....阿里旺旺....start.exe...</span><br>
+<span style="font-family: arial,sans-serif;">004689C0 &nbsp;网易POPO....网易popo....uc.exe..新浪UC..新浪uc..icq.exe.ICQ6....</span><br>
+<span style="font-family: arial,sans-serif;">00468A00 &nbsp;icq6....skype.exe...Skype...skype...eph.exe.e话通...doshow..msnm</span><br>
+<span style="font-family: arial,sans-serif;">00468A40 &nbsp;sgr.exe.MSN.msn messenger...qqgame.exe..QQ游戏..qq游戏..qqchat.e</span><br>
+<span style="font-family: arial,sans-serif;">00468A80 &nbsp;xe..QQ聊天室....qq聊天室....qq.exe..QQ..qq2.bitbomet.exe....BitC</span><br>
+<span style="font-family: arial,sans-serif;">00468AC0 &nbsp;omet....bitcomet....<br>
+</span>
+</blockquote>
+</div>
+<div>
+<br>
+</div>
+<div>
+<font class="Apple-style-span" size="3"><font size="2">从</font></font><font class="Apple-style-span" size="3"><font size="2">injlib.exe中（偏移地址</font></font><font class="Apple-style-span" size="3"><font size="2">0x89e8</font></font><font class="Apple-style-span" size="3"><font size="2">）提取出的字串，反映出一部分</font></font><font class="Apple-style-span" size="3"><font size="2">可能受监控的程序：</font></font>
+</div>
+<div>
+<span style="color: rgb(153, 153, 153);">Possibly monitored programs (found in injlib.exe, offset 89e8H): </span><br>
+<br>
+</div>
+editplus.exe uedit32.exe emeditor.exe wordpad.exe notepad.exe wps.exe
+wpp.exe et.exe powerpnt.exe frontpg.exe excel.exe msaccess.exe
+outlook.exe winword.exe mailmagic.exe popo.exe<br>
+qqmail.exe aixmail.exe imapp.exe incmail.exe msimn.exe dm2005.exe
+foxmail.exe googletalk.exe miranda32.exe imu.exe ypager.exe tmshell.exe
+start.exe uc.exe icqchatrobot.exe qq.exe msnmsgr.exe gsfbwsr.exe
+greenbrowser.exe touchnet.exe theworld.exe maxthon.exe ttraveler.exe
+netscp.exe ge.exe firefox.exe opera.exe netcaptor.exe myie.exe
+iexplore.exe mmc.exe regedit.exe taskmgr.exe&nbsp;
+<div>
+<strike>mpsvcc.exe&nbsp; </strike>
+</div>
+<div>
+<strike> xdaemon.exe&nbsp; </strike>
+</div>
+<strike> xnet2.exe </strike>&nbsp;<br>
+<br>
+几乎市面上所有常见文本编辑工具（EditPlus, UltraEdit, EmEditor）、办公软件（WPS三部件，MS Office系列）、邮件客户端、IM客户端、浏览器都会受到监视。<br>
+<span style="color: rgb(153, 153, 153);">It seems that nearly all text
+editors on the market (EditPlus, UltraEdit, EmEditor), office software
+suites (WPS, MS Office), e-mail clients, instant messaging clients and
+browsers, are being monitored.</span><br>
+&nbsp;
+<h4>
+网络监控 <span style="color: rgb(153, 153, 153);">Internet monitoring</span><br>
+</h4>
+金惠公司在文档中称，“绿坝”通过Winsock2的SPI接口获取发送和接收的数据，对这些数据进行分析，获取HTTP数据，将HTTP<span style="background-color: rgb(255, 255, 255);">协议数据解析</span>后，经过URL检测器，不良URL检测器和关键字检测器后，根据检测结果决定是否需要使用图像检测器，通过图像检测将新发现的不良网址提供给系统管理员。
+<div>
+<span style="color: rgb(153, 153, 153);">In documentation, Jinhui
+claims that "Green Dam" utilizes the Winsock2 SPI port to obtain data
+from both sender and recipient, and through analyzing these data,
+obtains http data. Having obtained http data protocol and run through a
+URL detector, a harmful URL detector and a keyword detector, Green Dam
+decides based on those results whether or not image detection is
+needed, and through image detection, addresses of websites containing
+harmful information are delivered to system management.</span><br>
+&nbsp;
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<h2>
+<a id="ymm6" name="6.被监控、屏蔽的关键词、URL数据库文件分析"></a>6.被监控、屏蔽的关键词、URL数据库文件分析 <span style="color: rgb(153, 153, 153);">Analysis of the library files involved in monitoring or screening keywords and URL data</span><br>
+</h2>
+<div>
+<br>
+</div>
+<div>
+<div>
+<div>
+现放出来自直接解密安装路径下的 .dat 文件的关键字列表，并稍加解说
+</div>
+<div>
+<br>
+</div>
+<div>
+wfile.dat - <a id="o41v" href="http://privatepaste.com/450zZe32hn" title="http://privatepaste.com/450zZe32hn">http://privatepaste.com/450zZe32hn</a>
+</div>
+<div>
+这个文件说明了过滤文件类型
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div><span style="background-color: rgb(255, 242, 204);">
+TrustUrl.dat - </span><a id="vk7v" href="http://privatepaste.com/4c0Q3tzzb0" title="http://privatepaste.com/4c0Q3tzzb0"><span style="background-color: rgb(255, 242, 204);">http://privatepaste.com/4c0Q3tzzb0</span></a>
+</div>
+<div><span style="background-color: rgb(255, 242, 204);">
+信任网址。这些网站毫无疑问都是老大哥信得过的。值得全球站长屏蔽这些网站。这是滤霸软件中最有价值的一份列表
+</span></div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+vgamfil.dat - <a id="zz38" href="http://privatepaste.com/1auoil5bP2" title="http://privatepaste.com/1auoil5bP2">http://privatepaste.com/1auoil5bP2</a>
+</div>
+<div>
+所谓“暴力”游戏类。都有屏蔽了什么游戏呢？Quake，Quake2，Quake3，你们PLA训练用的counter-strike.net，F22
+Raptor，古墓丽影（这也算暴力类？），古墓丽影II，星际争霸（暴力类？我看是“封建迷信”吧？），暴雪母公司
+activision.com，duke4.com，万年跳票的dukeforever.com，ff8online.com，half-
+life.com，stormtroopers.com，unreal.org等等。建议大家以后只打清廉战士。
+</div>
+<div>
+<br>
+</div>
+<div>
+chtfil.dat - <a id="m75j" href="http://privatepaste.com/32hbY5XUgy" title="http://privatepaste.com/32hbY5XUgy">http://privatepaste.com/32hbY5XUgy</a>
+</div>
+<div>
+屏蔽了AOL，AIM，Yahoo，MSN
+</div>
+<div>
+<br>
+</div>
+<div>
+csnews.dat - <a id="s6:5" href="http://privatepaste.com/bb1RyuqiVu" title="http://privatepaste.com/bb1RyuqiVu">http://privatepaste.com/bb1RyuqiVu</a>
+</div>
+<div>
+这个文件是最喜剧的，滤霸抄袭美国人的过滤库就算了，还很临时工的把cybersitter别人的readme文件一起抄过来了
+</div>
+<div>
+<br>
+</div>
+<div>
+entfil.dat - <a id="k.21" href="http://privatepaste.com/bd0qklsJuD" title="http://privatepaste.com/bd0qklsJuD">http://privatepaste.com/bd0qklsJuD</a>
+</div>
+<div>娱乐类过滤。这里屏蔽了BSG和Firefly的scifi.com，StarTrek.com，StarWars.com，这样Geek四大
+剧就被围剿得一个不剩了。另外southpark、pokemon、xfiles和BritneySpears也是监视关键字。blizzard.com
+暴雪公司官方网站被屏蔽
+</div>
+<div>
+<br>
+</div>
+<div>
+finfil.dat - <a id="s8na" href="http://privatepaste.com/b414bkBNPv" title="http://privatepaste.com/b414bkBNPv">http://privatepaste.com/b414bkBNPv</a>
+</div>
+<div>
+金融类过滤。包括华尔街时报www.wsj.com，www.ft.com，www.sec.gov等
+</div>
+<div>
+<br>
+</div>
+<div>
+fmfil.dat - http://privatepaste.com/3d114bf1mD
+</div>
+<div>
+电子邮件监控。hotmail.com，gmail.com，甚至www.mail开头的都会受到特别关注。
+</div>
+<div>
+<br>
+</div>
+<div>
+fshrfil.dat - <a id="yqee" href="http://privatepaste.com/b8kPPu9ZiV" title="http://privatepaste.com/b8kPPu9ZiV">http://privatepaste.com/b8kPPu9ZiV</a>
+</div>
+<div>
+文件共享监控。监控市面上几乎所有的P2P客户端和软件。gnutella, bearshare, emule, wrapster,&nbsp;
+</div>
+<div>
+scourexchange, imesh, audiogalaxy, kazaa, filesharing, morpheus, limewire,&nbsp;
+</div>
+<div>
+javalimewire, gnutella, wrapster, scourexchange, shareaza, kazaalite,&nbsp;
+</div>
+<div>
+bittorrent, azureus
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+gdwfil.dat - <a id="s5pa" href="http://privatepaste.com/49ftIfdRqJ" title="http://privatepaste.com/49ftIfdRqJ">http://privatepaste.com/49ftIfdRqJ</a>
+</div>
+<div>屏蔽了amazon.com，还有这款山寨软件的祖宗
+cybersitter*.com，download.windowsupdate.com，liveupdate.symantec.com，symantec.liveupdate.com，microsoft.com，symantec.com，windowsupdate.com，zdnet.com。
+也就是说安装了某软件，Windows的补丁和杀毒软件升级，要么被监控，要么就被直接屏蔽了。有人说这个文件是白名单，请问在同一个列表里的
+amnesty.org，virgin-boys，porno-free.net这些东西也可能是白名单吗？&nbsp;
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+imgfil.dat - <a id="rj_0" href="http://privatepaste.com/cehwHinyM0" title="http://privatepaste.com/cehwHinyM0">http://privatepaste.com/cehwHinyM0</a>
+</div>
+<div>这里屏蔽了很多图片类网站，只要URL包含下列字符就会像GFW一样被RST，例如google.ca/image，google.com
+/image，当然还有Yahoo的yahoo.com/image，还有视频搜索屏蔽
+searchcat=vid，video.search.yahoo。请问老大哥究竟有什么见不得人的东西要把图片和视频搜索统统屏蔽呢？
+</div>
+<div>
+<br>
+</div>
+<div>
+mp3fil.dat - <a id="eh9y" href="http://privatepaste.com/f0uBTti5uh" title="http://privatepaste.com/f0uBTti5uh">http://privatepaste.com/f0uBTti5uh</a>
+</div>
+<div>mp3类。封杀了一些MP3共享软件，例如gnutella, bearshare, wrapster, scourexchange,
+imesh, audiogalaxy, kazaa, filesharing, morpheus, limewire, gnutella,
+wrapster, scourexchange
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+wrestfil.dat - <a id="h1.l" href="http://privatepaste.com/eapAh32NC8" title="http://privatepaste.com/eapAh32NC8">http://privatepaste.com/eapAh32NC8</a>
+</div>
+<div>
+摔跤类。主要是WWE美摔之类的被屏蔽了。没有屏蔽K1，说明的确是抄袭cybersitter
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+pkmon.dat - <a id="fry1" href="http://privatepaste.com/580KvOFYV4" title="http://privatepaste.com/580KvOFYV4">http://privatepaste.com/580KvOFYV4</a> (POKEMON!)
+</div>
+<div>
+文件名就很囧。这份名单貌似过滤了一些anime和manga
+</div>
+<div>
+<br>
+</div>
+<div>
+sporfil.dat - <a id="km0e" href="http://privatepaste.com/e20QeOlezv" title="http://privatepaste.com/e20QeOlezv">http://privatepaste.com/e20QeOlezv</a>
+</div>
+<div>
+体育类过滤。屏蔽了www.nba.com和wnba.com，还有其他的太多了。。。
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+--------------------分割线--------------------
+</div>
+<div>
+<br>
+</div>
+<div>
+下面的.dat文件内容，几乎都来自cybersitter，山寨程度可见一斑
+</div>
+<div>
+<br>
+</div>
+<div>
+wfileu.dat - http://privatepaste.com/9c0oaeS0i1
+</div>
+<div>
+这个网址就是cybersitter的升级地址了，居然还保留了。你说滤霸这软件山寨不山寨？
+</div>
+<div>
+<br>
+</div>
+<div>
+wzfil.dat - http://privatepaste.com/170Epo2wTZ
+</div>
+<div>
+游戏破解
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+adwapp.dat - http://privatepaste.com/aey5BIlkyx
+</div>
+<div>
+adult类网站过滤（严格）
+</div>
+<div>
+<br>
+</div>
+<div>
+adwfil.dat - http://privatepaste.com/091MdBUyDv
+</div>
+<div>
+adult类网站过滤
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+lgwfil.dat - http://privatepaste.com/a1ndIrVvEn
+</div>
+<div>
+同志类网站，不熟悉，不评价。
+</div>
+<div>
+<br>
+</div>
+<div>
+iawfil.dat - http://privatepaste.com/951A0xSKW2
+</div>
+<div>
+非法类。照抄cybersitter的名单
+</div>
+<div>
+<br>
+</div>
+<div>
+auctfil.dat - http://privatepaste.com/f20vFALQPl
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+bnrfil.dat - http://privatepaste.com/76uATdcCsN
+</div>
+<div>
+屏蔽广告
+</div>
+<div>
+<br>
+</div>
+<div>
+bsnlst.dat - http://privatepaste.com/b6tJvZlQJN
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+cultfil.dat - http://privatepaste.com/dc1NtZn183
+</div>
+<div>
+文化过滤，包括GeorgeKing，scientology，ChurchOfSatan一类的。还是抄袭cybersitter
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+gblfil.dat - http://privatepaste.com/53CXciru9I
+</div>
+<div>
+貌似是赌博类。
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+gnfil.dat - http://privatepaste.com/c6lU71HHUT
+</div>
+<div>
+枪支类。
+</div>
+<div>
+<br>
+</div>
+<div>
+hatfil.dat - http://privatepaste.com/1005oQLOJv
+</div>
+<div>
+种族仇恨类。
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+jbfil.dat - http://privatepaste.com/7d1cmQ7bdW
+</div>
+<div>
+招聘类。
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+movfil.dat - http://privatepaste.com/99cMT8Xjyr
+</div>
+<div>
+电影类
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+nvgamfil.dat - http://privatepaste.com/9aYQOBgQoU
+</div>
+<div>
+又一个游戏类过滤。nv game filter.dat？
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+perfil.dat - http://privatepaste.com/7driTj667b
+</div>
+<div>
+sex类过滤
+</div>
+<div>
+<br>
+</div>
+<div>
+picsfil.dat - http://privatepaste.com/34TI4cSbZE
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+popfil.dat - http://privatepaste.com/c10gAsIEuq
+</div>
+<div>
+广告弹窗类过滤
+</div>
+<div>
+<br>
+</div>
+<div>
+psyfil.dat - http://privatepaste.com/ae0GA79ZFm
+</div>
+<div>
+封建迷信和超自然类过滤。
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+swfil.dat - http://privatepaste.com/aeSIsoDlKd
+</div>
+<div>
+盗版软件过滤。
+</div>
+<div>
+<br>
+</div>
+<div>
+tafil.dat - http://privatepaste.com/26FTx1Dfjz
+</div>
+<div>
+酒精类过滤。抄袭cybersitter的名单
+</div>
+<div>
+<br>
+</div>
+<div>
+tapfil.dat - http://privatepaste.com/ae0UoosGMk
+</div>
+<div>
+纹身类过滤。
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+viofil.dat - http://privatepaste.com/f79OiqXC6J
+</div>
+<div>
+暴力自杀类。
+</div>
+<div>
+<br>
+</div>
+</div>
+<div>
+<br>
+</div>
+</div>
+<div>
+<br>
+</div>
+<br>
+<div>
+<div>
+<h2>
+<a id="q836" name="7.用户体验_User_experience"></a>7.用户体验 <span style="color: rgb(153, 153, 153);">User experience</span>
+</h2>
+</div>
+<div>
+<h4>
+<span style="font-weight: normal;">通过实际测试和用户反馈，发现绿坝的宣称功能的实现能力并不强，却没有避免在各个层面添加很多没有宣称的功能。部分用户的使用体验和讨论：<span style="color: rgb(153, 153, 153);">Through
+testing and user feedback, it has been noted that Green Dam's ability
+to achieve its stated function is in fact not that strong, and has not
+avoided including many additional undisclosed functions situated at
+various levels. Here is a sample of some users' user experiences and
+discussion:</span><br>
+</span>
+</h4>
+<ul>
+<li>
+<span style="font-weight: normal;"><font size="2"><a href="http://blog.sina.com.cn/s/blog_4b862d070100doj4.html" id="v051" title="http://blog.sina.com.cn/s/blog_4b862d070100doj4.html">http://blog.sina.com.cn/s/blog_4b862d070100doj4.html</a></font></span>
+</li>
+<li>
+<span style="font-weight: normal;"><font size="2"><a href="http://club.cat898.com/newbbs/dispbbs.asp?BoardID=1&amp;id=2853590">http://club.cat898.com/newbbs/dispbbs.asp?BoardID=1&amp;id=2853590</a></font></span>
+</li>
+<li>
+<a href="http://www.meirendaddy.com/blog/?p=404" id="tr62" title="http://www.meirendaddy.com/blog/?p=404">http://www.meirendaddy.com/blog/?p=404</a>
+</li>
+<li>
+<font size="2"><a href="http://tieba.baidu.com/f?kz=591097210" id="i-8s" title="http://tieba.baidu.com/f?kz=591097210">http://tieba.baidu.com/f?kz=591097210</a></font>
+</li>
+</ul>
+<br>
+</div>
+<h2>
+<a id="od.q" name="8.知识产权侵害_Copyright_infringement"></a>8.知识产权侵害 <span style="color: rgb(153, 153, 153);">Copyright infringement</span>
+</h2>
+绿霸受到以下指控：<br>
+<ol>
+<li>
+违反BSD许可证在软件中使用OpenCV库
+</li>
+<li>
+将OpenCV的算法和技术用于申请专利<br>
+</li>
+<li>
+抄袭美产过滤软件<font class="Apple-style-span" style="background-color: rgb(255, 255, 255);" face="arial, helvetica, sans-serif">CYBERsitter的关键字列表（猜测应该还有更多代码抄袭）</font>
+</li>
+</ol>
+证据请见前。<span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);"><br>
+Green Dam is subject to the following accusations:<br>
+</span></span>
+<ol>
+<li>
+<span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);">Violation of the BSD license through the software's use of the OpenCV library</span></span>
+</li>
+<li>
+<span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);">Use of OpenCV algorithms and technology in a patent application</span></span>
+</li>
+<li>
+<span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);">Plagiarizes the keyword list from American filtering software CYBERsitter (alongside speculation of further code plagiarism)<br>
+</span></span>
+</li>
+</ol>
+<h2>
+<a id="khww" name="9.潜在风险_Vulnerabilities"></a>9.潜在风险 <span style="color: rgb(153, 153, 153);">Vulnerabilities</span><br>
+</h2>
+<div>
+后门：<span style="font-family: arial,helvetica,sans-serif;">绿霸本身的安全性就有很大疑问，这样一款小公司开发的软件很容易存在安全漏洞，一旦被黑客发现，则所有安装绿霸的电脑都成为黑客的“肉鸡”，如果其安装量大的话，完全有可能重演“暴风影音断网”的事件。<br>
+</span><span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);">Backdoor:</span></span><span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);">
+The security of Green Dam itself is highly doubted; software developed
+by companies as small as this can easily contain security leaks which,
+once discovered by hackers, then compromise all computers having
+installed Green Dam. Given sufficiently high usage, Green Dam could
+easily lead to another "Baofeng" incident. </span></span><br>
+</div>
+<div>
+<br>
+</div>
+<div>
+因为绿坝软件本身的多种不完善性，可能会导致客户端正常软件功能的失效（例如，关闭没有保存的正常工作文档而不提示保存）。<br>
+<span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);">Given
+the many different imperfections in the Green Dam software, it's
+possible that Green Dam will cause normally-functioning client software
+to malfunction (for example, work not being saved during shutdown, or
+no reminder to save). </span></span>&nbsp;<br>
+</div>
+<div>
+<br>
+</div>
+<div>
+因为该软件所有技术参数的设置，都基于科技人员本人对于什么是色情图片的假设。这些假设反而强化了色情的窠臼和性/别不平等，对青少年不利。
+</div>
+<div>
+<span style="font-weight: normal;"><span style="color: rgb(153, 153, 153);">Because
+settings for the software's technical specifications have all been
+based on a technician's assumption of what constitutes pornography,
+these assumptions only further reinforce patterns in pornography, of
+gender inequality, detrimental to children.</span></span>
+</div>
+<div>
+<h2>
+<a id="ds:d" name="10.媒体报道_Media_coverage"></a> <b>10.媒体报道 <span style="color: rgb(153, 153, 153);">Media coverage</span><br>
+</b>
+</h2>
+<b><i>（可能不属于技术分析报告，仅作参考）<br>
+<span style="color: rgb(153, 153, 153);">(possibly off-topic, for reference only)</span><br>
+</i></b><br>
+<ol style="margin-right: 0px; margin-left: 0px;">
+<li style="margin-right: 0px; margin-left: 0px;">
+<a href="http://chinese.wsj.com/gb/20090608/chw085100.asp?source=whatnews" style="color: rgb(51, 102, 204);">中国收紧互联网控制</a>（华尔街日报）
+</li>
+<li style="margin-right: 0px; margin-left: 0px;">
+<a href="http://blog.sina.com.cn/s/blog_4a60f29e0100dluv.html" style="color: rgb(51, 102, 204);">工业和信息化部文件</a>
+</li>
+<li style="margin-right: 0px; margin-left: 0px;">
+<a href="http://tech.163.com/09/0609/03/5BB9USTI000915BD.html" style="color: rgb(51, 102, 204);">下月起新售个人电脑将预装上网过滤软件</a>（网易科技）
+</li>
+<li style="margin-right: 0px; margin-left: 0px;">
+&nbsp;<a href="http://news.66wz.com/system/2009/06/09/101258543.shtml" style="color: rgb(51, 102, 204);">“绿坝·花季护航”上网管理软件试用测评</a>
+</li>
+<li style="margin-right: 0px; margin-left: 0px;">
+&nbsp;<a href="http://news.ifeng.com/mainland/200906/0609_17_1195649.shtml" style="color: rgb(51, 102, 204);">外交部发言人反驳“你有孩子吗？”&nbsp;</a>&nbsp;
+</li>
+<li style="margin-right: 0px; margin-left: 0px;">
+<a href="http://www.caijing.com.cn/2009-06-09/110181748.html" style="color: rgb(51, 102, 204);">“绿坝”为何遭质</a>疑 &nbsp;(财经网）
+</li>
+<li style="margin-right: 0px; margin-left: 0px;">
+<a href="http://tech.sina.com.cn/it/2009-06-09/21083163804.shtml" id="l2mn" title="上网过滤软件绿坝官网遭黑客攻击无法访问">上网过滤软件绿坝官网遭黑客攻击无法访问</a>（新浪科技）
+</li><li style="margin-right: 0px; margin-left: 0px;">“<a id="l7qy" href="http://www.tianya.cn/publicforum/content/free/1/1587887.shtml" title="天涯上的五毛党评论">天涯上的五毛党评论</a>”&nbsp;</li><li style="margin-right: 0px; margin-left: 0px;"><a id="ld:z" href="http://www.skycn.com/comment/comment.php?softid=46657&amp;page=2" title="天空软件站上的五毛评论">天空软件站上的五毛评论</a></li><li style="margin-right: 0px; margin-left: 0px;"><a id="t-4r" href="https://docs.google.com/View?id=dggh5mp6_129fwcxpncw" title="绿坝软件的五大法律障碍">绿坝软件的五大法律障碍</a></li><li style="margin-right: 0px; margin-left: 0px;"><b><a id="wfus" href="https://docs.google.com/View?id=dggh5mp6_127c5nwpzcq" title="绿坝响应书上的隐身人：金惠是如何盗卖军队研究成果牟利的">绿坝响应书上的隐身人：金惠是如何盗卖军队研究成果牟利的</a></b></li>
+</ol>
+</div>
+<br>
+<br>
+<h2>
+11.相关文件 <span style="color: rgb(153, 153, 153);">Links</span>
+</h2>
+绿坝与政府的谈判响应书：<a href="https://wikileaks.org/wiki/Chinese_Green_Dam_Falun_Gong_related_censorship_keywords,_June_2009">https://wikileaks.org/wiki/Chinese_Green_Dam_Falun_Gong_related_censorship_keywords,_June_2009</a><br>
+<br>
+<div id="yr68" style="text-align: left;">
+“绿坝—花季护航”使用全攻略 http://tech.techweb.com.cn/redirect.php?tid=387273&amp;goto=lastpost<br>
+<br style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+有人对与此软件有关的大正公司的一些文件进行了分析。 <span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">通过对<a href="http://www.hncit.com/update/ST771.rar" id="l.t3" title="ST771.rar">ST771.rar</a><a href="http://www.hncit.com/update/" target="_blank"></a>的分析，对ST771.rar\ST771\package2中</span>hncldata_mdb.zip\L:\HncProjects\版权\检测版\升级包制作工具\2007.1.15\标准检测版\programfiles\hncldata.mdb进行分析后可以得到<a href="http://paste.ubuntu.org.cn/15292" id="gps9" title="网址黑名单">网址黑名单</a>。在北京大正语言知识处理科技有限公司网站上还可以找到未加密的<a href="https://docs.google.com/Doc?docid=dczkbptk_0ffc2hvc9" id="lr9i" title="关键词文件">关键词文件</a>： <a href="https://docs.google.com/View?id=ah27xz4pbz6s_22cgwh6xf7" id="hnfr" title="测试版中的色情关键词">测试版中的色情关键词</a>；<a href="https://docs.google.com/View?id=ah27xz4pbz6s_24c6dw27g6" id="h:x5" title="非色情关键词">非色情关键词</a>；<a href="https://docs.google.com/View?id=ah27xz4pbz6s_25fpx2qkhp" id="y.r7" title="上级部门指示">上级部门指示</a>。
+<div style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+</div>
+<br style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<br>
+<br>
+<img src="%E7%BB%BF%E5%9D%9D-%E8%8A%B1%E5%AD%A3%E6%8A%A4%E8%88%AA%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90_files/File_002.jpg" style="width: 404px; height: 531px;">
+</div>
+<div id="a2cb" style="text-align: left;">
+<img src="%E7%BB%BF%E5%9D%9D-%E8%8A%B1%E5%AD%A3%E6%8A%A4%E8%88%AA%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90_files/File.jpg" style="width: 408px; height: 552px;">
+</div>
+<br>
+<br>
+</div>
+<br>
+<br>
+<br clear="all">
+</div>
+<div id="google-view-footer">
+<div id="maybecanedit" style="float: right;">
+<a class="google-small-link" id="editpermissionlink" href="https://docs.google.com/Doc?tab=edit&amp;dr=true&amp;id=afk7vnz54wt_12f8jzj9gw" title="Edit this page">
+Edit this page (if you have permission)</a>
+<span style="color: rgb(103, 103, 103);">|</span>
+<input id="report-abuse-button" value="Report abuse" onclick="reportAbuse();" type="button">
+</div>
+<div style="float: left;">
+<a title="Learn more about Google Docs" class="google-small-link" href="https://docs.google.com/">
+Google Docs -- Web word processing, presentations and spreadsheets.</a>
+</div>
+<p> &nbsp;
+</p></div>
+<script><!--
+    viewOnLoad();
+    if(window.jstiming){window.jstiming.a={};window.jstiming.b=1;function k(b,d,f){var a=b.t[d];if(!a)return undefined;a=b.t[d][0];if(f!=undefined)var h=f;else h=b.t.start[0];return a-h}window.jstiming.report=function(b,d,f){var a="";if(window.jstiming.pt){a+="&srt="+window.jstiming.pt;delete window.jstiming.pt}try{if(window.external&&window.external.tran)a+="&tran="+window.external.tran}catch(h){}var e=b.t,p=e.start,l=[],i=[];for(var c in e)if(!(c=="start"))if(!(c.indexOf("_")==0)){var j=e[c][1];if(j)e[j]&&
+i.push(c+"."+k(b,c,e[j][0]));else p&&l.push(c+"."+k(b,c))}delete e.start;if(d)for(var m in d)a+="&"+m+"="+d[m];var n=[f?f:"http://csi.gstatic.com/csi","?v=3","&s="+(window.jstiming.sn?window.jstiming.sn:"writely")+"&action=",b.name,i.length?"&it="+i.join(",")+a:a,"&rt=",l.join(",")].join(""),g=new Image,o=window.jstiming.b++;window.jstiming.a[o]=g;g.onload=g.onerror=function(){delete window.jstiming.a[o]};g.src=n;g=null;return n}};
+
+    window.jstiming.load.name = 'published';
+    
+    
+    var urchinPage = "/View";
+
+    
+    function getXHR() {
+      if (typeof XMLHttpRequest != "undefined") {
+        return new XMLHttpRequest();
+      }
+      try { return new ActiveXObject("Msxml2.XMLHTTP.6.0") } catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP.3.0") } catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP") } catch(e) {}
+      try { return new ActiveXObject("Microsoft.XMLHTTP") } catch(e) {}
+      return null;
+    }
+
+    function reportAbuse() {
+      var req = getXHR();
+      if (req) {
+        
+          var docid = 'afk7vnz54wt_12f8jzj9gw';
+          var posttoken = 'iRoJASIBAAA.QZZL2rPR20Qs91MLp6fXT6f0irNUNjrosLfNvYMutik.w4BBUSnrdwhGZM7R66WYPw';
+        
+        req.onreadystatechange = function() {
+          try {
+            if (req.readyState == 4 && req.status == 200) {
+              var button = document.getElementById("report-abuse-button");
+              button.value = 'Thank you!';
+              button.disabled = true;
+            }
+          } catch (ex) {
+            
+          }
+        }
+        try {
+          req.open('POST', 'MiscCommands', true);
+          req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+          req.send('command=report_abuse&abuseDoc=' + encodeURIComponent(docid) +
+                   '&POST_TOKEN=' + encodeURIComponent(posttoken));
+        } catch (ex) {
+          
+        }
+      }
+    }
+  --></script>
+</body></html>

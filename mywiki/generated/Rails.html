@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Rails script</h1><div id="div1"></div><h2 id="2" class="title">Generate model</h2><div id="div2"><pre>script/generate model </pre>
+</div><h2 id="3" class="title">Generate db migration</h2><div id="div3"><pre>script/generate migration add_folder_id_to_picture folder_id:integer</pre>
+</div><h1 id="4" class="title">Railscast</h1><div id="div4"></div><h2 id="5" class="title">dynamic find</h2><div id="div5"><pre><code>Task.find(:all, :conditions =&gt; ['complete = ?', false] -&gt;
+Task.find_all_by_complete(false)
+
+Task.find(:first, :conditions =&gt; ['complete = ?, false], :order =&gt; 'create_at DESC') -&gt;
+Task.find_by_complete(false, :order =&gt; 'create_at DESC')
+
+Task.find(:all, :conditions =&gt; ['project_id = ? AND complete = ?', @project.id, false] -&gt;
+@project.tasks.find_all_by_complete(false)
+</code></pre>
+</div><h2 id="6" class="title">with_scope</h2><div id="div6"><pre><code>class Task &lt; ActiveRecord::Base
+  def self.find_incomplete(options = {})
+    with_scope :find =&gt; options do
+      find_all_by_complete(false, :order =&gt; 'created_at DESC')
+    end
+  end
+
+end</code></pre>
+<p>then when call<br />
+<pre>Task.find_incomplete(:limit =&gt; 20)</pre><br />
+with the help of with_scope, the find_all_by_complete method will execute with the parameter options and it&#8217;s own original options.</p>
+</div><h2 id="7" class="title">layouts</h2><div id="div7"><ol>
+	<li>application.rhtml</li>
+	<li><controller_name>.rhtml</li>
+	<li>assigned in controller<br />
+<pre><code>class SearchController &lt; ApplicationController
+  layout 'admin'
+end</code></pre></li>
+	<li>assigned in controller via method<br />
+<pre><code>class SearchController &lt; ApplicationController
+  layout :user_layout
+  protected
+  def user_layout
+    if user.admin?
+      'admin'
+    else
+      'normal'
+    end
+  end
+end</code></pre></li>
+</ol>
+</div><h2 id="8" class="title">content_for</h2><div id="div8"><p>in layout:<br />
+<pre><code>&lt;%= yield :head %&gt;</code></pre><br />
+in template:<br />
+<pre><code>&lt;% content_for :head do %&gt;
+  &lt;p&gt;content&lt;/p&gt;
+&lt;% end %&gt;</code></pre></p>
+</div><h2 id="9" class="title">filtering log</h2><div id="div9"><p>in application controller<br />
+<pre>filter_parameter_logging &#8220;password&#8221;</pre></p></div></div>
+</body></html>

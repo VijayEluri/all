@@ -1,0 +1,211 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<p>&lt;<TableOfContents>&gt;</p>
+<h1 id="1" class="title">Oracle Parameters</h1><div id="div1"><p><a href="Oracle%20Parameters%20for%20Documentum.html">Oracle Parameters for Documentum</a></p>
+</div><h1 id="2" class="title"><span class="caps">LDAP</span> Integration</h1><div id="div2"><p>Pre:</p>
+Install third party files for DA, check webapps/da/<span class="caps">WEB</span>-<span class="caps">INF</span>/thirdparty/readme.txt
+<p>Steps:</p>
+<ol>
+	<li>new <span class="caps">LDAP</span> config object</li>
+	<li>check the box &#8220;Use this conf object as default conf object&#8221;</li>
+	<li>make sure the user in ldap have the properties {{{<br />
+cn<br />
+uid<br />
+mail<br />
+}}}</li>
+	<li>check the box &#8220;Sync on demand for dir users&#8221; in repository config</li>
+	<li>select default directory in server config</li>
+	<li>set user validation as &#8220;dm_check_password.exe&#8221; in server/locations</li>
+	<li>run the job dm_LDAPSync
+	<ul>
+		<li>change fullsync to Full will make a full sync</li>
+	</ul></li>
+	<li>the log is at /System/Sysadmin/Reports</li>
+	<li>enable changelog in ldap server
+	<ul>
+		<li>sun one: Configuration&#8594;Data&#8594;Replication</li>
+	</ul></li>
+</ol>
+</div><h1 id="3" class="title">Add New Locale</h1><div id="div3"><ol>
+	<li>find the file data_dictionary.ini</li>
+	<li>copy the ini file into product/&#8230;/bin</li>
+	<li>edit the ini file, un-comment the Chinese part and English part</li>
+	<li>run dd_populate under product/&#8230;/bin according to Content Server Admin Guide appendix E {{{<br />
+dmbasic <del>f dd_populate.ebs -e Entry_Point -</del> <repository_name> <username> <password> <ini_filename><br />
+}}}</li>
+</ol>
+</div><h1 id="4" class="title">Webtop Localization</h1><div id="div4"><ol>
+	<li>Add new locale for content server</li>
+	<li>copy localization file into webtop</li>
+	<li>modify app.xml</li>
+	<li>clean up app server&#8217;s cache/temp folder</li>
+	<li>make sure dm_dataDictionaryPublishing job run once</li>
+</ol>
+</div><h1 id="5" class="title">Desktop Offline</h1><div id="div5"><ol>
+	<li>set repository config to enable sync</li>
+	<li>choose Subscribe&#8594;offline in desktop</li>
+	<li>Do powersync</li>
+</ol>
+</div><h1 id="6" class="title">Create Index on Attribute</h1><div id="div6"><p><span class="caps">DQL</span></p>
+<pre>
+execute make_index with type_name='dmi_queue_item', attribute='name'</pre>
+<p></p>
+</div><h1 id="7" class="title">Fulltext Queue Items Management</h1><div id="div7"><p><span class="caps">API</span></p>
+<pre>
+API&gt; execquery,c,T,select count(*) from dmi_queue_item where name like '%fulltext%'
+...
+OK
+API&gt; getlastcoll,c
+...
+q0
+API&gt; next,c,q0
+...
+OK
+API&gt; get,c,q0,dm_attr_0001
+...
+2025
+API&gt; close,c,q0
+...
+OK
+API&gt; execquery,c,F,delete dmi_queue_item objects where name like '%fulltext%'
+...
+OK
+API&gt; getlastcoll,c
+...
+q0
+API&gt; next,c,q0
+...
+OK
+API&gt; get,c,q0,objects_deleted
+...
+0
+API&gt; close,c,q0
+...
+OK</pre>
+<p></p>
+<p><span class="caps">DQL</span></p>
+<pre>
+select count(*) from dmi_queue_item where name like '%fulltext%'</pre>
+<pre>select name,event,item_name,item_type,task_state from dmi_queue_item where name like '%fulltext%'</pre>
+<pre>delete dmi_queue_item objects where name='dm_fulltext_index_user'</pre>
+<p></p>
+</div><h1 id="8" class="title">Inbox Management</h1><div id="div8"><p><span class="caps">DQL</span></p>
+<pre>
+select name,event,item_name,item_type,task_state,message from dmi_queue_item where name='dmadmin'</pre>
+<pre>delete dmi_queue_item objects where name='dmadmin'</pre>
+<p></p>
+</div><h1 id="9" class="title"><span class="caps">BOCS</span></h1><div id="div9"><ul>
+	<li>install <span class="caps">BOCS</span> at branch server</li>
+	<li>start <span class="caps">BOCS</span> service</li>
+	<li>login to DA</li>
+	<li>setup locations
+		<ul>
+			<li>open Administration&#8594;Configuration&#8594;Network Locations</li>
+			<li>create 2 locations, one for HQ, one for branch</li>
+		</ul></li>
+	<li>setup <span class="caps">BOCS</span>
+		<ul>
+			<li>open Administration&#8594;Configuration&#8594;<span class="caps">BOCS</span> Servers</li>
+			<li>new <span class="caps">BOCS</span> config</li>
+			<li>select location for branch</li>
+			<li>set <span class="caps">BOCS</span> to be able to read content</li>
+			<li>add supported protocol
+				<ul>
+					<li>Protocol: http</li>
+					<li>Base <span class="caps">URL</span>: http://jason-vm2:8086/bocs/servlet/<span class="caps">ACS</span></li>
+				</ul></li>
+		</ul></li>
+	<li>setup server config
+		<ul>
+			<li>open Administration&#8594;Configuration&#8594;Servers</li>
+			<li>open server properties</li>
+			<li>select Network Location Prj tab</li>
+			<li>add HQ location with proximity 1</li>
+			<li>add Branch location with proximity 99</li>
+		</ul></li>
+	<li>restart the content server and webtop app server</li>
+	<li>access webtop from the branch location</li>
+	<li>do an export operation and check the <span class="caps">BOCS</span> server&#8217;s cache</li>
+</ul>
+</div><h1 id="10" class="title">Disable fulltext indexing in 5.3</h1><div id="div10"><pre>
+API&gt; retrieve,c,dm_type where name='dm_sysobject'
+...
+0301117180000105
+API&gt; unregister,c,0301117180000105,dm_save,dm_fulltext_index_user
+...
+OK
+API&gt; unregister,c,0301117180000105,dm_destroy,dm_fulltext_index_user
+...
+OK
+API&gt; unregister,c,0301117180000105,dm_readonlysave,dm_fulltext_index_user
+...
+OK
+API&gt; unregister,c,0301117180000105,dm_checkin,dm_fulltext_index_user
+...
+OK
+API&gt; unregister,c,0301117180000105,dm_move_content,dm_fulltext_index_user
+...
+OK</pre>
+<p></p>
+</div><h1 id="11" class="title">Check all audit registeration</h1><div id="div11"><pre>
+select * from dmi_registry</pre>
+<p></p>
+<p>&lt;&lt;Anchor(globalregistry)&gt;&gt;</p>
+</div><h1 id="12" class="title">Enable Global Registry After Installation</h1><div id="div12"><p>If it is not enabled during the installation.</p>
+<pre>
+retrieve,c,dm_user where user_name='dm_bof_registry'
+set,c,l,user_state
+0
+set,c,l,user_password
+newpassword
+save,c,l</pre>
+<p></p>
+<p>the new password will be automatically encrypted in database.</p>
+<p>Modify dfc.properties in server to update the new password. Then restart the content server.</p>
+</div><h1 id="13" class="title">Job Execution</h1><div id="div13"><p>Documentum的Job并不是按Schedule设定的时间和日期启动，它的运行时间由a_next_invocation决定，在执行后，Job会按本次执行时间和设定的重复间隔去设置好新的a_next_invocation时间。因此，如果要修改一个Job的下次运行时间，必须修改它的a_next_invocation属性，之后Job即可按新的时间和重复间隔去运行。</p>
+<pre>
+retrieve,c,dm_job where object_name='dm_DMClean'
+set,c,l,a_next_invocation
+M/d/yyyy HH:mm:ss
+save,c,l</pre>
+<p></p>
+</div><h1 id="14" class="title">How Webtop displays cabinets</h1><div id="div14"><p>This logic exists in DocbaseFolderTreeNode.class:</p>
+<pre>
+protected String getQueryString()
+...
+        if(isDocbaseRoot())
+        {
+            String strSelect = "select upper(object_name),r_object_id,object_name,r_object_type,r_link_cnt,r_lock_owner";
+            String strHiddenFalseOption = " and a_is_hidden=false";
+            String strUnion = " union ";
+            String strOrderBy = " order by 1";
+            String strFrom = " from dm_cabinet";
+            String strWherePrivateOption = " where (is_private=0)";
+            String strWhereOwnerOption = " where (owner_name=USER)";
+            buf.append(strSelect);
+            buf.append(strFrom);
+            buf.append(strWherePrivateOption);
+            if(!HiddenObjectUtil.getShowHiddenObjectPreference())
+                buf.append(strHiddenFalseOption);
+            buf.append(strUnion);
+            buf.append(strSelect);
+            buf.append(strFrom);
+            buf.append(strWhereOwnerOption);
+            if(!HiddenObjectUtil.getShowHiddenObjectPreference())
+                buf.append(strHiddenFalseOption);
+            buf.append(strOrderBy);
+...</pre>
+<p></p>
+<p>So the result <span class="caps">DQL</span> is:</p>
+<pre>
+select ... from dm_cabinet where is_private=0 and a_is_hidden=false 
+  union 
+select ... from dm_cabinet where owner=USER</pre>
+<p></p>
+<hr />
+<p>CategoryDocumentum</p></div></div>
+</body></html>

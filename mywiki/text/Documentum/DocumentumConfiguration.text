@@ -1,0 +1,275 @@
+<<TableOfContents>>
+
+
+h1. Oracle Parameters
+
+
+[[Oracle Parameters for Documentum]]
+
+
+h1. LDAP Integration
+
+Pre:
+
+  Install third party files for DA, check webapps/da/WEB-INF/thirdparty/readme.txt
+
+Steps:
+# new LDAP config object
+# check the box "Use this conf object as default conf object"
+# make sure the user in ldap have the properties {{{
+cn
+uid
+mail
+}}}
+# check the box "Sync on demand for dir users" in repository config
+# select default directory in server config
+# set user validation as "dm_check_password.exe" in server/locations
+# run the job dm_LDAPSync
+** change fullsync to Full will make a full sync
+# the log is at /System/Sysadmin/Reports
+# enable changelog in ldap server
+** sun one: Configuration->Data->Replication
+
+h1. Add New Locale
+
+# find the file data_dictionary.ini
+# copy the ini file into product/.../bin
+# edit the ini file, un-comment the Chinese part and English part
+# run dd_populate under product/.../bin according to Content Server Admin Guide appendix E {{{
+dmbasic -f dd_populate.ebs -e Entry_Point -- <repository_name> <username> <password> <ini_filename>
+}}}
+
+h1. Webtop Localization
+
+# Add new locale for content server
+# copy localization file into webtop
+# modify app.xml
+# clean up app server's cache/temp folder
+# make sure dm_dataDictionaryPublishing job run once
+
+h1. Desktop Offline
+
+# set repository config to enable sync
+# choose Subscribe->offline in desktop
+# Do powersync
+
+h1. Create Index on Attribute
+
+DQL
+
+pre.. 
+execute make_index with type_name='dmi_queue_item', attribute='name'
+
+p. 
+
+
+h1. Fulltext Queue Items Management
+
+API
+
+pre.. 
+API> execquery,c,T,select count(*) from dmi_queue_item where name like '%fulltext%'
+...
+OK
+API> getlastcoll,c
+...
+q0
+API> next,c,q0
+...
+OK
+API> get,c,q0,dm_attr_0001
+...
+2025
+API> close,c,q0
+...
+OK
+API> execquery,c,F,delete dmi_queue_item objects where name like '%fulltext%'
+...
+OK
+API> getlastcoll,c
+...
+q0
+API> next,c,q0
+...
+OK
+API> get,c,q0,objects_deleted
+...
+0
+API> close,c,q0
+...
+OK
+
+p. 
+
+DQL 
+
+pre.. 
+select count(*) from dmi_queue_item where name like '%fulltext%'
+
+select name,event,item_name,item_type,task_state from dmi_queue_item where name like '%fulltext%'
+
+delete dmi_queue_item objects where name='dm_fulltext_index_user'
+
+p. 
+
+
+h1. Inbox Management
+
+DQL
+
+pre.. 
+select name,event,item_name,item_type,task_state,message from dmi_queue_item where name='dmadmin'
+
+delete dmi_queue_item objects where name='dmadmin'
+
+p. 
+
+
+h1. BOCS
+
+* install BOCS at branch server
+* start BOCS service
+* login to DA
+* setup locations
+*** open Administration->Configuration->Network Locations
+*** create 2 locations, one for HQ, one for branch
+* setup BOCS
+*** open Administration->Configuration->BOCS Servers
+*** new BOCS config
+*** select location for branch
+*** set BOCS to be able to read content
+*** add supported protocol
+***** Protocol: http
+***** Base URL: http://jason-vm2:8086/bocs/servlet/ACS
+* setup server config
+*** open Administration->Configuration->Servers
+*** open server properties
+*** select Network Location Prj tab
+*** add HQ location with proximity 1
+*** add Branch location with proximity 99
+* restart the content server and webtop app server
+* access webtop from the branch location
+* do an export operation and check the BOCS server's cache
+
+h1. Disable fulltext indexing in 5.3
+
+
+pre.. 
+API> retrieve,c,dm_type where name='dm_sysobject'
+...
+0301117180000105
+API> unregister,c,0301117180000105,dm_save,dm_fulltext_index_user
+...
+OK
+API> unregister,c,0301117180000105,dm_destroy,dm_fulltext_index_user
+...
+OK
+API> unregister,c,0301117180000105,dm_readonlysave,dm_fulltext_index_user
+...
+OK
+API> unregister,c,0301117180000105,dm_checkin,dm_fulltext_index_user
+...
+OK
+API> unregister,c,0301117180000105,dm_move_content,dm_fulltext_index_user
+...
+OK
+
+p. 
+
+
+
+h1. Check all audit registeration
+
+
+pre.. 
+select * from dmi_registry
+
+p. 
+
+
+<<Anchor(globalregistry)>>
+
+h1. Enable Global Registry After Installation
+
+
+If it is not enabled during the installation.
+
+
+pre.. 
+retrieve,c,dm_user where user_name='dm_bof_registry'
+set,c,l,user_state
+0
+set,c,l,user_password
+newpassword
+save,c,l
+
+p. 
+
+
+the new password will be automatically encrypted in database.
+
+Modify dfc.properties in server to update the new password. Then restart the content server. 
+
+
+h1. Job Execution
+
+
+Documentum的Job并不是按Schedule设定的时间和日期启动，它的运行时间由a_next_invocation决定，在执行后，Job会按本次执行时间和设定的重复间隔去设置好新的a_next_invocation时间。因此，如果要修改一个Job的下次运行时间，必须修改它的a_next_invocation属性，之后Job即可按新的时间和重复间隔去运行。
+
+
+pre.. 
+retrieve,c,dm_job where object_name='dm_DMClean'
+set,c,l,a_next_invocation
+M/d/yyyy HH:mm:ss
+save,c,l
+
+p. 
+
+
+
+h1. How Webtop displays cabinets
+
+
+This logic exists in DocbaseFolderTreeNode.class:
+
+
+pre.. 
+protected String getQueryString()
+...
+        if(isDocbaseRoot())
+        {
+            String strSelect = "select upper(object_name),r_object_id,object_name,r_object_type,r_link_cnt,r_lock_owner";
+            String strHiddenFalseOption = " and a_is_hidden=false";
+            String strUnion = " union ";
+            String strOrderBy = " order by 1";
+            String strFrom = " from dm_cabinet";
+            String strWherePrivateOption = " where (is_private=0)";
+            String strWhereOwnerOption = " where (owner_name=USER)";
+            buf.append(strSelect);
+            buf.append(strFrom);
+            buf.append(strWherePrivateOption);
+            if(!HiddenObjectUtil.getShowHiddenObjectPreference())
+                buf.append(strHiddenFalseOption);
+            buf.append(strUnion);
+            buf.append(strSelect);
+            buf.append(strFrom);
+            buf.append(strWhereOwnerOption);
+            if(!HiddenObjectUtil.getShowHiddenObjectPreference())
+                buf.append(strHiddenFalseOption);
+            buf.append(strOrderBy);
+...
+
+p. 
+
+
+So the result DQL is:
+
+pre.. 
+select ... from dm_cabinet where is_private=0 and a_is_hidden=false 
+  union 
+select ... from dm_cabinet where owner=USER
+
+p. 
+
+----
+CategoryDocumentum

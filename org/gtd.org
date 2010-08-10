@@ -1,0 +1,157 @@
+#+CATEGORY: Me
+
+* Customers
+** FSI
+*** ABC
+**** DONE 讨论影像平台[2/2]
+     - State "DONE"       from "TODO"       [2009-06-29 Mon 12:37]
+     email: [[message://25640DF23D4B1F478D8F6D15E8C9B5E1C5674B@CORPUSMX70B.corp.emc.com][ABC Image System]]
+***** DONE 确定交流时间
+      DEADLINE: <2009-06-26 Fri> 
+      - State "DONE"       from "TODO"       [2009-06-25 Thu 10:30]
+***** DONE 与农行交流影像平台
+      SCHEDULED: <2009-06-29 Mon 09:00-11:00>
+      - State "DONE"       from "TODO"       [2009-06-29 Mon 12:37]
+***** 第二次讨论影像平台 <2009-07-13 Mon 09:30-11:00>
+      架构讨论
+      配置参考
+**** DONE 生产系统数据库CPU 100%问题
+     - State "DONE"       from "WAIT"       [2009-09-04 Fri 17:59]
+     - State "WAIT"       from "TODO"       [2009-06-25 Thu 01:05] \\
+       wait for PS and TSE
+*** BOC
+**** Meetings
+***** 测试总结会 西单三层 <2009-07-02 Thu 09:30>
+***** 湖南测试总结 西单总行大楼7F-4号会议室 <2009-08-13 Thu 14:30>
+*** COAMC
+**** DONE DA 6.5 SP1 to Xiong Hui
+     DEADLINE: <2009-07-03 Fri>
+     - State "DONE"       from "TODO"       [2009-07-01 Wed 11:39]
+*** CEB
+**** 待办
+***** DONE Download D6.5 SP2 for CEB
+      DEADLINE: <2009-07-13 Mon>
+      - State "DONE"       from "TODO"       [2009-07-13 Mon 15:14]
+      1.ContentServer 安腾HP-unix+Pa版和Windows版，官方的ReleaseNotes及安装手册
+      2.Windows下的Da,WebTop
+      3.DFC
+      4.BPM，DAI，DAB
+
+      另外，还希望有DFS的服务端、客户端/SDK等，还有BOCS。虽然不是升级必
+      须的，但有利于未来规划、研究用
+*** CCB
+**** DONE CCB升级方案，需要升级哪些相关组件，可以加入哪些新模块，带来哪些好处
+     - State "DONE"       from "TODO"       [2009-09-04 Fri 17:58]
+**** DONE 快递IRM光盘给陈杰
+     DEADLINE: <2009-07-20 Mon>
+     - State "DONE"       from "TODO"       [2009-07-21 Tue 00:33]
+**** 武汉CCB交流<2009-07-09 Thu>
+** Publishing
+*** Trends
+**** DONE Meeting with Zanyu about DMS
+     SCHEDULED: <2009-06-26 Fri 10:00>
+     - State "DONE"       from ""           [2009-06-26 Fri 12:31]
+** Telco
+*** 海南移动
+**** DONE 发送IRM资料给Zhang li
+     - State "DONE"       from "TODO"       [2009-07-06 Mon 11:11]
+*** 网通设计院
+**** 了解联通PMS情况
+     | 陈博 | 18910160402 |
+***** DONE 联系网通设计院，确定交流时间 
+      DEADLINE: <2009-06-29 Mon>
+      - State "DONE"       from "TODO"       [2009-06-30 Tue 14:38]
+***** DONE 交流关于联通PMS
+      SCHEDULED: <2009-06-30 Tue 09:30-11:00>
+      - State "DONE"       from ""           [2009-06-30 Tue 14:39]
+**** IRM需求
+***** DONE 网通IRM交流
+      SCHEDULED: <2009-06-26 Fri 13:00-15:00>
+      - State "DONE"       from ""           [2009-06-26 Fri 16:00]
+***** DONE IRM Proposal
+      DEADLINE: <2009-07-02 Thu>
+      - State "DONE"       from "TODO"       [2009-07-03 Fri 15:37]
+      dispatched to SHEC
+** Transport
+*** Air China
+**** 国航交流澄清 <2009-08-18 Tue>
+**** DONE Meeting with IBM and Hang An about SAP                       :DCTM:
+     SCHEDULED: <2009-06-25 Thu 14:00>
+     - State "DONE"       from ""           [2009-06-25 Thu 16:30]
+     [[file:meetings.org::*Meeting%20with%20IBM%20regarding%20SAP%202009%2006%2025%20Thu][minutes]]
+**** DONE Meet the other partner with Victor Li     
+     SCHEDULED: <2009-06-29 Mon 14:00>
+     - State "DONE"       from ""           [2009-06-30 Tue 00:24]
+**** 航安xDB培训 <2009-07-03 Fri 14:00-18:00>
+**** DONE 演示翻译
+     - State "DONE"       from "TODO"       [2009-07-21 Tue 00:34]
+**** Meeting requested by Ma Jian <2009-07-21 Tue 09:30-11:30>
+     [[message://DFAB381DCAAC7741A008550A95424CA6460139@CORPUSMX70A.corp.emc.com][RE: 国航马健想在下周四上午与我们进行技术交流（航安公司可能也需要出席），具体内容要求会在今天或周一发给我们，请大家把下周四的时间book出来．谢谢！]]
+**** DONE 航安reharsal
+     SCHEDULED: <2009-07-20 Mon 10:00-15:00>
+     - State "DONE"       from ""           [2009-07-21 Tue 11:04]
+** O&G
+*** 吉化
+**** 吉化解决方案介绍 <2009-07-08 Wed 09:30-11:00>
+**** 参观SEI <2009-07-08 Wed 14:00-18:00>
+* Other Work Requests
+** DONE 昆仑联通交流SourceOne
+   - State "DONE"       from ""           [2009-07-02 Thu 20:16]
+   主要是销售
+   SCHEDULED: <2009-07-02 Thu 16:00-17:00>
+** 神码DFS培训 <2009-07-16 Thu>-<2009-07-17 Fri>
+** Microsoft
+   to intergrate FAST with Documentum
+* Media
+** Musics
+** Movies
+* Life
+** Gift ideas
+*** 干豆豆浆机，不用泡
+** iPhone Dev
+*** DONE complete and fax registration form
+    - State "DONE"       from "TODO"       [2009-07-22 Wed 10:55]
+    
+    Include this information in your Purchase Order Form
+
+    Program:    Standard Individual $99/year
+    Enrollment ID:    59ADEW5S3E
+    Person ID:    299021514
+    Full Name:    TIEJUN HU
+    Email:    me@oldhu.com
+    Phone:    10-10-13911793577 
+
+** Misc things
+*** DONE 50万左右的越野车或是奥迪
+    DEADLINE: <2009-07-03 Fri>
+    - State "DONE"       from "TODO"       [2009-06-28 Sun 00:00]
+    大切诺基，霸道，Q5(8月上市)
+    | Benz  | E230    | 优雅型  |  51.8 |
+    | Lexus | ES350   | 豪华型  |    52 |
+    |       |         | 标准型  |  44.5 |
+    | Auqi  | A6L 2.4 | 豪华型  | 52.98 |
+    | Prado | 4.0 GX  | 运动DVD |    50 |
+    | BMW   | 523 Li  | 豪华型  | 50.36 |
+*** DONE 牙
+**** DONE 第一次检查
+     SCHEDULED: <2009-07-03 Fri 10:00-12:00>
+     - State "DONE"       from ""           [2009-07-03 Fri 15:37]
+**** 第二次检查 <2009-07-10 Fri 11:00>
+*** 财务
+**** TODO 取出医疗蓝本的钱
+     DEADLINE: <2009-07-17 Fri>
+**** 整理银行卡/存折
+***** DONE 取出工行存折中移动退的3000元钱
+      DEADLINE: <2009-07-17 Fri>
+      - State "DONE"       from "TODO"       [2009-07-22 Wed 10:54]
+**** DONE 定投华夏蓝筹
+     DEADLINE: <2009-07-17 Fri>
+     - State "DONE"       from "TODO"       [2009-07-14 Tue 10:15]
+*** DONE GPS安装R66 V8
+    - State "DONE"       from "TODO"       [2009-07-16 Thu 21:49]
+** Annversary
+#+CATEGORY: Birthday
+%%(diary-anniversary  6 13 1978) Gengli is %d years old
+%%(diary-anniversary  8 28 1950) Mama is %d years old
+%%(diary-anniversary 12 22 1947) Dad is %d years old
+%%(diary-anniversary  7 18 2005) Joined EMC for %d years

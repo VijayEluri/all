@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Engagement</h1><div id="div1"><ul>
+	<li>Deal registration</li>
+	<li>Notify Daryush for each <span class="caps">POC</span></li>
+</ul>
+</div><h1 id="2" class="title">Product Family</h1><div id="div2"><p>Email Management: per active mailbox, exclude disabled ones. EmailXtender user can upgrade to SourceOne for free.</p>
+<p>Discovery Manager: per mailbox, include disabled ones.</p>
+<p>Discovery Collector is a hardware, <span class="caps">OEM</span> from Stored IQ</p>
+</div><h1 id="3" class="title">Exchange</h1><div id="div3"></div><h2 id="4" class="title">Roles</h2><div id="div4"><p>introduced in Exchange 2007.</p>
+<ul>
+	<li>Edge Transport</li>
+	<li>Hub Transport</li>
+	<li>Client Access</li>
+	<li>Mailbox &#8594; need to access</li>
+	<li>Unified Messaging</li>
+</ul>
+</div><h1 id="5" class="title">Architecture</h1><div id="div5"></div><h2 id="6" class="title">Capture</h2><div id="div6"><ul>
+	<li>Real-Time Journaling. Will expand a distribution list to assign permissions to specific users.</li>
+	<li>Scheduled archive. Won&#8217;t expand distribution lists. To archive <span class="caps">PST</span> file, nothing need to be installed on client.</li>
+	<li>User archive</li>
+</ul>
+<ul>
+	<li>Permission is based on email address, not windows ID.</li>
+	<li>When retention period expired, the container file will be deleted.</li>
+</ul>
+</div><h2 id="7" class="title">Comparing vs. EmailXtender</h2><div id="div7"><ul>
+	<li>Not direct connection to one Exchange server, but based on AD information.</li>
+	<li>Attachments can be stored separately, then de-duped by storage devices.</li>
+	<li>No message body keyword rules</li>
+	<li><span class="caps">PST</span> migration but no shortcut</li>
+</ul>
+</div><h2 id="8" class="title"><span class="caps">PST</span> Capture</h2><div id="div8"></div><h2 id="9" class="title">Fulltext search</h2><div id="div9"><p>iSys 8.0, no .rar support, .zip is supported.</p>
+</div><h2 id="10" class="title">Connect to Documentum</h2><div id="div10"><p><span class="caps">HVS</span> is a must.</p>
+<p>All emails archived into Documentum will be light objects and owned by a service account. So we cannot search from Webtop for someone&#8217;s email, but still can do this from SourceOne search.</p>
+<p>attachments will be seperated objects linked to email objects.</p>
+</div><h2 id="11" class="title">Archive servers</h2><div id="div11"><p>when we have multiple archive servers, they need to access the backend storage in a shared manner, which means <span class="caps">NAS</span>.</p>
+</div><h2 id="12" class="title"><span class="caps">SQL</span> Server in SourceOne</h2><div id="div12"><ul>
+	<li>Job DB</li>
+	<li>Mail Archive DB &#8594; <span class="caps">SHA</span>-1 signature of each archived email.</li>
+	<li>Search DB &#8594; Saved search conditions</li>
+</ul>
+</div><h1 id="13" class="title">Questions</h1><div id="div13"></div><h2 id="14" class="title">Can SourceOne filter email and change the route of it based on policy ?</h2><div id="div14"></div><h2 id="15" class="title">How to do IM ?</h2><div id="div15"><p>require third-party IM to <span class="caps">SMTP</span> gateway.</p>
+</div><h2 id="16" class="title">Migration</h2><div id="div16"></div></div>
+</body></html>

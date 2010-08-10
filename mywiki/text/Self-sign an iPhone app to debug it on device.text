@@ -1,0 +1,14 @@
+h2. Self-sign an iPhone App
+
+* Create a code sign certificate in KeyChain tool.
+** Keep the validation period as 365 days. (3000 days obviously won't work...)
+** Trust the certificate after you created it
+* Add two user-defined settings in project settings
+<pre>PROVISIONING_PROFILE_ALLOWED = NO
+PROVISIONING_PROFILE_REQUIRED = NO</pre>
+* Change "Code Signing Identity" in project settings to your certificate
+* Add the following key/value in info.plist
+<pre>SignerIdentity = Apple iPhone OS Application Signing</pre>
+* Patch the MobileInstall right:
+** Add a source http://cydia.hackulo.us in Cydia
+** Install miPatch

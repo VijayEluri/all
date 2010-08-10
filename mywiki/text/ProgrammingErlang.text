@@ -1,0 +1,23 @@
+h1. Getting Started
+
+All variable names must start with an uppercase letter, they are called single assignment variables. = is a pattern matching operator
+
+*Lhs = Rhs* really means this:
+evaluate the right side (Rhs), and then match the result against the pattern on the left side (Lhs).
+
+How can you express something like X = X + 1 in Erlang? The answer is easy. Invent a new variable whose name hasn’t been used before (say X1), and write X1 = X + 1.
+
+Atoms start with lowercase letters, followed by a sequence of alphanumeric characters or the underscore (_) or at (@) sign. Atoms can also be quoted with a single quotation mark (’). Using the quoted form, we can create atoms that start with uppercase letters or that contain non-alphanumeric characters.
+
+Tuples are similar to structs in C, with the difference that they are anonymous. To make it easier to remember what a tuple is being used for, it’s common to use an atom as the first element of the tuple, which describes what the tuple represents. So we’d write {point, 10, 45} instead of {10, 45}, which makes the program a lot more understandable.
+
+The symbol _ is called an anonymous variable. Unlike regular variables, several occurrences of _ in the same pattern don’t have to bind to the same value.
+
+We create a list by enclosing the list elements in square brackets and separating them with commas.
+
+If T is a list, then [H|T] is also a list,11 with head H and tail T. The vertical bar | separates the head of a list from its tail. [ ] is the empty list.
+
+Strings are really just lists of integers. In Erlang, you must use double quotes. We don’t need to know which integer represents a particular character.  We can use the '''“dollar syntax”''' for this purpose. So, for example, $a is actually the integer that represents the character a, and so on.
+
+h1. Sequential Programming
+

@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<p>&lt;<TableOfContents>&gt;</p>
+<h1 id="1" class="title">JVM_Bind: Address already in use error when calling <span class="caps">DFS</span> too fast on Windows</h1><div id="div1"><p>this relates to a known Windows setting: http://support.microsoft.com/kb/q196271</p>
+<ul>
+	<li>go to &#8217;&#8217;&#8217;HKEY_LOCAL_MACHINE\<span class="caps">SYSTEM</span>\CurrentControlSet\Services\Tcpip\Parameter&#8217;&#8217;&#8217;</li>
+	<li>MaxUserPort <span class="caps">DWORD</span> 65534</li>
+	<li>TCPTimedWaitDelay <span class="caps">DWORD</span> 30</li>
+	<li>you can see all open local ports by &#8217;&#8217;&#8217;netstat -n&#8217;&#8217;&#8217;</li>
+</ul>
+</div><h1 id="2" class="title">MediaWorkSpace WebService error</h1><div id="div2"><p>If MediaWorkSpace and <span class="caps">DFS</span> are not deployed on the same machine, must add crossdomain.xml to DFS&#8217;s host&#8217;s root. eg:</p>
+<ul>
+	<li>MediaWorkSpace: http://hosta:8080/MediaWorkSpace</li>
+	<li><span class="caps">DFS</span>: http://hostb:9080/service/mediaworkspace</li>
+</ul>
+<p>Then you must deploy a crossdomain.xml at http://hostb:9080/crossdomain.xml contains:</p>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;cross-domain-policy&gt;
+	&lt;allow-access-from domain="*"/&gt;
+	&lt;allow-http-request-headers-from domain="*" headers="*"/&gt;
+&lt;/cross-domain-policy&gt; </pre>
+<p></p>
+</div><h1 id="3" class="title"><span class="caps">ADTS</span> error</h1><div id="div3"><ul>
+	<li>Install .Net Framework 2.0 SP2 if <span class="caps">ASP</span>.<span class="caps">NET</span> webservice error</li>
+	<li>Adlib need at least 1G free disk space to start to work</li>
+</ul>
+</div><h1 id="4" class="title">locale en error</h1><div id="div4"><p>make sure dm_dataDictionaryPublish job run once after installation and types are created.</p>
+</div><h1 id="5" class="title">UCFException: All remote hosts failed</h1><div id="div5"><p>&#8217;&#8217;&#8217;iapi&#8217;&#8217;&#8217;</p>
+<pre>
+API&gt; retrieve,c,dm_acs_config
+...
+08013499800002fb
+API&gt; get,c,l,acs_base_url
+...
+http://jason-vm3:9080/ACS/servlet/ACS
+API&gt; set,c,l,acs_base_url"0":0.html
+SET&gt; http://newhost:9080/ACS/servlet/ACS
+...
+OK
+API&gt; save,c,l
+...
+OK</pre>
+<p></p>
+</div><h1 id="6" class="title"><span class="caps">WDK</span> Trace</h1><div id="div6"><p>http://developer.emc.com/developer/articles/wdk_itrace_tool.htm</p>
+</div><h1 id="7" class="title"><span class="caps">DMCL</span> Trace</h1><div id="div7"><p>dmcl.ini</p>
+<pre>
+"DMAPI_CONFIGURATION":DMAPI_CONFIGURATION.html
+trace_file = c:\tracefile.txt
+trace_level = 10</pre>
+<p></p>
+</div><h1 id="8" class="title">DA cannot show right click menu</h1><div id="div8"><p>When you first run DA, if global registry is not properly configured, the DA may behave wired that cannot show right click menu, almost all menu items in menu bar are also disabled.</p>
+<p>To fix this, firstly enable global registry following the steps: <a href="DocumentumConfiguration%23globalregistry.html">DocumentumConfiguration#globalregistry</a></p>
+<p>Then clear all cache of the App server that runs DA. Start it again. Enter DA. Select one document and press <shift-p> to force show the properties page of this item. After you close the properties page, all will be fixed.<br />
+&#8212;&#8212;<br />
+CategoryDocumentum</p></div></div>
+</body></html>

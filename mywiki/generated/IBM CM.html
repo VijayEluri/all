@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h2 id="1" class="title">CM</h2><div id="div1"></div><h3 id="2" class="title">Documents</h3><div id="div2"><p>http://publib.boulder.ibm.com/infocenter/cmgmt/v8r3m0/index.jsp</p>
+</div><h3 id="3" class="title">Platforms</h3><div id="div3"><ul>
+	<li>ref: http://www-306.ibm.com/software/data/cm/cmgr/mp/requirements.html</li>
+	<li>ref: http://www-1.ibm.com/support/docview.wss?rs=86&amp;uid=swg21268156</li>
+	<li>8.3: <span class="caps">AIX</span>, Windows, Solaris, Linux, HP-UX <acronym title="added from 8.3 Fix 7"><span class="caps">IA64</span></acronym></li>
+	<li>8.4: <span class="caps">AIX</span>, Windows, Solaris, Linux</li>
+	<li>Database: DB2, Oracle</li>
+</ul>
+</div><h3 id="4" class="title">Components</h3><div id="div4"><ul>
+	<li>Library server
+		<ul>
+			<li>Need a database</li>
+		</ul></li>
+	<li>Resource manager
+		<ul>
+			<li>Running inside a web app server</li>
+			<li>File can be stored distributely</li>
+			<li>Can be configured to do partial replication, providing failover</li>
+			<li>Need a database</li>
+		</ul></li>
+	<li>CM Client for Windows
+		<ul>
+			<li>triangle: library server/resource manager/cm client</li>
+			<li>cm client *&gt; library server: <span class="caps">SQL</span> request directly</li>
+			<li>library server *&gt; cm client: token and locator</li>
+			<li>cm client *&gt; resource manager: <span class="caps">HTTP</span> request</li>
+		</ul></li>
+	<li>eClient (web based)
+		<ul>
+			<li>client capabilities: http://www-1.ibm.com/support/docview.wss?uid=swg21220064</li>
+		</ul></li>
+	<li>Administration client</li>
+	<li>Information Integrator for Content (<span class="caps">ECI</span> like)</li>
+	<li>CM VideoCharger</li>
+	<li>CM OnDemand</li>
+</ul>
+</div><h3 id="5" class="title">vs <span class="caps">DCTM</span></h3><div id="div5"><ol>
+	<li>No HP-UX support</li>
+	<li>No Sybase, <span class="caps">SQL</span> Server support</li>
+	<li>No lightweight cache component (<span class="caps">BOCS</span>)</li>
+	<li>Need many database instances</li>
+	<li>Doesn&#8217;t support D&amp;D on web</li>
+	<li>Cannot import multiple files through web</li>
+	<li>Cannot manipulate compond document(virtual document) through desktop/web</li>
+	<li>No web based administration client</li>
+</ol></div></div>
+</body></html>

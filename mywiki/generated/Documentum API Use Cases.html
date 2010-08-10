@@ -1,0 +1,89 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<h1 id="1" class="title">Get and set attribute</h1><div id="div1"><pre>
+PI&gt; query,s0,'select r_object_id from dm_user where user_login_name=''dmadmin'
+...
+q0
+API&gt; next,s0,q0
+...
+OK
+API&gt; get,s0,q0,r_object_id
+...
+110be6e180000102
+API&gt; close,s0,q0
+...
+OK
+API&gt; dump,s0,110be6e180000102su
+...
+USER ATTRIBUTES
+
+  user_name                  : dmadmin
+  ...
+  default_folder             : /Temp
+  ...
+
+API&gt; set,s0,110be6e180000102,default_folder
+SET&gt; /dmadmin
+...
+OK
+API&gt; save,s0,110be6e180000102
+...
+OK
+API&gt; reinit,s0
+...
+OK
+</pre>
+</div><h1 id="2" class="title">use case 2 (better than case 1)</h1><div id="div2"><pre>
+API&gt; retrieve,c,dm_user where user_login_name='dmadmin'
+...
+1101349980000102
+API&gt; dump,c,l
+...
+...
+API&gt; get,c,l,default_folder
+...
+/dmadmin
+API&gt; set,c,l,default_folder
+SET&gt; /newfolder
+...
+OK
+API&gt; save,c,l
+...
+OK
+API&gt; reinit,c
+...
+OK
+</pre>
+</div><h1 id="3" class="title">Signoff object</h1><div id="div3"><pre>
+API&gt; retrieve,c,dm_document where object_name='SevenDCTMJobs.pdf'
+...
+090134998000491d
+API&gt; signoff,c,l,'dmadmin','dmadmin','approved'
+...
+OK
+API&gt; retrieve,c,dm_audittrail where object_name like 'Seven%'
+...
+5f01349980000500
+API&gt; dump,c,l
+...
+USER ATTRIBUTES
+
+  event_name                 : dm_signoff
+  event_source               : Electronic Signature
+  user_name                  : dmadmin
+  audited_obj_id             : 090134998000491d
+  time_stamp                 : 2007-9-16 23:28:30
+  string_1                   : jason-vm3\dmadmin
+  string_2                   : approved
+  string_3                   :
+  string_4                   :
+......
+ object_name                : SevenDCTMJobs.pdf
+ version_label              : 1.0
+ object_type                : dm_document
+</pre></div></div>
+</body></html>

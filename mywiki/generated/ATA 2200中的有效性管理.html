@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<p>http://www.s1000d.cn/index.php/ata2200/effect-management.html</p>
+<h1 id="1" class="title">客户化手册（customized document）与非客户化手册</h1><div id="div1"><p>航空技术出版物一般分为两类，客户化和非客户化的手册。顾名思义，客户化的手册就是针对于特定的客户，为特定的飞机/发动机或者机载设备使用的手册，这一类手册是有专门的适用性的。而非客户化手册不是针对于特定的客户而是针对于整个机型/发动机/机载设备而制定的手册，它的适用范围就是这个特定的飞机/发动机/机载设备型号。</p>
+<p>飞机制造商提供给用户的各种手册都是客户化的文件，就是制造商根据客户使用飞机有效性的不同，对飞机的基本文件进行了删减、增加，形成客户化的有效文件。对于不同的用户提供的手册所包含的内容也是不同的，也会出现对于同一个机载设备，在不同的客户化IPC手册中标识的地方也不同。</p>
+</div><h1 id="2" class="title">标识飞机的编号</h1><div id="div2"></div><h2 id="3" class="title"><span class="caps">MSN</span></h2><div id="div3"><p>Manufacturer Serial Number，制造商序列号，一般称为飞机序列号。它指的是飞机/发动机或机载设备的生产序列号，用于在产品生命周期中起唯一标识作用。如中国南方航空公司于2000年引入了一架飞机型号为MD90-30的飞机，其飞机序列号为：60002/4002。</p>
+</div><h2 id="4" class="title"><span class="caps">ACN</span></h2><div id="div4"><p>Aircraft Registration Number，飞机注册号。飞机注册号即我们常说的飞机号、机尾号、注册号，它是飞机的一个重要识别标志，在世界范围内绝无重号，没有这个编号的民用航空器是不允许作任何飞行，即使是刚出厂的新飞机，作试飞或是交接给客户的转场飞行等等。</p>
+<p>在中国注册的飞机，其注册号由中国民用航空局（CAAC）分配，如序列号为60002/4002的飞机其注册号为B-2103。</p>
+</div><h2 id="5" class="title"><span class="caps">CEC</span></h2><div id="div5"><p>Customer Effectivity Code，客户有效性代码。由航空公司确定的标识用户机群内飞机的3位数字编码，如：001、002、023。它用于在客户化手册中标识飞机。一个客户有效性代码对应一架飞机，其代码的确定方法有两种：一种是由飞机制造商向用户推荐，由用户认定；另一种是由用户自己选定，经飞机制造商认可后备案。</p>
+<p>航空技术出版物的有效性管理主要依据此代码进行。</p>
+</div><h1 id="6" class="title">有效性标注</h1><div id="div6"></div><h2 id="7" class="title">有效性标注的形式</h2><div id="div7"><p>有效性标注形式有：</p>
+<ol>
+	<li>按客户有效性代码
+	<ol>
+		<li>当内容适用于某一用户的所有飞机时，有效性标注为”ALL”；</li>
+		<li>当内容仅用于某几架飞机时，有效性应标注出离散的客户有效性代码（三位数字）”×××”，例如：004、026；</li>
+		<li>当内容适用于自某架起至某架止时，有效性应标注出连续的客户有效性代码（六位数字）”××××××”，例如：001005（表示适用于自用户飞机有效性代码001 起至005 止所对应的5 架飞机）；</li>
+		<li>当内容适用于自某架起后续的所有飞机时，有效性标注为”×××999″，例如：203999（表示适用于自客户有效性代码203 对应的飞机起以后的所有飞机）。</li>
+	</ol></li>
+	<li>按服务通告贯彻情况<br />
+  服务通告的贯彻可能会直接影响技术出版物的有效性。此时，在技术出版物部分内容中应用”贯彻SB ××－××－××前（后）”来表明服务通告的贯彻对技术出版物有效性的影响。</li>
+</ol>
+<pre>
+** ON A/C ALL Post SB 24-1002 For A/C 001-005 
+</pre>
+</div><h2 id="8" class="title">有效性标注的位置</h2><div id="div8"><ol>
+	<li>有效性栏内<br />
+  在客户化的航空技术出版物中，每一页的页脚左边都有一个有效性栏，用于记录该页内容对客户飞机的有效性。<br />
+  在有效性栏内，有效性的标注，按上述有效性标注的形式直接标注。</li>
+	<li>正文中部分内容的标注<br />
+  当正文中的部分内容需要标注有效性时，如AMM中的一个task仅适用于飞机001-007，则需要为此task标注有效性，其方式为：在task之上标注：** ON A/C 001007</li>
+</ol>
+</div><h1 id="9" class="title">SGML实现原理</h1><div id="div9"></div><h2 id="10" class="title">原理</h2><div id="div10"><p>客户化技术出版物由客户化数字数据格式化生成，检索系统可以根据主文档中的有效性标签来抽取数据，生成客户化数字数据。在ATA iSpec 2200规范中定义的有效性标签有三个：effect, sbeff及coceff，其中sbeff, coceff为effect元素的子元素，其出现顺序、次数无限制，可以是0次到多次出现。effec元素基本用指示Anchor的有效性，即用于 Anchor的子元素。</p>
+<p>标识数据有效性主要使用effect元素，它有三个属性label, effrg, efftext。effrg：有效性范围，给出了文本、图形、或其它图形对象所适用的机群中的飞机范围（以CEC号格式给出），如”003010 019099″，供计算机读取与处理；efftext：有效性文本，这部分内容只供人读，所以不可在此属性上进行有效性选择。label：文档标识符，标识此effect元素。</p>
+<p>sbeff为服务通告有效性，表示某此数据仅适用于执行某个服务通告前或后的飞机。此元素不仅具有effect元素的effrg, efftext属性，还具有另外三个属性。sbnbr指明了服务通告号；sbcond指明了条件，即是执行服务通告前，还是执行服务通告后，其取值一般为 pre或post；sbrev指明了服务通告更改号。</p>
+<p>coceff为客户发起的有效性，一般很少使用。</p>
+</div><h2 id="11" class="title">举例</h2><div id="div11"><p>SGML源数据：</p>
+<pre>
+&lt;ANCHOR attributes…&gt;
+  &lt;EFFECT effrg=”001999″&gt;
+    &lt;SBEFF effrg=”001005″ sbnbr=”24-1002″ sbcond=”POST”&gt;
+  &lt;/EFFECT&gt;
+  &lt;PARA&gt;s1000d.cn&lt;/PARA&gt;
+&lt;/ANCHOR&gt;
+
+&lt;ANCHOR attributes…&gt;
+  &lt;EFFECT effrg=”001005″&gt;&lt;/EFFECT&gt;
+  &lt;PARA&gt;lizlex…&lt;/PARA&gt;
+&lt;/ANCHOR&gt;
+</pre>
+<p>解析并格式化输出</p>
+<pre>
+** ON A/C ALL
+Post SB 24-1002 For A/C 001-005
+s1000d.cn
+
+** ON A/C 001-005
+lizlex
+</pre>
+</div><h1 id="12" class="title">飞机有效性目录List of Effective Aircraft</h1><div id="div12"><p>为特定机群而定制的客户化手册，应当提供手册中涉及的飞机清单，此清单位于手册的标题页后。注意：对于一个基本型飞机的每种改型，都应当编制一本独立的手册，以免用户的手册中出现多余的不适用数据。</p>
+<p>飞机有效性目录中至少包含以下信息：</p>
+<pre>
+Manufacturer’s Series and Model
+Operator’s Identification Code
+Operator’s Effectivity Code (3 digit alphanumeric)
+Manufacturer’s Serial Number
+Aircraft Registration Number
+Manufacturer’s Line Number
+</pre></div></div>
+</body></html>

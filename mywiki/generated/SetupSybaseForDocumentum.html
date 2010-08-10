@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="main.css" type="text/css">
+</head><body>
+<div class="content">
+<ul>
+	<li>Install sybase
+	<ol>
+		<li>set kernel parameter, increase memory allocation permit</li>
+		<li>add sybase group and user sybase:sybase</li>
+		<li>mount sybase iso</li>
+		<li>run setup as sybase</li>
+		<li>block size 4096 for D5/8192 for D6</li>
+		<li>config a new server/backup server/monitor server</li>
+	</ol></li>
+	<li>Set sybase parameter
+	<ol>
+		<li>enter isql</li>
+		<li>Set the following parameters to the values shown:<br />
+	 for D5 {{{<br />
+sp_configure &#8216;number of open objects&#8217;, 2000<br />
+sp_configure &#8216;number of open indexes&#8217;, 1000<br />
+sp_configure &#8216;number of locks&#8217;, 20000<br />
+sp_configure &#8216;max memory&#8217;, <number of 2k pages><br />
+}}}<br />
+	 for D6/Sybase 15 {{{<br />
+sp_configure &#8216;number of open objects&#8217;, 4000<br />
+sp_configure &#8216;number of open indexes&#8217;, 3000<br />
+sp_configure &#8216;number of locks&#8217;, 25000<br />
+sp_configure &#8216;number of user connections&#8217;, 200<br />
+sp_configure &#8216;procedure cache size&#8217;, 48000<br />
+sp_configure &#8216;number of open partitions&#8217;, 2500<br />
+sp_configure &#8216;max memory&#8217;, <number of 2k pages><br />
+}}}</li>
+		<li>Restart the Sybase server.</li>
+	</ol></li>
+	<li>Set codepage to UTF8
+	<ol>
+		<li>Install the Sybase server with the <span class="caps">UTF</span>-8 code page.</li>
+		<li>Connect as Sybase administrator.</li>
+		<li>Using isql, connect and run the following query to determine if <span class="caps">UTF</span>-8 is installed: {{{<br />
+1)use master<br />
+2)go<br />
+1)select name from syscharsets where name=&#8216;utf8&#8217;<br />
+2)go<br />
+}}} If the query returns an answer, <span class="caps">UTF</span>-8 is installed.</li>
+		<li>Issue this command to determine whether <span class="caps">UTF</span>-8 is the default character set: {{{<br />
+1: sp_configure &#8216;default character set id&#8217;<br />
+2: go <br />
+}}}</li>
+		<li>If <span class="caps">UTF</span>-8 is not installed or is not the default code page:
+		<ul>
+			<li>Execute this command on the command-line to install the <span class="caps">UTF</span>-8 code page: {{{<br />
+charset -Usa -Ppassword -Shost_name binary.srt utf8<br />
+}}}</li>
+			<li>Using isql, execute these commands to make <span class="caps">UTF</span>-8 the default code page: {{{<br />
+1)use master<br />
+2)go<br />
+1)sp_configure &#8216;default character set id&#8217;,190<br />
+2)go<br />
+}}}</li>
+		</ul></li>
+		<li>Restart the Sybase server.</li>
+		<li>Install Content Server and configure a repository.</li>
+	</ol></li>
+	<li>Create database with page size larger than 2k {{{<br />
+dbinit -p 4096<br />
+dbinit -p 8192<br />
+}}}</li>
+	<li>Increase the network packet size
+	<ol>
+		<li>Log in the <span class="caps">ISQL</span>.</li>
+		<li>Display the current maximum network packet size: {{{<br />
+sp_configure &#8220;max network&#8221;<br />
+}}}</li>
+		<li>Change the size to 4 K: {{{<br />
+sp_configure &#8220;max network packet size&#8221;, 4096<br />
+}}}<br />
+	 or to 8K {{{<br />
+sp_configure &#8220;max network packet size&#8221;, 8192<br />
+}}}</li>
+	</ol></li>
+	<li>Increase Sybase connections {{{<br />
+sp_configure &#8216;number of user connections&#8217;, 200<br />
+}}} watch the prompt messages, the command may be failed.<br />
+&#8212;&#8212;<br />
+CategoryDocumentum</li>
+</ul></div>
+</body></html>
