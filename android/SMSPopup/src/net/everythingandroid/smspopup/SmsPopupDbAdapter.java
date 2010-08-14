@@ -1,5 +1,6 @@
 package net.everythingandroid.smspopup;
 
+import net.everythingandroid.smspopup.filter.FilteredMessage;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -64,9 +65,9 @@ public class SmsPopupDbAdapter
 
 	// message filtering
 	private static final String FILTERED_MESSAGES_DB_TABLE = "filtered";
-	private static final String KEY_NUMBER = "number";
-	private static final String KEY_RECEIVED = "received";
-	private static final String KEY_BODY = "body";
+	public static final String KEY_NUMBER = "number";
+	public static final String KEY_RECEIVED = "received";
+	public static final String KEY_BODY = "body";
 
 	private static final String DATABASE_NAME = "data";
 	private static final int DATABASE_VERSION = 1;
@@ -244,11 +245,41 @@ public class SmsPopupDbAdapter
 			Log.v("Filterd message id " + id);
 	}
 
+	public Cursor fetchAllFilteredMessage()
+	{
+		String[] cols = new String[] { KEY_ROWID, KEY_NUMBER, KEY_RECEIVED, KEY_BODY };
+		return mDb.query(FILTERED_MESSAGES_DB_TABLE, cols, null, null, null, null, null);
+	}
+	
+	public void deleteAllFilteredMessage()
+	{
+		mDb.delete(FILTERED_MESSAGES_DB_TABLE, null, null);
+	}
+	
+	public void deleteFilteredMessage(long id)
+	{
+		mDb.delete(FILTERED_MESSAGES_DB_TABLE, KEY_ROWID + "=" + id, null);
+	}
+	
+	public FilteredMessage findFilteredMessageById(long id)
+	{
+		FilteredMessage msg = new FilteredMessage();
+		String[] cols = new String[] { KEY_ROWID, KEY_NUMBER, KEY_RECEIVED, KEY_BODY };
+		Cursor c = mDb.query(FILTERED_MESSAGES_DB_TABLE, cols, KEY_ROWID + "=" + id, null, null, null, null);
+		if (c.moveToFirst()) {
+			msg.setNumber(c.getString(1));
+			msg.setReceived(c.getString(2));
+			msg.setBody(c.getString(3));
+		}
+		c.close();
+		return msg;
+	}
+
 	public boolean deleteContact(long contactId)
 	{
 		return deleteContact(contactId, true);
 	}
-
+	
 	public boolean deleteContact(long contactId, boolean showToast)
 	{
 		if (mDb.delete(CONTACTS_DB_TABLE, KEY_CONTACT_ID + "=" + String.valueOf(contactId), null) > 0) {

@@ -169,9 +169,10 @@
 			android:key="@string/pref_bypass_contacts_key"></CheckBoxPreference>
 		<Preference android:title="Manage Filtered Messages" android:dependency="@string/pref_enable_filtering_key"
 			android:key="@string/pref_manage_filtered_key"></Preference>
+		<!-- 
 		<Preference android:title="Process Existing Messages" android:dependency="@string/pref_enable_filtering_key"
 			android:key="@string/pref_filter_existing_key"></Preference>
-
+		-->
 
 	</PreferenceCategory>
 	<PreferenceCategory android:key="@string/pref_other_key" android:title="@string/pref_other_title">

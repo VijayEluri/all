@@ -174,17 +174,26 @@ public class SmsReceiverService extends Service
 		boolean docked = docked_state == ExternalEventReceiver.EXTRA_DOCK_STATE_DESK;
 
 		String keywords = mPrefs.getString(R.string.pref_keywords_key, "");
+		
+		boolean ignoreContacts = mPrefs.getBoolean(R.string.pref_bypass_contacts_key, true);
+		boolean enableFiltering = mPrefs.getBoolean(R.string.pref_enable_filtering_key, true);
 
 		mPrefs.close();
 
-		if (message.getMessageType() == SmsMmsMessage.MESSAGE_TYPE_SMS) {
-			if (filterMessageByKeywords(message, keywords)) {
-				SmsPopupDbAdapter dbAdapter = new SmsPopupDbAdapter(getApplicationContext());
-				dbAdapter.open();
-				dbAdapter.createFilteredMessage(message);
-				dbAdapter.close();
-				message.delete();
-				return;
+		if (enableFiltering) {
+			if (message.getMessageType() == SmsMmsMessage.MESSAGE_TYPE_SMS) {
+				if (ignoreContacts && (message.getContactId() != null)) {
+					// ignore if we can find contact id
+				} else {
+					if (filterMessageByKeywords(message, keywords)) {
+						SmsPopupDbAdapter dbAdapter = new SmsPopupDbAdapter(getApplicationContext());
+						dbAdapter.open();
+						dbAdapter.createFilteredMessage(message);
+						dbAdapter.close();
+						message.delete();
+						return;
+					}
+				}
 			}
 		}
 
