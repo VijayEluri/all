@@ -24,6 +24,8 @@ public class ManagePreferences {
   public static final class Defaults {
     public static final boolean PREFS_AUTOROTATE = true;
     public static final boolean PREFS_PRIVACY = false;
+    public static final boolean PREFS_PRIVACY_SENDER = false;
+    public static final boolean PREFS_PRIVACY_ALWAYS = false;
     public static final boolean PREFS_SHOW_BUTTONS = true;
     public static final String PREFS_BUTTON1 = String.valueOf(ButtonListPreference.BUTTON_CLOSE);
     public static final String PREFS_BUTTON2 = String.valueOf(ButtonListPreference.BUTTON_DELETE);
@@ -32,6 +34,7 @@ public class ManagePreferences {
     public static final boolean PREFS_ONLY_SHOW_ON_KEYGUARD = false;
 
     public static final boolean PREFS_NOTIF_ENABLED = false;
+    public static final String PREFS_NOTIF_ICON = "0";
     public static final boolean PREFS_VIBRATE_ENABLED = true;
     public static final String PREFS_VIBRATE_PATTERN = "0,1200";
     public static final boolean PREFS_LED_ENABLED = true;
@@ -138,6 +141,11 @@ public class ManagePreferences {
   public int getInt(String pref, int defaultVal) {
     return mPrefs.getInt(pref, defaultVal);
   }
+
+  public int getInt(int resPrefId, int defaultVal) {
+    return mPrefs.getInt(context.getString(resPrefId), defaultVal);
+  }
+
 
   public void close() {
     if (contactCursor != null) {

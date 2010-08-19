@@ -3,6 +3,7 @@ package net.everythingandroid.smspopup;
 import net.everythingandroid.smspopup.SmsPopupUtils.ContactIdentification;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.gsm.SmsMessage;
@@ -55,6 +56,10 @@ public class SmsMmsMessage {
   private boolean fromEmailGateway = false;
   private MessageClass messageClass = null;
 
+  // Sprint vars to check for special voicemail messages
+  private static final String SPRINT_BRAND = "sprint";
+  private static final String SPRINT_VOICEMAIL_PREFIX = "//ANDROID:";
+
   /**
    * Construct SmsMmsMessage given a raw message (created from pdu), used for when
    * a message is initially received via the network.
@@ -73,15 +78,20 @@ public class SmsMmsMessage {
     fromEmailGateway = sms.isEmail();
     messageClass = sms.getMessageClass();
 
-    String body;
-    if (messages.length == 1 || sms.isReplace()) {
-      body = sms.getDisplayMessageBody();
-    } else {
-      StringBuilder bodyText = new StringBuilder();
-      for (int i = 0; i < messages.length; i++) {
-        bodyText.append(messages[i].getMessageBody());
+    String body = "";
+
+    try {
+      if (messages.length == 1 || sms.isReplace()) {
+        body = sms.getDisplayMessageBody();
+      } else {
+        StringBuilder bodyText = new StringBuilder();
+        for (int i = 0; i < messages.length; i++) {
+          bodyText.append(messages[i].getMessageBody());
+        }
+        body = bodyText.toString();
       }
-      body = bodyText.toString();
+    } catch (Exception e) {
+      if (Log.DEBUG) Log.v("SmsMmsMessage<init> exception: " + e.toString());
     }
     messageBody = body;
 
@@ -261,10 +271,10 @@ public class SmsMmsMessage {
 
   /**
    * Fetch the "reply to" message intent
-   * 
+   *
    * @param replyToThread whether or not to reply using the message threadId or using the
    * sender address
-   * 
+   *
    * @return the intent to pass to startActivity()
    */
   public Intent getReplyIntent(boolean replyToThread) {
@@ -408,7 +418,7 @@ public class SmsMmsMessage {
 
   /**
    * Sned a reply to this message
-   * 
+   *
    * @param quickreply the message to send
    * @return true of the message was sent, false otherwise
    */
@@ -422,6 +432,22 @@ public class SmsMmsMessage {
       new SmsMessageSender(context, new String[] {fromAddress}, quickReply, getThreadId());
 
     return sender.sendMessage();
+  }
+
+  // Checks if user is on carrier Sprint and message is a special system message
+  public boolean isSprintVisualVoicemail() {
+
+    if (!SPRINT_BRAND.equals(Build.BRAND)) {
+      return false;
+    }
+
+    if (messageBody != null) {
+      if (messageBody.trim().startsWith(SPRINT_VOICEMAIL_PREFIX)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
 }

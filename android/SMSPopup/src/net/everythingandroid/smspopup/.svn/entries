@@ -1,14 +1,14 @@
 10
 
 dir
-251
+272
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/src/net/everythingandroid/smspopup
 http://android-smspopup.googlecode.com/svn
 
 
 
-2010-07-11T15:23:54.505666Z
-251
+2010-08-18T04:10:39.724021Z
+269
 adam@everythingandroid.net
 
 
@@ -304,13 +304,14 @@ file
 
 
 
-2010-08-03T14:21:28.000000Z
-29694b022f596280d95df731b4cbba4a
-2010-01-29T17:33:30.398359Z
-229
+2010-08-19T15:27:34.000000Z
+dd68de8c18934bc711844500a4a41a30
+2010-08-14T00:16:59.079370Z
+264
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -329,8 +330,7 @@ adam@everythingandroid.net
 
 
 
-
-19941
+21299
 
 ManagePreferences.java
 file
@@ -338,13 +338,14 @@ file
 
 
 
-2010-08-03T14:21:29.000000Z
-39b05baba6c9f05137f5da708c855a1a
-2009-12-21T03:23:24.925592Z
-214
+2010-08-19T15:27:35.000000Z
+addf409f0ffab2f4e10fc92abc581724
+2010-08-14T00:16:59.079370Z
+264
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -363,8 +364,7 @@ adam@everythingandroid.net
 
 
 
-
-5329
+5643
 
 ManageWakeLock.java
 file
@@ -474,13 +474,14 @@ file
 
 
 
-2010-08-03T14:21:33.000000Z
-8a684b38bcebc0635752603373a1834b
-2009-12-20T14:24:22.532943Z
-209
+2010-08-19T15:27:34.000000Z
+d1a2b2721e29fa7796dfdd417d380bc0
+2010-08-18T03:49:29.678284Z
+266
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -499,8 +500,7 @@ adam@everythingandroid.net
 
 
 
-
-12408
+15340
 
 SmsMmsMessage.java
 file
@@ -508,13 +508,14 @@ file
 
 
 
-2010-08-03T14:21:34.000000Z
-2cdddcdbb2b234e384ec77e8d71b28c5
-2010-02-01T03:44:42.570078Z
-232
+2010-08-19T15:27:35.000000Z
+c5a787fd97631d41dbfc57d6e2189f3a
+2010-08-18T04:10:39.724021Z
+269
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -533,8 +534,7 @@ adam@everythingandroid.net
 
 
 
-
-14240
+14974
 
 SmsMonitorService.java
 file
@@ -576,13 +576,14 @@ file
 
 
 
-2010-08-03T14:21:36.000000Z
-adde9b2592522e28dd4a87a2bb072459
-2010-07-11T15:23:54.505666Z
-251
+2010-08-19T15:27:34.000000Z
+50121b8ff25612dda1ad53c47b56c187
+2010-08-14T00:16:59.079370Z
+264
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -601,8 +602,7 @@ adam@everythingandroid.net
 
 
 
-
-49149
+50967
 
 SmsPopupConfigActivity.java
 file
@@ -678,13 +678,14 @@ file
 
 
 
-2010-08-03T14:21:06.000000Z
-81cd4fc99c214cc2df676d8c5830d048
-2010-07-11T15:23:54.505666Z
-251
+2010-08-19T15:27:34.000000Z
+6d80e2b8b6f28b048f2ab4fe96753c4e
+2010-08-18T03:49:29.678284Z
+266
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -703,8 +704,7 @@ adam@everythingandroid.net
 
 
 
-
-43381
+44525
 
 SmsPopupUtilsService.java
 file
@@ -780,13 +780,14 @@ file
 
 
 
-2010-08-01T05:42:59.000000Z
-779fcd24e26182ad52ff3afbe69f552a
-2010-02-18T02:58:52.630957Z
-243
+2010-08-19T15:31:17.000000Z
+da7fd66efb6bb5379dc7db0b95ce59f6
+2010-08-18T03:49:29.678284Z
+266
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -805,8 +806,7 @@ adam@everythingandroid.net
 
 
 
-
-12878
+14941
 
 controls
 dir

@@ -1,13 +1,61 @@
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/svn/!svn/ver/231/trunk/SMSPopup/res/drawable
+/svn/!svn/ver/272/trunk/SMSPopup/res/drawable
+END
+smspopup_icon.png
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/270/trunk/SMSPopup/res/drawable/smspopup_icon.png
+END
+quickcontact_nobadge_highlight.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/231/trunk/SMSPopup/res/drawable/quickcontact_nobadge_highlight.9.png
+END
+stat_notify_sms_htc.png
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/272/trunk/SMSPopup/res/drawable/stat_notify_sms_htc.png
+END
+stat_notify_sms_failed_htc.png
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/272/trunk/SMSPopup/res/drawable/stat_notify_sms_failed_htc.png
+END
+stat_notify_sms_blur.png
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/272/trunk/SMSPopup/res/drawable/stat_notify_sms_blur.png
+END
+quickcontact_nobadge_normal.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/231/trunk/SMSPopup/res/drawable/quickcontact_nobadge_normal.9.png
 END
 quickcontact_badge_small.xml
 K 25
 svn:wc:ra_dav:version-url
 V 74
 /svn/!svn/ver/231/trunk/SMSPopup/res/drawable/quickcontact_badge_small.xml
+END
+stat_notify_sms.png
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/272/trunk/SMSPopup/res/drawable/stat_notify_sms.png
+END
+stat_notify_sms_failed.png
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/272/trunk/SMSPopup/res/drawable/stat_notify_sms_failed.png
 END
 quickcontact_nobadge.xml
 K 25
@@ -20,16 +68,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 80
 /svn/!svn/ver/231/trunk/SMSPopup/res/drawable/quickcontact_nobadge_pressed.9.png
-END
-quickcontact_nobadge_highlight.9.png
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/!svn/ver/231/trunk/SMSPopup/res/drawable/quickcontact_nobadge_highlight.9.png
-END
-quickcontact_nobadge_normal.9.png
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/svn/!svn/ver/231/trunk/SMSPopup/res/drawable/quickcontact_nobadge_normal.9.png
 END

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 32
-/svn/!svn/ver/251/trunk/SMSPopup
+/svn/!svn/ver/272/trunk/SMSPopup
 END
 default.properties
 K 25
@@ -9,11 +9,17 @@ svn:wc:ra_dav:version-url
 V 51
 /svn/!svn/ver/153/trunk/SMSPopup/default.properties
 END
-.classpath
+.android2po
 K 25
 svn:wc:ra_dav:version-url
-V 43
-/svn/!svn/ver/170/trunk/SMSPopup/.classpath
+V 44
+/svn/!svn/ver/257/trunk/SMSPopup/.android2po
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/271/trunk/SMSPopup/AndroidManifest.xml
 END
 .project
 K 25
@@ -21,9 +27,9 @@ svn:wc:ra_dav:version-url
 V 41
 /svn/!svn/ver/126/trunk/SMSPopup/.project
 END
-AndroidManifest.xml
+.classpath
 K 25
 svn:wc:ra_dav:version-url
-V 52
-/svn/!svn/ver/247/trunk/SMSPopup/AndroidManifest.xml
+V 43
+/svn/!svn/ver/170/trunk/SMSPopup/.classpath
 END

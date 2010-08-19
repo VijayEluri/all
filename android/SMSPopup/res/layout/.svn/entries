@@ -1,7 +1,7 @@
 10
 
 dir
-251
+272
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/res/layout
 http://android-smspopup.googlecode.com/svn
 
@@ -26,14 +26,14 @@ adam@everythingandroid.net
 
 dacd1dde-df38-11dd-9759-139c9ab14fc6
 
-ledpatterndialog.xml
+about.xml
 file
 
 
 
 
 2010-08-01T05:43:10.000000Z
-104309996d5023d715396e88d68205ae
+98515b8c4c6f29a9966298a53216c7d6
 2010-02-01T03:44:42.570078Z
 232
 adam@everythingandroid.net
@@ -58,7 +58,75 @@ adam@everythingandroid.net
 
 
 
-2708
+610
+
+config_contacts_activity.xml
+file
+
+
+
+
+2010-08-01T05:43:10.000000Z
+0a97568edfa4cb7ed2c8186eeb20e80c
+2010-02-01T03:44:42.570078Z
+232
+adam@everythingandroid.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1015
+
+donate.xml
+file
+
+
+
+
+2010-08-01T05:43:10.000000Z
+256d1044b657f163f626177140170b48
+2010-02-01T03:44:42.570078Z
+232
+adam@everythingandroid.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1470
 
 ledcolordialog.xml
 file
@@ -94,14 +162,14 @@ adam@everythingandroid.net
 
 3079
 
-simple_list_item_2.xml
+ledpatterndialog.xml
 file
 
 
 
 
 2010-08-01T05:43:10.000000Z
-c1af9df519c1b8c18141094b491e518c
+104309996d5023d715396e88d68205ae
 2010-02-01T03:44:42.570078Z
 232
 adam@everythingandroid.net
@@ -126,7 +194,41 @@ adam@everythingandroid.net
 
 
 
-852
+2708
+
+list_view.xml
+file
+
+
+
+
+2010-08-01T05:43:10.000000Z
+5e5bc5cf5d2c05177ca2a04b45cff525
+2010-02-01T03:44:42.570078Z
+232
+adam@everythingandroid.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+451
 
 message_presets_configure.xml
 file
@@ -196,40 +298,6 @@ adam@everythingandroid.net
 
 4036
 
-popup_privacy.xml
-file
-
-
-
-
-2010-08-01T05:43:10.000000Z
-b773e51d69beb070c5b2718180211aca
-2010-02-01T03:44:42.570078Z
-232
-adam@everythingandroid.net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-575
-
 popup.xml
 file
 
@@ -263,40 +331,6 @@ adam@everythingandroid.net
 
 
 2648
-
-list_view.xml
-file
-
-
-
-
-2010-08-01T05:43:10.000000Z
-5e5bc5cf5d2c05177ca2a04b45cff525
-2010-02-01T03:44:42.570078Z
-232
-adam@everythingandroid.net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-451
 
 popup_divider.xml
 file
@@ -332,14 +366,14 @@ adam@everythingandroid.net
 
 399
 
-donate.xml
+popup_header.xml
 file
 
 
 
 
 2010-08-01T05:43:10.000000Z
-256d1044b657f163f626177140170b48
+f0781f4d7855362d7fcd2d7d68c62426
 2010-02-01T03:44:42.570078Z
 232
 adam@everythingandroid.net
@@ -364,16 +398,16 @@ adam@everythingandroid.net
 
 
 
-1470
+1604
 
-vibratepatterndialog.xml
+popup_mms.xml
 file
 
 
 
 
 2010-08-01T05:43:10.000000Z
-15bcee7d4771420b08f018e3aaad295c
+b9364a1aad72dd1f6fadf8992a348cac
 2010-02-01T03:44:42.570078Z
 232
 adam@everythingandroid.net
@@ -398,7 +432,41 @@ adam@everythingandroid.net
 
 
 
-1393
+1016
+
+popup_privacy.xml
+file
+
+
+
+
+2010-08-01T05:43:10.000000Z
+b773e51d69beb070c5b2718180211aca
+2010-02-01T03:44:42.570078Z
+232
+adam@everythingandroid.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+575
 
 popup_unreadcount.xml
 file
@@ -434,14 +502,14 @@ adam@everythingandroid.net
 
 1347
 
-about.xml
+simple_list_item_2.xml
 file
 
 
 
 
 2010-08-01T05:43:10.000000Z
-98515b8c4c6f29a9966298a53216c7d6
+c1af9df519c1b8c18141094b491e518c
 2010-02-01T03:44:42.570078Z
 232
 adam@everythingandroid.net
@@ -466,16 +534,16 @@ adam@everythingandroid.net
 
 
 
-610
+852
 
-popup_header.xml
+vibratepatterndialog.xml
 file
 
 
 
 
 2010-08-01T05:43:10.000000Z
-f0781f4d7855362d7fcd2d7d68c62426
+15bcee7d4771420b08f018e3aaad295c
 2010-02-01T03:44:42.570078Z
 232
 adam@everythingandroid.net
@@ -500,73 +568,5 @@ adam@everythingandroid.net
 
 
 
-1604
-
-config_contacts_activity.xml
-file
-
-
-
-
-2010-08-01T05:43:10.000000Z
-0a97568edfa4cb7ed2c8186eeb20e80c
-2010-02-01T03:44:42.570078Z
-232
-adam@everythingandroid.net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1015
-
-popup_mms.xml
-file
-
-
-
-
-2010-08-01T05:43:10.000000Z
-b9364a1aad72dd1f6fadf8992a348cac
-2010-02-01T03:44:42.570078Z
-232
-adam@everythingandroid.net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1016
+1393
 

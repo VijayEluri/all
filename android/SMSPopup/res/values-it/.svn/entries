@@ -1,15 +1,15 @@
 10
 
 dir
-251
+272
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/res/values-it
 http://android-smspopup.googlecode.com/svn
 
 
 
-2010-02-18T23:24:54.199930Z
-244
-macarse
+2010-08-12T14:50:04.789737Z
+263
+adam@everythingandroid.net
 
 
 
@@ -32,11 +32,14 @@ file
 
 
 
-2010-08-01T05:43:08.000000Z
-6e8f5be9a9f83f28767cda58280a4712
-2010-02-18T23:24:54.199930Z
-244
-macarse
+2010-08-19T15:27:34.000000Z
+d24ccd029ef8317fffb0af0e4db6051c
+2010-08-12T14:50:04.789737Z
+263
+adam@everythingandroid.net
+
+
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -55,8 +58,5 @@ macarse
 
 
 
-
-
-
-20202
+20118
 

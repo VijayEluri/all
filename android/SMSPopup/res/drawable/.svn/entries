@@ -1,14 +1,14 @@
 10
 
 dir
-251
+272
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/res/drawable
 http://android-smspopup.googlecode.com/svn
 
 
 
-2010-01-31T02:59:19.154107Z
-231
+2010-08-19T03:13:35.575850Z
+272
 adam@everythingandroid.net
 
 
@@ -94,40 +94,6 @@ adam@everythingandroid.net
 
 1225
 
-quickcontact_nobadge_pressed.9.png
-file
-
-
-
-
-2010-08-01T05:43:03.000000Z
-2cdf10711a68d7070ed8eb3e175dbaa3
-2010-01-31T02:59:19.154107Z
-231
-adam@everythingandroid.net
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-675
-
 quickcontact_nobadge_highlight.9.png
 file
 
@@ -195,4 +161,242 @@ has-props
 
 
 390
+
+quickcontact_nobadge_pressed.9.png
+file
+
+
+
+
+2010-08-01T05:43:03.000000Z
+2cdf10711a68d7070ed8eb3e175dbaa3
+2010-01-31T02:59:19.154107Z
+231
+adam@everythingandroid.net
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+675
+
+smspopup_icon.png
+file
+
+
+
+
+2010-08-19T15:27:33.000000Z
+c02d513ebbe7e4e9b1c5b905a1405b3d
+2010-08-18T12:39:53.741813Z
+270
+adam@everythingandroid.net
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2359
+
+stat_notify_sms.png
+file
+
+
+
+
+2010-08-19T15:27:34.000000Z
+a2d59278e1bbab44596ae2ca8cc7283c
+2010-08-19T03:13:35.575850Z
+272
+adam@everythingandroid.net
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1951
+
+stat_notify_sms_blur.png
+file
+
+
+
+
+2010-08-19T15:27:34.000000Z
+f323ecebb1022ec97c6cc1d64301de0c
+2010-08-19T03:13:35.575850Z
+272
+adam@everythingandroid.net
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+453
+
+stat_notify_sms_failed.png
+file
+
+
+
+
+2010-08-19T15:27:34.000000Z
+8b870a262fe708a6804b9bab33f1e9e2
+2010-08-19T03:13:35.575850Z
+272
+adam@everythingandroid.net
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1814
+
+stat_notify_sms_failed_htc.png
+file
+
+
+
+
+2010-08-19T15:27:34.000000Z
+90d5e5642669b089d8c7f15afd3a568b
+2010-08-19T03:13:35.575850Z
+272
+adam@everythingandroid.net
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+753
+
+stat_notify_sms_htc.png
+file
+
+
+
+
+2010-08-19T15:27:34.000000Z
+c6643754b96615026252666f0c91563c
+2010-08-19T03:13:35.575850Z
+272
+adam@everythingandroid.net
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+642
 

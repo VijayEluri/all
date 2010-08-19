@@ -1,14 +1,14 @@
 10
 
 dir
-251
+272
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/res/xml
 http://android-smspopup.googlecode.com/svn
 
 
 
-2010-01-24T22:42:44.701437Z
-216
+2010-08-14T00:16:59.079370Z
+264
 adam@everythingandroid.net
 
 
@@ -66,13 +66,14 @@ file
 
 
 
-2010-08-01T05:43:04.000000Z
-7e424304ce4dfbe311f117fd308d0a33
-2010-01-24T22:42:44.701437Z
-216
+2010-08-19T14:25:40.000000Z
+d83d63076e43fa1e0966b99a59ed252d
+2010-08-14T00:16:59.079370Z
+264
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -91,6 +92,5 @@ adam@everythingandroid.net
 
 
 
-
-17126
+18499
 

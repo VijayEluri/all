@@ -30,12 +30,25 @@ public class ManageNotification {
   public static final String defaultRingtone = Settings.System.DEFAULT_NOTIFICATION_URI.toString();
   private static final Uri UNDELIVERED_URI = Uri.parse("content://mms-sms/undelivered");
 
+  private static final int NOTIFY = 0;
+  private static final int FAILED = 1;
+  private static final int[][] NOTIF_ICON_RES = {
+    {R.drawable.stat_notify_sms, R.drawable.stat_notify_sms_failed},
+    {R.drawable.stat_notify_sms_htc, R.drawable.stat_notify_sms_failed_htc},
+    {R.drawable.stat_notify_sms_blur, R.drawable.stat_notify_sms_failed},
+  };
+
   /*
    * Class to hold the popup notification elements
    */
   static class PopupNotification {
     public Notification notification;
     public boolean privacyMode;
+    public boolean privacySender;
+    public boolean privacyAlways;
+    public int notifIcon;
+    public int notifFailedIcon;
+
     public boolean replyToThread;
 
     PopupNotification(Notification n) {
@@ -126,9 +139,16 @@ public class ManageNotification {
 
       // If we're in privacy mode and the keyguard is on then just display
       // the name of the person, otherwise scroll the name and message
-      if (n.privacyMode && ManageKeyguard.inKeyguardRestrictedInputMode()) {
-        scrollText =
-          new SpannableString(context.getString(R.string.notification_scroll_privacy, contactName));
+      if (n.privacyMode && (ManageKeyguard.inKeyguardRestrictedInputMode() || n.privacyAlways)) {
+
+        if (n.privacySender) {
+          scrollText =
+            new SpannableString(context.getString(R.string.notification_scroll_privacy_no_name));
+        } else {
+          scrollText =
+            new SpannableString(context.getString(R.string.notification_scroll_privacy, contactName));
+        }
+
       } else {
         scrollText =
           new SpannableString(context.getString(R.string.notification_scroll, contactName,
@@ -159,7 +179,7 @@ public class ManageNotification {
      */
 
     // Set the icon, scrolling text and timestamp
-    n.notification.icon = R.drawable.stat_notify_sms;
+    n.notification.icon = n.notifIcon;
     n.notification.tickerText = scrollText;
     n.notification.when = timestamp;
 
@@ -251,9 +271,17 @@ public class ManageNotification {
 
     if (Log.DEBUG) Log.v("Sounds URI = " + alarmSoundURI.toString());
 
-    // See if user wants some privacy
+    // Fetch privacy settings
     boolean privacyMode =
       mPrefs.getBoolean(R.string.pref_privacy_key, Defaults.PREFS_PRIVACY);
+    boolean privacySender =
+      mPrefs.getBoolean(R.string.pref_privacy_sender_key, Defaults.PREFS_PRIVACY_SENDER);
+    boolean privacyAlways =
+      mPrefs.getBoolean(R.string.pref_privacy_always_key, Defaults.PREFS_PRIVACY_ALWAYS);
+
+    // Fetch notification icon
+    int notifIcon =
+      Integer.valueOf(mPrefs.getString(R.string.pref_notif_icon_key, Defaults.PREFS_NOTIF_ICON));
 
     boolean replyToThread =
       mPrefs.getBoolean(R.string.pref_reply_to_thread_key, Defaults.PREFS_REPLY_TO_THREAD);
@@ -357,6 +385,10 @@ public class ManageNotification {
     PopupNotification popupNotification = new PopupNotification(notification);
     popupNotification.replyToThread = replyToThread;
     popupNotification.privacyMode = privacyMode;
+    popupNotification.privacySender = privacySender;
+    popupNotification.privacyAlways = privacyAlways;
+    popupNotification.notifIcon = notifIcon == -1 ? 0 : NOTIF_ICON_RES[notifIcon][NOTIFY];
+    popupNotification.notifFailedIcon = notifIcon == -1 ? 0 : NOTIF_ICON_RES[notifIcon][FAILED];
 
     return popupNotification;
   }
@@ -399,7 +431,7 @@ public class ManageNotification {
 
   /**
    * Parse the user provided custom vibrate pattern into a long[]
-   * 
+   *
    */
   // TODO: tidy this up
   public static long[] parseVibratePattern(String stringPattern) {
@@ -439,7 +471,7 @@ public class ManageNotification {
 
   /**
    * Parse LED pattern string into int[]
-   * 
+   *
    * @param stringPattern
    * @return
    */
@@ -506,7 +538,7 @@ public class ManageNotification {
     }
 
     // Set the icon, scrolling text and timestamp
-    n.notification.icon = R.drawable.stat_notify_sms_failed;
+    n.notification.icon = n.notifFailedIcon;
     n.notification.tickerText = contentTitle;
     n.notification.when = System.currentTimeMillis();
 

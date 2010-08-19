@@ -43,6 +43,14 @@
               android:showSilent="true"
               android:dependency="@string/pref_notif_enabled_key"
               android:defaultValue="content://settings/system/notification_sound" />
+            <ListPreference
+              android:key="@string/pref_notif_icon_key"
+              android:title="@string/pref_notif_icon_title"
+              android:summary="@string/pref_notif_icon_summary"
+              android:entries="@array/pref_notif_icon_entries"
+              android:entryValues="@array/pref_notif_icon_values"
+              android:defaultValue="@string/pref_notif_icon_default"
+              android:dependency="@string/pref_notif_enabled_key" />              
             <net.everythingandroid.smspopup.preferences.TestNotificationDialogPreference
               android:key="@string/pref_notif_test_key"
               android:dialogIcon="@drawable/android:ic_dialog_alert"
@@ -241,13 +249,29 @@
           android:summaryOff="@string/pref_dimscreen_summaryoff"
           android:defaultValue="@string/pref_dimscreen_default"
           android:dependency="@string/pref_screen_on_key" />
+      </PreferenceCategory>
+      <PreferenceCategory
+        android:title="@string/pref_privacy_category">          
         <CheckBoxPreference
           android:key="@string/pref_privacy_key"
           android:title="@string/pref_privacy_title"
           android:summaryOn="@string/pref_privacy_summaryon"
           android:summaryOff="@string/pref_privacy_summaryoff"
-          android:defaultValue="@string/pref_privacy_default"
-          android:dependency="@string/pref_screen_on_key" />
+          android:defaultValue="@string/pref_privacy_default" />
+        <CheckBoxPreference
+          android:key="@string/pref_privacy_sender_key"
+          android:title="@string/pref_privacy_sender_title"
+          android:summaryOn="@string/pref_privacy_sender_summaryon"
+          android:summaryOff="@string/pref_privacy_sender_summaryoff"
+          android:defaultValue="@string/pref_privacy_sender_default"
+          android:dependency="@string/pref_privacy_key" />
+        <CheckBoxPreference
+          android:key="@string/pref_privacy_always_key"
+          android:title="@string/pref_privacy_always_title"
+          android:summaryOn="@string/pref_privacy_always_summaryon"
+          android:summaryOff="@string/pref_privacy_always_summaryoff"
+          android:defaultValue="@string/pref_privacy_always_default"
+          android:dependency="@string/pref_privacy_key" />
       </PreferenceCategory>
       <PreferenceCategory
         android:title="@string/pref_other_title">
@@ -269,7 +293,7 @@
           android:summaryOn="@string/pref_onlyShowOnKeyguard_summaryon"
           android:summaryOff="@string/pref_onlyShowOnKeyguard_summaryoff"
           android:defaultValue="@string/pref_onlyShowOnKeyguard_default" />
-      </PreferenceCategory>
+      </PreferenceCategory>   
     </PreferenceScreen>
     <PreferenceScreen
       android:key="@string/quickmessages_key"

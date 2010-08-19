@@ -1,14 +1,18 @@
 package net.everythingandroid.smspopup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.everythingandroid.smspopup.ManagePreferences.Defaults;
 import android.app.Activity;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.app.PendingIntent.CanceledException;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -23,8 +27,7 @@ import android.telephony.gsm.SmsMessage;
 import android.telephony.gsm.SmsMessage.MessageClass;
 import android.widget.Toast;
 
-public class SmsReceiverService extends Service
-{
+public class SmsReceiverService extends Service {
 	private static final String ACTION_SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
 	private static final String ACTION_MMS_RECEIVED = "android.provider.Telephony.WAP_PUSH_RECEIVED";
 	private static final String ACTION_MESSAGE_RECEIVED = "net.everythingandroid.smspopup.MESSAGE_RECEIVED";
@@ -53,10 +56,8 @@ public class SmsReceiverService extends Service
 	private static final int TOAST_HANDLER_MESSAGE_FAILED = 2;
 
 	@Override
-	public void onCreate()
-	{
-		if (Log.DEBUG)
-			Log.v("SMSReceiverService: onCreate()");
+	public void onCreate() {
+		if (Log.DEBUG) Log.v("SMSReceiverService: onCreate()");
 		HandlerThread thread = new HandlerThread(Log.LOGTAG, Process.THREAD_PRIORITY_BACKGROUND);
 		thread.start();
 		context = getApplicationContext();
@@ -65,10 +66,8 @@ public class SmsReceiverService extends Service
 	}
 
 	@Override
-	public void onStart(Intent intent, int startId)
-	{
-		if (Log.DEBUG)
-			Log.v("SMSReceiverService: onStart()");
+	public void onStart(Intent intent, int startId) {
+		if (Log.DEBUG) Log.v("SMSReceiverService: onStart()");
 
 		mResultCode = intent != null ? intent.getIntExtra("result", 0) : 0;
 
@@ -79,31 +78,24 @@ public class SmsReceiverService extends Service
 	}
 
 	@Override
-	public void onDestroy()
-	{
-		if (Log.DEBUG)
-			Log.v("SMSReceiverService: onDestroy()");
+	public void onDestroy() {
+		if (Log.DEBUG) Log.v("SMSReceiverService: onDestroy()");
 		mServiceLooper.quit();
 	}
 
 	@Override
-	public IBinder onBind(Intent intent)
-	{
+	public IBinder onBind(Intent intent) {
 		return null;
 	}
 
-	private final class ServiceHandler extends Handler
-	{
-		public ServiceHandler(Looper looper)
-		{
+	private final class ServiceHandler extends Handler {
+		public ServiceHandler(Looper looper) {
 			super(looper);
 		}
 
 		@Override
-		public void handleMessage(Message msg)
-		{
-			if (Log.DEBUG)
-				Log.v("SMSReceiverService: handleMessage()");
+		public void handleMessage(Message msg) {
+			if (Log.DEBUG) Log.v("SMSReceiverService: handleMessage()");
 
 			int serviceId = msg.arg1;
 			Intent intent = (Intent) msg.obj;
@@ -129,27 +121,27 @@ public class SmsReceiverService extends Service
 	/**
 	 * Handle receiving a SMS message
 	 */
-	private void handleSmsReceived(Intent intent)
-	{
-		if (Log.DEBUG)
-			Log.v("SMSReceiver: Intercept SMS");
+	private void handleSmsReceived(Intent intent) {
+		if (Log.DEBUG) Log.v("SMSReceiver: Intercept SMS");
 
 		Bundle bundle = intent.getExtras();
 		if (bundle != null) {
 			SmsMessage[] messages = SmsPopupUtils.getMessagesFromIntent(intent);
 			if (messages != null) {
-				SmsMmsMessage smm = new SmsMmsMessage(context, messages, System.currentTimeMillis());
-				notifyMessageReceived(smm);
+				notifyMessageReceived(new SmsMmsMessage(context, messages, System.currentTimeMillis()));
 			}
 		}
 	}
 
-	private void notifyMessageReceived(SmsMmsMessage message)
-	{
+	private void notifyMessageReceived(SmsMmsMessage message) {
 
 		// Class 0 SMS, let the system handle this
-		if (message.getMessageType() == SmsMmsMessage.MESSAGE_TYPE_SMS
-				&& message.getMessageClass() == MessageClass.CLASS_0) {
+		if (message.getMessageType() == SmsMmsMessage.MESSAGE_TYPE_SMS &&
+			message.getMessageClass() == MessageClass.CLASS_0) {
+			return;
+		}
+
+		if (message.isSprintVisualVoicemail()) {
 			return;
 		}
 
@@ -157,24 +149,30 @@ public class SmsReceiverService extends Service
 		ManagePreferences mPrefs = new ManagePreferences(context, message.getContactId());
 
 		// Whether or not the popup should only show when keyguard is on
-		boolean onlyShowOnKeyguard = mPrefs.getBoolean(R.string.pref_onlyShowOnKeyguard_key,
+		boolean onlyShowOnKeyguard =
+			mPrefs.getBoolean(R.string.pref_onlyShowOnKeyguard_key,
 				Defaults.PREFS_ONLY_SHOW_ON_KEYGUARD);
 
 		// check if popup is enabled for this contact
-		boolean showPopup = mPrefs.getBoolean(R.string.pref_popup_enabled_key, Defaults.PREFS_SHOW_POPUP,
+		boolean showPopup =
+			mPrefs.getBoolean(R.string.pref_popup_enabled_key,
+				Defaults.PREFS_SHOW_POPUP,
 				SmsPopupDbAdapter.KEY_POPUP_ENABLED_NUM);
 
 		// check if notifications are on for this contact
-		boolean notifEnabled = mPrefs.getBoolean(R.string.pref_notif_enabled_key, Defaults.PREFS_NOTIF_ENABLED,
+		boolean notifEnabled =
+			mPrefs.getBoolean(R.string.pref_notif_enabled_key,
+				Defaults.PREFS_NOTIF_ENABLED,
 				SmsPopupDbAdapter.KEY_ENABLED_NUM);
 
 		// get docked state of phone
-		int docked_state = mPrefs.getInt(getString(R.string.pref_docked_key), 0);
+		int docked_state =
+			mPrefs.getInt(R.string.pref_docked_key, 0);
 
 		boolean docked = docked_state == ExternalEventReceiver.EXTRA_DOCK_STATE_DESK;
 
 		String keywords = mPrefs.getString(R.string.pref_keywords_key, "");
-		
+
 		boolean ignoreContacts = mPrefs.getBoolean(R.string.pref_bypass_contacts_key, true);
 		boolean enableFiltering = mPrefs.getBoolean(R.string.pref_enable_filtering_key, true);
 
@@ -197,8 +195,7 @@ public class SmsReceiverService extends Service
 			}
 		}
 
-		// Fetch call state, if the user is in a call or the phone is ringing we
-		// don't want to show the popup
+		// Fetch call state, if the user is in a call or the phone is ringing we don't want to show the popup
 		TelephonyManager mTM = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 		boolean callStateIdle = mTM.getCallState() == TelephonyManager.CALL_STATE_IDLE;
 
@@ -206,46 +203,42 @@ public class SmsReceiverService extends Service
 		ManageKeyguard.initialize(context);
 
 		/*
-		 * If popup is enabled for this user -AND- the user is not in a call
-		 * -AND- -AND- phone is not docked -AND- (screen is locked -OR- (setting
-		 * is OFF to only show on keyguard -AND- user is not in messaging app:
-		 * then show the popup activity, otherwise check if notifications are on
-		 * and just use the standard notification))
+		 * If popup is enabled for this user -AND- the user is not in a call -AND-
+		 * -AND- phone is not docked -AND-
+		 * (screen is locked -OR- (setting is OFF to only show on keyguard -AND- user is not in messaging app:
+		 * then show the popup activity, otherwise check if notifications are on and just use the standard
+		 * notification))
 		 */
-		if (showPopup
-				&& callStateIdle
-				&& !docked
-				&& (ManageKeyguard.inKeyguardRestrictedInputMode() || (!onlyShowOnKeyguard && !SmsPopupUtils
-						.inMessagingApp(context)))) {
+		if (showPopup && callStateIdle && !docked
+			&& (ManageKeyguard.inKeyguardRestrictedInputMode() ||
+			(!onlyShowOnKeyguard && !SmsPopupUtils.inMessagingApp(context)))) {
 
-			if (Log.DEBUG)
-				Log.v("^^^^^^Showing SMS Popup");
+			if (Log.DEBUG) Log.v("^^^^^^Showing SMS Popup");
 			ManageWakeLock.acquireFull(context);
 			context.startActivity(message.getPopupIntent());
 
 		} else if (notifEnabled) {
 
-			if (Log.DEBUG)
-				Log.v("^^^^^^Not showing SMS Popup, using notifications");
+			if (Log.DEBUG) Log.v("^^^^^^Not showing SMS Popup, using notifications");
 			ManageNotification.show(context, message);
 			ReminderReceiver.scheduleReminder(context, message);
 
 		}
 	}
 
-	private boolean filterMessageByKeywords(SmsMmsMessage message, String keywords)
-	{
+	private boolean filterMessageByKeywords(SmsMmsMessage message, String keywords) {
 		ArrayList<String> words = new ArrayList<String>();
-		for (String line: keywords.split("\n")) {
-			for (String word: line.split(" |,|;")) {
+		for (String line : keywords.split("\n")) {
+			for (String word : line.split(" |,|;")) {
 				word = word.trim();
-				if (word.length() > 0) words.add(word);
+				if (word.length() > 0)
+					words.add(word);
 			}
 		}
-		
+
 		String body = message.getMessageBody();
-		
-		for (String word: words) {
+
+		for (String word : words) {
 			if (body.indexOf(word) >= 0) {
 				return true;
 			}
@@ -256,10 +249,8 @@ public class SmsReceiverService extends Service
 	/**
 	 * Handle receiving a MMS message
 	 */
-	private void handleMmsReceived(Intent intent)
-	{
-		if (Log.DEBUG)
-			Log.v("MMS received!");
+	private void handleMmsReceived(Intent intent) {
+		if (Log.DEBUG) Log.v("MMS received!");
 		SmsMmsMessage mmsMessage = null;
 		int count = 0;
 
@@ -272,12 +263,10 @@ public class SmsReceiverService extends Service
 			mmsMessage = SmsPopupUtils.getMmsDetails(context);
 
 			if (mmsMessage != null) {
-				if (Log.DEBUG)
-					Log.v("MMS found in content provider");
+				if (Log.DEBUG) Log.v("MMS found in content provider");
 				notifyMessageReceived(mmsMessage);
 			} else {
-				if (Log.DEBUG)
-					Log.v("MMS not found, sleeping (count is " + count + ")");
+				if (Log.DEBUG) Log.v("MMS not found, sleeping (count is " + count + ")");
 				count++;
 				try {
 					Thread.sleep(MESSAGE_RETRY_PAUSE);
@@ -289,46 +278,42 @@ public class SmsReceiverService extends Service
 	}
 
 	/**
-	 * Handle receiving an arbitrary message (potentially coming from a 3rd
-	 * party app)
+	 * Handle receiving an arbitrary message (potentially coming from a 3rd party app)
 	 */
-	private void handleMessageReceived(Intent intent)
-	{
-		if (Log.DEBUG)
-			Log.v("SMSReceiver: Intercept Message");
+	private void handleMessageReceived(Intent intent) {
+		if (Log.DEBUG) Log.v("SMSReceiver: Intercept Message");
 
 		Bundle bundle = intent.getExtras();
 
 		/*
-		 * FROM: ContactURI -or- display name and display address -or- display
-		 * address MESSAGE BODY: message body TIMESTAMP: optional (will use
-		 * system timestamp)
-		 * 
-		 * QUICK REPLY INTENT: REPLY INTENT: DELETE INTENT:
+		 * FROM: ContactURI -or- display name and display address -or- display address
+		 * MESSAGE BODY: message body
+		 * TIMESTAMP: optional (will use system timestamp)
+		 *
+		 * QUICK REPLY INTENT:
+		 * REPLY INTENT:
+		 * DELETE INTENT:
 		 */
 
 		if (bundle != null) {
 
-			// notifySmsReceived(new SmsMmsMessage(context, messages,
-			// System.currentTimeMillis()));
+			//notifySmsReceived(new SmsMmsMessage(context, messages, System.currentTimeMillis()));
 		}
 	}
 
 	/*
 	 * Handler to deal with showing Toast messages for message sent status
 	 */
-	public Handler mToastHandler = new Handler()
-	{
+	public Handler mToastHandler = new Handler() {
 		@Override
-		public void handleMessage(Message msg)
-		{
+		public void handleMessage(Message msg) {
 
 			if (msg != null) {
 				switch (msg.what) {
 					case TOAST_HANDLER_MESSAGE_SENT:
 						Toast.makeText(SmsReceiverService.this,
-								SmsReceiverService.this.getString(R.string.quickreply_sent_toast), Toast.LENGTH_SHORT)
-								.show();
+							SmsReceiverService.this.getString(R.string.quickreply_sent_toast),
+							Toast.LENGTH_SHORT).show();
 						break;
 					case TOAST_HANDLER_MESSAGE_SEND_LATER:
 						Toast.makeText(SmsReceiverService.this,
@@ -337,8 +322,8 @@ public class SmsReceiverService extends Service
 						break;
 					case TOAST_HANDLER_MESSAGE_FAILED:
 						Toast.makeText(SmsReceiverService.this,
-								SmsReceiverService.this.getString(R.string.quickreply_failed), Toast.LENGTH_SHORT)
-								.show();
+							SmsReceiverService.this.getString(R.string.quickreply_failed),
+							Toast.LENGTH_SHORT).show();
 						break;
 				}
 			}
@@ -348,25 +333,63 @@ public class SmsReceiverService extends Service
 	/*
 	 * Handle the result of a sms being sent
 	 */
-	private void handleSmsSent(Intent intent)
-	{
-		if (Log.DEBUG)
-			Log.v("SMSReceiver: Handle SMS sent");
+	private void handleSmsSent(Intent intent) {
+		if (Log.DEBUG) Log.v("SMSReceiver: Handle SMS sent");
 
-		// Check the result and notify the user
+		PackageManager pm = getPackageManager();
+		Intent sysIntent = null;
+		Intent tempIntent;
+		List<ResolveInfo> receiverList;
+		boolean forwardToSystemApp = true;
+
+    // Search for system messaging app that will receive our "message sent complete" type intent
+		tempIntent = intent.setClassName(
+				SmsMessageSender.MESSAGING_PACKAGE_NAME,
+				SmsMessageSender.MESSAGING_RECEIVER_CLASS_NAME);
+
+		tempIntent.setAction(SmsReceiverService.MESSAGE_SENT_ACTION);
+
+		receiverList = pm.queryBroadcastReceivers(tempIntent, 0);
+
+		if (receiverList.size() > 0) {
+			if (Log.DEBUG) Log.v("SMSReceiver: Found system messaging app - " + receiverList.get(0).toString());
+			sysIntent = tempIntent;
+		}
+
+		/*
+		 * No system messaging app was found to forward this intent to, therefore we will need to do
+		 * the final piece of this ourselves which is basically moving the message to the correct
+		 * folder depending on the result.
+		 */
+		if (sysIntent == null) {
+			forwardToSystemApp = false;
+			if (Log.DEBUG) Log.v("SMSReceiver: Did not find system messaging app, moving messages directly");
+
+			Uri uri = intent.getData();
+
+			if (mResultCode == Activity.RESULT_OK) {
+				SmsMessageSender.moveMessageToFolder(this, uri, SmsMessageSender.MESSAGE_TYPE_SENT);
+			} else if ((mResultCode == SmsManager.RESULT_ERROR_RADIO_OFF) ||
+					(mResultCode == SmsManager.RESULT_ERROR_NO_SERVICE)) {
+				SmsMessageSender.moveMessageToFolder(this, uri, SmsMessageSender.MESSAGE_TYPE_QUEUED);
+			} else {
+				SmsMessageSender.moveMessageToFolder(this, uri, SmsMessageSender.MESSAGE_TYPE_FAILED);
+			}
+		}
+
+		// Check the result and notify the user using a toast
 		if (mResultCode == Activity.RESULT_OK) {
-			if (Log.DEBUG)
-				Log.v("SMSReceiver: Message was sent");
+			if (Log.DEBUG) Log.v("SMSReceiver: Message was sent");
 			mToastHandler.sendEmptyMessage(TOAST_HANDLER_MESSAGE_SENT);
-		} else if ((mResultCode == SmsManager.RESULT_ERROR_RADIO_OFF)
-				|| (mResultCode == SmsManager.RESULT_ERROR_NO_SERVICE)) {
-			if (Log.DEBUG)
-				Log.v("SMSReceiver: Error sending message (will send later)");
+
+		} else if ((mResultCode == SmsManager.RESULT_ERROR_RADIO_OFF) ||
+				(mResultCode == SmsManager.RESULT_ERROR_NO_SERVICE)) {
+			if (Log.DEBUG) Log.v("SMSReceiver: Error sending message (will send later)");
 			// The system shows a Toast here so no need to show one
 			// mToastHandler.sendEmptyMessage(TOAST_HANDLER_MESSAGE_SEND_LATER);
+
 		} else {
-			if (Log.DEBUG)
-				Log.v("SMSReceiver: Error sending message");
+			if (Log.DEBUG) Log.v("SMSReceiver: Error sending message");
 			// ManageNotification.notifySendFailed(this);
 			mToastHandler.sendEmptyMessage(TOAST_HANDLER_MESSAGE_FAILED);
 		}
@@ -375,33 +398,37 @@ public class SmsReceiverService extends Service
 		 * Now let's forward the same intent onto the system app to make sure
 		 * things there are processed correctly
 		 */
-		Intent sysIntent = intent.setClassName(SmsMessageSender.MMS_PACKAGE_NAME, SmsMessageSender.MMS_SENT_CLASS_NAME);
+		// sysIntent = intent.setClassName(
+		// SmsMessageSender.MMS_PACKAGE_NAME,
+		// SmsMessageSender.MMS_SENT_CLASS_NAME);
+
 		// Log.v("sysIntent = " + sysIntent.toString());
 		// Log.v("bundle = " + sysIntent.getExtras().toString());
 
 		/*
-		 * Start the broadcast via PendingIntent so result code is passed over
-		 * correctly
+		 * Start the broadcast via PendingIntent so result code is passed over correctly
 		 */
-		try {
-			PendingIntent.getBroadcast(this, 0, sysIntent, 0).send(mResultCode);
-		} catch (CanceledException e) {
-			e.printStackTrace();
+		if (forwardToSystemApp) {
+			try {
+				Log.v("SMSReceiver: Broadcasting send complete to system messaging app");
+				PendingIntent.getBroadcast(this, 0, sysIntent, 0).send(mResultCode);
+			} catch (CanceledException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	/**
-	 * Start the service to process the current event notifications, acquiring
-	 * the wake lock before returning to ensure that the service will run.
+	* Start the service to process the current event notifications, acquiring the
+	* wake lock before returning to ensure that the service will run.
 	 */
-	public static void beginStartingService(Context context, Intent intent)
-	{
+	public static void beginStartingService(Context context, Intent intent) {
 		synchronized (mStartingServiceSync) {
-			if (Log.DEBUG)
-				Log.v("SMSReceiverService: beginStartingService()");
+			if (Log.DEBUG) Log.v("SMSReceiverService: beginStartingService()");
 			if (mStartingService == null) {
 				PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-				mStartingService = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, Log.LOGTAG + ".SmsReceiverService");
+				mStartingService = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+					Log.LOGTAG + ".SmsReceiverService");
 				mStartingService.setReferenceCounted(false);
 			}
 			mStartingService.acquire();
@@ -413,11 +440,9 @@ public class SmsReceiverService extends Service
 	 * Called back by the service when it has finished processing notifications,
 	 * releasing the wake lock if the service is now stopping.
 	 */
-	public static void finishStartingService(Service service, int startId)
-	{
+	public static void finishStartingService(Service service, int startId) {
 		synchronized (mStartingServiceSync) {
-			if (Log.DEBUG)
-				Log.v("SMSReceiverService: finishStartingService()");
+			if (Log.DEBUG) Log.v("SMSReceiverService: finishStartingService()");
 			if (mStartingService != null) {
 				if (service.stopSelfResult(startId)) {
 					mStartingService.release();

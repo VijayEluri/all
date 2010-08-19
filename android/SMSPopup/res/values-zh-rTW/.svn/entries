@@ -1,14 +1,14 @@
 10
 
 dir
-251
+272
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/res/values-zh-rTW
 http://android-smspopup.googlecode.com/svn
 
 
 
-2010-02-18T23:24:54.199930Z
-244
+2010-08-11T19:01:50.613734Z
+257
 macarse
 
 
@@ -32,13 +32,14 @@ file
 
 
 
-2010-08-01T05:43:03.000000Z
-148db06a050c4bf878432e663fd719dc
-2010-02-18T23:24:54.199930Z
-244
+2010-08-19T15:27:34.000000Z
+01cde69dd75d07f181b20336a3db0c3e
+2010-08-11T19:01:50.613734Z
+257
 macarse
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -57,6 +58,5 @@ macarse
 
 
 
-
-13986
+13991
 

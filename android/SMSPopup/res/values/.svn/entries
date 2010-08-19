@@ -1,14 +1,14 @@
 10
 
 dir
-251
+272
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/res/values
 http://android-smspopup.googlecode.com/svn
 
 
 
-2010-02-18T02:58:52.630957Z
-243
+2010-08-14T00:16:59.079370Z
+264
 adam@everythingandroid.net
 
 
@@ -32,11 +32,14 @@ file
 
 
 
-2010-08-01T05:43:04.000000Z
-7bd7f5a2d5cd2cb01315ffd785a8e530
-2010-02-17T01:00:30.295623Z
-240
-macarse
+2010-08-19T15:27:33.000000Z
+1d1f03c2b26256b54011a6ad54667da3
+2010-08-14T00:16:59.079370Z
+264
+adam@everythingandroid.net
+
+
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -55,10 +58,7 @@ macarse
 
 
 
-
-
-
-4107
+4411
 
 colors.xml
 file
@@ -100,11 +100,14 @@ file
 
 
 
-2010-08-01T05:43:04.000000Z
-2285ddb11d4979a4a80019522bce8024
-2010-02-17T01:00:30.295623Z
-240
-macarse
+2010-08-19T15:27:33.000000Z
+61fb587bbf83b9a070c9897b0586575c
+2010-08-14T00:16:59.079370Z
+264
+adam@everythingandroid.net
+
+
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -123,44 +126,7 @@ macarse
 
 
 
-
-
-
-1694
-
-strings.xml
-file
-
-
-
-
-2010-08-01T05:43:04.000000Z
-89ecb1283489621e026a6ea842db8452
-2010-02-17T01:00:30.295623Z
-240
-macarse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20198
+1869
 
 keys.xml
 file
@@ -168,13 +134,14 @@ file
 
 
 
-2010-08-01T05:43:04.000000Z
-728602e4c69f462a687b77ac256671ee
-2010-02-18T02:58:52.630957Z
-243
+2010-08-19T14:20:51.000000Z
+80a8371b30ebbd55cf70c78fc1bacc98
+2010-08-14T00:16:59.079370Z
+264
 adam@everythingandroid.net
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -193,6 +160,39 @@ adam@everythingandroid.net
 
 
 
+4092
+
+strings.xml
+file
 
-3903
+
+
+
+2010-08-19T14:22:12.000000Z
+5f13eb5e528f1688f955aa0c28cd9550
+2010-08-14T00:16:59.079370Z
+264
+adam@everythingandroid.net
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20982
 
