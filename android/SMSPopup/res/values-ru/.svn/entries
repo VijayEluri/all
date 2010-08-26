@@ -1,14 +1,14 @@
 10
 
 dir
-272
+276
 http://android-smspopup.googlecode.com/svn/trunk/SMSPopup/res/values-ru
 http://android-smspopup.googlecode.com/svn
 
 
 
-2010-08-12T14:50:04.789737Z
-263
+2010-08-20T19:02:36.291385Z
+273
 adam@everythingandroid.net
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2010-08-19T15:27:34.000000Z
-991312bb2e84119aa7491731f2b052f7
-2010-08-12T14:50:04.789737Z
-263
+2010-08-26T12:52:42.000000Z
+8b860308802bcdd2c53bae0c999b4303
+2010-08-20T19:02:36.291385Z
+273
 adam@everythingandroid.net
 
 
@@ -58,5 +58,5 @@ svn:special svn:externals svn:needs-lock
 
 
 
-25507
+25452
 

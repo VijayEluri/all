@@ -1,6 +1,5 @@
 package net.everythingandroid.smspopup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import net.everythingandroid.smspopup.ManagePreferences.Defaults;
@@ -171,29 +170,10 @@ public class SmsReceiverService extends Service {
 
 		boolean docked = docked_state == ExternalEventReceiver.EXTRA_DOCK_STATE_DESK;
 
-		String keywords = mPrefs.getString(R.string.pref_keywords_key, "");
-
-		boolean ignoreContacts = mPrefs.getBoolean(R.string.pref_bypass_contacts_key, true);
-		boolean enableFiltering = mPrefs.getBoolean(R.string.pref_enable_filtering_key, true);
 
 		mPrefs.close();
-
-		if (enableFiltering) {
-			if (message.getMessageType() == SmsMmsMessage.MESSAGE_TYPE_SMS) {
-				if (ignoreContacts && (message.getContactId() != null)) {
-					// ignore if we can find contact id
-				} else {
-					if (filterMessageByKeywords(message, keywords)) {
-						SmsPopupDbAdapter dbAdapter = new SmsPopupDbAdapter(getApplicationContext());
-						dbAdapter.open();
-						dbAdapter.createFilteredMessage(message);
-						dbAdapter.close();
-						message.delete();
-						return;
-					}
-				}
-			}
-		}
+		
+		if (net.everythingandroid.smspopup.filter.FilterService.filterMessage(message, context)) return;
 
 		// Fetch call state, if the user is in a call or the phone is ringing we don't want to show the popup
 		TelephonyManager mTM = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -224,26 +204,6 @@ public class SmsReceiverService extends Service {
 			ReminderReceiver.scheduleReminder(context, message);
 
 		}
-	}
-
-	private boolean filterMessageByKeywords(SmsMmsMessage message, String keywords) {
-		ArrayList<String> words = new ArrayList<String>();
-		for (String line : keywords.split("\n")) {
-			for (String word : line.split(" |,|;")) {
-				word = word.trim();
-				if (word.length() > 0)
-					words.add(word);
-			}
-		}
-
-		String body = message.getMessageBody();
-
-		for (String word : words) {
-			if (body.indexOf(word) >= 0) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	/**

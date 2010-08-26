@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 32
-/svn/!svn/ver/272/trunk/SMSPopup
+/svn/!svn/ver/276/trunk/SMSPopup
 END
 default.properties
 K 25
@@ -19,7 +19,7 @@ AndroidManifest.xml
 K 25
 svn:wc:ra_dav:version-url
 V 52
-/svn/!svn/ver/271/trunk/SMSPopup/AndroidManifest.xml
+/svn/!svn/ver/276/trunk/SMSPopup/AndroidManifest.xml
 END
 .project
 K 25

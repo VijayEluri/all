@@ -71,4 +71,6 @@
    <string name="pref_bypass_contacts_key">bypasscontacts</string>
    <string name="pref_manage_filtered_key">managefiltered</string>
    <string name="pref_filter_existing_key">filterexisting</string>
+   <!-- Value to set trigger custom dialogs -->
+   <string name="pref_custom_val">custom</string>
 </resources>

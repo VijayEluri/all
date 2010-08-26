@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svn/!svn/ver/269/trunk/SMSPopup/src/net/everythingandroid/smspopup
+/svn/!svn/ver/275/trunk/SMSPopup/src/net/everythingandroid/smspopup
 END
 ManageNotification.java
 K 25
@@ -85,7 +85,7 @@ SmsPopupUtils.java
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/!svn/ver/266/trunk/SMSPopup/src/net/everythingandroid/smspopup/SmsPopupUtils.java
+/svn/!svn/ver/275/trunk/SMSPopup/src/net/everythingandroid/smspopup/SmsPopupUtils.java
 END
 ExternalEventReceiver.java
 K 25

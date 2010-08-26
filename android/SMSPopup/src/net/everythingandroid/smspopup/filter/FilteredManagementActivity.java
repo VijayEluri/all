@@ -2,7 +2,6 @@ package net.everythingandroid.smspopup.filter;
 
 import net.everythingandroid.smspopup.Log;
 import net.everythingandroid.smspopup.R;
-import net.everythingandroid.smspopup.SmsPopupDbAdapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -28,7 +27,7 @@ public class FilteredManagementActivity extends Activity implements OnItemClickL
 	private static final int MENU_RESTORE_ID = 3;
 	private static final int MENU_DELETE_ID = 4;
 
-	private SmsPopupDbAdapter dbAdapter;
+	private FilterDbAdapter dbAdapter;
 	private Cursor cursor;
 
 	public void onCreate(Bundle savedInstanceState)
@@ -36,7 +35,7 @@ public class FilteredManagementActivity extends Activity implements OnItemClickL
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manage_filtered);
 
-		dbAdapter = new SmsPopupDbAdapter(this);
+		dbAdapter = new FilterDbAdapter(this);
 		dbAdapter.open(true);
 
 		cursor = dbAdapter.fetchAllFilteredMessage();
@@ -46,7 +45,7 @@ public class FilteredManagementActivity extends Activity implements OnItemClickL
 			this,
 			android.R.layout.simple_list_item_2,
 			cursor,
-			new String[] { SmsPopupDbAdapter.KEY_NUMBER, SmsPopupDbAdapter.KEY_BODY },
+			new String[] { FilterDbAdapter.KEY_NUMBER, FilterDbAdapter.KEY_BODY },
 			new int[] { android.R.id.text1, android.R.id.text2 });
 
 		ListView lv = (ListView) findViewById(R.id.FilteredListView);
