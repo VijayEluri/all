@@ -6,6 +6,7 @@ import shlex
 import unittest
 import subprocess
 
+
 BASE_URL = 'http://localhost:8517/'
 
 def run_cmd(cmd):
@@ -27,9 +28,28 @@ def curl(cmd):
         print "ERROR cmd: %s, output: %s" % (cmd, output)
         raise
 
+class dsclient:
+    def __init__(self, url):
+        self.url = url
+        self.files_url = url + 'files/'
+        self.file_url = url + 'file/'
+        
+    def create(self, fileName):
+        r = curl("-F file=@%s %s" % (fileName, self.files_url))
+        return r
+    
+    def download(self, saveas, id):
+        r = curl("-o %s %s%s" % (saveas, self.file_url, id))
+        return r
+    
+    def delete(self, id):
+        r = curl("-X DELETE %s%s" % (self.file_url, id))
+        return r
+    
 class TestFiles(unittest.TestCase):
     def setUp(self):
         self.url = BASE_URL + 'files/'
+        self.client = dsclient(BASE_URL)
 
     def test_get(self):
         r = curl(self.url)
@@ -37,26 +57,28 @@ class TestFiles(unittest.TestCase):
         self.assertEqual(r['err'], 1)
         
     def test_post(self):
-        r = curl('-F file=@file1.bin ' + self.url)
+        r = self.client.create("file1.bin")
         self.assertEqual(r['http_code'], 201)
         self.assertEqual(r['err'], 0)
         
         os.remove('output.bin')
 
         obj_id = r['id']
-        r = curl("-o output.bin %sfile/%s" % (BASE_URL, obj_id))
+        r = self.client.download('output.bin', obj_id)
+
         self.assertEqual(r['http_code'], 200)
         
         r = run_cmd('diff --binary file1.bin output.bin')
         self.assertEqual(len(r), 0, 'error while comparing')
         
-        r = curl("-X DELETE %sfile/%s" % (BASE_URL, obj_id))
+        r = self.client.delete(obj_id)
         self.assertEqual(r['http_code'], 200)
         self.assertEqual(r['err'], 0)        
 
-        r = curl("%sfile/%s" % (BASE_URL, obj_id))
+        r = self.client.download("output.bin", obj_id)
+        print r       
         self.assertEqual(r['http_code'], 404)
-        self.assertEqual(r['err'], 1)        
+        self.assertEqual(r['err'], 1) 
         
 class TestFile(unittest.TestCase):
     def setUp(self):

@@ -1,30 +1,30 @@
 package com.lanxum.dstor.server.db.mongo;
 
+import java.util.Map;
+
 import com.lanxum.dstor.server.db.DbService;
 import com.lanxum.dstor.server.db.FileObject;
+import com.lanxum.dstor.util.C;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 
-public class DbServiceImpl implements DbService
-{
+public class DbServiceImpl implements DbService {
 	private DB db;
 
-	public void setDb(DB db)
-	{
+	public void setDb(DB db) {
 		this.db = db;
 	}
 
 	private volatile DBCollection col;
 
-	private DBCollection getCol()
-	{
+	private DBCollection getCol() {
 		if (col == null) {
 			synchronized (this) {
 				if (col == null) {
-					DBCollection r = db.getCollection("files");
+					DBCollection r = db.getCollection(C.COL_FILES);
 					col = r;
 				}
 			}
@@ -32,33 +32,42 @@ public class DbServiceImpl implements DbService
 		return col;
 	}
 
-	public void save(long id, FileObject fobj)
-	{
-		DBObject obj = BasicDBObjectBuilder.start()
-			.append("_id", id)
-			.append("u", fobj.getURI())
-			.append("s", fobj.getFileSize())
-			.append("n", fobj.getFileName())
-			.append("h", fobj.getMd5Sum())
-			.get();
+	// TODO: create date, update date
+	public void save(long id, FileObject fobj) {
+		BasicDBObjectBuilder builder = BasicDBObjectBuilder.start()
+			.append(C.FIELD_ID, id)
+			.append(C.FIELD_URI, fobj.getURI())
+			.append(C.FIELD_SIZE, fobj.getFileSize())
+			.append(C.FIELD_NAME, fobj.getFileName())
+			.append(C.FIELD_HASH, fobj.getMd5Sum());
+		
+		Map<String, Object> metaData = fobj.getMetaData();
+		
+		if (metaData != null) {
+			for (String key: metaData.keySet()) {
+				builder.append(key, metaData.get(key));
+			}
+		}
+		
+		DBObject obj = builder.get();
 		getCol().save(obj);
 	}
 
-	public FileObject find(long id)
-	{
-		DBObject obj = getCol().findOne(new BasicDBObject("_id", id));
+	public FileObject find(long id) {
+		DBObject obj = getCol().findOne(new BasicDBObject(C.FIELD_ID, id));
 		if (obj == null) return null;
+
 		FileObject fobj = new FileObject();
-		fobj.setFileName(obj.get("n").toString());
-		fobj.setFileSize(Long.parseLong(obj.get("s").toString()));
-		fobj.setURI(obj.get("u").toString());
-		fobj.setMd5Sum(obj.get("h").toString());
+		fobj.setFileName(obj.get(C.FIELD_NAME).toString());
+		fobj.setFileSize(Long.parseLong(obj.get(C.FIELD_SIZE).toString()));
+		fobj.setURI(obj.get(C.FIELD_URI).toString());
+		fobj.setMd5Sum(obj.get(C.FIELD_HASH).toString());
+
 		return fobj;
 	}
 
-	public void remove(long id)
-	{
-		getCol().remove(new BasicDBObject("_id", id));
+	public void remove(long id) {
+		getCol().remove(new BasicDBObject(C.FIELD_ID, id));
 	}
 
 }

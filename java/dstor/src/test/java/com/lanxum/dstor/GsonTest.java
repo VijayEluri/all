@@ -9,6 +9,7 @@ import com.google.gson.reflect.TypeToken;
 
 import junit.framework.TestCase;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class GsonTest extends TestCase
 {
 	public void testMarshal()

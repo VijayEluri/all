@@ -1,11 +1,22 @@
 package com.lanxum.dstor.server.db;
 
+import java.util.Map;
+
 public class FileObject
 {
 	private String URI;
 	private String fileName;
 	private long fileSize;
 	private String md5Sum;
+	private Map<String, Object> metaData;
+
+	public Map<String, Object> getMetaData() {
+		return metaData;
+	}
+
+	public void setMetaData(Map<String, Object> metaData) {
+		this.metaData = metaData;
+	}
 
 	public String getMd5Sum()
 	{
