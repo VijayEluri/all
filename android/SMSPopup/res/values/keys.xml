@@ -68,6 +68,7 @@
    <!-- filtering  -->
    <string name="pref_enable_filtering_key">enablefiltering</string>
    <string name="pref_keywords_key">keywords</string>
+   <string name="pref_dbkeywords_key">dbkeywords</string>
    <string name="pref_bypass_contacts_key">bypasscontacts</string>
    <string name="pref_manage_filtered_key">managefiltered</string>
    <string name="pref_filter_existing_key">filterexisting</string>

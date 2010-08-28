@@ -101,6 +101,7 @@
     <service
       android:name=".SmsMonitorService" />
   <activity android:name=".filter.FilteredManagementActivity"></activity>
+  <activity android:name=".filter.KeywordConfigActivity"></activity>
 </application>
   <uses-permission
     android:name="android.permission.READ_SMS" />

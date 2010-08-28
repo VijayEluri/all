@@ -1,6 +1,7 @@
 package net.everythingandroid.smspopup;
 
 import net.everythingandroid.smspopup.filter.FilteredManagementActivity;
+import net.everythingandroid.smspopup.filter.KeywordConfigActivity;
 import net.everythingandroid.smspopup.preferences.AppEnabledCheckBoxPreference;
 import net.everythingandroid.smspopup.preferences.ButtonListPreference;
 import net.everythingandroid.smspopup.preferences.DialogPreference;
@@ -208,6 +209,17 @@ public class SmsPopupConfigActivity extends PreferenceActivity {
     	manageFilterMessagePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference pref) {
 				Intent intent = new Intent(SmsPopupConfigActivity.this, FilteredManagementActivity.class);
+				startActivity(intent);
+				return true;
+			}
+    	});
+    }
+
+    Preference manageKeywords = findPreference(getString(R.string.pref_dbkeywords_key));
+    if (manageKeywords != null) {
+    	manageKeywords.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			public boolean onPreferenceClick(Preference pref) {
+				Intent intent = new Intent(SmsPopupConfigActivity.this, KeywordConfigActivity.class);
 				startActivity(intent);
 				return true;
 			}

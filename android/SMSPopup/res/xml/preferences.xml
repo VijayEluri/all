@@ -305,12 +305,17 @@
 	<PreferenceCategory android:title="Filter">
 		<CheckBoxPreference android:title="Enable Filtering" android:defaultValue="true"
 			android:key="@string/pref_enable_filtering_key"></CheckBoxPreference>
+		<Preference android:title="@string/pref_keywords" android:dependency="@string/pref_enable_filtering_key"
+			android:key="@string/pref_dbkeywords_key"></Preference>
+
+		<!-- 
 		<EditTextPreference android:layout_width="fill_parent" android:layout_height="wrap_content"
 			android:gravity="top" android:singleLine="false" android:lines="5" android:layout_marginLeft="10dip"
 			android:layout_marginRight="10dip" android:key="@string/pref_keywords_key" android:title="@string/pref_keywords"
 			android:dependency="@string/pref_enable_filtering_key" android:summary="Set filter keywords, seperated by , ; &lt;space&gt; &lt;return&gt;"
 			android:dialogTitle="Filter Keywords">
 		</EditTextPreference>
+		-->
 
 		<CheckBoxPreference android:dependency="@string/pref_enable_filtering_key"
 			android:summary="Don't filter the messages from contacts" android:title="Bypass Contacts'"

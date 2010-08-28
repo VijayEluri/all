@@ -1,5 +1,8 @@
 package net.everythingandroid.smspopup.filter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.everythingandroid.smspopup.Log;
 import net.everythingandroid.smspopup.SmsMmsMessage;
 import android.content.ContentValues;
@@ -17,12 +20,18 @@ public class FilterDbAdapter {
 	public static final String KEY_RECEIVED = "received";
 	public static final String KEY_BODY = "body";
 
+	private static final String FILTER_KEYWORDS_DB_TABLE = "keywords";
+	public static final String KEY_WORD = "word";
+
 	private static final String DATABASE_NAME = "data";
 	private static final int DATABASE_VERSION = 1;
 
 	private static final String FILTERED_DB_CREATE = "create table " + FILTERED_MESSAGES_DB_TABLE + " (" + KEY_ROWID
 		+ " integer primary key autoincrement, " + KEY_NUMBER + " text, " + KEY_RECEIVED + " integer, " + KEY_BODY
 		+ " text);";
+	
+	private static final String FILTER_KEYWORDS_DB_CREATE = "create table " + FILTER_KEYWORDS_DB_TABLE + " (" + KEY_ROWID
+		+ " integer primary key autoincrement, " + KEY_WORD + " text);";
 
 	private final Context context;
 	private DatabaseHelper mDbHelper;
@@ -37,8 +46,9 @@ public class FilterDbAdapter {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			if (Log.DEBUG)
-				Log.v("SMSPopupDbAdapter: Creating Database");
+				Log.v("FilterDbAdapter: Creating Database");
 			db.execSQL(FILTERED_DB_CREATE);
+			db.execSQL(FILTER_KEYWORDS_DB_CREATE);
 		}
 
 		@Override
@@ -47,8 +57,7 @@ public class FilterDbAdapter {
 			// " to "
 			// + newVersion + ", which will destroy all old data");
 			if (Log.DEBUG)
-				Log.v("SMSPopupDbAdapter: Upgrading Database");
-			db.execSQL("DROP TABLE IF EXISTS " + FILTERED_MESSAGES_DB_TABLE);
+				Log.v("FilterDbAdapter: Upgrading Database");
 			onCreate(db);
 		}
 	}
@@ -133,5 +142,47 @@ public class FilterDbAdapter {
 		}
 		c.close();
 		return msg;
+	}
+	
+	public List<String> fetchKeywordsAsList()
+	{
+		List<String> result = new ArrayList<String>();
+		String[] cols = new String[] { KEY_ROWID, KEY_WORD };
+		Cursor c = mDb.query(FILTER_KEYWORDS_DB_TABLE, cols, null, null, null, null, null);
+		while (c.moveToNext()) {
+			result.add(c.getString(1));
+		}
+		c.close();
+		return result;
+	}
+	
+	public Cursor fetchKeywords()
+	{
+		String[] cols = new String[] { KEY_ROWID, KEY_WORD };
+		Cursor c = mDb.query(FILTER_KEYWORDS_DB_TABLE, cols, null, null, null, null, KEY_ROWID + " DESC");
+		return c;
+	}
+	
+	public void insertKeyword(String keyword)
+	{
+		ContentValues vals = new ContentValues();
+		vals.put(KEY_WORD, keyword);
+		mDb.insert(FILTER_KEYWORDS_DB_TABLE, null, vals);
+	}
+	
+	public void deleteKeyword(long id)
+	{
+		mDb.delete(FILTER_KEYWORDS_DB_TABLE, KEY_ROWID + "=" + id, null);
+	}
+	
+	public void insertKeywords(String keywords)
+	{
+		for (String line : keywords.split("\n")) {
+			for (String word : line.split(" |,|;")) {
+				word = word.trim();
+				if (word.length() > 0)
+					insertKeyword(word);
+			}
+		}
 	}
 }
