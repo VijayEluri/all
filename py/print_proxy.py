@@ -13,6 +13,7 @@ print proxy/filter, work on RAW protocol
 
 Work as a proxy without the 'filter' parameter
     - every receveied bytes will be saved as a file per connection
+    - file is placed in folder named as client(which connects to this proxy)'s IP address
     - forward the data to target IP/port
     - won't forward if target cannot connect
 
@@ -20,6 +21,7 @@ Work as a filter with the 'filter' parameter
     - each received byte will be checked to determine the end of job (@PJL EOJ)
     - all data before end of job will be forwarded to target IP/port
     - all data after end of job will be saved as a file and won't be forwarded
+    - file is placed in folder named as target IP address
     - won't forward if target cannot connect
 '''
 
@@ -175,8 +177,12 @@ class ConnectionHandler:
     
     def get_file_name(self):
         now = datetime.now().strftime('%Y%m%d.%H%M%S.%f.pcl')
-        self.info("generated dir name %s, file name %s" % (self.target_host, now))
-        return (self.target_host, now)
+        if self.filter_enabled:
+            host = self.target_host
+        else:
+            (host, port) = self.client_socket.getpeername()
+        self.info("generated dir name %s, file name %s" % (host, now))
+        return (host, now)
     
     def info(self, str):
         self.logger.info("%s - %s" % (self.log_prefix, str))
