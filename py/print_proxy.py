@@ -8,93 +8,183 @@ import thread
 from threading import Thread
 from datetime import datetime
 
+'''
+print proxy/filter, work on RAW protocol
+
+Work as a proxy without the 'filter' parameter
+    - every receveied bytes will be saved as a file per connection
+    - forward the data to target IP/port
+    - won't forward if target cannot connect
+
+Work as a filter with the 'filter' parameter
+    - each received byte will be checked to determine the end of job (@PJL EOJ)
+    - all data before end of job will be forwarded to target IP/port
+    - all data after end of job will be saved as a file and won't be forwarded
+    - won't forward if target cannot connect
+'''
+
 class ConnectionHandler:
-    def __init__(self, connection, address, timeout, target_host, target_port, server_only):
-        
+    def __init__(self, connection, address, timeout, target_host, target_port, filter_enabled):
+        self.logger = logging.getLogger('ConnectionHandler')
         self.client_socket = connection
         self.local_address = address
         self.timeout = timeout
         self.target_host = target_host
         self.target_port = target_port
-        self.server_only = server_only
-        self.logger = logging.getLogger('ConnectionHandler')
+        self.state = 0
+        self.ignore_left = False
+        self.file = 0
+        (host, port) = self.client_socket.getpeername()
+        self.log_prefix = "%s:%d" % (host, port)
+        self.filter_enabled = filter_enabled
         
-        if not server_only:
-            self.target_socket = self.connect_target(target_host, target_port)
-        
+        self.assign_target_socket()
         self.read_write()
-
+    
+    def assign_target_socket(self):
+        try:
+            self.target_socket = self.connect_target(target_host, target_port)
+        except:
+            self.info("cannot connect to %s:%d, acting as a null server" % (target_host, target_port))
+            self.target_socket = 0
+    
     def connect_target(self, host, port):
         (soc_family, _, _, _, address) = socket.getaddrinfo(host, port)[0]
         target = socket.socket(soc_family)
         target.connect(address)
-        self.logger.info("connected to target %s:%d" % (host, port))
+        self.info("connected to target %s:%d" % (host, port))
         
         return target
+    
+    def _check_and_update_state(self, current_state, v, value):
+        if (self.state == current_state):
+            if (v == value):
+                self.state = self.state + 1
+            else:
+                self.state = 0
+            return True
+        return False
+    
+    def _check_and_update_state_pjl(self, current_state, v, value):
+        if self._check_and_update_state(current_state, v, value):
+            if self.state == 0:
+                self.ignore_left = True
+            return True
+        return False
+    
+    def update_state(self, v):
+        if self._check_and_update_state(0, v, 0x1b):
+            return
+        if self._check_and_update_state(1, v, 0x25):
+            return
+        if self._check_and_update_state(2, v, 0x2d):
+            return
+        if self._check_and_update_state(3, v, 0x31):
+            return
+        if self._check_and_update_state(4, v, 0x32):
+            return
+        if self._check_and_update_state(5, v, 0x33):
+            return
+        if self._check_and_update_state(6, v, 0x34):
+            return
+        if self._check_and_update_state(7, v, 0x35):
+            return
+        if self._check_and_update_state(8, v, 0x58):
+            return
+        
+        if self._check_and_update_state_pjl( 9, v, 0x40):
+            return
+        if self._check_and_update_state_pjl(10, v, 0x50):
+            return
+        if self._check_and_update_state_pjl(11, v, 0x4a):
+            return
+        if self._check_and_update_state_pjl(12, v, 0x4c):
+            return
+        
+        if self.state == 13:
+            self.state = 0
+
+    
+    def handle_data(self, socket, data):
+        datalen = len(data) if data else 0
+        if not self.ignore_left:
+            if socket is self.client_socket:
+                out = self.target_socket
+                if self.filter_enabled:
+                    i = 0
+                    for b in data:
+                        i += 1
+                        v = ord(b)
+                        self.update_state(v)
+                        if self.ignore_left: # self.ignore_left will be updated in self.update_state
+                            self.create_folder_and_file()
+                            self.file.write(data[i - 1:])
+                            data = data[:i - 1]
+                            self.info("error in stream from offset %d" % (self.total + len(data)))
+                            break
+            else:
+                out = self.client_socket            
+            if data and out:
+                out.send(data)
+        if data:
+            if self.file:
+                self.file.write(data)
+            self.total += datalen
 
     def read_write(self):
-        time_out_max = self.timeout / 3
-
-        if server_only:
-            socs = [self.client_socket]
-        else:
-            socs = [self.client_socket, self.target_socket]
+        select_time_out = 3;
+        time_out_max = self.timeout / select_time_out
+        
+        socs = [self.client_socket, self.target_socket] if self.target_socket else [self.client_socket]
             
+        if not self.filter_enabled:
+            self.create_folder_and_file()
+        
         count = 0
-
+        self.total = 0
+        
         while 1:
             count += 1
-            (recv, _, error) = select.select(socs, [], socs, 3)
-
-            if error:
-                break
-            if recv:
-                for in_ in recv:
-                    data = in_.recv(8192)
-                    if in_ is self.client_socket:
-                        if not server_only:
-                            out = self.target_socket
-                    else:
-                        out = self.client_socket
-                    if data:
-                        self.analyze_data(data)
-                        
-                        if server_only:
-                            self.dump_data(data)
-                        else:
-                            out.send(data)
-                        count = 0
-
-            if count == time_out_max:
-                break
-                
-    def dump_data(self, src, length = 16):
-        if not self.logger.isEnabledFor(logging.DEBUG):
-            return
-        digits = 4 if isinstance(src, unicode) else 2
-        for i in xrange(0, len(src), length):
-            s = src[i : i + length]
-            hexa = b' '.join(["%0*X" % (digits, ord(x))  for x in s])
-            text = b''.join([x if 0x20 <= ord(x) < 0x7F else b'.'  for x in s])
-            self.logger.debug(b"%04X   %-*s   %s" % (i, length*(digits + 1), hexa, text))
+            (recv, _, error) = select.select(socs, [], socs, select_time_out)
             
-    def get_file_name(self):
-        (host, port) = self.client_socket.getpeername()
-        now = datetime.now().strftime('%Y%m%d.%H%M%S.%f.pcl')
-        self.logger.debug("generated dir name %s, file name %s" % (host, now))
-        return (host, now)        
+            if error:
+                self.info("error in select")
+                break
+            
+            if recv:
+                for in_socket in recv:
+                    data = in_socket.recv(8192 * 8)
+                    self.handle_data(in_socket, data)
+                    if data:
+                        count = 0
+            
+            if count == time_out_max:
+                self.info("timeout, received total %d bytes" % self.total)
+                break
 
-    def analyze_data(self, data):
-        self.get_file_name()
-        pass
-        
-def start_server(host, port, t_host, t_port, server_only):
+        if self.file:
+            self.file.close()
+    
+    def create_folder_and_file(self):
+        (folder, filename) = self.get_file_name()
+        try:
+            os.mkdir(folder)
+        except:
+            pass
+        self.file = open(os.path.join('.', folder, filename), 'wb')
+    
+    def get_file_name(self):
+        now = datetime.now().strftime('%Y%m%d.%H%M%S.%f.pcl')
+        self.info("generated dir name %s, file name %s" % (self.target_host, now))
+        return (self.target_host, now)
+    
+    def info(self, str):
+        self.logger.info("%s - %s" % (self.log_prefix, str))
+
+def start_server(host, port, t_host, t_port, filter_enabled):
     logger = logging.getLogger('start_server')
-    if server_only:
-        logger.info("starting server %s:%d" % (host, port))
-    else:
-        logger.info("starting proxy server %s:%d" % (host, port))
-        
+    logger.info("starting %s server %s:%d" % ('filter' if filter_enabled else 'proxy', host, port))
+    
     soc = socket.socket(socket.AF_INET)
     soc.bind((host, port))
     soc.listen(1)
@@ -104,28 +194,32 @@ def start_server(host, port, t_host, t_port, server_only):
         logger.info("stopping server.")
         soc.close()
         sys.exit(1)
-        
+    
     signal.signal(signal.SIGINT, signal_handler)
     
     while 1:
-        thread.start_new_thread(ConnectionHandler, soc.accept() + (60, t_host, t_port, server_only))
-        
+        thread.start_new_thread(ConnectionHandler, soc.accept() + (60, t_host, t_port, filter_enabled))
+
 def usage():
-    print "Usage: %s <local ip> <listen port> <target ip> <target port> [end]" % sys.argv[0]
+    print "Usage: %s <local ip> <listen port> <target ip> <target port> [filter]" % sys.argv[0]
     exit(1)
 
 if __name__ == '__main__':
     if (len(sys.argv) < 5):
         usage()
+        
     host = sys.argv[1]
     port = int(sys.argv[2])
     target_host = sys.argv[3]
     target_port = int(sys.argv[4])
-
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)-8s %(name)s  %(message)s')
-
-    server_only = False
+    filter_enabled = False
+    
     if (len(sys.argv) == 6):
-        server_only = (sys.argv[5] == 'end')
-
-    start_server(host, port, target_host, target_port, server_only)        
+        if sys.argv[5] == 'filter':
+            filter_enabled = True
+    
+    logfile = "%s.log" % target_host
+    
+    logging.basicConfig(filename=logfile, level=logging.DEBUG, format='%(asctime)s - %(levelname)-8s %(name)s  %(message)s')
+    
+    start_server(host, port, target_host, target_port, filter_enabled)
