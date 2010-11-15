@@ -79,6 +79,7 @@ public class JSONHelper {
 		writeErrorMsg(response, err, HttpServletResponse.SC_METHOD_NOT_ALLOWED);
 	}
 
+	@SuppressWarnings("unused")
 	private static class ErrorMsg {
 		private int err;
 		private String msg;

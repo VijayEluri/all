@@ -1,2 +1,2 @@
 
-python print_proxy.py 1 9100 4 9100
+python print_proxy.py  9100  9100
