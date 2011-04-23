@@ -26,7 +26,7 @@ Work as a filter with the 'filter' parameter
 '''
 
 class ConnectionHandler:
-    def __init__(self, connection, address, timeout, target_host, target_port, filter_enabled):
+    def __init__(self, connection, address, timeout, target_host, target_port, filter_enabled, no_save):
         self.logger = logging.getLogger('ConnectionHandler')
         self.client_socket = connection
         self.local_address = address
@@ -39,6 +39,7 @@ class ConnectionHandler:
         (host, port) = self.client_socket.getpeername()
         self.log_prefix = "%s:%d" % (host, port)
         self.filter_enabled = filter_enabled
+	self.no_save = no_save
         
         self.assign_target_socket()
         self.read_write()
@@ -168,6 +169,8 @@ class ConnectionHandler:
             self.file.close()
     
     def create_folder_and_file(self):
+	if no_save:
+            return
         (folder, filename) = self.get_file_name()
         try:
             os.mkdir(folder)
@@ -187,7 +190,7 @@ class ConnectionHandler:
     def info(self, str):
         self.logger.info("%s - %s" % (self.log_prefix, str))
 
-def start_server(host, port, t_host, t_port, filter_enabled):
+def start_server(host, port, t_host, t_port, filter_enabled, no_save):
     logger = logging.getLogger('start_server')
     logger.info("starting %s server %s:%d" % ('filter' if filter_enabled else 'proxy', host, port))
     
@@ -204,10 +207,10 @@ def start_server(host, port, t_host, t_port, filter_enabled):
     signal.signal(signal.SIGINT, signal_handler)
     
     while 1:
-        thread.start_new_thread(ConnectionHandler, soc.accept() + (60, t_host, t_port, filter_enabled))
+        thread.start_new_thread(ConnectionHandler, soc.accept() + (60, t_host, t_port, filter_enabled, no_save))
 
 def usage():
-    print "Usage: %s <local ip> <listen port> <target ip> <target port> [filter]" % sys.argv[0]
+    print "Usage: %s <local ip> <listen port> <target ip> <target port> [filter/nosave]" % sys.argv[0]
     exit(1)
 
 if __name__ == '__main__':
@@ -219,13 +222,16 @@ if __name__ == '__main__':
     target_host = sys.argv[3]
     target_port = int(sys.argv[4])
     filter_enabled = False
+    no_save = False
     
     if (len(sys.argv) == 6):
         if sys.argv[5] == 'filter':
             filter_enabled = True
+	if sys.argv[5] == 'nosave':
+	    no_save = True
     
     logfile = "%s.log" % target_host
     
     logging.basicConfig(filename=logfile, level=logging.DEBUG, format='%(asctime)s - %(levelname)-8s %(name)s  %(message)s')
     
-    start_server(host, port, target_host, target_port, filter_enabled)
+    start_server(host, port, target_host, target_port, filter_enabled, no_save)
