@@ -89,8 +89,9 @@ def server(host, port):
         whole_frame = whole_frame + data
         if len(whole_frame) >= WHOLE_FRAME_SIZE:
             frame = whole_frame[:WHOLE_FRAME_SIZE]
-            soc_back.sendto(frame, (addr[0], port + 1))
             (failed, packetid) = verify_whole_frame(frame)
+            frame[HASH_SIZE:HASH_SIZE + 8] = pack('q', total_frame + 1)
+            soc_back.sendto(frame, (addr[0], port + 1))
             if first_packet_id == 0:
                 first_packet_id = packetid
             failed_frame += failed
@@ -135,10 +136,10 @@ def client_generate_random_string(packet_id):
 
 def client(host, port, ms):
     logger = logging.getLogger('client')
-    line_fmt = "%10s%10s%10s%10s%10s%10s"
+    line_fmt = "%10s%10s%10s%10s%10s%10s%10s%10s"
 
     soc = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    soc.bind((host, port + 1))
+    soc.bind(('0.0.0.0', port + 1))
     target = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
     print "connected to target %s:%d" % (host, port)
@@ -151,7 +152,8 @@ def client(host, port, ms):
     failed_frame = 0
     latency_in_5_sec = 0
     received_in_5_count = 0
-    count_in_5_sec = 0
+    received = 0
+    lost = 0
     while(1):
         data = client_generate_random_string(total_count + 1)
         target.sendto(data, (host, port))
@@ -164,25 +166,25 @@ def client(host, port, ms):
                 first_packet_id = packetid
             failed_frame += failed
             received_in_5_count += 1
+            received += 1
+            lost = packetid - received + 1
         usleep(ms)
         total_size += len(data)
         total_count += 1
-        count_in_5_sec += 1
         diff = datetime.now() - start_time
         if (diff.seconds > 0 and diff.seconds % 5 == 0):
             if need_print:
                 if (print_count % 20 == 0):
                     logger.info("--------")
-                    logger.info(line_fmt % ('BYTES', 'PACKETS', 'SECONDS', 'BPS', 'PPS', "LATENCY"))
+                    logger.info(line_fmt % ('BYTES', 'PACKETS', 'SECONDS', 'BPS', 'PPS', "RECEIVED", "LOST", "LATENCY"))
                 latency = 0
                 if received_in_5_count > 0:
                     latency = latency_in_5_sec / received_in_5_count
                 logger.info(line_fmt % 
                     (sizeof_fmt(total_size), total_count, diff.seconds, sizeof_fmt(total_size / diff.seconds), 
-                    sizeof_fmt(total_count / diff.seconds), latency))
+                    sizeof_fmt(total_count / diff.seconds), received, lost, ("%dms" % (latency))))
                 print_count += 1
                 need_print = False
-                count_in_5_sec = 0
                 latency_in_5_sec = 0
                 received_in_5_count = 0
         else:
