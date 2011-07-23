@@ -68,6 +68,8 @@
 		<property name="basePath" value="/var/dstor/fs" />
 	</bean>
 
+    <!-- big file storage back end -->
+
 	<!-- main server -->
 	<bean id="restServer" class="com.lanxum.dstor.server.rest.RestServer">
 		<constructor-arg type="int" value="8517" />

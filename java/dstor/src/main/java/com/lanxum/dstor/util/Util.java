@@ -25,6 +25,7 @@ public class Util {
 
 	private static ThreadLocal<MessageDigest> digestCache = new ThreadLocal<MessageDigest>()
 	{
+        @Override
 		protected synchronized MessageDigest initialValue()
 		{
 			try {
@@ -45,6 +46,7 @@ public class Util {
 
 	private static ThreadLocal<DateFormat> dateFormatCache = new ThreadLocal<DateFormat>()
 	{
+        @Override
 		protected synchronized DateFormat initialValue()
 		{
 			return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ");
@@ -58,6 +60,7 @@ public class Util {
 	
 	private static ThreadLocal<ObjectMapper> objectMapperCache = new ThreadLocal<ObjectMapper>()
 	{
+        @Override
 		protected synchronized ObjectMapper initialValue()
 		{
 			return new ObjectMapper();

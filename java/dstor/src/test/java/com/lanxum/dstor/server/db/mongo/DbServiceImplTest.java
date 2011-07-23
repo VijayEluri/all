@@ -25,12 +25,13 @@ public class DbServiceImplTest extends TestCase
 
 	public void testSave() throws Exception
 	{
-		long id = generator.getNextId();
+		long id = generator.getNextFileId();
 
 		FileObject f1 = new FileObject();
 		f1.setFileName("filename");
 		f1.setFileSize(1234567L);
 		f1.setURI("hello2");
+        f1.setMd5Sum("md5sum");
 
 		dbService.save(id, f1);
 

@@ -32,7 +32,7 @@ public class GetHandler extends AbstractHttpHandler {
 				return;
 			}
 			
-			//TODO: calculate digest upon config 
+			//TODO: make digest calculation configable
 			MessageDigest digest = Util.getDigest();
 
 			outputFileAndUpdateDigest(response, fobj, digest);
@@ -42,7 +42,7 @@ public class GetHandler extends AbstractHttpHandler {
 				logger.debug("object " + id + " md5 check ok.");
 			} else {
 				logger.error("object " + id + " md5 check error.");
-				//TODO: response digest error to client
+                // TODO: tell the user md5 error after downloading
 			}
 
 			logger.debug("object " + id + " sent to client.");

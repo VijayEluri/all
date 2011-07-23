@@ -2,10 +2,10 @@
 
 set timeout -1
 spawn killall ssh
-spawn ssh -D 7777 -N router@ssh.uapp.info
+spawn ssh -D 7777 -p 80 -N hhhtj@ssh.csball.com
 set spawnid $spawn_id
 expect "*?assword:*"
-send -- "eZC!-Bcm1)mV"
+send -- "deqrpl"
 send -- "\r"
 spawn say connected
 expect -i $spawnid eof

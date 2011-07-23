@@ -10,10 +10,12 @@ public class C
 	public static final int ERR_ERROR = 1;
 	
 	public static final String FIELD_ID = "_id";
-	public static final String FIELD_URI = "_u";
-	public static final String FIELD_SIZE = "_s";
-	public static final String FIELD_NAME = "_n";
-	public static final String FIELD_HASH = "_h";
+
+    public static final String COL_FILES = "files";
+	public static final String FIELD_FILES_URI = "_u";
+	public static final String FIELD_FILES_SIZE = "_s";
+	public static final String FIELD_FILES_NAME = "_n";
+	public static final String FIELD_FILES_HASH = "_h";
 	
-	public static final String COL_FILES = "files";
+    public static final String COL_BIGFILE_STORES = "bigfile_stores";
 }

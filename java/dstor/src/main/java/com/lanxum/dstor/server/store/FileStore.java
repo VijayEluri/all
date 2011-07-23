@@ -4,7 +4,7 @@ import java.io.InputStream;
 
 public interface FileStore
 {
-	StoreOutputStream getOutputStreamById(long id) throws Exception;
+	StoreOutputStream getOutputStream(long id, long size) throws Exception;
 
 	void removeByURI(String URI);
 

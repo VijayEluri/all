@@ -36,10 +36,10 @@ public class DbServiceImpl implements DbService {
 	public void save(long id, FileObject fobj) {
 		BasicDBObjectBuilder builder = BasicDBObjectBuilder.start()
 			.append(C.FIELD_ID, id)
-			.append(C.FIELD_URI, fobj.getURI())
-			.append(C.FIELD_SIZE, fobj.getFileSize())
-			.append(C.FIELD_NAME, fobj.getFileName())
-			.append(C.FIELD_HASH, fobj.getMd5Sum());
+			.append(C.FIELD_FILES_URI, fobj.getURI())
+			.append(C.FIELD_FILES_SIZE, fobj.getFileSize())
+			.append(C.FIELD_FILES_NAME, fobj.getFileName())
+			.append(C.FIELD_FILES_HASH, fobj.getMd5Sum());
 		
 		Map<String, Object> metaData = fobj.getMetaData();
 		
@@ -58,10 +58,10 @@ public class DbServiceImpl implements DbService {
 		if (obj == null) return null;
 
 		FileObject fobj = new FileObject();
-		fobj.setFileName(obj.get(C.FIELD_NAME).toString());
-		fobj.setFileSize(Long.parseLong(obj.get(C.FIELD_SIZE).toString()));
-		fobj.setURI(obj.get(C.FIELD_URI).toString());
-		fobj.setMd5Sum(obj.get(C.FIELD_HASH).toString());
+		fobj.setFileName(obj.get(C.FIELD_FILES_NAME).toString());
+		fobj.setFileSize(Long.parseLong(obj.get(C.FIELD_FILES_SIZE).toString()));
+		fobj.setURI(obj.get(C.FIELD_FILES_URI).toString());
+		fobj.setMd5Sum(obj.get(C.FIELD_FILES_HASH).toString());
 
 		return fobj;
 	}

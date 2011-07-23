@@ -9,14 +9,13 @@ import java.io.InputStream;
 
 import org.apache.log4j.Logger;
 
-import com.lanxum.dstor.server.Main;
 import com.lanxum.dstor.server.store.FileStore;
 import com.lanxum.dstor.server.store.StoreOutputStream;
 
 public class FileStoreImpl implements FileStore
 {
 
-	private static final Logger logger = Logger.getLogger(Main.class.getName());
+	private static final Logger logger = Logger.getLogger(FileStoreImpl.class.getName());
 	private String basePath;
 
 	public void setBasePath(String basePath)
@@ -24,7 +23,7 @@ public class FileStoreImpl implements FileStore
 		this.basePath = basePath;
 	}
 
-	public StoreOutputStream getOutputStreamById(long id) throws Exception
+	public StoreOutputStream getOutputStream(long id, long size) throws Exception
 	{
 		String str = String.format("%016X", id);
 		StringBuilder sb = new StringBuilder();

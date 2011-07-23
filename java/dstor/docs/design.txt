@@ -1,0 +1,52 @@
+== REST API ==
+
+|   URL   | METHOD | FUNCTION            | PARAMETERS              | RESPONSE                          | S |
+------------------------------------------------------------------------------------------------------------
+| /files/ | POST   | create new file     | multi-part file stream  | {"id":file id, "err":0}           | O |
+| /files/ | GET    | query files         | TBD                     | id list                           | N |
+| /file   | GET    | download a file     | /file/<file id>         | file stream as original file name | O |
+| /file   | HEAD   | get file meta data  | /file/<file id>         | metadata(json) in response header | N |
+| /file   | DELETE | delete a file       | /file/<file id>         | {"err":0}                         | O |
+| /file   | PUT    | update a file       | /file/<file id>         | {"err":0}                         | N |
+
+== STORAGE ==
+
+=== METADATA IN MONGO DB===
+
+Collection "files":
+
+{
+  _id: 1
+  n:   file name
+  s:   file size
+  u:   URI
+  h:   MD5 hash
+  c:   create time
+  u:   update time
+}
+
+Collection "ids":
+
+file id:
+
+{
+  _id: "fid"
+  val: NumberLong(1)
+}
+
+=== BIG FILE STORE ===
+
+| STORE LIST
+-----------------------------------------------
+| id | capacity | available | largest segment |
+
+| STORE FREE LIST
+---------------------------------
+| id | store id | offset | size |
+
+| FILE LIST
+-------------------------------------------
+| id | store id | offset | size | deleted |
+
+
+h2. BOCS架构

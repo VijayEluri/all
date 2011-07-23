@@ -16,18 +16,23 @@ public class IdGeneratorImpl implements IdGenerator
 		this.db = db;
 	}
 
-	public long getNextId() throws Exception
+	public long getNextFileId() throws Exception
 	{
 		DBObject updateObj = new BasicDBObject("$inc", new BasicDBObject("val", 1L));
-		DBObject queryObj = new BasicDBObject("_id", "oid");
-		DBObject cmd = BasicDBObjectBuilder.start().append("findAndModify", "ids").append("query", queryObj)
-				.append("update", updateObj).append("upsert", true).append("new", true).get();
+		DBObject queryObj = new BasicDBObject("_id", "fid");
+		DBObject cmd = BasicDBObjectBuilder.start()
+                .append("findAndModify", "ids")
+                .append("query", queryObj)
+				.append("update", updateObj)
+                .append("upsert", true)
+                .append("new", true)
+                .get();
 		DBObject result = db.command(cmd);
 		String ok = result.get("ok").toString();
 		if (ok.equals("1.0")) {
 			DBObject value = (DBObject) result.get("value");
 			return Long.parseLong(value.get("val").toString());
 		}
-		throw new Exception("findAndModify error: " + result.toString());
+		throw new Exception("getNextId error: " + result.toString());
 	}
 }

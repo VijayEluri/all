@@ -1,0 +1,57 @@
+== /files/ + POST ==
+
+=== Trips Between Client and Server ===
+
+1. Client -> Server
+
+POST /files/ HTTP/1.1
+User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+Host: localhost:8517
+Accept: */*
+Metadata:{test:1}
+Content-Length: 29343
+Expect: 100-continue
+Content-Type: multipart/form-data; boundary=----------------------------e4f460371edf
+
+NOTE:
+
+Metadata: meta data in json format，if you want to save a date format data, it need's to start with __date
+and be in format of yyyy-MM-dd HH:mm:ss.SSSZ
+
+2. Server -> Client
+
+HTTP/1.1 100 Continue
+
+3. Client -> Server
+
+------------------------------e4f460371edf
+Content-Disposition: form-data; name="file"; filename="file1.bin"
+Content-Type: application/octet-stream
+
+4. Client -> Server
+
+%PDF-1.3.%............4 0 obj.<< /Length 5 0 R /Filter /FlateDec
+ode >>.stream.x...[o.H....+j.}.2+.w....d..@23.'..z1P$:.B.G.r...U
+7o.u.........>u...n^?._....M.P&y(.B~....V..*...........>...5./:.l
+)?.K...|....../.....y..Q.-..#.....d........G.&..7...G..%.....b?.
+
+h3. GET /file/<id>
+_1. C->S_
+{code}GET /file/8044 HTTP/1.1
+User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+Host: localhost:8517
+Accept: */*{code}
+_2. S->C_
+{code}HTTP/1.1 200 OK
+Content-Type: application/x-download;charset=UTF-8
+Content-Disposition: attachment; filename=file1.bin
+Metadata:{test:1}
+Transfer-Encoding: chunked
+Server: Jetty(7.1.5.v20100705)
+
+3000
+%PDF-1.3.%............4 0 obj.<< /Length 5 0 R /Filter /FlateDec
+ode >>.stream.x...[o.H....+j.}.2+.w....d..@23.'..z1P$:.B.G.r...U
+7o.u.........>u...n^?._....M.P&y(.B~....V..*...........>...5./:.l{code}
+
+

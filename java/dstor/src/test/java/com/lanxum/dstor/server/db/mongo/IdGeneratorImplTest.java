@@ -35,16 +35,16 @@ public class IdGeneratorImplTest extends TestCase
 	/**
 	 * Test of getNextId method, of class IdGenerator.
 	 */
-	public void testGetNextId() throws Exception
+	public void testGetNextFileId() throws Exception
 	{
-		long id1 = generator.getNextId();
-		long id2 = generator.getNextId();
+		long id1 = generator.getNextFileId();
+		long id2 = generator.getNextFileId();
 		assert (id2 == id1 + 1);
 
 		long start = System.currentTimeMillis();
 		int count = 2000;
 		for (int i = 0; i < count; ++i) {
-			generator.getNextId();
+			generator.getNextFileId();
 		}
 		System.out.println("Speed of getNextId: " + (System.currentTimeMillis() - start) / (double) count + " ms");
 	}

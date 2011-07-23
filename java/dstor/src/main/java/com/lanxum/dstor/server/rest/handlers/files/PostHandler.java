@@ -138,15 +138,15 @@ public class PostHandler implements HttpHandler {
 		}
 	}
 
-	// TODO: save meta data
 	private void processFile(HttpServletResponse response, FileItem item, Map<String, Object> metaData) {
 		long id = -1;
 		StoreOutputStream os = null;
 		try {
 			MessageDigest digest = Util.getDigest();
-			id = idGenerator.getNextId();
-			os = fileStore.getOutputStreamById(id);
+			id = idGenerator.getNextFileId();
+			os = fileStore.getOutputStream(id, item.getSize());
 			InputStream is = item.getInputStream();
+            
 			byte[] buf = new byte[1024 * 16];
 			long fileSize = 0;
 			int len;
@@ -156,6 +156,7 @@ public class PostHandler implements HttpHandler {
 				digest.update(buf, 0, len);
 			}
 			os.close();
+            
 			byte[] md5 = digest.digest();
 			String fileName = item.getName();
 			if (fileName != null) {
