@@ -5,6 +5,7 @@ import atom.data
 import gdata.data
 import gdata.contacts.client
 import gdata.contacts.data
+import sys
 
 import pinyin
 
@@ -31,6 +32,7 @@ def has_chinese(str):
 	return False
 
 count = 1
+updated = 0
 while True:
 	query = gdata.contacts.client.ContactsQuery()
 	query.max_results = 20
@@ -43,14 +45,22 @@ while True:
 				fullname = unicode(entry.name.full_name.text)
 				if (has_chinese(fullname)):
 					name_py = py.pinyin(fullname)
-					print "%s = %s" % (fullname, initials(name_py))
-					nickname = gdata.contacts.data.NickName(text = initials(name_py))
-					if entry.nickname is None or entry.nickname != nickname:
+					inits = initials(name_py)
+					nickname = gdata.contacts.data.NickName(text = inits)
+					if entry.nickname is None or entry.nickname.text != inits:
 						entry.nickname = nickname
 						entry.extended_property = None
 						gdclient.Update(entry)
+						updated += 1
+						print
+						print "%s = %s" % (fullname, inits)
+						sys.stdout.flush()
+					else:
+						print ".",
+						sys.stdout.flush()
 				else:
-					print "%s = " % (fullname)
+					print "*",
+					sys.stdout.flush()
 					if not entry.nickname is None:
 						entry.nickname = None
 						entry.extended_property = None
@@ -58,4 +68,5 @@ while True:
 	else:
 		break
 	
-print count	
+print
+print "Total: %d, Updated: %d" % (count, updated)
