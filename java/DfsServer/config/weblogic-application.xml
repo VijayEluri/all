@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-application xmlns="http://www.bea.com/ns/weblogic/90">
+    <prefer-application-packages>
+        <package-name>javax.xml.ws.*</package-name>
+        <package-name>javax.xml.bind.*</package-name>
+        <package-name>javax.jws.*</package-name>
+        <package-name>javax.namespace.xml.*</package-name>
+        <package-name>javax.xml.soap.*</package-name>
+        <package-name>org.apache.xerces.*</package-name>
+        <package-name>com.sun.xml.*</package-name>
+    </prefer-application-packages>
+</weblogic-application>

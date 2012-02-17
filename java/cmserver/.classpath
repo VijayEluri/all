@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/spring-2.5.6SEC01.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/jetty-server-7.0.0.RC6.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/jetty-servlet-7.0.0.RC6.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/jetty-util-7.0.0.RC6.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/jetty-http-7.0.0.RC6.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/jetty-io-7.0.0.RC6.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/jetty-security-7.0.0.RC6.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-7.0.0.rc6/jetty-continuation-7.0.0.RC6.jar"/>
+	<classpathentry kind="lib" path="lib/hessian-4.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/mongo-0.11.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

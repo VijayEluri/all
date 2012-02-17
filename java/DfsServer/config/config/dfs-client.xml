@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DfsClientConfig defaultModuleName="core" registryProviderModuleName="core" requireSignedUcfJars="no">
+    <ModuleInfo name="core" protocol="http" host="21.7.16.38" port="9080" contextRoot="services">
+    </ModuleInfo>
+</DfsClientConfig>

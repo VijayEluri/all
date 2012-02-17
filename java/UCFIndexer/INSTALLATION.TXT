@@ -1,0 +1,33 @@
+IMPORTANT INSTRUCTIONS!!!
+Author: Johnny Guo
+Email: guo_johnny@emc.com
+
+On Tomcat app server
+1. Install Winzip if you don't have it installed
+2. Install JDK 1.5+ if you don't have it installed
+3. Configure Tomcat to use the newly installed JDK1.5+
+4. Don't use the auto-deploy feature of Tomcat!!!
+5. Stop the Tomcat app server.
+6. Use Winzip to unzip the ucf.war file from server directory into ${catalina.home}/webapps 
+   on your Tomcat app server. Make sure "use folder name" feature is checked when unziping.
+7. Delete the "META-INF" folder under ${catalina.home}/webapps
+8. Start the Tomcat app server.
+
+On Indexer client machine
+1. Make a folder to contain indexer binaries, such as D:\Indexer
+2. Copy the client/bin folder to the folder mentioned in step 1.
+3. Copy proper client/lib_<ver> to the folder mentioned in step 1!
+   Note: this is very important step to make sure you are using the correct versions of UCF client
+   jar files and native libraries.
+4. Rename your local lib_<ver> directory to lib
+5. Install proper DFC binaries on the client machine if you don't have one available on the machine. 
+   Note: recommend using the same version of DFC as your Webtop/Content Server.
+6. If installing DFC using default directory value in step 5, you don't need to modify start_indexer.bat
+   file in bin directory. Otherwise, modify it accordingly to have the correct CLASSPATH
+7. Based on the sample UCF_PERF_TEST.xml file provided in bin directory, create an .xml file to suit
+   your need. Here're the current support actions strings:
+   checkout, checkin, export, import, cancelcheckout, dctcheckout, dctcheckin, dctexport, dctimport
+   Note: the prefix "dct" stands for distributed content transfer.
+8. Start the indexer by:
+   D:\Indexer\bin> start_indexer <path to the xml file created in step 7>
+   

@@ -1,0 +1,20 @@
+@echo off
+rem check docbase connection
+
+if "%1"==""  goto usage
+
+set JAVA_HOME="C:\Program Files\Java\jdk1.5.0_10"
+set DM_SHARED=C:\Program Files\Documentum\Shared
+set CLASSPATH=%DM_SHARED%\dfc.jar;%DM_SHARED%\dfcbase.jar;%DM_SHARED%\log4j.jar;..\lib\ucf-client-api.jar;..\lib\ucf-client-impl.jar;..\lib\indexer.jar;C:\Documentum\config
+set PATH=%PATH%;%DM_SHARED%;..\lib
+
+%JAVA_HOME%\bin\java com.documentum.performance.ucf.indexer.UCFIndexerDriver %1
+
+goto end
+
+:usage
+echo.
+echo Usage: start_indexer configFile
+echo.
+
+:end

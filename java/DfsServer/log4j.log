@@ -1,0 +1,1274 @@
+09:59:59,375  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+09:59:59,843  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+09:59:59,937  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+09:59:59,953  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+09:59:59,953  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:01,250  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:01,250  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:01,265  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:01,265  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:01,265  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:01,453  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:01,453  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:01,468  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:01,468  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:01,468  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:01,593  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:01,593  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:01,609  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:01,609  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:01,609  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:01,781  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:01,781  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:01,781  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:01,796  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:01,796  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:01,937  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:01,937  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:01,937  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:01,953  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:01,953  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:02,140  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:02,140  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:02,156  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:02,156  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:02,156  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:02,328  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:02,328  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:02,328  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:02,343  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:02,343  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:02,484  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:02,484  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:02,484  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:02,500  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:02,500  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:02,656  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:02,656  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:02,656  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:02,656  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:02,656  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:02,921  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:02,921  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:02,937  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:02,937  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:02,937  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:03,093  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:03,093  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:03,093  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:03,109  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:03,109  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:03,281  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:03,281  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:03,281  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:03,281  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:03,281  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:03,421  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:03,421  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:03,437  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:03,437  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:03,437  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:03,562  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:03,562  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:03,578  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:03,578  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:03,578  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:03,796  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:03,796  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:03,812  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:03,812  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:03,812  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:04,015  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:04,015  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:04,031  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:04,031  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:04,031  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:04,218  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:04,218  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:04,218  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:04,234  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:04,234  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:04,406  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:04,406  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:04,406  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:04,421  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:04,421  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:04,562  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:04,562  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:04,578  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:04,578  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:04,578  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:04,828  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:04,828  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:04,828  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:04,828  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:04,828  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:05,015  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:05,015  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:05,015  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:05,015  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:05,015  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:05,156  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:05,156  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:05,156  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:05,171  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:05,171  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:05,312  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:05,312  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:05,312  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:05,328  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:05,328  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:05,500  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:05,500  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:05,500  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:05,515  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:05,515  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:05,843  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:05,843  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:05,843  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:05,859  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:05,859  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:06,000  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:06,000  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:06,015  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:06,015  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:06,015  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:06,187  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:06,187  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:06,187  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:06,203  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:06,203  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:06,312  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:06,312  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:06,312  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:06,328  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:06,328  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:06,468  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:06,468  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:06,484  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:06,484  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:06,484  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:18,640  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:19,125  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:19,234  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:19,234  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:19,250  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:20,531  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:20,531  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:20,546  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:20,546  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:20,546  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:20,671  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:20,671  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:20,671  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:20,671  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:20,671  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:20,765  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:20,765  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:20,781  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:20,781  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:20,781  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:20,921  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:20,921  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:20,937  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:20,937  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:20,937  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:21,093  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:21,093  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:21,093  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:21,093  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:21,093  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:21,296  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:21,296  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:21,296  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:21,296  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:21,296  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:21,468  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:21,468  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:21,468  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:21,468  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:21,468  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:21,593  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:21,593  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:21,593  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:21,609  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:21,609  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:21,796  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:21,796  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:21,796  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:21,796  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:21,796  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:22,031  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:22,031  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:22,031  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:22,031  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:22,031  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:22,187  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:22,187  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:22,187  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:22,203  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:22,203  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:22,343  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:22,343  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:22,343  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:22,359  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:22,359  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:22,515  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:22,515  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:22,515  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:22,531  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:22,531  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:22,625  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:22,625  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:22,640  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:22,640  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:22,640  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:22,859  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:22,859  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:22,859  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:22,875  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:22,875  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:23,015  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:23,015  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:23,031  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:23,031  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:23,031  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:23,203  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:23,203  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:23,203  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:23,218  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:23,218  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:23,312  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:23,312  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:23,312  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:23,328  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:23,328  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:23,468  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:23,468  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:23,468  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:23,484  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:23,484  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:23,765  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:23,765  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:23,781  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:23,781  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:23,781  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:23,937  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:23,937  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:23,937  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:23,937  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:23,937  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:24,093  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:24,093  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:24,093  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:24,093  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:24,109  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:24,218  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:24,218  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:24,234  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:24,234  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:24,234  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:24,421  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:24,421  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:24,437  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:24,437  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:24,437  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:24,687  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:24,687  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:24,687  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:24,703  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:24,703  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:24,828  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:24,828  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:24,828  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:24,828  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:24,828  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:24,968  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:24,968  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:24,984  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:24,984  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:24,984  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:25,109  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:25,109  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:25,125  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:25,125  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:25,125  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:00:25,328  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:00:25,328  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:00:25,343  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:00:25,343  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:00:25,343  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:01:51,593  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] CREATED
+10:01:51,593  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] OPENED
+10:01:51,734  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 72 65 61 64 0A]
+10:01:51,734  INFO [DFS] com.dfs.server.DfsOperation - reading
+10:01:56,500  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802957e1
+10:01:56,515  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] WRITE: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:01:56,515  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] WRITE: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:01:56,515  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] SENT: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:01:56,515  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:01:56,515  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 71 75 69 74 0A]
+10:01:56,531  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] CLOSE
+10:01:56,546  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55687] CLOSED
+10:02:47,843  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] CREATED
+10:02:47,843  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] OPENED
+10:02:47,843  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 72 65 61 64 0A]
+10:02:47,859  INFO [DFS] com.dfs.server.DfsOperation - reading
+10:02:52,359  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802957e1
+10:02:52,359  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] WRITE: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:02:52,359  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] WRITE: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:02:52,359  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] SENT: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:02:52,359  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:02:52,375  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 71 75 69 74 0A]
+10:02:52,375  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] CLOSE
+10:02:52,390  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55706] CLOSED
+10:08:16,875  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:17,343  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:17,437  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:17,453  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:17,453  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:18,750  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:18,750  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:18,750  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:18,765  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:18,765  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:18,890  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:18,890  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:18,890  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:18,890  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:18,890  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:19,015  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:19,015  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:19,031  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:19,031  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:19,031  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:19,187  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:19,187  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:19,187  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:19,203  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:19,203  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:19,328  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:19,328  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:19,328  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:19,343  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:19,343  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:19,546  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:19,546  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:19,562  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:19,562  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:19,562  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:19,703  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:19,703  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:19,703  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:19,718  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:19,718  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:19,859  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:19,859  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:19,859  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:19,859  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:19,859  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,000  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,000  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,000  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,000  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,000  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,171  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,171  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,171  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,171  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,171  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,281  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,281  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,296  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,296  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,296  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,421  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,421  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,437  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,437  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,437  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,562  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,562  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,578  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,578  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,578  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,671  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,671  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,671  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,687  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,687  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,859  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,859  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,859  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,859  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,859  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:20,968  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:20,968  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:20,968  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:20,984  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:20,984  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,093  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,093  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,093  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,109  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,109  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,203  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,203  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,203  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,203  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,203  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,312  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,312  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,312  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,312  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,312  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,453  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,453  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,453  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,468  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,468  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,609  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,609  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,609  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,609  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,609  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,734  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,734  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,734  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,734  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,734  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,859  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,859  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,859  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,875  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,875  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:21,937  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:21,937  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:21,937  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:21,953  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:21,953  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:22,109  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:22,109  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:22,109  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:22,125  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:22,125  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:22,203  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:22,203  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:22,218  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:22,218  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:22,218  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:22,312  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:22,312  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:22,312  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:22,328  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:22,328  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:22,437  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:22,437  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:22,453  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:22,453  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:22,453  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:08:22,531  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+10:08:22,546  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+10:08:22,546  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+10:08:22,546  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+10:08:22,562  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+10:09:04,421  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] CREATED
+10:09:04,437  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] OPENED
+10:09:04,437  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 72 65 61 64 0A]
+10:09:04,453  INFO [DFS] com.dfs.server.DfsOperation - reading
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e3
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e4
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e5
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e6
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e7
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e8
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e9
+10:09:10,671  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834f7
+10:09:10,687  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] WRITE: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:09:10,703  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] WRITE: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:09:10,703  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] SENT: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:09:10,703  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 71 75 69 74 0A]
+10:09:10,703  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] CLOSE
+10:09:10,703  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:09:10,718  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55781] CLOSED
+10:09:21,062  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] CREATED
+10:09:21,062  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] OPENED
+10:09:21,062  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 72 65 61 64 0A]
+10:09:21,062  INFO [DFS] com.dfs.server.DfsOperation - reading
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e3
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e4
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e5
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e6
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e7
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e8
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834e9
+10:09:26,000  INFO [DFS] com.dfs.server.DfsOperation -  got 09011172802834f7
+10:09:26,000  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] WRITE: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:09:26,000  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] WRITE: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:09:26,000  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] SENT: DirectBuffer[pos=0 lim=5 cap=8: 64 6F 6E 65 0A]
+10:09:26,000  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+10:09:26,000  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] RECEIVED: DirectBuffer[pos=0 lim=5 cap=1024: 71 75 69 74 0A]
+10:09:26,000  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] CLOSE
+10:09:26,000  INFO [DFS] com.dfs.server.DfsServerHandler - [/127.0.0.1:55808] CLOSED
+14:05:58,468  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+14:05:58,886  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+14:05:58,905  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+14:05:58,907  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+14:05:58,914  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+14:06:45,992  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+14:06:46,424  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+14:06:46,443  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+14:06:46,445  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+14:06:46,452  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+15:55:19,543  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+15:55:19,963  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+15:55:19,982  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+15:55:19,984  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+15:55:19,991  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+15:55:23,554 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+15:55:58,296  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+15:55:58,718  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+15:55:58,737  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+15:55:58,740  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+15:55:58,747  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+15:56:03,671 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+15:57:48,544  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+15:57:48,971  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+15:57:48,991  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+15:57:48,993  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+15:57:49,000  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+15:57:53,492 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+16:01:06,007  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+16:01:06,456  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+16:01:06,475  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+16:01:06,478  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+16:01:06,485  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+16:01:11,050 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+16:03:13,839  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+16:03:14,272  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+16:03:14,291  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+16:03:14,293  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+16:03:14,300  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+16:03:18,708 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+16:05:06,759  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+16:05:07,178  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+16:05:07,197  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+16:05:07,201  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+16:05:07,206  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+16:05:11,439 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+16:09:59,766  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+16:10:00,187  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+16:10:00,206  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+16:10:00,210  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+16:10:00,215  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+16:10:04,530 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+16:41:53,811  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+16:41:54,232  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+16:41:54,251  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+16:41:54,255  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+16:41:54,260  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+16:41:58,695 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+16:45:06,225  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+16:45:06,644  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+16:45:06,663  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+16:45:06,667  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+16:45:06,672  INFO [DFS] com.dfs.pool.ServicePool - Registering context
+16:45:10,016 ERROR [DFS] com.dfs.pool.ServicePool - Error while creating service
+com.emc.documentum.fs.services.core.CoreServiceException: Operation output generation failed: could not retrieve data for identity: 0901117280381131.
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:31)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.FailOnExceptionPayloadPolicy.execute(FailOnExceptionPayloadPolicy.java:28)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:33)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.payload.PayloadPolicy.execute(PayloadPolicy.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:29)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.ObjectIdentitySetToDataPackagePayloadAdapter.execute(ObjectIdentitySetToDataPackagePayloadAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DfcSessionReleaseAction.execute(DfcSessionReleaseAction.java:30)
+	at com.emc.documentum.fs.services.core.impl.ObjectService.get(ObjectService.java:425)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.emc.documentum.fs.rt.context.impl.ReflectionServiceInvoker.invoke(ReflectionServiceInvoker.java:40)
+	at com.emc.documentum.fs.rt.impl.tx.TxInvocationHandler.invoke(TxInvocationHandler.java:27)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.handleUCF(UcfServiceInvocationHandler.java:63)
+	at com.emc.documentum.fs.rt.context.impl.UcfServiceInvocationHandler.invoke(UcfServiceInvocationHandler.java:43)
+	at com.emc.documentum.fs.rt.context.impl.SoapServiceInvocationHandler.invoke(SoapServiceInvocationHandler.java:49)
+	at com.emc.documentum.fs.rt.context.impl.OperationOptionsHandler.invoke(OperationOptionsHandler.java:48)
+	at $Proxy121.get(Unknown Source)
+	at com.emc.documentum.fs.services.core.ObjectServiceWebService.get(ObjectServiceWebService.java:260)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:246)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:146)
+	at com.sun.xml.ws.server.sei.EndpointMethodHandler.invoke(EndpointMethodHandler.java:257)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:93)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:595)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:554)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:539)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:436)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:243)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:444)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:244)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:135)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doGet(WSServletDelegate.java:129)
+	at com.sun.xml.ws.transport.http.servlet.WSServletDelegate.doPost(WSServletDelegate.java:160)
+	at com.sun.xml.ws.transport.http.servlet.WSServlet.doPost(WSServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:763)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:225)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:127)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:283)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:175)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3214)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:1983)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:1890)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1344)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:209)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:181)
+Caused by: java.lang.Exception: E_CANT_LOAD_RELATIONS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:122)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:24)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.DataObjectToObjectIdentityAdapter.execute(DataObjectToObjectIdentityAdapter.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.transformation.CoreServiceExceptionContext.execute(CoreServiceExceptionContext.java:27)
+	... 50 more
+Caused by: java.lang.Exception: E_CANNOT_PROCESS
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:59)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:37)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PropertiesLoader.execute(PropertiesLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:39)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.PermissionsLoader.execute(PermissionsLoader.java:1)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.walk(DeepGetAction.java:215)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.DeepGetAction.execute(DeepGetAction.java:110)
+	... 54 more
+Caused by: com.emc.documentum.fs.services.core.CoreServiceException: Failed to load content for object [] [id =0901117280381131] PROPERTIES [] (format->jpeg, pageNumber->0, pageModifier->)
+	at com.emc.documentum.fs.services.core.impl.result.ThrowExceptionPolicy.processException(ThrowExceptionPolicy.java:19)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadPageContent(ContentLoader.java:175)
+	at com.emc.documentum.fs.services.core.impl.result.ContentLoader.loadContents(ContentLoader.java:279)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.flush(ContentsLoader.java:104)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.process(ContentsLoader.java:76)
+	at com.emc.documentum.fs.services.core.impl.execution.proto.dfc.ContentsLoader.execute(ContentsLoader.java:50)
+	... 61 more
+17:48:58,894  INFO [DFS] com.dfs.pool.ServicePool - 	Getting ContextFactory
+17:48:59,517  INFO [DFS] com.dfs.pool.ServicePool - 	Creating empty context
+17:48:59,665  INFO [DFS] com.dfs.pool.ServicePool - 	Adding identity
+17:48:59,667  INFO [DFS] com.dfs.pool.ServicePool - 	Setting transferProfile
+17:48:59,698  INFO [DFS] com.dfs.pool.ServicePool - Registering context

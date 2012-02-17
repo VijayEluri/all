@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-app>
+    <loader-repository>
+        com.emc.documentum.fs:loader=dfs.ear
+        <loader-repository-config>
+            java2ParentDelegation=false
+        </loader-repository-config>
+    </loader-repository>
+    <library-directory>
+        APP-INF/lib
+    </library-directory>  
+</jboss-app>
+ 

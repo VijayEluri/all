@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+    <distributable/>
+    <servlet>
+        <servlet-name>GAIRConnector</servlet-name>
+        <servlet-class>com.documentum.ucf.server.transport.impl.GAIRConnectorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InitGAIRConnector</servlet-name>
+        <servlet-class>com.documentum.ucf.server.transport.impl.InitGAIRConnectorServlet</servlet-class>
+        <init-param>
+            <param-name>ucfName</param-name>
+            <param-value>ucf</param-value>
+            <description>UCF entry in HttpSession</description>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>InitSocketConnector</servlet-name>
+        <servlet-class>com.documentum.ucf.server.transport.impl.InitSocketConnectorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Notification</servlet-name>
+        <servlet-class>com.documentum.ucf.server.notification.impl.NotificationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoteUnavailability</servlet-name>
+        <servlet-class>com.documentum.ucf.server.transport.impl.RemoteUnavailabilityServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UCFIndexer</servlet-name>
+        <servlet-class>com.documentum.performance.ucf.indexer.UCFIndexerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.documentum.performance.ucf.indexer.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfigUpdate</servlet-name>
+        <servlet-class>com.documentum.performance.ucf.indexer.ConfigUpdateServlet</servlet-class>
+    </servlet>
+
+    <!-- servlet mappings -->
+    <servlet-mapping>
+        <servlet-name>GAIRConnector</servlet-name>
+        <url-pattern>/servlet/com/documentum/ucf/server/transport/impl/GAIRConnector</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InitGAIRConnector</servlet-name>
+        <url-pattern>/servlet/com/documentum/ucf/server/transport/impl/InitGAIRConnector</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InitSocketConnector</servlet-name>
+        <url-pattern>/servlet/com/documentum/ucf/server/transport/impl/InitSocketConnector</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Notification</servlet-name>
+        <url-pattern>/servlet/com/documentum/ucf/server/notification/impl/Notification</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoteUnavailability</servlet-name>
+        <url-pattern>/servlet/com/documentum/ucf/server/transport/impl/RemoteUnavailability</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UCFIndexer</servlet-name>
+        <url-pattern>/UCFIndexer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfigUpdate</servlet-name>
+        <url-pattern>/ConfigUpdate</url-pattern>
+    </servlet-mapping>
+
+</web-app>
