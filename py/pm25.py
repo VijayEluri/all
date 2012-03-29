@@ -66,10 +66,10 @@ data = urllib.urlopen(url).read()
 parser = MyHTMLParser()
 parser.feed(data)
 
-str = u"PM25: %s" % g_result["current"]
+str = u"PM2.5: \t\t%s" % g_result["current"]
 print str.encode('utf-8')
 
-str = u"%s" % g_result["time"]
+str = u"Time: \t\t%s" % g_result["time"].split(' ')[1]
 print str.encode('utf-8')
 
-print "Updt:", datetime.datetime.now()
+print "Upated: \t%s" % datetime.datetime.now()

@@ -18,6 +18,9 @@ wind = dom.getElementsByTagName('yweather:wind')[0].attributes
 atmosphere = dom.getElementsByTagName('yweather:atmosphere')[0].attributes
 astronomy = dom.getElementsByTagName('yweather:astronomy')[0].attributes
 
+print u"Weather"
+print u"-------"
+
 print u"Sunrise: \t%s" % astronomy.getNamedItem('sunrise').value
 print u"Sunset: \t%s" % astronomy.getNamedItem('sunset').value
 print u"Humidity: \t%s%%" % atmosphere.getNamedItem('humidity').value
