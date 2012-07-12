@@ -10,7 +10,6 @@
 	[controller loadView];
 	controller.title = @"Log Book";
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (void)showCategories {
@@ -18,7 +17,6 @@
 	[controller loadView];
 	controller.title = @"Categories";
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -52,7 +50,7 @@
 	UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell"];
 	
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"Cell"] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 	}
 	
 	switch(indexPath.row) {
@@ -82,11 +80,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
 }
-
-- (void)dealloc {
-	[tableView release];
-    [super dealloc];
-}
-
 
 @end

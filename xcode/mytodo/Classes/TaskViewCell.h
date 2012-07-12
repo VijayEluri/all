@@ -19,7 +19,7 @@
 }
 
 @property (retain) Task *task;
-@property (assign) TaskViewController *taskViewController; 
+@property (retain) TaskViewController *taskViewController; 
 @property (retain) NSString *nowDate;
 		   
 - (void)layoutLabels;

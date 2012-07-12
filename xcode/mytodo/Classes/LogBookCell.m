@@ -78,13 +78,4 @@
 	return self;
 }
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[taskContentLabel release];
-	[completionDateLabel release];
-	[tickImageView release];
-	[theTask release];
-    [super dealloc];
-}
-
 @end

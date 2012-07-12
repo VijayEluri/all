@@ -52,20 +52,12 @@
 	[dataArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
 						  @"Completed", @"caption",
 						  completedTasks, @"tasks",
-						  nil]];
-	
-	[notCompletedTasks release];
-	[completedTasks release];	
+						  nil]];	
 }
 
 -(id)init:(TaskViewController *)controller {
-	[super init:controller];
+	self = [super init:controller];
 	return self;
-}
-
--(void)dealloc {
-	[dataArray release];
-	[super dealloc];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,7 +92,6 @@
 	if (nowDate == nil) {
 		NSDate *now = [[NSDate alloc] init];
 		nowDate = [[AppGlobal dateFormatter] stringFromDate:now];
-		[now release];
 	}
 	return nowDate;
 }
@@ -108,7 +99,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TaskViewCell *cell = (TaskViewCell *) [tableView dequeueReusableCellWithIdentifier:TASK_CELL_ID];
     if (cell == nil) {
-        cell = [[[TaskViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:TASK_CELL_ID] autorelease];
+        cell = [[TaskViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TASK_CELL_ID];
     }
     	
 	int section = indexPath.section;

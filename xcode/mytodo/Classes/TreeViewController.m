@@ -13,7 +13,6 @@
 	CGRect frame = [[UIScreen mainScreen] applicationFrame];
 	UIView *contentView = [[UIView alloc] initWithFrame:frame];
 	self.view = contentView;
-	[contentView release];
 }
 
 - (void)actionCancel:(id)sender {
@@ -43,8 +42,6 @@
 	
 	NSArray *items = [NSArray arrayWithObjects: cancelItem, flexItem, nil];
 	[toolbar setItems:items animated:NO];
-	[cancelItem release];
-	[flexItem release];
 }
 
 - (void)createTableView {
@@ -93,17 +90,5 @@
     
     [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    tableView.delegate = nil;
-    tableView.dataSource = nil;
-    [tableViewDelegate release];
-    [tableViewDataSource release];
-    [tableView release];
-    [taskToMove release];
-    [super dealloc];
-}
-
 
 @end

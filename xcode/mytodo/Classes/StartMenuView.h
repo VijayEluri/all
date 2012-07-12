@@ -9,7 +9,7 @@
 	UINavigationController *navigationController;
 }
 
-@property (assign) TaskViewToolbarItemsDelegate *toolbarItemsDelegate;
-@property (assign) UINavigationController *navigationController;
+@property (retain) TaskViewToolbarItemsDelegate *toolbarItemsDelegate;
+@property (retain) UINavigationController *navigationController;
 
 @end

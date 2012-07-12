@@ -63,9 +63,9 @@ enum tagSections {
 	BOOL readOnly;
 }
 
-@property (assign) Task *task;
-@property (assign) Task *parentTask;
-@property (assign) TaskViewController *taskViewController;
+@property (retain) Task *task;
+@property (retain) Task *parentTask;
+@property (retain) TaskViewController *taskViewController;
 @property (readonly) UITextView *contentTextView;
 @property (readonly) UISegmentedControl *prioritySegment;
 @property (readonly) UIView *dueDateView;

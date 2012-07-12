@@ -9,13 +9,9 @@ static NSMutableArray *dateArray = nil;
 static NSMutableArray *dateValueArray = nil;
 
 - (DetailViewCustomDueDatePickerDelegate *)init:(DetailViewController *)controller; {
-	[super init];
+	self = [super init];
 	detailViewController = controller;
 	return self;
-}
-
-- (void)dealloc {
-	[super dealloc];
 }
 
 - (void)initArrays {
@@ -43,26 +39,23 @@ static NSMutableArray *dateValueArray = nil;
 	dateValueArray = [[NSMutableArray alloc] initWithObjects:
 					  NO_DUE_DATE,
 					  [formater stringFromDate:now],
-					  [formater stringFromDate:[now addTimeInterval:secondsPerDay]],
-					  [formater stringFromDate:[now addTimeInterval:secondsPerDay * (6 - [weekComponents weekday])]],
-					  [formater stringFromDate:[now addTimeInterval:secondsPerDay * (7 + 6 - [weekComponents weekday])]],
-					  [formater stringFromDate:[now addTimeInterval:secondsPerDay * (dayRange.length - [weekComponents day])]],
+					  [formater stringFromDate:[now dateByAddingTimeInterval:secondsPerDay]],
+					  [formater stringFromDate:[now dateByAddingTimeInterval:secondsPerDay * (6 - [weekComponents weekday])]],
+					  [formater stringFromDate:[now dateByAddingTimeInterval:secondsPerDay * (7 + 6 - [weekComponents weekday])]],
+					  [formater stringFromDate:[now dateByAddingTimeInterval:secondsPerDay * (dayRange.length - [weekComponents day])]],
 					  nil];
 	
 	for (int i = [weekComponents weekday]; i < [weekDayNames count]; ++i) {
 		//[dateArray addObject:[NSString stringWithFormat:@"This %@", [weekDayNames objectAtIndex:i]]];
 		[dateArray addObject:[weekDayNames objectAtIndex:i]];
-		[dateValueArray addObject:[formater stringFromDate:[now addTimeInterval:secondsPerDay * (i + 1 - [weekComponents weekday])]]];
+		[dateValueArray addObject:[formater stringFromDate:[now dateByAddingTimeInterval:secondsPerDay * (i + 1 - [weekComponents weekday])]]];
 	}
 	
 	for (int i = 1; i < [weekDayNames count]; ++i) {
 		[dateArray addObject:[NSString stringWithFormat:@"Next %@", [weekDayNames objectAtIndex:i]]];
-		[dateValueArray addObject:[formater stringFromDate:[now addTimeInterval:secondsPerDay * (7 + 1 + i - [weekComponents weekday])]]];
+		[dateValueArray addObject:[formater stringFromDate:[now dateByAddingTimeInterval:secondsPerDay * (7 + 1 + i - [weekComponents weekday])]]];
 	}
-	
-	[gregorian release];
-	[now release];
-	
+		
 	for (int i = 0; i < [dateArray count]; ++i) {
 		NSLog(@"%@, %@", [dateArray objectAtIndex:i], [dateValueArray objectAtIndex:i]);
 	}

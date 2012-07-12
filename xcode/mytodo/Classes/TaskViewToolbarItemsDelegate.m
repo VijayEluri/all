@@ -11,15 +11,10 @@
 @implementation TaskViewToolbarItemsDelegate
 
 - (id)init:(TaskViewController *)controller {
-	[super init:controller];
+	self = [super init:controller];
 	categoryPickerHidden = YES;
 	startMenuHidden = YES;
 	return self;
-}
-
-- (void)dealloc {
-	[startMenuView release];
-	[super dealloc];
 }
 
 - (void)showCategoryPicker:(id)sender {
@@ -94,7 +89,6 @@
 	}
 	[controller loadView];
 	[taskViewController.navigationController pushViewController:controller animated:YES];
-	[controller release];	
 }
 
 - (void)viewTodayView:(id)sender {
@@ -102,6 +96,5 @@
 	[controller loadView];
     controller.title = @"Today";
 	[taskViewController.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 @end

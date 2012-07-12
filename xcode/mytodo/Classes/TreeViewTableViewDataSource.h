@@ -11,7 +11,7 @@
     Tasks *tasks;
 }
 
-@property (assign) TreeViewController *treeViewController;
+@property (retain) TreeViewController *treeViewController;
 
 - (TreeViewTableViewDataSource *)init;
 - (Task *)taskAt:(NSIndexPath *)path;

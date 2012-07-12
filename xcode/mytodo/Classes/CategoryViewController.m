@@ -53,7 +53,7 @@ enum editActionCode {
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"MyCell"] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyCell"];
     }
 	
 	cell.textLabel.text = [[categories categoryAtIndex:indexPath.row] categoryName];
@@ -80,7 +80,7 @@ enum editActionCode {
     action = EDIT_ACTION;
     Category *category = [categories categoryAtIndex:indexPath.row];
     categoryNameField.text = category.categoryName;
-    currentEditingIndexPath = [indexPath retain];
+    currentEditingIndexPath = indexPath;
     tableView.userInteractionEnabled = NO;
     [self showDetailView];
     [categoryNameField becomeFirstResponder];
@@ -116,8 +116,6 @@ enum editActionCode {
                                 action:@selector(actionAddCategory:)];
 	NSArray *items = [NSArray arrayWithObjects: flexItem, newItem, nil];
 	[toolbar setItems:items animated:NO];
-	[newItem release];
-    [flexItem release];
 }
 
 #pragma mark UITextFieldDelegate
@@ -127,7 +125,6 @@ enum editActionCode {
     category.categoryName = categoryName;
     [Category createCategory:category];
     [categories addCategory:category];
-    [category release];
     
     NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:[categories count] - 1 inSection:0];
     NSArray *insertIndexPaths = [NSArray arrayWithObjects:newIndexPath, nil];
@@ -140,7 +137,6 @@ enum editActionCode {
     [category saveToDb];
     [tableView reloadData];
     [tableView deselectRowAtIndexPath:currentEditingIndexPath animated:YES];
-    [currentEditingIndexPath release];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -244,17 +240,5 @@ enum editActionCode {
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
 }
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    [categoryNameField release];
-    [categoryNameLabel release];
-    [toolbar release];
-    [detailView release];
-	[tableView release];
-	[contentView release];
-    [super dealloc];
-}
-
 
 @end

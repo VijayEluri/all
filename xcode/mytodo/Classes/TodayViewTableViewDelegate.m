@@ -10,10 +10,6 @@
 
 @synthesize todayViewController;
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[super dealloc];
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	TodayViewCell *cell = (TodayViewCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -24,7 +20,6 @@
 	[controller loadView];
 	controller.title = @"Task Detail";
 	[todayViewController.navigationController pushViewController:controller animated:YES];
-	[controller release];
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

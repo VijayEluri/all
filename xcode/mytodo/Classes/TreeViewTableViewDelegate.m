@@ -9,10 +9,6 @@
 
 @synthesize treeViewController;
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[super dealloc];
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	TreeViewCell *cell = (TreeViewCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -26,7 +22,6 @@
 														otherButtonTitles:nil];
 		actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 		[actionSheet showInView:treeViewController.view];
-		[actionSheet release];
 	} else {
 		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Move task \"%@\" into \"%@\" ?", treeViewController.taskToMove.content, parentTask.content]
 																 delegate:self 
@@ -35,7 +30,6 @@
 														otherButtonTitles:nil];
 		actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 		[actionSheet showInView:treeViewController.view];
-		[actionSheet release];
 	}
     	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];

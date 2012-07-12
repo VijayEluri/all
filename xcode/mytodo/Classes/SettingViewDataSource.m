@@ -7,13 +7,8 @@
 
 @synthesize settingViewController;
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[super dealloc];
-}
-
 - (SettingViewDataSource *)init {
-	[super init];
+	self = [super init];
 	return self;
 }
 
@@ -32,7 +27,7 @@
 		case 0:
 			switch (indexPath.row) {
 				case 0:
-					cell = [[[CellViewWithLabel alloc] initWithFrame:CGRectZero reuseIdentifier:CELL_VIEW_WITH_LABEL_ID] autorelease];
+					cell = [[CellViewWithLabel alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_VIEW_WITH_LABEL_ID];
 					((CellViewWithLabel *)cell).nameLabel.text = @"Enable Animations";
 					((CellViewWithLabel *)cell).view = settingViewController.animationSwitch;
 					break;
@@ -45,7 +40,8 @@
 	}
 	
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"Cell"] autorelease];
+//		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"Cell"] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 		cell.textLabel.text = @"test";
 	}
 	

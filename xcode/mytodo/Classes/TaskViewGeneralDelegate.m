@@ -5,14 +5,9 @@
 @implementation TaskViewGeneralDelegate
 
 -(id)init:(TaskViewController *)controller {
-	[super init];
+	self = [super init];
 	taskViewController = controller;
 	return self;
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    [super dealloc];
 }
 
 @end

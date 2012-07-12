@@ -19,9 +19,7 @@
 	[controller loadView];
 	controller.title = @"Task Detail";
 	[taskViewController.navigationController pushViewController:controller animated:YES];
-	
-	[controller release];
-	
+		
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

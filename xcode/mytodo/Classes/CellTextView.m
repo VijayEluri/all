@@ -29,9 +29,4 @@
 								 contentRect.size.height - 6.0);
 }
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    [super dealloc];
-}
-
 @end

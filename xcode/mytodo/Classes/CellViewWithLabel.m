@@ -36,10 +36,14 @@
 	if (view)
 		[view removeFromSuperview];
 	view = inView;
-	[self.view retain];
 	[self.contentView addSubview:inView];
 	
 	[self layoutSubviews];
+}
+
+- (UIView *)view
+{
+    return view;
 }
 
 - (void)layoutSubviews
@@ -62,15 +66,6 @@
 								self.view.bounds.size.width,
 								self.view.bounds.size.height);
 	view.frame = uiFrame;
-}
-
-- (void)dealloc
-{
-	NSLog(@"dealloc %@", self);
-	[nameLabel release];
-	[view release];
-	
-    [super dealloc];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

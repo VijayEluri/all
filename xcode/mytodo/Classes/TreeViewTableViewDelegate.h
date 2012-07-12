@@ -9,6 +9,6 @@
     Task *parentTask;
 }
 
-@property (assign) TreeViewController *treeViewController;
+@property (retain) TreeViewController *treeViewController;
 
 @end

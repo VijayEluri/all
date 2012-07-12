@@ -7,6 +7,6 @@
 	TodayViewController *todayViewController;
 }
 
-@property (assign) TodayViewController *todayViewController;
+@property (retain) TodayViewController *todayViewController;
 
 @end

@@ -6,10 +6,6 @@
 
 @synthesize detailViewController;
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[super dealloc];
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if ((indexPath.section == CATEGORY_SECTION) && !detailViewController.readOnly) {

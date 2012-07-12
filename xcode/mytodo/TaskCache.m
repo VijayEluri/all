@@ -15,34 +15,13 @@ static TaskCache *taskCache = nil;
 		return nil;
 	}
 	
-	if ([super init]) {
+	if (self = [super init]) {
 		keyArray = [[NSMutableArray alloc] initWithCapacity:CACHE_SIZE];
 		cacheDict = [[NSMutableDictionary alloc] initWithCapacity:CACHE_SIZE];
 		allocFromClassMethod = NO;
 		return self;
 	}
 	return nil;
-}
-
-- (void)dealloc {
-	[cacheDict release];
-	[keyArray release];
-	[super dealloc];
-}
-
-- (NSUInteger)retainCount {
-	return NSUIntegerMax;
-}
-
-- (oneway void)release {
-}
-
-- (id)retain {
-	return taskCache;
-}
-
-- (id)autorelease {
-	return taskCache;
 }
 
 + (TaskCache *)sharedInstance {
@@ -76,7 +55,6 @@ static TaskCache *taskCache = nil;
 	}
 	[keyArray addObject:key];
 	[cacheDict setValue:data forKey:key];
-	[data release];
 	
 	return data;
 }

@@ -38,7 +38,7 @@ enum tagSections {
 	button.frame = CGRectMake(0, 0, 160, 40);
 	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[button addTarget:toolbarItemsTarget action:@selector(showCategoryPicker:) forControlEvents:UIControlEventTouchDown];
-	return [button retain];
+	return button;
 }
 
 - (void)createToolbarItems {
@@ -80,12 +80,6 @@ enum tagSections {
 					  addItem, nil];
 	
 	[toolbar setItems:items animated:NO];
-
-	[categoryItem release];
-	[moreViewItem release];
-	[addItem release];
-	[flexItem release];
-    [flexItem2 release];
 	
 	// Top toolbar items
 	
@@ -96,7 +90,6 @@ enum tagSections {
 										target:toolbarItemsTarget
 										action:@selector(viewTodayView:)];
 		self.navigationItem.leftBarButtonItem = todayViewItem;
-		[todayViewItem release];
 	}
 	
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -139,7 +132,6 @@ enum tagSections {
 	CGRect frame = [[UIScreen mainScreen] applicationFrame];
 	UIView *contentView = [[UIView alloc] initWithFrame:frame];
 	self.view = contentView;
-	[contentView release];
 }
 
 - (void)createTableView {
@@ -194,24 +186,6 @@ enum tagSections {
 	[self updateCategoryButtonTitle];
 }
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    
-	[parentTask release]; parentTask = nil;
-    [toolbar release]; toolbar = nil;
-    [tableView release]; tableView = nil;
-	[categoryButton release]; categoryButton = nil;
-    [categoryPicker release]; categoryPicker = nil;
-
-	[toolbarItemsTarget release]; toolbarItemsTarget = nil;
-	[categoryPickerDelegate release]; categoryPickerDelegate = nil;
-	[actionSheetDelegate release]; actionSheetDelegate = nil;
-	[tableViewDelegate release]; tableViewDelegate = nil;
-	[tableViewDataSource release]; tableViewDataSource = nil;
-    
-    [super dealloc];    
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return NO;
 }
@@ -228,7 +202,6 @@ enum tagSections {
 	} else {
 		Category *category = [(Category *) [Category alloc] initWithId:categoryId];
 		title = category.categoryName;
-		[category release];
 	}
 	[categoryButton setTitle:title forState:UIControlStateNormal];
 }
@@ -266,7 +239,6 @@ enum tagSections {
 														otherButtonTitles:nil];
 		actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 		[actionSheet showInView:self.view];
-		[actionSheet release];
 	}
 
 	if ((result.newSection == 0) && ([tableViewDataSource openTasksCount] > 0)) {
@@ -278,8 +250,6 @@ enum tagSections {
 			task = task.parentTask;
 		}
 	}
-	
-	[result release];
 }
 
 - (Task *)parentTask {
@@ -287,8 +257,7 @@ enum tagSections {
 }
 
 - (void)setParentTask:(Task *)value {
-	[parentTask release];
-	parentTask = [value retain];
+	parentTask = value;
 	self.title = parentTask.content;
 }
 

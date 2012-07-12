@@ -9,23 +9,7 @@
 @implementation TaskData
 
 @synthesize taskId;
-@synthesize parentId;
 @synthesize categoryId;
-@synthesize priority;
-@synthesize completed;
-@synthesize content;
-@synthesize completionDate;
-@synthesize dueDate;
-@synthesize subTasksCount;
-@synthesize completedSubTasksCount;
-
-- (void)dealloc {
-	NSLog(@"dealloc %@ with id %d", self, taskId);
-	[content release];
-	[completionDate release];
-	[dueDate release];
-	[super dealloc];
-}
 
 - (void)loadSubTasksCount{
     static sqlite3_stmt *subtaks_count_statement = nil;
@@ -100,14 +84,22 @@
 	hasLoaded = YES;
 }
 
-- (int) priority {
+- (int)priority {
 	if (!hasLoaded) [self loadFromDb];
 	return priority;
 }
 
-- (int) parentId {
+- (void)setPriority:(int)value {
+    priority = value;
+}
+
+- (int)parentId {
 	if (!hasLoaded) [self loadFromDb];
 	return parentId;
+}
+
+- (void)setParentId:(int)value {
+    parentId = value;
 }
 
 - (int)categoryId {
@@ -115,9 +107,17 @@
     return categoryId;
 }
 
+- (void)setCategoryId:(int)value {
+    categoryId = value;
+}
+
 - (NSString *)content {
 	if (!hasLoaded) [self loadFromDb];
 	return content;
+}
+
+- (void)setContent:(NSString *)value {
+    content = value;
 }
 
 - (NSString *)dueDate {
@@ -125,9 +125,17 @@
 	return dueDate;
 }
 
+- (void)setDueDate:(NSString *)value {
+    dueDate = value;
+}
+
 - (NSString *)completionDate {
 	if (!hasLoaded) [self loadFromDb];
 	return completionDate;
+}
+
+- (void)setCompletionDate:(NSString *)value {
+    completionDate = value;
 }
 
 - (int)completed {
@@ -135,14 +143,26 @@
 	return completed;
 }
 
+- (void)setCompleted:(int)value {
+    completed = value;
+}
+
 - (int)subTasksCount {
 	if (!hasLoadedSubTasksCount) [self loadSubTasksCount];
 	return subTasksCount;
 }
 
+- (void)setSubTasksCount:(int)value {
+    subTasksCount = value;
+}
+
 - (int)completedSubTasksCount {
 	if (!hasLoadedCompletedSubTasksCount) [self loadCompletedSubTasksCount];
 	return completedSubTasksCount;
+}
+
+- (void)setCompletedSubTasksCount:(int)value {
+    completedSubTasksCount = value;
 }
 
 @end
@@ -152,14 +172,14 @@
 @synthesize open;
 
 - (Task *)init {
-	[super init];
+	self = [super init];
 	data = [[TaskData alloc] init];
 	data.taskId = -1;
 	return self;
 }
 
 - (Task *)initWithId:(int)value {
-	[super init];
+	self = [super init];
 #ifdef ENABLED_CACHE
 	data = [[[TaskCache sharedInstance] taskDataWithId:value] retain];
 #else
@@ -170,17 +190,10 @@
 	return self;
 }
 
-- (void) dealloc {
-	NSLog(@"dealloc %@ with id %d", self, data.taskId);
-	[data release];
-	[parentTask release]; parentTask = nil;
-	[super dealloc];
-}
-
 #pragma mark DB Methods
 
 - (void)saveToDb {
-    static sqlite3_stmt *update_statement = nil;
+    sqlite3_stmt *update_statement = nil;
 	
 	if (data.taskId <= 0) return;
 	
@@ -244,7 +257,6 @@
 	NSDateFormatter *formatter = [AppGlobal dateTimeFormatter];
 	NSDate *nowDate = [[NSDate alloc] init];
 	NSString *now = [formatter stringFromDate:nowDate];
-	[nowDate release];
 	
 	static NSString *sql = @"UPDATE task SET completed = ?, completion_date = ? WHERE task_id = ?";
 	[instance prepareStatement:&update_completed_statement sql:sql];
@@ -390,8 +402,7 @@
 }
 
 - (void)setParentTask:(Task *)task {
-	[parentTask release];
-	parentTask = [task retain];
+	parentTask = task;
 }
 
 - (int)subTasksCount {

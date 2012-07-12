@@ -18,6 +18,6 @@
 
 @property int indentLevel;
 @property (retain) Task *task;
-@property (assign) TreeViewController *treeViewController;
+@property (retain) TreeViewController *treeViewController;
 
 @end

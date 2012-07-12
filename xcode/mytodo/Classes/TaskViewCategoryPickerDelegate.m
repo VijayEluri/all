@@ -7,13 +7,9 @@
 @implementation TaskViewCategoryPickerDelegate
 
 - (id)init:(TaskViewController *)controller {
-	[super init:controller];
+	self = [super init:controller];
 	categories = [Categories allCategories];
 	return self;
-}
-
-- (void)dealloc {
-	[super dealloc];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {

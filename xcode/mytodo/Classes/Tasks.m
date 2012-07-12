@@ -6,15 +6,9 @@
 @implementation Tasks
 
 - (Tasks *) init {
-	[super init];
+	self = [super init];
 	tasksArray = [[NSMutableArray alloc] init];
 	return self;
-}
-
-- (void) dealloc {
-	NSLog(@"dealloc %@", self);
-	[tasksArray release];
-	[super dealloc];
 }
 
 - (Task *) taskAtIndex: (int)value {
@@ -111,7 +105,6 @@
 		int primaryKey = sqlite3_column_int(select_by_due_date_statement, 0);
 		Task *task = [[Task alloc] initWithId:primaryKey];
 		[tasks addTask:task];
-		[task release];
 	}
 	sqlite3_reset(select_by_due_date_statement);
 	
@@ -130,7 +123,6 @@
 		int primaryKey = sqlite3_column_int(select_by_date_statement, 0);
 		Task *task = [[Task alloc] initWithId:primaryKey];
 		[tasks addTask:task];
-		[task release];
 	}
 	sqlite3_reset(select_by_date_statement);
 	
@@ -161,7 +153,6 @@
 		int primaryKey = sqlite3_column_int(select_statement, 0);
 		Task *task = [[Task alloc] initWithId:primaryKey];
 		[tasks addTask:task];
-		[task release];
 	}
 	
 	sqlite3_reset(select_statement);
@@ -182,7 +173,6 @@
 		int primaryKey = sqlite3_column_int(select_statement, 0);
 		Task *task = [[Task alloc] initWithId:primaryKey];
 		[tasks addTask:task];
-		[task release];
 	}
 	
 	sqlite3_reset(select_statement);

@@ -88,7 +88,7 @@
 - (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LogBookCell *cell = (LogBookCell *) [tableView dequeueReusableCellWithIdentifier:LOG_BOOK_CELL_ID];
     if (cell == nil) {
-        cell = [[[LogBookCell alloc] initWithFrame:CGRectZero reuseIdentifier:LOG_BOOK_CELL_ID] autorelease];
+        cell = [[LogBookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LOG_BOOK_CELL_ID];
     }
 	
 	int startIndex = [[sectionStartIndexArray objectAtIndex:indexPath.section] intValue];
@@ -124,17 +124,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
-}
-
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[tasks release];
-	[tableView release];
-	[sectionTitleArray release];
-	[sectionTasksCountArray release];
-	[sectionStartIndexArray release];
-    [super dealloc];
 }
 
 

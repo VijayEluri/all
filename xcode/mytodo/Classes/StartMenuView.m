@@ -17,7 +17,6 @@
 	[controller loadView];
 	controller.title = @"Log Book";
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (void)showCategories {
@@ -26,7 +25,6 @@
 	[controller loadView];
 	controller.title = @"Categories";
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (void)showToday {
@@ -35,7 +33,6 @@
 	[controller loadView];
     controller.title = @"Today";
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (void)showSettings {
@@ -44,7 +41,6 @@
 	[controller loadView];
 	controller.title = @"Settings";
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];	
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -67,7 +63,7 @@
 	UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell"];
 	
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"Cell"] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 	}
 	
 	switch(indexPath.row) {
@@ -149,11 +145,5 @@
 	boxRect = CGRectInset(boxRect, 1.0f, 1.0f);
     [self drawRoundedRect:boxRect inContext:ctxt];
 }
-
-- (void)dealloc {
-	[tableView release];
-    [super dealloc];
-}
-
 
 @end

@@ -32,7 +32,7 @@
 }
 
 - (void)createMiddleButton {
-	middleButton = [[MyButton buttonWithType:UIButtonTypeCustom] retain];
+	middleButton = [MyButton buttonWithType:UIButtonTypeCustom];
 	middleButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 	middleButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
 	middleButton.backgroundColor = [UIColor clearColor];
@@ -59,7 +59,6 @@
     controller.taskToMove = task;
     [controller loadView];
     [self presentModalViewController:controller animated:YES];
-    [controller release];
 }
 
 - (void)createToolbar {
@@ -89,9 +88,6 @@
 	
 	NSArray *items = [NSArray arrayWithObjects: cancelItem, flexItem, moveItem, nil];
 	[toolbar setItems:items animated:NO];
-	[cancelItem release];
-	[flexItem release];
-    [moveItem release];
 }
 
 #pragma mark CustomDueDatePicker
@@ -222,7 +218,7 @@
 	
 	dueDateView = [[UIView alloc] initWithFrame:CGRectMake(8, 5, 200, 40)];
 
-	dueDateButton = [[MyButton buttonWithType:UIButtonTypeCustom] retain];
+	dueDateButton = [MyButton buttonWithType:UIButtonTypeCustom];
 	dueDateButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 	dueDateButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
 	dueDateButton.backgroundColor = [UIColor clearColor];
@@ -244,7 +240,7 @@
 	
 	[dueDateView addSubview:dueDateButton];
 	
-	clearDueDateButton = [[MyButton buttonWithType:UIButtonTypeCustom] retain];
+	clearDueDateButton = [MyButton buttonWithType:UIButtonTypeCustom];
 	clearDueDateButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 	clearDueDateButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
 	clearDueDateButton.backgroundColor = [UIColor clearColor];
@@ -312,7 +308,6 @@
 	CGRect frame = [[UIScreen mainScreen] applicationFrame];
 	UIView *contentView = [[UIView alloc] initWithFrame:frame];
 	self.view = contentView;
-	[contentView release];
 }
 
 - (void)createTableView {
@@ -418,7 +413,6 @@
 			t.dueDate = @"";
 		}
         [Task createTask:t];
-        [t release];
     }
 }
 
@@ -435,7 +429,7 @@
 		} else {
 			task.dueDate = @"";
 		}
-        task.saveToDb;
+        [task saveToDb];
     }
 }
 
@@ -443,37 +437,6 @@
 	[self hidePicker:dueDatePicker];
 	[self hidePicker:customDueDatePicker];
 	dueDateStep = 0;
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	
-	[prioritySegment release];
-	[middleButton release];
-	[dueDatePicker release];
-
-	[dueDateView release];
-	[clearDueDateButton release];
-	[dueDateButton release];
-	
-	customDueDatePicker.delegate = nil;
-	[customDueDatePicker release];
-
-	contentTextView.delegate = nil;
-	[contentTextView release];
-	
-	[toolbar release];
-
-	tableView.delegate = nil;
-	tableView.dataSource = nil;
-	[tableView release];
-
-	[textViewDelegate release];
-    [tableViewDelegate release];
-    [tableViewDataSource release];
-	[customDueDatePickerDelegate release];
-	
-	[super dealloc];
 }
 
 @end

@@ -13,7 +13,7 @@
 	NSMutableArray *sectionStartIndexArray;
 }
 
-@property (assign) TodayViewController *todayViewController;
+@property (retain) TodayViewController *todayViewController;
 
 - (Task *)taskAt:(NSIndexPath *)path;
 - (int)removeTask:(Task *)task;

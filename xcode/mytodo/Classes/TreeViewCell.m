@@ -34,7 +34,7 @@
 		[self.contentView addSubview:subTaskCountLabel];
 		
 		// cell's check button
-		treeNodeButton = [[MyButton buttonWithType:UIButtonTypeCustom] retain]; 
+		treeNodeButton = [MyButton buttonWithType:UIButtonTypeCustom]; 
 		treeNodeButton.frame = CGRectZero;
 		treeNodeButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		treeNodeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
@@ -170,15 +170,5 @@
     
     [self layoutLabels];	
 }
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    [task release];
-    [subTaskCountLabel release];
-    [treeNodeButton release];
-    [taskContentLabel release];
-    [super dealloc];
-}
-
 
 @end

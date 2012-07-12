@@ -16,7 +16,7 @@
 }
 
 @property (retain) Task *task;
-@property (assign) TodayViewController *todayViewController;
+@property (retain) TodayViewController *todayViewController;
 
 - (void)onAccessoryClick;
 

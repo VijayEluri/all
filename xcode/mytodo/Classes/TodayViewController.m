@@ -23,18 +23,6 @@
 	self.view = tableView;
 }
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	
-	tableView.delegate = nil;
-	tableView.dataSource = nil;
-	[tableView release];
-	[tableViewDelegate release];
-	[tableViewDataSource release];
-	
-    [super dealloc];
-}
-
 - (Task *)taskAt:(NSIndexPath *)path {
 	return [tableViewDataSource taskAt:path];
 }

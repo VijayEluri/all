@@ -10,17 +10,9 @@
 @synthesize todayViewController;
 
 - (TodayViewTableViewDataSource *)init {
-	[super init];
+	self = [super init];
 	[self reloadData];
 	return self;
-}
-
-- (void)dealloc {
-	[tasks release];
-	[sectionTitleArray release];
-	[sectionTasksCountArray release];
-	[sectionStartIndexArray release];
-	[super dealloc];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -45,7 +37,7 @@
 	TodayViewCell *cell = (TodayViewCell *) [table dequeueReusableCellWithIdentifier:TODAY_VIEW_CELL_ID];
 	
 	if (cell == nil) {
-		cell = [[[TodayViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:TODAY_VIEW_CELL_ID] autorelease];
+		cell = [[TodayViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TODAY_VIEW_CELL_ID];
 	}
 	
 	cell.todayViewController = todayViewController;
@@ -55,12 +47,10 @@
 }
 
 - (void)reloadData {
-	[tasks release];
 	tasks = [Tasks allocTasksOrderByDueDate];
 	
 	NSDate *today = [[NSDate alloc] init];
 	NSString* todayDate = [[AppGlobal dateFormatter] stringFromDate:today];
-	[today release];
 	
 	sectionTitleArray = [[NSMutableArray alloc] init];
 	sectionTasksCountArray = [[NSMutableArray alloc] init];

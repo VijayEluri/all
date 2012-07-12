@@ -7,6 +7,6 @@
     DetailViewController *detailViewController;
 }
 
-@property (assign) DetailViewController *detailViewController;
+@property (retain) DetailViewController *detailViewController;
 
 @end

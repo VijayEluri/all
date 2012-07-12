@@ -12,7 +12,7 @@
 	Task *parentTask;
 }
 
-@property (assign) DetailViewController *detailViewController;
+@property (retain) DetailViewController *detailViewController;
 @property (retain) Task *task;
 @property (retain) Task *parentTask;
 

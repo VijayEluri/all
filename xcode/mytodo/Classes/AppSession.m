@@ -28,14 +28,12 @@
 	[controller loadView];
 	controller.title = @"Log Book";
 	[navigationController pushViewController:controller animated:NO];
-	[controller release];
 }
 
 - (void)restoreTodayView {
 	TodayViewController *controller = [[TodayViewController alloc] init];
 	[controller loadView];
 	[navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (void)restoreTaskView:(NSDictionary *)dict {
@@ -52,16 +50,13 @@
 			[tasksToRestore addTask:tempTask];
 			tempTask = tempTask.parentTask;
 		} while (tempTask != nil);
-		[task release];
 		
 		for (int i = tasksToRestore.count - 1; i >= 0; i--) {
 			task = [tasksToRestore taskAtIndex:i];
 			TaskViewController *controller = [[TaskViewController alloc] initWithNibName:@"TaskViewController" bundle:nil];
 			[controller setParentTask:task];
 			[navigationController pushViewController:controller animated:NO];
-			[controller release];
 		}
-		[tasksToRestore release];
 	}
 }
 
@@ -75,8 +70,7 @@
 										  mutabilityOption:NSPropertyListMutableContainersAndLeaves
 										  format:&format errorDescription:&errorDesc];
 	if (!temp) {
-		NSLog(@"Error: %s", errorDesc);
-		[errorDesc release];
+		NSLog(@"Error: %@", errorDesc);
 	}
 	
 	NSString *currentView = [temp objectForKey:@"Screen"];
@@ -127,7 +121,6 @@
 		[taskDict setObject:[NSNumber numberWithInt:parentId] forKey:@"ParentTaskId"];
 		[taskDict setObject:state forKey:@"State"];
 		[plistDict setObject:taskDict forKey:TASK_VIEW_KEY];
-		[taskDict release];
 	} else 
 	if ([activeController isKindOfClass:[DetailViewController class]]) {
 		currentView = TASK_VIEW_KEY;
@@ -142,7 +135,6 @@
 		int parentId = detailViewController.taskViewController.parentTask.taskId;
 		[taskDict setObject:[NSNumber numberWithInt:parentId] forKey:@"ParentTaskId"];
 		[plistDict setObject:taskDict forKey:TASK_VIEW_KEY];
-		[taskDict release];
 	}
 	
 	if (currentView) {
@@ -155,7 +147,6 @@
 			[plistData writeToFile:bundlePath atomically:YES];
 		}	
 	}
-	[plistDict release];
 }
 
 - (AppSession *)init:(UINavigationController *)controller {
@@ -164,11 +155,6 @@
 		return self;
 	}
 	return nil;
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    [super dealloc];
 }
 
 - (void)saveState {

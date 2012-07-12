@@ -9,7 +9,7 @@
 @synthesize treeViewController;
 
 - (TreeViewTableViewDataSource *)init {
-	[super init];
+	self = [super init];
     indentLevelArray = [[NSMutableArray alloc] init];
     tasks = [Tasks allocTasks:@"parent_id=-1 ORDER BY completed"];
 
@@ -21,17 +21,9 @@
     rootTask.content = @"Root";
     rootTask.taskId = -1;
     [tasks insertTask:rootTask at:0];
-    [rootTask release];
     [indentLevelArray insertObject:[NSNumber numberWithInt:0] atIndex:0];
     
 	return self;
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-    [tasks release];
-    [indentLevelArray release];
-    [super dealloc];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -54,7 +46,7 @@
 	TreeViewCell *cell = (TreeViewCell *) [table dequeueReusableCellWithIdentifier:TREE_VIEW_CELL_ID];
 	
 	if (cell == nil) {
-		cell = [[[TreeViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:TREE_VIEW_CELL_ID] autorelease];
+		cell = [[TreeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TREE_VIEW_CELL_ID];
 	}
     
     cell.task = [self taskAt:indexPath];
@@ -76,9 +68,7 @@
         [indentLevelArray insertObject:[NSNumber numberWithInt:indentLevel + 1] atIndex:newIndex];
         [pathArray addObject:[NSIndexPath indexPathForRow:newIndex inSection:0]];
     }
-    [subTasks release];
     [tv insertRowsAtIndexPaths:pathArray withRowAnimation:UITableViewRowAnimationTop];
-    [pathArray release];
 }
 
 - (void)closeSubTasksOf:(Task *)task withIn:(UITableView *)tv {
@@ -101,7 +91,6 @@
         subTaskIndentLevel = [[indentLevelArray objectAtIndex:index + 1] intValue];
     }
     [tv deleteRowsAtIndexPaths:pathArray withRowAnimation:UITableViewRowAnimationBottom];
-    [pathArray release];
 }
 
 @end

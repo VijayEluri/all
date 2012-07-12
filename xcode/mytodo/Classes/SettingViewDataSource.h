@@ -7,6 +7,6 @@
 	SettingViewController *settingViewController;
 }
 
-@property (assign) SettingViewController *settingViewController;
+@property (retain) SettingViewController *settingViewController;
 
 @end

@@ -35,20 +35,11 @@
 - (void)updateBadgeNumber:(UIApplication *)application {
 	Tasks *tasks = [Tasks allocTasks:nil completed:NO];
 	application.applicationIconBadgeNumber = [tasks count];
-	[tasks release];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	[session saveState];
 	[self updateBadgeNumber:application];
-}
-
-- (void)dealloc {
-	[session release];
-	[rootTaskViewController release];
-	[navigationController release];
-	[window release];
-	[super dealloc];
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {

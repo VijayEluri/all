@@ -5,16 +5,10 @@
 @implementation Category
 
 -(Category *)initWithId:(int)value {
-	[super init];
+	self = [super init];
 	categoryId = value;
 	loaded = NO;
 	return self;
-}
-
--(void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[categoryName release];
-	[super dealloc];
 }
 
 - (void)loadFromDb {
@@ -55,8 +49,7 @@
 }
 
 -(void)setCategoryName:(NSString *)value {
-	[categoryName release];
-	categoryName = [value retain];
+	categoryName = value;
 }
 
 -(void)saveToDb {

@@ -3,9 +3,4 @@
 
 @implementation SettingViewDelegate
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[super dealloc];
-}
-
 @end

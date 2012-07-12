@@ -15,16 +15,9 @@
 @synthesize parentTask;
 
 -(DetailViewTableViewDataSource *)init {
-    [super init];
+    self = [super init];
     categories = [Categories allCategories];
     return self;
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[task release];
-	[parentTask release];
-	[super dealloc];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -48,23 +41,23 @@
 		case CONTENT_SECTION:
 			switch (indexPath.row) {
 				case 0:
-					cell = [[[CellTextView alloc] initWithFrame:CGRectZero reuseIdentifier:CELL_TEXT_VIEW_ID] autorelease];
+					cell = [[CellTextView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_TEXT_VIEW_ID];
 					[(CellTextView *) cell setView:detailViewController.contentTextView];
 					break;
 				case 1:
-					cell = [[[CellViewWithLabel alloc] initWithFrame:CGRectZero reuseIdentifier:CELL_VIEW_WITH_LABEL_ID] autorelease];
+					cell = [[CellViewWithLabel alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_VIEW_WITH_LABEL_ID];
 					((CellViewWithLabel *)cell).nameLabel.text = @"Priority";
 					((CellViewWithLabel *)cell).view = detailViewController.prioritySegment;
 					break;
 				case 2:
-					cell = [[[CellViewWithLabel alloc] initWithFrame:CGRectZero reuseIdentifier:CELL_VIEW_WITH_LABEL_ID] autorelease];
+					cell = [[CellViewWithLabel alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_VIEW_WITH_LABEL_ID];
 					((CellViewWithLabel *)cell).nameLabel.text = @"Due in";
 					((CellViewWithLabel *)cell).view = detailViewController.dueDateView;
 					break;
 			}
 			break;
 		case CATEGORY_SECTION:
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CategoryCell"] autorelease];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CategoryCell"];
 			if (indexPath.row == 0) {
 				cell.textLabel.text = @"<No Category>";
 				if (task == nil) {

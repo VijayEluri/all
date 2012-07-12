@@ -5,14 +5,9 @@
 @implementation DetailViewTextViewDelegate
 
 - (id)init:(DetailViewController *)value {
-    [super init];
+    self = [super init];
     controller = value;
     return self;
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[super dealloc];
 }
 
 - (void)createButton {
@@ -23,7 +18,6 @@
 									 target:self 
 									 action:@selector(doneTextViewEditingAction:)];
 		controller.navigationItem.rightBarButtonItem = doneItem;
-		[doneItem release];
 	}
 }
 

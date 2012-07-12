@@ -101,7 +101,6 @@
 													otherButtonTitles:nil];
 	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 	[actionSheet showInView:self.superview];
-	[actionSheet release];
 }
 
 - (void)checkAction:(id)sender {
@@ -118,7 +117,6 @@
 	[controller setParentTask:task];
     [controller loadView];
 	[todayViewController.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -145,7 +143,7 @@
 		[self.contentView addSubview:subTaskCountLabel];
 		
 		// cell's check button
-		completionCheckButton = [[MyButton buttonWithType:UIButtonTypeCustom] retain]; 
+		completionCheckButton = [MyButton buttonWithType:UIButtonTypeCustom]; 
 		completionCheckButton.frame = CGRectZero;
 		completionCheckButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		completionCheckButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
@@ -155,15 +153,6 @@
 	}
 	
 	return self;
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[completionCheckButton release];
-    [task release];
-	[taskContentLabel release];
-    [subTaskCountLabel release];
-    [super dealloc];
 }
 
 @end

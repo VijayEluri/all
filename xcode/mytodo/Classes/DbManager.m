@@ -79,7 +79,7 @@ static DbManager *dbManager = nil;
 		return nil;
 	}
 	
-	if ([super init]) {
+	if (self = [super init]) {
 		[self createEditableCopyOfDatabaseIfNeeded];
 		[self openDatabase];
 	}
@@ -89,24 +89,7 @@ static DbManager *dbManager = nil;
 
 - (void)dealloc {
 	[self closeDatabase];
-	[super dealloc];
 }
-
-- (NSUInteger)retainCount {
-	return NSUIntegerMax;
-}
-
-- (oneway void)release {
-}
-
-- (id)retain {
-	return dbManager;
-}
-
-- (id)autorelease {
-	return dbManager;
-}
-
 
 #pragma mark Public Methods
 

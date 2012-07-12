@@ -24,7 +24,6 @@
 	[controller setParentTask:theTask];
     [controller loadView];
 	[taskViewController.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (void)updateTaskLabelColor {
@@ -165,7 +164,6 @@
 													otherButtonTitles:nil];
 	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 	[actionSheet showInView:taskViewController.view];
-	[actionSheet release];
 }
 
 - (void)promptCannotCloseTask {
@@ -176,7 +174,6 @@
 													otherButtonTitles:nil];
 	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 	[actionSheet showInView:taskViewController.view];
-	[actionSheet release];
 }
 
 - (void)checkAction:(id)sender {
@@ -220,7 +217,7 @@
 		[self.contentView addSubview:subTaskCountLabel];
 		
 		// cell's check button
-		completionCheckButton = [[MyButton buttonWithType:UIButtonTypeCustom] retain]; 
+		completionCheckButton = [MyButton buttonWithType:UIButtonTypeCustom]; 
 		completionCheckButton.frame = CGRectZero;
 		completionCheckButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		completionCheckButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
@@ -238,17 +235,6 @@
 	}
 	
 	return self;	
-}
-
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-	[completionCheckButton release];
-    [theTask release];
-	[taskContentLabel release];
-    [dateLabel release];
-    [subTaskCountLabel release];
-	[nowDate release];
-    [super dealloc];
 }
 
 @end

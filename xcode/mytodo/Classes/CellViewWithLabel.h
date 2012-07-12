@@ -10,8 +10,8 @@
 	UIView	*view;
 }
 
-@property (nonatomic, retain) UIView *view;
-@property (nonatomic, retain) UILabel *nameLabel;
+@property (retain) UIView *view;
+@property (retain) UILabel *nameLabel;
 
 - (void)setView:(UIView *)inView;
 

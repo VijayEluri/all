@@ -14,31 +14,11 @@ static Categories *categories = nil;
 		NSAssert(FALSE, @"You should never call DbManager.alloc directly!");
 		return nil;
 	}
-	[super init];
+	self = [super init];
     selectedCategoryId = ALL_CATEGORY;
 	categoriesArray = [[NSMutableArray alloc] init];
     allocFromClassMethod = NO;
 	return self;
-}
-
-- (NSUInteger)retainCount {
-	return NSUIntegerMax;
-}
-
-- (oneway void)release {
-}
-
-- (id)retain {
-	return categories;
-}
-
-- (id)autorelease {
-	return categories;
-}
-
--(void)dealloc {
-	[categoriesArray release];
-	[super dealloc];
 }
 
 - (Category *)categoryAtIndex: (int)value {
@@ -87,7 +67,6 @@ static Categories *categories = nil;
 		int primaryKey = sqlite3_column_int(select_statement, 0);
 		Category *category = [[Category alloc] initWithId:primaryKey];
 		[categories addCategory:category];
-		[category release];
 	}
 	sqlite3_reset(select_statement);
 	

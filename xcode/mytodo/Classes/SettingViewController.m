@@ -32,19 +32,5 @@
 	self.view = tableView;
 }
 
-- (void)dealloc {
-	NSLog(@"dealloc %@", self);
-
-	[animationSwitch release];
-	
-	tableView.delegate = nil;
-	tableView.dataSource = nil;
-	[tableView release];
-	[tableViewDelegate release];
-	[tableViewDataSource release];
-	
-	[super dealloc];
-}
-
 @end
 
