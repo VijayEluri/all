@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo 'Name: ' `aapt dump badging $1 | sed -n "s/application-label:'\(.*\)'/\1/p"`
+echo 'Version: ' `aapt dump badging $1 | sed -n "s/.*versionName='\([^']*\).*/\1/p"`
