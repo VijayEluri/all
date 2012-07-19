@@ -62,6 +62,7 @@ var server = net.createServer(function(socket) {
 
   socket.on('connect', function() {
     remoteAddress = socket.remoteAddress + ':' + socket.remotePort;
+    console.log(remoteAddress + ' connected.');
     log.debug(remoteAddress + ' connected.');
   });
 
@@ -89,6 +90,7 @@ var server = net.createServer(function(socket) {
   };
 
   socket.on('data', function(chunk) {
+    console.log("received chunk " + chunk.length + " bytes");
     log.debug("received chunk " + chunk.length + " bytes");
 
     global.bytesLeft = chunk.length;
