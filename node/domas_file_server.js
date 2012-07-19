@@ -58,7 +58,7 @@ var server = net.createServer(function(socket) {
   var fileWriteStream = null;
   var fileWriteSize = Long.Long(0, 0);
 
-  var remoteAddress = null;
+  var remoteAddress = '<NO REMOTE ADDR>';
 
   socket.on('connect', function() {
     remoteAddress = socket.remoteAddress + ':' + socket.remotePort;
@@ -150,7 +150,7 @@ if (!fs.existsSync(folder)) {
   process.exit(1);
 }
 
-server.listen(port, null);
+server.listen(port);
 
 log.info("server running at port " + port);
 
