@@ -17,13 +17,13 @@ func error(str string) {
 }
 
 func usage() {
-	error("usage: domas_send_file [ip:port] [times]")
+	error("usage: domas_send_file <ip:port> [times] [threads]")
 	os.Exit(2)
 }
 
-func generateFileName() (string, [260]byte) {
+func generateFileName(id int) (string, [260]byte) {
 	var fileNameBytes [260]byte
-	fileName := time.Now().Format("2006_01_02_15_04_05.dat")
+	fileName := time.Now().Format("2006_01_02_15_04_05.dat") + "_" + strconv.Itoa(id)
 	copy(fileNameBytes[:], []byte(fileName))
 	return fileName, fileNameBytes
 }
@@ -45,14 +45,15 @@ func generateFileBuffer(size int64) []byte {
 	return buffer.Bytes()
 }
 
-func send(address string) int64 {
+func send(id int, address string) int64 {
 	conn, err := net.Dial("tcp", address)
 	if err != nil {
 		error("cannot connect to " + address)
+		error(err.Error())
 		os.Exit(1)
 	}
 
-	fileName, fileNameBytes := generateFileName()
+	fileName, fileNameBytes := generateFileName(id)
 	fmt.Printf("file name: %v\n", fileName)
 
 	fileSize, fileSizeBytes := generateFileSize()
@@ -70,6 +71,24 @@ func send(address string) int64 {
 	return fileSize + int64(268)
 }
 
+type Performance struct {
+	totalSize int64
+	duration int64
+}
+
+func send_files(id int, times int, address string, ch chan<- Performance) {
+	startTime := time.Now()
+	var totalSize int64
+
+	for i := 0; i < times; i++ {
+		fmt.Printf("%04d: sending file to %v\n", i + 1, address)
+		totalSize += send(id * 10000 + i, address)		
+	}	
+
+	duration := time.Now().Sub(startTime).Nanoseconds() / 1000000
+	ch <- Performance { totalSize, duration }	
+}
+
 func main() {
 	if len(os.Args) < 2 {
 		usage()
@@ -78,21 +97,33 @@ func main() {
 
 	address := os.Args[1]
 	times := 1
+	threads := 1
+
 	if len(os.Args) > 2 {
 		times, _ = strconv.Atoi(os.Args[2])
 	}
 
+	if (len(os.Args) > 3) {
+		threads, _ = strconv.Atoi(os.Args[3])
+	}
+
+	fmt.Printf("running %v threads\n", threads)
 	fmt.Printf("repeating %v times\n", times)
+	ch := make(chan Performance)
+	for i := 0; i < threads; i++ {
+		go send_files(i + 1, times, address, ch)
+	}
 
-	startTime := time.Now()
-	var totalSize int64
+	totalSize := int64(0)
+	duration := int64(0)
+	for i := 0; i < threads; i++ {
+		p := <- ch
+		totalSize += p.totalSize
+		if (p.duration > duration) {
+			duration = p.duration
+		}
+	}
 
-	for i := 0; i < times; i++ {
-		fmt.Printf("%04d: sending file to %v\n", i + 1, address)
-		totalSize += send(address)		
-	}	
-
-	duration := time.Now().Sub(startTime).Nanoseconds() / 1000000
 	fmt.Printf("total size %v, duration %v ms, performance %v\n", totalSize, duration, totalSize / duration)
 
 }
