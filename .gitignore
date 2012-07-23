@@ -1,2 +1,5 @@
 .DS_Store
 *.log
+go/domas_file_server/domas_file_server
+go/domas_send_file/domas_send_file
+node/data/

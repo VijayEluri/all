@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import urllib
+import urllib2
 import datetime
 from HTMLParser import HTMLParser
 from htmlentitydefs import name2codepoint
@@ -62,14 +62,30 @@ class MyHTMLParser(HTMLParser):
         
 
 url = "http://iphone.bjair.info/m/beijing/mobile"
-data = urllib.urlopen(url).read()
-parser = MyHTMLParser()
-parser.feed(data)
 
-str = u"PM2.5: \t\t%s" % g_result["current"]
-print str.encode('utf-8')
+def log(f, str):
+    f.write(str + "\n")
+    print str
 
-str = u"Time: \t\t%s" % g_result["time"].split(' ')[1]
-print str.encode('utf-8')
+try:
+    data = urllib2.urlopen(url).read()
+    parser = MyHTMLParser()
+    parser.feed(data)
+    f = open('/tmp/_pm2.5.txt', 'w+')
 
-print "Upated: \t%s" % datetime.datetime.now()
+    str = u"PM2.5: \t\t%s" % g_result["current"]
+    log(f, str.encode('utf-8'))
+
+    str = u"Time: \t\t%s" % g_result["time"].split(' ')[1]
+    log(f, str.encode('utf-8'))
+
+    log(f, "Upated: \t%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%m:%S"))
+    
+    f.close()
+except urllib2.URLError:
+    try:
+        with open('/tmp/_pm2.5.txt') as f:
+            for line in f.readlines():
+                print line,
+    except:
+        pass
