@@ -79,13 +79,14 @@ try:
     str = u"Time: \t\t%s" % g_result["time"].split(' ')[1]
     log(f, str.encode('utf-8'))
 
-    log(f, "Upated: \t%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%m:%S"))
+    log(f, "Upated: \t%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     
     f.close()
-except urllib2.URLError:
+except urllib2.URLError as e:
     try:
         with open('/tmp/_pm2.5.txt') as f:
             for line in f.readlines():
                 print line,
-    except:
-        pass
+        print "Cannot update now, use old data. " + e.__str__()
+    except e:
+        print e

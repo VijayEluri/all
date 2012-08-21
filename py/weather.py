@@ -16,8 +16,9 @@ def read_dom(url):
       with open('/tmp/_weather.txt') as f:
         for line in f.readlines():
           print line,
+      print "Cannot update now, use old data. " + e.__str__()
     except:
-      pass
+      print "Cannot update weather: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     exit(1)
   return dom
 
@@ -28,15 +29,15 @@ def log(f, str):
     f.write(str + "\n")
   print str
 
-units = dom.getElementsByTagName('yweather:units')[0].attributes
-tempUnit = units.getNamedItem('temperature').value
-distUnit = units.getNamedItem('distance').value
+units        = dom.getElementsByTagName('yweather:units')[0].attributes
+tempUnit     = units.getNamedItem('temperature').value
+distUnit     = units.getNamedItem('distance').value
 pressureUnit = units.getNamedItem('pressure').value
-speedUnit = units.getNamedItem('speed').value
+speedUnit    = units.getNamedItem('speed').value
 
-wind = dom.getElementsByTagName('yweather:wind')[0].attributes
-atmosphere = dom.getElementsByTagName('yweather:atmosphere')[0].attributes
-astronomy = dom.getElementsByTagName('yweather:astronomy')[0].attributes
+wind         = dom.getElementsByTagName('yweather:wind')[0].attributes
+atmosphere   = dom.getElementsByTagName('yweather:atmosphere')[0].attributes
+astronomy    = dom.getElementsByTagName('yweather:astronomy')[0].attributes
 
 f = open('/tmp/_weather.txt', "w+")
 
@@ -61,5 +62,5 @@ log(f, str.encode('utf-8'))
 str = u"%s: \t\tL %s°%s, H %s°%s, %s" % (forcast2.getNamedItem('day').value, forcast2.getNamedItem('low').value, tempUnit, forcast2.getNamedItem('high').value, tempUnit, forcast2.getNamedItem('text').value)
 log(f, str.encode('utf-8'))
 
-log(f, "Updated: \t" + datetime.datetime.now().strftime("%Y-%m-%d %H:%m:%S"))
+log(f, "Updated: \t" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 f.close()
