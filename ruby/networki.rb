@@ -14,6 +14,6 @@ input.each do |service|
     router = $1 if line =~ /^Router: (.*)/
   end
   if ipaddr
-    puts "#{service}: #{ipaddr} mask #{mask} gateway #{router}"
+    puts "#{service}:#{' ' * (9 - service.length)}#{ipaddr} mask #{mask} gateway #{router}"
   end
 end
