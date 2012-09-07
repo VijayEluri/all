@@ -2,6 +2,7 @@
 
 
 print "Network Interfaces\n------------------\n"
+none = true
 
 input = %x{networksetup -listallnetworkservices}.split("\n")
 
@@ -15,5 +16,10 @@ input.each do |service|
   end
   if ipaddr
     puts "#{service}:#{' ' * (9 - service.length)}#{ipaddr} mask #{mask} gateway #{router}"
+    none = false
   end
+end
+
+if none
+  puts "No network connection"
 end
